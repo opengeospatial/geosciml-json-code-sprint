@@ -1,0 +1,928 @@
+= DRAFT OGC Geoscience Markup Language (GeoSciML) - Part 1: Core
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+:docnumber: YY-999
+:received-date: 2029-03-30
+:issued-date: 2029-03-30
+:published-date: 2029-03-30
+:fullname: Editor One
+:fullname_2: Editor Two
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, API, openapi, html
+:submitting-organizations: Arizona Geological Survey (AzGS), Arizona, USA; British Geological Survey (NERC-BGS), UK; Bureau de Recherches Géologiques et Minières (BRGM), France; Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia; Geological Survey of Victoria (GSV), Australia; Geological Survey of Finland (GTK), Finland; Geological Survey of Italy (ISPRA), Italy; Geological Survey of Sweden (SGU), Sweden; Geoscience Australia (GA), Australia; Institute of Geological and Nuclear Sciences (GNS), New Zealand; Landcare Research, New Zealand; Natural Resources Canada (NRCan), Canada; U.S. Geological Survey (USGS), United States of America
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+
+////
+NOTE: Uncomment ISO section if necessary
+
+*ISO Declaration*
+
+ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO member bodies). The work of preparing International Standards is normally carried out through ISO technical committees. Each member body interested in a subject for which a technical committee has been established has the right to be represented on that committee. International organizations, governmental and non-governmental, in liaison with ISO, also take part in the work. ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of electrotechnical standardization.
+
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2.
+
+The main task of technical committees is to prepare International Standards. Draft International Standards adopted by the technical committees are circulated to the member bodies for voting. Publication as an International Standard requires approval by at least 75 % of the member bodies casting a vote.
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
+////
+
+[abstract]
+== Abstract
+
+GeoSciML is a model of geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases.  The model was developed by the IUGS CGI (Commission for the Management and Application of Geoscience Information) and version 4.1 is the first version officially submitted as an OGC standard.  This specification describes a logical model and GML/XML encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses.  It includes a _Lite_ model, used for simple map-based applications; a _basic_ model, aligned on INSPIRE, for basic data exchange; and an _extended_ model to address more complex scenarios.  
+
+The specification also provides patterns, profiles (most notably of Observations and Measurements - ISO19156), and best practices to deal with common geoscience use cases. 
+
+== Preface
+
+The primary goal of this specification is to capture the semantics, schema, and encoding syntax of key elements described and portrayed in geological maps and databases, in order to enable information systems to interoperate with such data.
+
+== Security considerations
+
+//If no security considerations have been made for this Standard, use the following text.
+
+No security considerations have been made for this Standard.
+
+////
+If security considerations have been made for this Standard, follow the examples found in IANA or IETF documents. Please see the following example.
+“VRRP is designed for a range of internetworking environments that may employ different security policies. The protocol includes several authentication methods ranging from no authentication, simple clear text passwords, and strong authentication using IP Authentication with MD5 HMAC. The details on each approach including possible attacks and recommended environments follows.
+Independent of any authentication type VRRP includes a mechanism (setting TTL=255, checking on receipt) that protects against VRRP packets being injected from another remote network. This limits most vulnerabilities to local attacks.
+NOTE: The security measures discussed in the following sections only provide various kinds of authentication. No confidentiality is provided at all. This should be explicitly described as outside the scope....”
+////
+
+
+
+== Submitters
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+[width="100%",cols="30%,70%",options="header",]
+|===
+|*Name* |*Affiliation*
+|Eric Boisvert |Geological Survey of Canada (Natural Resources Canada)
+|Ollie Raymond |Geoscience Australia
+|Marcus Sen |British Geological Survey
+|Edd Lewis |British Geological Survey
+|Mark Rattenbury |Earth Sciences New Zealand
+|===
+
+== Contributors
+
+//This clause is optional.
+
+Additional contributors to this Standard include the following:
+
+Individual name(s), Organization
+
+== Scope
+
+GeoSciML (Geoscience Markup Language) covers the domain of geology (earth materials, geological units and stratigraphy, geological time, geological structures, geomorphology, geochemistry) and sampling features common to the practice of geoscience, such as boreholes and geological specimens.  The specification also proposes a simplified version of GeoSciML suitable for portrayal of geological features on digital maps.  This specification does not address (or very partially addresses) more specialised geoscience domains such as hydrogeology, seismology, geophysics or economic geology.  Some of these domains are covered by other specifications (e.g. GroundwaterML for hydrogeology; OGC 16-032, and EarthResourceML for economic geology – both developed in concert with GeoSciML).
+
+== Conformance
+
+This standard defines a logical model and an XML encoding which conform to OGC GML 3.3 encoding rules, itself, an iteration over ISO 19136 (2007).
+
+Requirements for three standardization target types are considered:
+
+* Logical Model
+* Encoding
+* Data instance
+
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web sitehttps://docs.ogc.org/is/16-008/16-008.html#_ftnref1[^[.underline]#++[++1++]++#^].
+
+All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
+
+[bibliography]
+== References
+
+The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
+
+[NOTE]
+====
+
+
+
+
+
+
+
+
+
+
+
+
+====
+
+* [[[OGC06-121r9,OGC 06-121r9]]], _OGC® Web Services Common Standard (2010)_
+
+* [[[ISO19103:2005,ISO/TS 19103:2005]]], _Conceptual Schema Language (2005)_
+
+* [[[ISO19107:2003,ISO 19107:2003]]], _Spatial Schema (2003)_
+
+* [[[ISO19108:2006,ISO 19108:2002/Cor 1:2006]]], _Temporal Schema (2006)_
+
+* [[[ISO8601,ISO 8601]]],
+
+* [[[ISO/TS19101-2:2008,ISO/TS 19101-2:2008]]],
+
+* [[[ISO19136:2007,ISO 19136:2007]]],
+
+* [[[ISO19156:2011,ISO 19156:2011]]],
+
+* [[[ISO19111:2007,ISO 19111:2007]]],
+
+* [[[ISO19115:2003,ISO 19115:2003]]],
+
+* [[[ISO19101:2002,ISO 19101:2002]]],
+
+* [[[OGC07-036,OGC 07-036]]],
+
+* [[[OGC10-025r1,OGC 10-025r1]]],
+
+* [[[OGC08-094r1,OGC 08-094r1]]],
+
+* [[[RFC3986,RFC 3986]]],
+
+* [[[ISOIEC19757-3,ISO/IEC 19757-3]]],
+
+* [[[OGC08-131r3,OGC 08-131r3]]],
+
+* [[[OMGUML,OMGUML]]], OMG: Unified Modeling Language (UML). Version 2.3
+
+* [[[UCUM201,UCUM]]], Schadow, G. and McDonald, C. J.: Unified Code for Units of Measure (UCUM) - Version 2.0.1
+
+* [[[MurphySalvador1994]]], Murphy, M. A. and Salvador, A.: _International Stratigraphic Guide – an abridged version accessed online at URL (link:++http://www.stratigraphy.org/index.php/ics-stratigraphicguide++[] (1994)_
+
+* [[[W3CXML, XML]]], W3C: _Extensible Markup Language (XML) - Version 1.0 (Fourth Edition) (2006)_
+
+* [[[W3CXSD, XSD]]], W3C: _XML Schema - Version 1.0 (Second Edition) (2004)_
+
+* [[[INSPIRE]]], INSPIRE Thematic Woring Group Geology: _INSPIRE Data Specification for the spatial data theme Geology Version 3.0. European Commission Joint Research Centre (2013)_
+
+* [[[NAGMDM_SC]]], North American Geologic Map Data Model Steering Committee: _NADM Conceptual Model 1.0—A conceptual model for geologic map information. U.S. Geological Survey Open-File Report 2004-1334, 58 p., accessed online at URL link:++http://pubs.usgs.gov/of/2004/1334++[[.underline]#http://pubs.usgs.gov/of/2004/1334#] (2004)_
+
+* [[[NAGMDM_Science]]],North American Geologic Map Data Model science language products _(link:++http://ngmdb.usgs.gov/www-nadm/sltt/products.html)_++[]
+
+== Terms and definitions
+
+This document uses the terms defined in OGC Policy Directive 49, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "`shall`" (not "`must`") is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+
+For the purposes of this document, the following additional terms and definitions apply.
+
+=== classifier
+
+A classifier is an abstract UML metaclass which describes (classifies) a set of instances having common features (not to be confused with the “Feature” stereotype from the OGC Feature Model). A feature declares a structural or behavioral characteristic of instances of classifiers. (link:++http://www.uml-diagrams.org/classifier.html++[]). Classes, Interfaces, Association, and Types are kinds of classifiers.
+
+
+=== domain feature
+
+Feature of a type defined within a particular application domain.
+
+[.source]
+<<ISO19156:2011>>
+
+NOTE: This may be contrasted with observations and sampling features, which are features of types defined for cross-domain purposes.
+
+
+=== element ++<++XML++>++
+
+Basic information item of an XML document containing child elements, attributes and character data.
+
+
+[.source]
+<<OGC07-036>>
+
+=== feature
+
+Abstraction of a real-world phenomenon.
+
+[.source]
+<<ISO19101:2002>>
+
+
+=== GML application schema
+
+Application schema written in XML Schema in accordance with the rules specified in OGC GML 3.3
+
+[.source]
+<<OGC07-036>>
+
+
+=== GML document
+
+XML document with a root element that is one of the elements AbstractFeature, Dictionary or TopoComplex, specified in the GML schema or any element of a substitution group of any of these elements.
+
+
+[.source]
+<<OGC07-036>>
+
+
+=== GML schema
+
+Schema components in the XML namespace ― as specified in OGC GML 3.3
+
+[.source]
+<<OGC07-036>>
+
+
+
+=== measurement
+
+Set of operations having the objective of determining the value of a quantity.
+
+[.source]
+<<ISO/TS19101-2:2008>>
+
+
+
+=== observation
+
+Act of observing a property.
+
+[.source]
+<<ISO 19156:2011>>
+
+NOTE: The goal of an observation may be to measure or otherwise determine the value of a property.
+
+
+
+=== observation procedure
+
+Method, algorithm or instrument, or system which may be used in making an observation.
+
+[.source]
+<<ISO19156:2011>>
+
+
+
+
+=== observation result
+
+Estimate of the value of a property determined through a known procedure.
+
+[.source]
+<<ISO19156:2011>>
+
+
+
+=== property ++<++General Feature Model++>++
+
+Facet or attribute of an object referenced by a name.
+
+
+
+[example]
+Abby’s car has the color red, where “color red” is a property of the car instance.
+
+
+
+=== sampled feature
+
+The real-world domain feature of interest, such as a geological unit or structure which is observed.
+
+[.source]
+<<ISO19156:2011>>
+
+
+
+=== sampling feature
+
+Feature, such as a station, outcrop, borehole, section or specimen, which is involved in making observations of a domain feature.
+
+[.source]
+<<ISO19156:2011>>
+
+NOTE: A sampling feature is purely an artefact of the observational strategy, and has no significance independent of the observational campaign.
+
+
+
+
+=== schema ++<++XML Schema++>++
+
+XML document containing a collection of schema component definitions and declarations within the same target namespace.
+
+Example Schema components of W3C XML Schema are types, elements, attributes, groups, etc.
+
+
+[.source]
+<<OGC07-036>>
+
+NOTE: The W3C XML Schema provides an XML interchange format for schema information. A single schema document provides descriptions of components associated with a single XML namespace, but several documents may describe components in the same schema, i.e. the same target namespace.
+
+
+
+
+
+
+
+
+
+
+
+
+
+== Conventions
+
+This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+
+=== Requirement class
+
+Each normative statement (requirement or recommendation) in this specification is a member of a requirements class. Each requirements class is described in a discrete clause or sub-clause, and summarized using the following template:
+
+[width="100%",cols="46%,54%",options="header",]
+|===
+|*Requirements class* |*/req/++{++classM}*
+|*Target type* |++[++artefact or technology type++]++
+|*Dependency* |++[++identifier for another requirements class++]++
+|*Requirement* |/req/++{++classM}/++{++reqN}
+|*Recommendation* |/req/++{++classM}/++{++recO}
+|*Requirement* |/req/++{++classM}/++{++reqP}
+|*Requirement /Recommendation* |++[++repeat as necessary++]++
+|===
+
+All requirements in a requirements class must be satisfied. Hence, the requirements class is the unit of re-use and dependency, and the value of a dependency requirement is another requirements class. All requirements in a dependency must also be satisfied by a conforming implementation. A requirements class may consist only of dependencies and introduce no new requirements.
+
+=== Requirement and Recommendation
+
+All requirements and recommendations are normative, and each is presented using the following template:
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/++[++classM++]++/++[++reqN++]++*
+|++[++Normative statement++]++
+|===
+
+ 
+
+where /req/++[++classM++]++/++[++reqN++]++ identifies the requirement or recommendation. The use of this layout convention allows the normative provisions of this specification to be easily located by implementers.
+
+=== Conformance class
+
+Conformance to this specification is possible at a number of levels, specified by conformance classes (Annex A). Each conformance class is summarized using the following template:
+
+[width="100%",cols="29%,71%",options="header",]
+|===
+|*Conformance class* |
+|/conf/++{++classM} |
+|*Dependency* |++[++identifier for another conformance class++]++
+|*Requirements* |/req/++{++classA}
+|*Tests* |++[++reference to clause(s) containing tests++]++
+|===
+
+All tests in a class must be passed. Each conformance class tests conformance to a set of requirements packaged in a requirements class.
+
+W3C Schema (XSD) and ISO Schematron (SCH) files are considered as part of this specification, although available online only, due to concerns about document size. Many requirements are expressed in a single XSD or SCH file, although tests are listed individually in the conformance annex (one test for XSD and one test for SCH). 
+
+Schematron files explicitly specify which requirements are being tested in the title of the schematron pattern.
+
+[source,xml]
+----
+<pattern id="unit-of-measure">
+    <title>Test requirement: /req/gsml4xsd/unit-of-measure</title>
+    <rule context="SWE::Quantity">
+        <assert test="SWE::Quantity">Quantity must have a UOM</assert>
+    </rule>
+</pattern>
+----
+
+=== Identifiers
+
+The normative provisions in this specification are denoted by a URI constructed using this pattern:
+
+link:++http://www.opengis.net/spec/++{++standard}/++{++m.n}++[]
+
+All requirements and conformance tests that appear in this document are denoted by a partial URI which is relative to this base. The identifier supports cross-referencing of class membership, dependencies, and links from each conformance test to the requirements tested. In this specification identifiers are expressed as partial URIs or paths, which can be appended to a base URI that identifies the specification as a whole in order to construct a complete URI for identification in an external context.
+
+The URI for each requirements class has the form:
+
+link:++http://www.opengis.net/spec/geosciml/4.1/req/++++[++classM++]++.
+
+The URI for each requirement or recommendation has the form:
+
+link:++http://www.opengis.net/spec/geosciml/4.1/req/++++[++classM++]++/++[++reqN++]++.
+
+The URI for each conformance class has the form:
+
+link:++http://www.opengis.net/spec/geosciml/4.1/conf/++++[++classM++]++.
+
+The URI for each conformance test has the form:
+
+link:++http://www.opengis.net/spec/geosciml/4.1/conf/++++[++classM++]++/++[++testN++]++.
+
+=== Classifiers
+
+This document contains a large number of references to classifiers that might sometimes be ambiguous.  Classes and packages are simply referred by their name formed using “CamelCase” name in mono space type.  Duplicate names do exist and the scope (the package of a class or the class a property belongs to) must be made explicit. 
+
+OCL syntax will be used to identify a logical model classifier from the UML model.
+
+Package::++{++…}Package::Classifier::Property:Type
+
+Package names are not formal in UML and can change from one implementation to another.  The reference model used by GeoSciML, and several other domain models, is HollowWorld.  For example, a complete path for a SF++_++SamplingPoint in HollowWorld (from HollowWorld root) is
+
+ISO TC211::ISO 19156 All::ISO 19156:2011 Observations and Measurements::Sampling Features::samplingPoint::SF++_++SamplingPoint
+
+For the sake of readability, and also because some HollowWorld package names do not have OCL friendly names (e.g. some package names contain ‘:’, as shown in the previous example), this document will use shortcuts to identify packages.  For example, for OM::SF++_++SamplingPoint, OM acts as a shortcut for (ISO TC211::ISO 19156 All::ISO 19156:2011 Observations and Measurements::++*++) that includes all classifiers in all sub packages and avoids creating a shortcut for all sub packages.  The list of shortcuts is provided in Section link:++https://docs.ogc.org/is/16-008/16-008.html#19++[[.underline]#8.1.2#].  GeoSciML also uses the recently published ISO19115-3 model which has numerous classifier name overlaps with ISO19115 from HollowWorld.
+
+W3C XPath will be used in XML instances.  XML entities will be identified using their full qualified name (namespace, identified by its prefix, and entity name).
+
+* `gsmlb:GeologicUnit` refers to an instance of GeologicUnit, from namespace `xmlns:gsmlb="link:++http://www.opengis.net/gsml/4.1/GeoSciML-Basic"`++[]
+* `gsmlb:GeologicUnit/gml:name` refers to the name property of GeologicUnit
+* `gsmlb:GeologicUnit/gml:name/@codeName` refers to the codeName attribute of the name property of GeologicUnit
+
+[obligation=informative]
+== Clauses not containing normative material
+
+Paragraph
+
+=== Clauses not containing normative material sub-clause 1
+
+Paragraph
+
+=== Clauses not containing normative material sub-clause 2
+
+[obligation=informative]
+== Clauses not containing normative material
+
+Paragraph
+
+=== Clauses not containing normative material sub-clause 1
+
+Paragraph
+
+=== Clauses not containing normative material sub-clause 2
+
+== Clause containing normative material
+
+Paragraph
+
+=== Requirement Class A or Requirement A Example
+
+Paragraph – intro text for the requirement class.
+
+Use the following table for Requirements Classes.
+
+[[req_class_a]]
+
+[requirements_class]
+.Requirements Class 'A'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/ABCD/m.n/req/req-class-a++[]
+subject:: Web API
+requirement:: /req/req-class-a/req-name-1
+requirement:: /req/req-class-a/req-name-2
+====
+
+
+
+==== Requirement 1
+
+Paragraph - intro text for the requirement.
+
+Use the following table for Requirements, number sequentially.
+
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
+
+Dictionary tables for requirements can be added as necessary. Modify the following example as needed.
+
+[width="90%",options="header"]
+|===
+|Names |Definition |Data types and values |Multiplicity and use
+|name 1 |definition of name 1 |float |One or more (mandatory)
+|name 2 |definition of name 2 |character string type, not empty |Zero or one (optional)
+|name 3 |definition of name 3 |GML:: Point PropertyType |One (mandatory)
+|===
+
+
+==== Requirement 2
+
+Paragraph - intro text for the requirement.
+
+Use the following table for Requirements, number sequentially.
+
+[[req_class_a_name_2]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-2
+part:: The server SHALL support process input values encoded as qualified values.
+part:: The value of the `value` key SHALL be an _object_ instance.
+====
+
+////
+add or remove annexes after "A" as necessary
+////
+[appendix]
+== Conformance Class Abstract Test Suite (Normative)
+
+
+[width="100%",cols="10%,7%,83%",options="header",]
+|===
+|*A.1 Conformance class: GeoSciML Conceptual* | |
+|*/conf/gsml4-conceptual* | |
+|*Requirements* |req/gsml4-conceptual |
+|*Test* |*/conf/gsml4-conceptual/similarity* |
+| |*Requirement* |*/req/gsml4-conceptual/similarity*
+| |*Test purpose* |Ensure that the target logical model is compatible with the conceptual model.
+| |*Test method* |Determine semantic similarity between the logical model and conceptual model using an established method such as: (i) visual comparison of the UML diagrams, (ii) comparison of logical and conceptual components expressed in a common knowledge representation language such as first order logic, or (iii) comparison after mapping to a reference ontology.
+| |*Test type* |Capability
+|===
+
+ 
+
+[width="100%",cols="11%,9%,80%",options="header",]
+|===
+|*A.2.           Conformance class: GeoSciML Core Abstract* | |
+|/conf/gsml4-core | |
+|*Requirements* |/req/gsml4-core |
+|*Dependency* |Urn:iso:dis:iso:19156:clause:A.1.1 |
+|*Dependency* |RFC 3986 |
+|*Test* |*/conf/gsml4-core/uml-entity-name* |
+| |*Requirement* |/req/gsml4-core/uml-entity-name
+| |*Test purpose* |Ensure that the names used in the target implementation matches the names in the logical model
+| |*Test method* |Visual inspection that, when possible, name used in the target implementation matches the names in the logical model.
+| |*Test type* |
+|*Test* |*/conf/gsml4-core/uml-cardinality* |
+| |*Requirement* |/req/gsml4-core/uml-cardinality
+| |*Test purpose* |Ensure that the cardinalities of the properties are the same as the logical model
+| |*Test method* |Visually inspect the target implementation and validate that all properties have the same cardinality as the one expressed in the logical model.
+| |*Test type* |
+|*Test* |*/conf/gsml4-core/uml-abstract* |
+| |*Requirement* |/req/gsml4-core/uml-abstract
+| |*Test purpose* |Ensure that target implementation does not allow materialisation of abstract classes
+| |*Test method* |Visually inspect the target implementation and validate that no classifiers (Feature, Type or Datatype) marked as abstract can be materialised.
+| |*Test type* |Capability
+|*Test* |*/conf/gsml4-core/uml-polymorphism* |
+| |*Requirement* |/req/gsml4-core/uml-polymorphism
+| |*Test purpose* |Ensure that target implementation has mechanisms to allow type substitutions for property values.
+| |*Test method* |Visually check the target implementation accept all substitutable types for property values
+| |*Test type* |Capability
+|*Test* |*/conf/gsml4-core/quantities-uom* |
+| |*Requirement* |/req/gsml4-core/quantities-uom
+| |*Test purpose* |Ensure that quantities have a governed unit of measure
+| |*Test method* |Visually check that the target implementation has a mechanism to enforce a unit of measure from a governed source.
+| |*Test type* |Capability
+|*Test* |*/conf/gsml4-core/codelist* |
+| |*Requirement* |/req/gsml4-core/codelist
+| |*Test purpose* |Ensure that vocabulary terms are encode as URI according to RFC3986
+| |*Test method* |Visually check that the target implementation has a mechanism to enforce a unit of measure from a governed source.
+| |*Test type* |Capability
+|===
+
+ 
+
+[width="100%",cols="10%,7%,83%",options="header",]
+|===
+|*A.3.           Conformance class: GeoSciML Linked Open Data* | |
+|/conf/gsml4-core | |
+|*Requirements* |/req/gsml4-core |
+|*Dependency* |RFC 3986 |
+|*Test* |*/conf/gsml4-lod/codelistURI* |
+| |*Requirement* |/req/gsml4-lod/codelistURI
+| |*Test purpose* |Ensure that the implementation check that vocabulary terms are dereferenceable URI
+| |*Test method* |Visual inspection of the target implementation and check that it provides a mechanism to verify that URI are dereferenceable
+| |*Test type* |Capability
+|*Test* |*/conf/gsml4-lod/identifier* |
+| |*Requirement* |/req/gsml4-lod/identifier
+| |*Test purpose* |Ensure that the URI identifier can be dereferenced.
+| |*Test method* |Visually inspect the target implementation and check that it provides a mechanism to verify that the identifier can be dereferenced and return a representation of the resource assigned to the identifier
+| |*Test type* |Capability
+|*Test* |*/conf/gsml4-lod/byref* |
+| |*Requirement* |/req/gsml4-lod/byref
+| |*Test purpose* |Ensure that for properties that reference an external resource using a HTTP URI identifier, this URI is dereferenceable.
+| |*Test method* |Visual inspection of the target implementation and check that it provides a mechanism to verify that URI are dereferenceable
+| |*Test type* |Capability
+|===
+
+ 
+
+[width="100%",cols="10%,8%,82%",options="header",]
+|===
+|*A.4.           Conformance class: GeoSciML Basic Logical Model* | |
+|/conf/gsml4-basic | |
+|*Requirements* |/req/gsml4-basic |
+|*Dependency* |/conf/gsml4-core |
+|*Test* |/conf/gsml4-basic/geologicfeature-purpose |
+| |*Requirement* |/req/gsml4-basic/geologicfeature-purpose
+| |*Test purpose* |Ensure that the target implementation enforces the purpose property to be restricted to the values provided in Table 2 (instance, typicalNorm, definingNorm) of 8.4.1.1.2
+| |*Test method* |Visual inspection that the target implementation has a mechanism to limit the property value to those provided in Table 2
+| |*Test type* |
+|*Test* |/conf/gsml4-basic/geologicevent-non-null |
+| |*Requirement* |/req/gsml4-basic/geologicevent-non-null
+| |*Test purpose* |Ensure that a GeologicEvent instance has either a olderNamedAge or youngerNamedAge as a non-null value
+| |*Test method* |Visual inspection that the target implementation has a mechanism to prevent a GeologicEvent to have both olderNamedAge or youngerNamedAge equals to null.
+| |*Test type* |
+|*Test* |/conf/gsml4-basic/plane-pol-dip-az-not-null |
+| |*Requirement* |/req/gsml4-basic/plane-pol-dip-az-not-null
+| |*Test purpose* |Ensure that a GSML++_++PlanarOrientation instance has either polarity, azimuth or dip as a non-null value
+| |*Test method* |Visual inspection that the target implementation has a mechanism to prevent a GSML++_++PlanarOrientation to have all polarity, azimuth or dip equal to null.
+| |*Test type* |Capacity
+|*Test* |/conf/gsml4-basic/linear-trend-plunge-not-null |
+| |*Requirement* |/req/gsml4-basic/linear-trend-plunge-not-null
+| |*Test purpose* |Ensure that a GSML++_++LinearOrientation instance has either trend or plunge as a non-null value
+| |*Test method* |Visual inspection that the target implementation has a mechanism to prevent a GSML++_++LinearOrientation to have both trend and plunge equals to null.
+| |*Test type* |
+|*Test* |/conf/gsml4-basic/quantity-range-order |
+| |*Requirement* |/req/gsml4-basic/quantity-range-order
+| |*Test purpose* |Ensure that a GSML++_++QuantityRange lowerValue is less or equal to upperValue
+| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain lowerValue to be less or equal to upperValue.
+| |*Test type* |
+|*Test* |/conf/gsml4-basic/quantity-range-repeat |
+| |*Requirement* |/req/gsml4-basic/quantity-range-repeat
+| |*Test purpose* |Ensure that a GSML++_++QuantityRange lowerValue and upperValue matches the quantities in the “value” property
+| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain lowerValue to match value++[++0++]++ and upperValue to match value++[++1++]++
+| |*Test type* |
+|===
+
+ 
+
+ 
+
+[width="100%",cols="10%,7%,83%",options="header",]
+|===
+|*A.5.           Conformance class: GeoSciML Extension Logical Model* | |
+|/conf/gsml4-extension | |
+|*Requirements* |/req/gsml4-extension |
+|*Dependency* |/conf/gsml4-basic |
+|*Test* |/conf/gsml4-extension/geologicfeature-history |
+| |*Requirement* |/req/gsml4-extension/geologicfeature-history
+| |*Test purpose* |Ensure that the target implementation restricts GeologicEvent describing the age of GeologicUnit to geologicHistory property
+| |*Test method* |Visual inspection that the target implementation has a mechanism to limit GeologicEvent describing age of GeologicFeature to geologicHistory.
+| |*Test type* |
+|*Test* |/conf/gsml4-extension/contact-chronoboundary |
+| |*Requirement* |/req/gsml4-extension/contact-chronoboundary
+| |*Test purpose* |Ensure that the target implementation restricts ContactDescription::correlatesWith value to an instance of GeochronologicBondary only when ContactDescription::contactType is ChronostratigraphicBoundary
+| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain the value of correlatesWith
+| |*Test type* |
+|*Test* |/conf/gsml4-extension/slipComponents-slip |
+| |*Requirement* |/req/gsml4-extension/slipComponents-slip
+| |*Test purpose* |Ensure that a slipComponent has at least one of heave, horizontalSlip or throw as a non-null
+| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain on of heave, horizontalSlip or throw to be non-null
+| |*Test type* |
+|===
+
+ 
+
+ 
+
+[width="100%",cols="10%,7%,83%",options="header",]
+|===
+|*A.6.           Conformance class: GeoSciML Timescale Logical Model* | |
+|/conf/gsml4-timescale | |
+|*Requirements* |/req/gsml4-timescale |
+|*Dependency* |/conf/gsml4-basic |
+|*Test* |/conf/gsml4-timescale/start |
+| |*Requirement* |/req/gsml4-timescale/start
+| |*Test purpose* |Ensure that the start TimeOrdinalEraBoundary is older that the end TimeOrdinalBoundaryEra
+| |*Test method* |Visual inspection that the target implementation has a mechanism to check that the age of the start TimeOrdinalEraBoundary is older than the age of the “end” TimeOrdinalEraBoundary
+| |*Test type* |
+|===
+
+ 
+
+ 
+
+[width="100%",cols="9%,8%,83%",options="header",]
+|===
+|*A.7.           Conformance class: GeoSciML Borehole Logical Model* | |
+|/conf/gsml4-borehole | |
+|*Requirements* |/req/gsml4-borehole |
+|*Dependency* |/conf/gsml4-basic |
+|*Dependency* |ISO 19156 Annex A |
+|*Test* |/conf/gsml4-borehole/value-intervalBegin |
+| |*Requirement* |/req/gsml4-borehole/value-intervalBegin
+| |*Test purpose* |Ensure that the target implementation enforces the DillingDetails::intervalBegin value is less or equal to DillingDetails::intervalEnd
+| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure that DillingDetails::intervalBegin is less or equal to . DillingDetails::intervalEnd
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/drill-interval-1D |
+| |*Requirement* |/req/gsml4-borehole/drill-interval-1D
+| |*Test purpose* |Ensure that the target implementation enforces the presence a 1D geometry for DrillingDetails::interval
+| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure DrillingDetails::interval is a 1D geometry
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/drill-interval-1D-CRS |
+| |*Requirement* |/req/gsml4-borehole/drill-interval-1D-CRS
+| |*Test purpose* |Ensure that the target implementation enforces DillingDetails::intervalEnd geometries CRS to be a valid vertical datum
+| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure that DillingDetails::intervalEnd datum is a valid vertical datum.
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/value-mappedIntervalBegin |
+| |*Requirement* |/req/gsml4-borehole/value-mappedIntervalBegin
+| |*Test purpose* |Ensure that the target implementation enforces the BoreholeInterval::mappedIntervalBegin value is less or equal to BoreholeInterval::mappedIntervalEnd
+| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure that BoreholeInterval::mappedIntervalBegin is less or equal to  BoreholeInterval::mappedIntervalEnd
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/interval-1D |
+| |*Requirement* |/req/gsml4-borehole/interval-1D
+| |*Test purpose* |Ensure that the target implementation enforces the presence a GM++_++LineString geometry composed of  a pair of 1D coordinates for BoreholeInterval::shape
+| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure BoreholeInterval::shape is a GM++_++LineString composed of a pair of 1D coordinates.
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/interval-1D-CRS |
+| |*Requirement* |/req/gsml4-borehole/interval-1D-CRS
+| |*Test purpose* |Ensure that the target implementation constrain the CRS to a relevant vertical datum
+| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain the CRS to a 1D vertical datum.
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/borehole-position-null |
+| |*Requirement* |/req/gsml4-borehole/borehole-position-null
+| |*Test purpose* |Ensure that the target implementation enforce a OGC nil when there are no GM++_++Point available
+| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain either a GM++_++Point or a OGC nil marker.
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/borehole-elevation-dim |
+| |*Requirement* |/req/gsml4-borehole/borehole-elevation-dim
+| |*Test purpose* |Ensure that the target implementation enforces that the OriginPosition::elevation has a dimension of 1
+| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain OriginPosition::elevation coordinate to have a single dimension
+| |*Test type* |
+|*Test* |/conf/gsml4-borehole/borehole-elevation-CRS |
+| |*Requirement* |/req/gsml4-borehole/borehole-elevation-CRS
+| |*Test purpose* |Ensure that the target implementation enforces the Origin::elevation geometry CRS to be a valid 1D vertical datum
+| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain OriginPosition::elevation CRS to a value in the range EPSG:5600 to EPSG:5799
+| |*Test type* |
+|===
+
+ 
+
+ 
+
+[width="100%",cols="10%,9%,81%",options="header",]
+|===
+|*A.8.           Conformance class: GeoSciML LaboratoryAnalysis-Specimen Logical Model* | |
+|/conf/gsml4-lab-analysis | |
+|*Requirements* |/req/gsml4-lab-analysis |
+|*Dependency* |/conf/gsml4-basic |
+|*Dependency* |ISO 19156 Annex A |
+|*Test* |/conf/gsml4-lab-analysis/sampledFeature |
+| |*Requirement* |/req/gsml4-lab-analysis/sampledFeature
+| |*Test purpose* |Ensure that the SF++_++SamplingFeature::sampledFeature is not an instance of SF++_++SamplingFeature
+| |*Test method* |Verify that the target implementation has a mechanism to prevent sampledFeature target to be an instance of SF++_++SamplingFeature or any of its subtypes.
+| |*Test type* |
+|*Test* |/conf/ gsml4-lab-analysis/accuracy-measure |
+| |*Requirement* |/req/gsml4-lab-analysis/accuracy-measure
+| |*Test purpose* |Ensure that DQ++_++Element::nameOfMeasure and ::result are not null
+| |*Test method* |Verify that the target implementation has a mechanism to enforce a non-null value for DQ++_++Element::nameOfMeasure and DQ++_++Element::result
+| |*Test type* |
+|*Test* |/conf/gsml4-lab-analysis/accuracy-vocabulary |
+| |*Requirement* |/req/gsml4-lab-analysis/accuracy-vocabulary
+| |*Test purpose* |Ensure that nameOfMeasure is a term from a controlled vocabulary
+| |*Test method* |Visually check target implementation for the presence of the mechanism that verifies that the nameOfMeasure is a term from a controlled vocabulary
+| |*Test type* |
+|===
+
+ 
+
+ 
+
+[width="100%",cols="12%,9%,79%",options="header",]
+|===
+|*A.9.           Conformance class: GeoSciML Lite Logical* | |
+|/conf/gsml4-lite | |
+|*Requirements* |/req/gsml4-lite |
+|*Dependency* |/conf/gsml4-core |
+|*Test* |/conf/gsml4-lite/geomtype |
+| |*Requirement* |/req/gsml4-lite/geomtype
+| |*Test purpose* |Ensure that the target implementation only allow a single geometry per instance
+| |*Test method* |Visual inspection that the target implementation has a mechanism to limit a single geometry per instance
+| |*Test type* |
+|*Test* |*/conf/gsml4-lite/string* |
+| |*Requirement* |/req/gsml4-lite/string
+| |*Test purpose* |Ensure that human readable strings are allowed in all properties of type CharacterString
+| |*Test method* |Visual inspection that the target implementation does not prevent human readable string (by ensuring that property data types are used)
+| |*Test type* |
+|*Test* |*/conf/gsml4-lite/datetime* |
+| |*Requirement* |/req/gsml4-lite/datetime
+| |*Test purpose* |Ensure that all representation of date and time uses ISO8601
+| |*Test method* |Visual inspection that the target implementation has mechanism or rules to enforce the usage of ISO8601 date and time
+| |*Test type* |
+|*Test* |*/conf/gsml4-lite/uri* |
+| |*Requirement* |/req/gsml4-lite/uri
+| |*Test purpose* |Ensure that all properties ending in URI contain a URI
+| |*Test method* |Check that the target implementation enforces the content to RFC 3986
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**user-defined |
+| |*Requirement* |/req/gsml4-lite/user-defined
+| |*Test purpose* |Ensure that user defined properties conform to GML Simple Feature Level 0
+| |*Test method* |Check that the target implementation enforces user defined properties to be conform to GML Simple Feature Level 0
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**identifier-unique |
+| |*Requirement* |/req/gsml4-lite/identifier-unique
+| |*Test purpose* |Ensure that the identifier is unique for the dataset
+| |*Test method* |Check that the target implementation implement a unique key constrain or mechanism to ensure that identifier property is unique.
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**identifier-uri |
+| |*Requirement* |/req/gsml4-lite/identifier-uri
+| |*Test purpose* |Ensure that the identifier field is formatted as a URI
+| |*Test method* |Check that the target implementation implement a formatting constraint on the identifier field that check its compliance to RFC3986
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeLithology |
+| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeLithology
+| |*Test purpose* |Ensure that the geologic unit view representative lithology come from a controlled vocabulary
+| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeAge |
+| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeAge
+| |*Test purpose* |Ensure that the geologic unit view representative age come from a controlled vocabulary
+| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeOlderAge |
+| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeOlderAge
+| |*Test purpose* |Ensure that the geologic unit view representative older age come from a controlled vocabulary
+| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeYoungerAge |
+| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeYoungerAge
+| |*Test purpose* |Ensure that the geologic unit view representative older age come from a controlled vocabulary
+| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**boreholeview-elevation-srs |
+| |*Requirement* |/req/gsml4-lite/boreholeview-elevation-srs
+| |*Test purpose* |Ensure that the elevation is using a valid SRS
+| |*Test method* |Check that the target implementation implements a proper CRS reference to a EPSG vertical datum
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**contactview-contacttype |
+| |*Requirement* |/req/gsml4-lite/contactview-contacttype
+| |*Test purpose* |Ensure that the contact’s contact type come from a controlled vocabulary
+| |*Test method* |Check that the target implementation implements mechanism to ensure that the term comes from a controlled vocabulary.
+| |*Test type* |
+|*Test* |**/conf/gsml4-lite/**siteobservationview-symbolRotation |
+| |*Requirement* |/req/gsml4-lite/siteobservationview-symbolRotation
+| |*Test purpose* |Ensure that the symbol rotation is the range ++[++0,360++[++
+| |*Test method* |Check that the target implementation implements mechanism to ensure that the rotation is in the range ++[++0,360++[++
+| |*Test type* |
+|===
+
+ 
+
+[appendix,obligation="informative"]
+== Abbreviations and Acronyms
+
+EarthResourceML: Earth Resource Markup Language (www.earthresourceml.org)
+
+INSPIRE: The INSPIRE Directive of the European Union was begun in May 2007 to establish an infrastructure for spatial information in Europe to support Community environmental policies (link:++http://inspire.ec.europa.eu/++[])
+
+IUGS: International Union of Geological Sciences (www.iugs.org)
+
+IUGS CGI: International Union of Geological Sciences, Commission for the Management and Application of Geoscience Information (www.cgi-iugs.org)
+
+GeoSciML:  Geoscience Markup Language (link:++http://www.geosciml.org/++[[.underline]#www.geosciml.org#])
+
+GWML: GroundWater Markup Language
+
+RDBMS: Relational database management system
+
+UCUM: Unified Code for Units of Measure (link:++http://unitsofmeasure.org/ucum.html++[[.underline]#http://unitsofmeasure.org/ucum.html#])
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+[appendix]
+== Revision History
+
+[width="90%",options="header"]
+|===
+|Date |Release |Editor | Primary clauses modified |Description
+|2016-04-28 |0.1 |G. Editor |all |initial version
+|===
+
+[bibliography]
+[[Bibliography]]
+== Bibliography
+
+[NOTE]
+.Example Bibliography (Delete this note).
+===============================================
+The TC has approved Springer LNCS as the official document citation type.
+
+Springer LNCS is widely used in technical and computer science journals and other publications
+
+* For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
+
+– Actual References:
+
+[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
+
+[n] Web: Author Surname, A.: Title, link:++http://Website-Url++[]
+
+===============================================
+
+* [[[OGC2015,OGCTB12]]], _OGC: OGC Testbed 12 Annex B: Architecture_ (2015).
