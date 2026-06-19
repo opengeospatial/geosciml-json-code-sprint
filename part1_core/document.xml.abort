@@ -44,7 +44,7 @@
 </abstract><status><stage>draft</stage></status><copyright><from>2026</from><owner><organization>
 <name>Open Geospatial Consortium</name>
 <abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>API</keyword><keyword>openapi</keyword><keyword>html</keyword><ext><doctype>standard</doctype><subdoctype>implementation</subdoctype><flavor>ogc</flavor></ext></bibdata><metanorma-extension><semantic-metadata><stage-published>false</stage-published></semantic-metadata>
-<presentation-metadata><name>document-scheme</name><value>2022</value></presentation-metadata><presentation-metadata><name>color-admonition-caution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-editor</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-important</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-note</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-safety-precaution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-tip</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-todo</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-warning</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-background-definition-description</name><value>rgb(242, 251, 255)</value></presentation-metadata><presentation-metadata><name>color-background-definition-term</name><value>rgb(215, 243, 255)</value></presentation-metadata><presentation-metadata><name>color-background-page</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-header</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-even</name><value>rgb(252, 246, 222)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-odd</name><value>rgb(254, 252, 245)</value></presentation-metadata><presentation-metadata><name>color-background-term-admitted-label</name><value>rgb(223, 236, 249)</value></presentation-metadata><presentation-metadata><name>color-background-term-deprecated-label</name><value>rgb(237, 237, 238)</value></presentation-metadata><presentation-metadata><name>color-background-term-preferred-label</name><value>rgb(249, 235, 187)</value></presentation-metadata><presentation-metadata><name>color-background-text-label-legacy</name><value>rgb(33, 60, 107)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-1</name><value>rgb(0, 177, 255)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-2</name><value>rgb(0, 177, 255)</value></presentation-metadata><presentation-metadata><name>color-text</name><value>rgb(88, 89, 91)</value></presentation-metadata><presentation-metadata><name>color-text-title</name><value>rgb(33, 55, 92)</value></presentation-metadata><table anchor="_misccontainer_anchor_aliases" id="_71b31c1e-eeac-d192-6ab2-1f60671b4842"><tbody><tr><th>req_class_geosciml_conceptual_model</th><td>http://www.opengis.net/spec/geosciml/5.0/req/gsml-conceptual</td><td>http___www.opengis.net_spec_geosciml_5.0_req_gsml-conceptual</td></tr><tr><th>req_gsml_conceptual_similarity</th><td>/req/gsml-conceptual/similarity</td><td>_req_gsml-conceptual_similarity</td></tr><tr><th>req_class_a</th><td>http://www.opengis.net/spec/geosciml/5.0/req/gsml-core</td><td>http___www.opengis.net_spec_geosciml_5.0_req_gsml-core</td></tr><tr><th>req_gsml-core_uml-entity-name</th><td>/req/gsml-core/uml-entity-name</td><td>_req_gsml-core_uml-entity-name</td></tr><tr><th>req_gsml-core_uml-cardinality</th><td>/req/gsml-core/uml-cardinality</td><td>_req_gsml-core_uml-cardinality</td></tr><tr><th>req_gsml-core_uml-abstract</th><td>/req/gsml-core/uml-abstract</td><td>_req_gsml-core_uml-abstract</td></tr><tr><th>req_gsml-core_uml-polymorphism</th><td>/req/gsml-core/uml-polymorphism</td><td>_req_gsml-core_uml-polymorphism</td></tr><tr><th>req_gsml-core_quantities-uom</th><td>/req/gsml-core/quantities-uom</td><td>_req_gsml-core_quantities-uom</td></tr><tr><th>req_gsml-core_quantities-single-range</th><td>/req/gsml-core/quantities-single-range</td><td>_req_gsml-core_quantities-single-range</td></tr><tr><th>req_gsml-core_codelist</th><td>/req/gsml-core/codelist</td><td>_req_gsml-core_codelist</td></tr><tr><th>req_class_a</th><td>http://www.opengis.net/spec/ABCD/m.n/req/req-class-a</td><td>http___www.opengis.net_spec_ABCD_m.n_req_req-class-a</td></tr><tr><th>req_gsml-lod_codelistURI</th><td>/req/gsml-lod/codelistURI</td><td>_req_gsml-lod_codelistURI</td></tr><tr><th>req_gsml-lod_identifier</th><td>/req/gsml-lod/identifier</td><td>_req_gsml-lod_identifier</td></tr><tr><th>req_gsml-lod_gsml-representation</th><td>/req/gsml-lod/gsml-representation</td><td>_req_gsml-lod_gsml-representation</td></tr><tr><th>req_gsml-lod_byref</th><td>/req/gsml4-lod/byref</td><td>_req_gsml4-lod_byref</td></tr></tbody></table><presentation-metadata><name>TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>HTML TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>DOC TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>PDF TOC Heading Levels</name><value>2</value></presentation-metadata></metanorma-extension>
+<presentation-metadata><name>document-scheme</name><value>2022</value></presentation-metadata><presentation-metadata><name>color-admonition-caution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-editor</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-important</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-note</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-safety-precaution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-tip</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-todo</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-warning</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-background-definition-description</name><value>rgb(242, 251, 255)</value></presentation-metadata><presentation-metadata><name>color-background-definition-term</name><value>rgb(215, 243, 255)</value></presentation-metadata><presentation-metadata><name>color-background-page</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-header</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-even</name><value>rgb(252, 246, 222)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-odd</name><value>rgb(254, 252, 245)</value></presentation-metadata><presentation-metadata><name>color-background-term-admitted-label</name><value>rgb(223, 236, 249)</value></presentation-metadata><presentation-metadata><name>color-background-term-deprecated-label</name><value>rgb(237, 237, 238)</value></presentation-metadata><presentation-metadata><name>color-background-term-preferred-label</name><value>rgb(249, 235, 187)</value></presentation-metadata><presentation-metadata><name>color-background-text-label-legacy</name><value>rgb(33, 60, 107)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-1</name><value>rgb(0, 177, 255)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-2</name><value>rgb(0, 177, 255)</value></presentation-metadata><presentation-metadata><name>color-text</name><value>rgb(88, 89, 91)</value></presentation-metadata><presentation-metadata><name>color-text-title</name><value>rgb(33, 55, 92)</value></presentation-metadata><table anchor="_misccontainer_anchor_aliases" id="_c79980cc-2900-eeb1-a655-a5eca4d83508"><tbody><tr><th>req_class_geosciml_conceptual_model</th><td>http://www.opengis.net/spec/geosciml/5.0/req/gsml-conceptual</td><td>http___www.opengis.net_spec_geosciml_5.0_req_gsml-conceptual</td></tr><tr><th>req_gsml_conceptual_similarity</th><td>/req/gsml-conceptual/similarity</td><td>_req_gsml-conceptual_similarity</td></tr><tr><th>req_class_a</th><td>http://www.opengis.net/spec/geosciml/5.0/req/gsml-core</td><td>http___www.opengis.net_spec_geosciml_5.0_req_gsml-core</td></tr><tr><th>req_gsml-core_uml-entity-name</th><td>/req/gsml-core/uml-entity-name</td><td>_req_gsml-core_uml-entity-name</td></tr><tr><th>req_gsml-core_uml-cardinality</th><td>/req/gsml-core/uml-cardinality</td><td>_req_gsml-core_uml-cardinality</td></tr><tr><th>req_gsml-core_uml-abstract</th><td>/req/gsml-core/uml-abstract</td><td>_req_gsml-core_uml-abstract</td></tr><tr><th>req_gsml-core_uml-polymorphism</th><td>/req/gsml-core/uml-polymorphism</td><td>_req_gsml-core_uml-polymorphism</td></tr><tr><th>req_gsml-core_quantities-uom</th><td>/req/gsml-core/quantities-uom</td><td>_req_gsml-core_quantities-uom</td></tr><tr><th>req_gsml-core_quantities-single-range</th><td>/req/gsml-core/quantities-single-range</td><td>_req_gsml-core_quantities-single-range</td></tr><tr><th>req_gsml-core_codelist</th><td>/req/gsml-core/codelist</td><td>_req_gsml-core_codelist</td></tr><tr><th>req_class_gsml4-lob</th><td>http://www.opengis.net/spec/geosciml/5.0/req/gsml-lob</td><td>http___www.opengis.net_spec_geosciml_5.0_req_gsml-lob</td></tr><tr><th>req_gsml-lod_codelistURI</th><td>/req/gsml-lod/codelistURI</td><td>_req_gsml-lod_codelistURI</td></tr><tr><th>req_gsml-lod_identifier</th><td>/req/gsml-lod/identifier</td><td>_req_gsml-lod_identifier</td></tr><tr><th>req_gsml-lod_gsml-representation</th><td>/req/gsml-lod/gsml-representation</td><td>_req_gsml-lod_gsml-representation</td></tr><tr><th>req_gsml-lod_byref</th><td>/req/gsml-lod/byref</td><td>_req_gsml-lod_byref</td></tr><tr><th>req_gsml-basic_geologicfeature-purpose</th><td>/req/gsml-basic/geologicfeature-purpose</td><td>_req_gsml-basic_geologicfeature-purpose</td></tr><tr><th>req_gsml-basic_geologicevent-single</th><td>/req/gsml-basic/geologicevent-single</td><td>_req_gsml-basic_geologicevent-single</td></tr><tr><th>req_gsml-basic_geologicevent-non-null</th><td>/req/gsml-basic/geologicevent-non-null</td><td>_req_gsml-basic_geologicevent-non-null</td></tr><tr><th>req_gsml-basic_plane-pol-dip-az-not-null</th><td>/req/gsml-basic/plane-pol-dip-az-not-null</td><td>_req_gsml-basic_plane-pol-dip-az-not-null</td></tr><tr><th>req_gsml-basic_linear-trend-plunge-not-null</th><td>/req/gsml-basic/linear-trend-plunge-not-null</td><td>_req_gsml-basic_linear-trend-plunge-not-null</td></tr><tr><th>/req/gsml-basic/quantity-range-order</th><td>/req/gsml-basic/quantity-range-order</td><td>_req_gsml-basic_quantity-range-order</td></tr><tr><th>req_gsml-basic_quantity-range-repeat</th><td>/req/gsml-basic/quantity-range-repeat</td><td>_req_gsml-basic_quantity-range-repeat</td></tr></tbody></table><presentation-metadata><name>TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>HTML TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>DOC TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>PDF TOC Heading Levels</name><value>2</value></presentation-metadata></metanorma-extension>
 <boilerplate><copyright-statement>
 
 <clause id="_e63a44fa-a301-00ff-d2aa-6801901f4ef4" obligation="normative">
@@ -579,7 +579,7 @@
 </requirement>
 </clause>
 
-<clause id="_14d23428-c637-3b58-7dc1-7db108bf4287" obligation="normative">
+<clause id="_4f02439f-d8f6-d7b8-d467-4e272a84e3b3" obligation="normative">
 <title id="_3e845d00-ba58-ead2-fcd1-9602cabe7a90">Logical Model</title>
 <p id="_5ca9713c-f6ac-8ce3-ea6c-360da301b6c9">This section describes requirements that must be met by all target implementations that claim conformance to this specification.  The target implementation of the logical model is generally an encoding specification or a schema (which could use technologies like XSD, for example) and not a data instance.  The logical model, expressed using UML, provides naming, structure and cardinality for any physical implementation.  The UML model is a normative artefact as the official representation of GeoSciML.  Rules that can be unambiguously inferred from the UML model will not be documented as explicit requirements.  Specific encoding idiosyncrasies shall be addressed in the requirement clauses pertaining to that encoding.</p>
 
@@ -717,44 +717,10 @@
 </clause>
 </clause>
 
-<clause id="_9f0e76aa-e20b-1afd-d359-f8327d795573" obligation="normative">
+<clause id="_39879366-f205-43d2-539d-9a054b4c28e4" obligation="normative">
 <title id="_e2b9dc8b-dd31-4bf3-fdf5-adab917718c7">Linked Open Data Requirements Class (Normative)</title>
-<table id="_a6040a74-a60a-2c64-4858-a85d5bfc0572" width="100%"><colgroup><col width="16%"/><col width="84%"/></colgroup><thead><tr id="_e6a28cb7-c3e2-187f-408c-d315cd6ac2ca"><th id="_3af27257-9f0f-737e-7421-720b35548181" valign="middle" align="left"><strong>Requirements Class</strong></th>
-<th id="_d7883a64-211a-4cd1-5ca8-338317ef0f14" valign="middle" align="left"/></tr></thead>
-<tbody><tr id="_709802e7-7a04-77a1-1f65-cb6bb064a575"><td id="_e7b422c4-5433-c11d-9fa2-736e32b3913a" valign="middle" align="left">/req/gsml4-lob</td>
-<td id="_fe11984b-aa9e-3181-5c85-cd0f9e20f492" valign="middle" align="left"/></tr><tr id="_74d8e3da-7c2a-ef55-83b0-85c14f832346"><td id="_990556f2-f9e3-c3cd-676c-3dba37344f61" valign="middle" align="left"><strong>Target type</strong></td>
-<td id="_d9e04140-dbe6-c2b0-427c-d510e83feefb" valign="middle" align="left">Encoding</td>
-</tr><tr id="_5e921412-4ede-c468-2859-5ab50054122f"><td id="_f1458078-ad9c-ad71-f86e-e54245bd7de5" valign="middle" align="left"><strong>Dependency</strong></td>
-<td id="_ed8888d7-edc9-1d3e-5740-771b6e571e8c" valign="middle" align="left">/req/gsml4-core</td>
-</tr><tr id="_3bb1387d-05c1-b676-9b4d-7f3ca5c5a4ea"><td id="_7bd3ebde-3bb4-32eb-14a3-db85d2fc9b87" valign="middle" align="left"><strong>Dependency</strong></td>
-<td id="_50161012-2d12-29c6-a7a5-0b0416f9afad" valign="middle" align="left">URI</td>
-</tr><tr id="_879bf27e-3287-2c2d-3e97-cf12201ae11d"><td id="_46337191-da84-27a1-b94f-c874922dc73d" valign="middle" align="left"><strong>Dependency</strong></td>
-<td id="_ea39097b-9a0b-026d-fb17-2b711a0e00bc" valign="middle" align="left">HTTP</td>
-</tr><tr id="_3c8e3816-fb3a-ad8d-83ba-10e6d5781b7f"><td id="_dec6f927-3545-f859-d5dd-5dffe6b8a9ec" valign="middle" align="left"><strong>Requirement</strong></td>
-<td id="_6b07cca1-16c4-33b1-3c6f-980871979703" valign="middle" align="left"><p id="_94596ea3-4b42-baec-bbd0-e1a460355701">/req/gsml4-lod/codelistURI</p>
-
-<p id="_239af8f1-83f5-7576-e5e6-5fd373970ed8">URI used for vocabulary terms SHALL be dereferenceable to one or more representations of the vocabulary term.</p>
-</td>
-</tr><tr id="_d786e0c9-f7f6-1538-09bd-acfc9e72e127"><td id="_f3a54b1a-b697-c3e9-0c1b-b3b9b298f62f" valign="middle" align="left"><strong>Requirement</strong></td>
-<td id="_65ebc9c6-a236-a2ae-6fde-e06f0c869b54" valign="middle" align="left"><p id="_8785f9d8-6ae8-bf1d-f9ea-1f625b05ce35"><strong>/req/gsml4-lod/identifier</strong></p>
-
-<p id="_86f027d7-76a5-75df-e9ef-88aedbf8a71f">HTTP URI used as entity identifiers SHALL be to one or more representations of that entity.</p>
-</td>
-</tr><tr id="_f42a4371-82f1-5829-407c-3043a31e282b"><td id="_5a3e6f6e-53d1-084d-2ab8-03466be44b62" valign="middle" align="left"><strong>Recommendation</strong></td>
-<td id="_1195fa14-76fa-0677-343b-010577a62665" valign="middle" align="left"><p id="_576e4327-d972-11aa-0658-b8176d169f75">/req/gsml4-lod/gsml-representation</p>
-
-<p id="_e09fb4ea-783c-0fde-7a74-625f61984a7c">Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML 4.1 as one of its representations.</p>
-</td>
-</tr><tr id="_39df5cd8-40a3-8122-695b-41b2c2a947b6"><td id="_33c1c10d-24c9-47ff-d1bd-cf2ac44b5a9a" valign="middle" align="left"><strong>Requirement</strong></td>
-<td id="_07955542-b328-be6d-79bc-7799e9255b74" valign="middle" align="left"><p id="_aff872d3-509c-6ec8-3a42-2b2dba96992b">/req/gsml4-lod/byref</p>
-
-<p id="_1864cc61-435a-8349-abf4-187326aedcbf">External references to an entity conforming to [/req/gsml4-lod/identifier] shall be expressed using this entity identifier.</p>
-</td>
-</tr></tbody>
-</table>
-
-<requirement id="_2e02e04c-9239-54db-2690-ff3711dd15b5" anchor="req_class_a" model="ogc" type="class">
-<title>Requirements Class ‘A’</title><identifier>http://www.opengis.net/spec/ABCD/m.n/req/req-class-a</identifier><subject>Web API</subject><requirement id="_b0e6a2f4-d117-09f8-5805-3cb806685b84" model="ogc" type="general"> <identifier>/req/req-class-a/req-name-1</identifier></requirement><requirement id="_013c2a72-503b-c570-95b0-4e612a3e9a9f" model="ogc" type="general"> <identifier>/req/req-class-a/req-name-2</identifier></requirement>
+<requirement id="_3ff20768-86ef-e4ec-5b5b-a9d801ba028a" anchor="req_class_gsml4-lob" model="ogc" type="class">
+<title>Requirements Class ‘Linked Open Data’</title><identifier>http://www.opengis.net/spec/geosciml/5.0/req/gsml-lob</identifier><subject>Encoding</subject><inherit>URI</inherit><inherit>HTTP</inherit><requirement id="_a023fd92-a7c2-9706-63c9-29bdbb92768d" model="ogc" type="general"> <identifier>/req/gsml-lod/codelistURI</identifier></requirement><requirement id="_35f3de1d-38c7-7a2b-9092-a7ba40c70c00" model="ogc" type="general"> <identifier>/req/gsml-lod/identifier</identifier></requirement><requirement id="_e499fb5c-31a7-5301-5756-8ad4fa15d663" model="ogc" type="general"> <identifier>/req/gsml-lod/gsml-representation</identifier></requirement><requirement id="_c00d3c62-52c2-35ac-a03d-7de19a2e913a" model="ogc" type="general"> <identifier>/req/gsml-lod/byref</identifier></requirement>
 
 </requirement>
 
@@ -766,14 +732,8 @@
 
 <p id="_404002a2-8e9e-2e1b-2123-7a84f4c2b5f0">It is important to note that a HTTP URI in this context is <underline>both</underline> an identifier and a location.  The same identifier is used to refer to any number of representations.  Therefore, different representations are selected through content negotiation with the server.</p>
 
-<clause id="_348062c6-8c6c-d885-1b46-2656cefd4d4f" obligation="normative">
+<clause id="_998c78f6-d88b-935f-43e4-fc2b86633602" obligation="normative">
 <title id="_7384691f-29e3-6d5e-194e-4e8b1ccfa11e">Code lists URI</title>
-<table id="_636fe8f1-4db2-354a-412d-b302bee42aad" width="100%"><thead><tr id="_7358d0dc-236a-810c-4768-38a91ddcd661"><th id="_f145b229-ef75-3ca4-9684-1ca9b5b7fa9f" valign="middle" align="left"><strong>Requirement /req/gsml4-lod/codelistURI</strong></th>
-</tr></thead>
-<tbody><tr id="_58fd73c0-4a29-90a9-6a36-0ca5e36b7114"><td id="_e5c8a7ff-5749-b073-ba62-5b1223287b59" valign="middle" align="left">URI used for vocabulary terms SHALL be dereferenceable to one or more representations of the vocabulary term.</td>
-</tr></tbody>
-</table>
-
 <requirement id="_fe58cf64-ada7-e269-a131-71c8d2aa04fc" anchor="req_gsml-lod_codelistURI" model="ogc"> <identifier>/req/gsml-lod/codelistURI</identifier><component id="_4eeb909a-c1f6-0ea7-3bd2-965489906207" class="part"><p id="_eeb8e5ec-ffcf-d61e-96a5-6f2bd0eb24e4">URI used for vocabulary terms SHALL be dereferenceable to one or more representations of the vocabulary term.</p>
 </component>
 </requirement>
@@ -781,25 +741,13 @@
 <p id="_b6f15e6e-aac6-aaf0-eef2-7f08a2453a55">The requirement described at 8.2.7  in Abstract Requirements Class demand that a vocabulary reference be encoded as a URI, but does not require that the URI actually resolve to anything (it could, but it is not required).  In this class, the target must ensure that the URI used to identify vocabulary terms SHALL dereference to one or more representations of a definition of the term (eg, RDF/SKOS, HTML, GML Definition, etc.)</p>
 </clause>
 
-<clause id="_18033c23-624c-2afb-99ca-48419af48c9e" obligation="normative">
+<clause id="_08896013-ddf5-ea2a-aac7-6283b3be2d05" obligation="normative">
 <title id="_cd4ae77f-5389-dc90-de89-61173f5ea56a">Identifier</title>
-<table id="_60cf1e53-58d0-f776-73fa-2da29a564c72" width="100%"><thead><tr id="_6217889d-06a9-b960-023a-8b2841d08e14"><th id="_eb3278a2-34bf-0d10-33b7-9924916dd96b" valign="middle" align="left"><strong>Requirement /req/gsml4-lod/identifier</strong></th>
-</tr></thead>
-<tbody><tr id="_0b7b16b9-762f-0728-b297-4eb7d78b7102"><td id="_52289cb6-acaa-c21d-c542-ce3bdd3bbd58" valign="middle" align="left">HTTP URI used as entity identifiers SHALL be to one or more representations of that entity.</td>
-</tr></tbody>
-</table>
-
 <requirement id="_5bf0194b-823f-5ac6-0c26-9e8132b885c9" anchor="req_gsml-lod_identifier" model="ogc"> <identifier>/req/gsml-lod/identifier</identifier><component id="_ec503df9-8133-821a-bfdf-f41fcac3e0c9" class="part"><p id="_52ea4dda-e419-2e5a-747d-9f0229a259f9">HTTP URI used as entity identifiers SHALL be to one or more representations of that entity.</p>
 </component>
 </requirement>
 
 <p id="_0c18a446-9b72-9fe9-8b75-4efa34031e15">This requirement demands that the target ensures that a data instance exposes a URI as a unique identifier for this feature and this identifier SHALL be dereferenceable to one or more representations of that feature.</p>
-
-<table id="_a80df56e-22d4-a196-f2d9-929222df7b99" width="100%"><thead><tr id="_991e5e63-53ad-eb01-c859-f78de57b450e"><th id="_d75c9c78-b022-0233-81a8-ea1486ad9549" valign="middle" align="left"><strong>Requirement /req/gsml4-lod/gsml-representation</strong></th>
-</tr></thead>
-<tbody><tr id="_2066b1b4-2801-ea76-5937-c3832f449be7"><td id="_7b03d7ce-519e-2fbf-63c1-1274a2a98412" valign="middle" align="left">Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML 4.1 as one of its representations.</td>
-</tr></tbody>
-</table>
 
 <requirement id="_44c827ee-65a4-554c-7e82-03f71fc4b3ab" anchor="req_gsml-lod_gsml-representation" model="ogc"> <identifier>/req/gsml-lod/gsml-representation</identifier><component id="_d41eadf7-29d3-d36e-16f6-c291530cbcd1" class="part"><p id="_9240375e-3cd2-9db2-73cc-464e7a9ca819">Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML 5.0 as one of its representations.</p>
 </component>
@@ -808,15 +756,9 @@
 <p id="_6ea6cf05-fb05-d8bf-ec2d-ea417f233ec0">It is expected that one of the representations should be a XML (GML) or any GeoSciML compliant representations, including any profiles derived from this specification.</p>
 </clause>
 
-<clause id="_c574dc84-3484-ddeb-127d-9f491166e436" obligation="normative">
+<clause id="_413548bb-0205-625f-87ac-1ddfc1c97bdd" obligation="normative">
 <title id="_501fe4e7-105c-8dd8-62ae-11676845b036">ByReference associations</title>
-<table id="_d2227b98-410e-d9f5-a9ea-63c714b6fa54" width="100%"><thead><tr id="_a976ca1f-a827-fff4-3850-47ecbd1dea10"><th id="_59845ce1-d5fa-f8a6-96ef-5c35e6f34ea2" valign="middle" align="left"><strong>Requirement /req/gsml4-lod/byref</strong></th>
-</tr></thead>
-<tbody><tr id="_c01065c2-ef7b-0233-ab2b-2ee805e25853"><td id="_ee4daeb1-73cf-cca5-de96-e7f15c76de07" valign="middle" align="left">External references to an entity conforming to [/req/gsml4-lod/identifier] shall be expressed using this entity identifier.</td>
-</tr></tbody>
-</table>
-
-<requirement id="_75d915dd-242d-a56e-2fc3-96394478f0d6" anchor="req_gsml-lod_byref" model="ogc"> <identifier>/req/gsml4-lod/byref</identifier><component id="_5fb5ec58-d4d0-c334-0905-872407c0eddf" class="part"><p id="_02a7a200-9316-409a-a0ae-d398dfe913da">External references to an entity conforming to [/req/gsml-lod/identifier] shall be expressed using this entity identifier.</p>
+<requirement id="_160cadc8-1f5b-3bf6-da4a-e573bcc6ec80" anchor="req_gsml-lod_byref" model="ogc"> <identifier>/req/gsml-lod/byref</identifier><component id="_5fb5ec58-d4d0-c334-0905-872407c0eddf" class="part"><p id="_02a7a200-9316-409a-a0ae-d398dfe913da">External references to an entity conforming to [/req/gsml-lod/identifier] shall be expressed using this entity identifier.</p>
 </component>
 </requirement>
 
@@ -824,7 +766,7 @@
 </clause>
 </clause>
 
-<clause id="_dfaf0d21-4f37-f612-abd6-0e36de016dbd" obligation="normative">
+<clause id="_8bd707e3-083b-e18b-93de-2cbba893b143" obligation="normative">
 <title id="_2a311187-0e09-6978-51b4-fcf6b543f711">GeoSciML Basic Requirements Class (Normative)</title>
 <table id="_35a4ffa9-b05a-e8ad-13d3-4d961f24044f" width="100%"><colgroup><col width="11%"/><col width="89%"/></colgroup><thead><tr id="_5d64544c-2938-aff5-a817-14da8c243cc1"><th id="_9c72b539-6d94-dd98-41ae-d5f5d3b5fdd3" valign="middle" align="left"><strong>Requirements Class</strong></th>
 <th id="_f4812af7-2a7e-700e-9b3f-8157426b2fd8" valign="middle" align="left"/></tr></thead>
@@ -875,13 +817,15 @@
 </tr></tbody>
 </table>
 
-<p id="_d0f69f70-dd38-bf98-2f75-037a04e98074"> </p>
+<p id="_2c566114-4d85-dbfc-2dea-48581f6b2a53">Unresolved directive in sections/clause_8_logical_model_4_geosciml_basic_rc.adoc — include::/requirements/requirements/requirements_class_geosciml_basic.adoc[]</p>
 
-<p id="_b43c7d70-2664-a3a1-b100-c903ae83684e">Basic package provides a collection of classes representing fundamental geological and geomorphological features (units, structures, and events), earth materials, geologic time, and the relations between them.  It limits the number of descriptive properties to match important common use cases, including the INSPIRE geological theme specification [8].</p>
+<p id="_97cbffa6-40a0-fad3-5204-9f4b51382038"> </p>
 
-<p id="_0b618d06-fbf3-79fd-88b4-bddf4a31dbf9">image::images/image10.png[GeoSciML Basic dependencies.,width=601,height=455]Figure: 10: GeoSciML Basic dependencies.</p>
+<p id="_fa8f9bbc-6cb6-06dd-d7ec-5f0165d173e5">Basic package provides a collection of classes representing fundamental geological and geomorphological features (units, structures, and events), earth materials, geologic time, and the relations between them.  It limits the number of descriptive properties to match important common use cases, including the INSPIRE geological theme specification [8].</p>
 
-<clause id="_9815d67c-e63f-4106-525f-3b953b47bdbd" obligation="normative">
+<p id="_fb3132c3-0089-bf26-683d-00dd8ea1f7ce">image::images/image10.png[GeoSciML Basic dependencies.,width=601,height=455]Figure: 10: GeoSciML Basic dependencies.</p>
+
+<clause id="_b738f43a-441e-bcc3-fd8b-440e12479d68" obligation="normative">
 <title id="_b03eee68-01c2-d8a5-52db-f068c2e9197e">Geology Basic</title>
 <p id="_340dc971-8644-96d5-30d3-eba4a8794237">GeologyBasic is a package of classes representing fundamental geological map features and the relations between them.  GeoSciML describes a geologic dataset as a series of GeologicFeature occurrences, spatially represented as MappedFeature.  A map is a collection of MappedFeatures.  The term “map”, typically understood as a map sheet (a given area on the surface of the earth), is only one of the possible collection of MappedFeatures.  Other examples are cross-sections, block diagrams, and even borehole logs (a linear map).  MappedFeature can represent any features and GeologicFeatures are one of the kinds of features it can represent.  A MappedFeature identifies what it represents using its “specification” association. </p>
 
@@ -889,7 +833,7 @@
 
 <p id="_7b723cc4-374a-a0c4-4503-1616255d9577">image::images/image11.png[Geologic Feature and MappedFeature.,width=601,height=366]Figure: 11: Geologic Feature and MappedFeature.</p>
 
-<clause id="_e68644c2-6f06-2ebe-2868-3445a9d5e255" obligation="normative">
+<clause id="_3cc29348-a136-5a62-5d7f-5fd8f01c1cda" obligation="normative">
 <title id="_9bdcc6b8-ed69-e856-1707-7a5c18440268">GeologicFeature</title>
 <p id="_c581cfdf-fe29-8671-6f4f-81b4f8779691">The abstract GeologicFeature class represents a conceptual feature that is hypothesized to exist coherently in the world.  It corresponds with a “legend item” from a traditional geologic map and its instance acts as the “description package”.  The description package is classified according to its intended purpose as a <em>typicalNorm</em>, <em>definingNorm or instance</em>.  GeologicFeature can be used outside the context of a map (it can lack a MappedFeature), for example when describing typical norms (describing expected property from a feature) or defining norms (describing properties required from a feature to be classifying in a group, such as given geologic unit).  A GeologicFeature appearing on a map is considered as an “instance”.</p>
 
@@ -902,13 +846,17 @@
 <p id="_a5b238ec-536a-bd93-21d5-77c33579e9ba">ObservationMethod is a convenience property that provides a simple approach to observation metadata when data are reported using a feature view (as opposed to observation view).  This property corresponds (loosely) to ISO19115 Lineage.</p>
 </clause>
 
-<clause id="_7c23ffdf-d6a2-1369-cbdc-e55945ca70d6" obligation="normative">
+<clause id="_d3c25fbd-aefb-b2af-4d20-7c8f83e47c66" obligation="normative">
 <title id="_34972b87-cd12-d51a-df4a-57035e8d139f">purpose</title>
 <table id="_812154ee-bbf4-382f-3e53-70e1d5cfbd60" width="100%"><thead><tr id="_6083b2b4-dce1-a710-ec10-9c630f6410fd"><th id="_5b8aebf3-a119-1d3b-5123-197113aedd7a" valign="middle" align="left"><strong>Requirement /req/gsml4-basic/geologicfeature-purpose</strong></th>
 </tr></thead>
 <tbody><tr id="_5fd0412b-d9bf-3be1-766c-ed74e007d4b9"><td id="_c472b831-8340-1e4c-de07-c6e2c2b50893" valign="middle" align="left">Purpose SHALL be a value from Table 2 of clause 8.4.1.1.2 .</td>
 </tr></tbody>
 </table>
+
+<requirement id="_d784e787-ecf7-da28-fc57-cbb8e34cd6d5" anchor="req_gsml-basic_geologicfeature-purpose" model="ogc"> <identifier>/req/gsml-basic/geologicfeature-purpose</identifier><component id="_1e9c510c-6a27-cfb9-22f1-9478b361d489" class="part"><p id="_ba25b96f-8e69-31b7-9501-a9722cf8e84a">Purpose SHALL be a value from Table 2 of clause 8.4.1.1.2.</p>
+</component>
+</requirement>
 
 <p id="_954b8654-b17f-c944-e29d-83205cb432fc"> </p>
 
@@ -1129,7 +1077,7 @@
 </clause>
 </clause>
 
-<clause id="_7903e0cb-700a-d408-48c5-6a5ff5fa9d19" obligation="normative">
+<clause id="_edc6224c-ac1c-e802-4212-b2cb2335aa6f" obligation="normative">
 <title id="_18b68cb7-7f41-c983-064f-1c438734b083">GeologicEvent</title>
 <p id="_03ab30d9-a5ac-2174-c15a-2ad1a39f304b">A GeologicEvent is an identifiable event during which one or more geological processes act to modify geological entities.  It may have a specified geologic age (numeric age or GeochologicEraTerm) and may have specified environments and processes. An example might be a cratonic uplift event during which erosion, sedimentation, and volcanism all take place.</p>
 
@@ -1143,6 +1091,10 @@
 </tr></tbody>
 </table>
 
+<requirement id="_7cc76195-6953-1825-b5a0-34d822852920" anchor="req_gsml-basic_geologicevent-single" model="ogc"> <identifier>/req/gsml-basic/geologicevent-single</identifier><component id="_15c07e20-d894-6397-44f1-997e4aa49a14" class="part"><p id="_df7d3d3d-6615-b3a4-e212-a6f547d92eac">An individual GeologicEvent SHALL only apply to one of DisplacementEvent, AlterationDescription or MetamorphicDescription.</p>
+</component>
+</requirement>
+
 <p id="_1e63fc4c-af86-22d6-b2ef-b0c9ef94fea2">A geologic event must at least have one age representation, either numerical or named. </p>
 
 <table id="_afe12c34-4aad-22cf-2dde-404cdebd4c06" width="100%"><thead><tr id="_c3d86fee-7de3-a31f-aed0-621337918721"><th id="_3d364fad-2f3e-c450-fbb0-62bebc61e566" valign="middle" align="left"><strong>Requirement /req/gsml4-basic/geologicevent-non-null</strong></th>
@@ -1150,6 +1102,10 @@
 <tbody><tr id="_278393ab-4079-0cca-3c88-27be1986f8d5"><td id="_9de60901-81bf-bb9f-a879-5069f90193e8" valign="middle" align="left">Either (olderNamedAge + youngerNamedAge) or numericAge SHALL not be null.</td>
 </tr></tbody>
 </table>
+
+<requirement id="_245ef35e-ce83-10d6-3a2d-a163bdb032a3" anchor="req_gsml-basic_geologicevent-non-null" model="ogc"> <identifier>/req/gsml-basic/geologicevent-non-null</identifier><component id="_7101ae41-02db-276d-422f-2301564c1af9" class="part"><p id="_6fe24551-0be8-697f-dde8-c8fbedf42cdf">Either (olderNamedAge + youngerNamedAge) or numericAge SHALL not be null.</p>
+</component>
+</requirement>
 
 <clause id="_9ad16ef4-4edb-b936-fa1f-435ad519ef51" obligation="normative">
 <title id="_b8a8a5b6-c066-1194-67da-d7baea673f3b">eventProcess</title>
@@ -1396,7 +1352,7 @@
 </clause>
 </clause>
 
-<clause id="_e13e1bce-e5b8-0c89-d501-4ce688833ced" obligation="normative">
+<clause id="_04425b8d-ffb0-85ae-a948-b4c5e352bab8" obligation="normative">
 <title id="_0f508f6e-c7f1-4126-7808-d1c76262b8b4">GeoSciML data types</title>
 <p id="_34418d6c-cc57-a631-b574-28e74bdd9315">GeoSciML Data is a package of data types that describes the planar or linear orientation of a geologic feature using conventions used in geology. They allow specifying direction by a numerical direction vector (e.g., dip/dip direction), or as a description (e.g., compass point (NE), or other text — “toward fold hinge”, “below”).  An additional GSML_QuantityRange class extends SWE::QuantityRange to allow upper and lower values in a numerical range to be delivered as two separate attributes. This is to facilitate query operations on upper and lower values by providing explicit names for these values (which are otherwise encoded as anonymous members of an array in SWE common).</p>
 
@@ -1417,7 +1373,7 @@
 </clause>
 </clause>
 
-<clause id="_d9b72070-39cc-8929-3f17-a406165a7f08" obligation="normative">
+<clause id="_73df3b19-e3e4-1e7d-609a-fb722796222c" obligation="normative">
 <title id="_1970ed71-94f5-852e-4fbb-d7c784669116">GSML_PlanarOrientation</title>
 <p id="_00b051d7-7340-5e5c-2862-f071ea5465c3">A planar orientation is composed of two values; the azimuth (a compass point) and a dip (the angle from the horizontal).  Polarity of the plane indicates whether the planar orientation is associated with a directed feature that is overturned, upright, vertical, etc.  There are several conventions to encode a planar orientation and this specification does not impose one but provides a convention property to report it. It must be noted that allowance for different conventions makes manipulation of the data more difficult. Therefore it is recommended that user communities adopt a single measurement convention.</p>
 
@@ -1426,6 +1382,10 @@
 <tbody><tr id="_d27aac38-db65-b0d5-1371-9da3a42e3171"><td id="_06457579-6a12-a63c-0c38-851f02c6788e" valign="middle" align="left">At least one of polarity, azimuth or dip SHALL not be null.</td>
 </tr></tbody>
 </table>
+
+<requirement id="_f2c94d94-5940-651b-afb3-a20e0602eaf7" anchor="req_gsml-basic_plane-pol-dip-az-not-null" model="ogc"> <identifier>/req/gsml-basic/plane-pol-dip-az-not-null</identifier><component id="_f31fd014-e121-6950-5d9f-35ad9e5d2dd4" class="part"><p id="_b9ad2e14-7aa3-784e-c0c7-8294995e212c">At least one of polarity, azimuth or dip SHALL not be null.</p>
+</component>
+</requirement>
 
 <p id="_00b6bdc5-ee28-705f-8921-79d916d03382">To have any meaningful value, the planar orientation shall have at least a value for polarity, azimuth or dip.</p>
 
@@ -1452,7 +1412,7 @@
 </clause>
 </clause>
 
-<clause id="_8a3e15ff-3439-6035-b021-60b107932c17" obligation="normative">
+<clause id="_8ef327d4-c260-b84c-6b1f-11515a326282" obligation="normative">
 <title id="_52bf197f-8e87-bd95-b922-77351f830a0e">GSML_LinearOrientation</title>
 <p id="_a34a8e8a-1ba6-71a3-bb9e-3d84a378a70d">A linear orientation is composed of a trend (the compass orientation of the line) and a plunge (the angle from the horizontal).  This vector may be oriented (pointing in a specific direction) or not.</p>
 
@@ -1464,6 +1424,10 @@
 </td>
 </tr></tbody>
 </table>
+
+<requirement id="_0fced6fd-f763-fd32-0603-37838e77a95d" anchor="req_gsml-basic_linear-trend-plunge-not-null" model="ogc"> <identifier>/req/gsml-basic/linear-trend-plunge-not-null</identifier><component id="_65895848-125e-63fd-7db8-a0f2dd953ae3" class="part"><p id="_b524b673-1cbd-3089-d8ea-fd63f490648d">At least one of plunge or trend SHALL not be null.</p>
+</component>
+</requirement>
 
 <p id="_88c04e02-0cb6-5c9d-28ae-1b257967211e">To have any meaningful value, an instance of GSML_LinearOrientation shall at least have a trend or a plunge value.</p>
 
@@ -1493,7 +1457,7 @@
 </clause>
 </clause>
 
-<clause id="_267f8f2e-989c-3d78-1f25-a1434dc19734" obligation="normative">
+<clause id="_39db9f87-e299-1f19-ef7a-2335cacafa8e" obligation="normative">
 <title id="_c8602973-3387-da44-6b8c-d3b649128172">GSML_QuantityRange</title>
 <p id="_c6aa64ff-2760-365f-53fe-1057c812c187">GSML_QuantityRange is a specialization of SWE Common QuantiytyRange (OGC 08-094r1, Clause 7.2.13)  where lower and upper values are made explicit.  SWE::QuantityRange uses an array of values (RealPair, see Clause OGC 08-094r1,7.2.1) where the lowest value is the first element and the highest the second.  This convenience data type has been created as an alternative encoding for implementations that do no support encoding of arrays in a single field (e.g. DBF) or reference to elements in string encoded arrayshttps://docs.ogc.org/is/16-008/16-008.html#_ftnref3[<underline>[3]</underline>] (eg. Filter Encoding Specification 2.0 – OGC 09-029r2).</p>
 
@@ -1507,13 +1471,23 @@
 </tr></tbody>
 </table>
 
-<p id="_0575ae24-2507-aa76-5fe0-8d15cb1a09e3">The values reported in lowerValue and upperValue shall be the same as the pair of values in inherited values property.</p>
+<p id="_d739bfa3-dc6f-54ae-6680-f30995368ca6">[[req_gsml-basic/quantity-range-order]]</p>
+
+<requirement id="_5ec767c4-726c-cf07-a2f0-6ab7916cd05c" model="ogc" anchor="/req/gsml-basic/quantity-range-order"> <identifier>/req/gsml-basic/quantity-range-order</identifier><component id="_5d9a816d-d344-b556-98c9-5c58f92b45e5" class="part"><p id="_25e396bc-9a55-15a4-06d0-e2c8e87593f9">The QuantityRange lowerValue SHALL be less than or equal to the upperValue.</p>
+</component>
+</requirement>
+
+<p id="_813ce169-12f7-9343-61f7-370c978b2870">The values reported in lowerValue and upperValue shall be the same as the pair of values in inherited values property.</p>
 
 <table id="_0e7ebf7c-3478-181f-078e-798876c251ed" width="100%"><thead><tr id="_c6bb255d-7f91-3633-1835-2a8485f030df"><th id="_5ed2721d-444d-03fd-4c24-a4fee71edd22" valign="middle" align="left"><strong>Requirement /req/gsml4-basic/quantity-range-repeat</strong></th>
 </tr></thead>
 <tbody><tr id="_9265deff-f185-356d-c629-2990b23d68bd"><td id="_18e6895d-d46f-fd1a-b426-d4e4dd6c0ef2" valign="middle" align="left">The QuantityRange’s value[0] SHALL provide the same value as lowerValue and value[1] SHALL provide the same value as upperValue.</td>
 </tr></tbody>
 </table>
+
+<requirement id="_eb3071cd-e133-58d7-f561-5fdde048bda1" anchor="req_gsml-basic_quantity-range-repeat" model="ogc"> <identifier>/req/gsml-basic/quantity-range-repeat</identifier><component id="_d6e47c3b-351f-b98f-1f3f-64b36d96e4c1" class="part"><p id="_90c7da54-4dbc-3a7a-fec2-a83b28cdb322">The QuantityRange’s value[0] SHALL provide the same value as lowerValue and value[1] SHALL provide the same value as upperValue.</p>
+</component>
+</requirement>
 
 <clause id="_3f4f3d97-79f0-1e43-04cc-7ea1bafbea97" obligation="normative">
 <title id="_f7b05661-cc8a-3e31-a6d5-2d830474d1a8">lowerValue</title>
