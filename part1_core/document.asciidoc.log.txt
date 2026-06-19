@@ -345,6 +345,7 @@ This sections provides details and examples for any conventions used in the docu
 
 Each normative statement (requirement or recommendation) in this specification is a member of a requirements class. Each requirements class is described in a discrete clause or sub-clause, and summarized using the following template:
 
+[%unnumbered%]
 [width="100%",cols="46%,54%",options="header",]
 |===
 |*Requirements class* |*/req/++{++classM}*
@@ -362,6 +363,7 @@ All requirements in a requirements class must be satisfied. Hence, the requireme
 
 All requirements and recommendations are normative, and each is presented using the following template:
 
+[%unnumbered%]
 [width="100%",cols="100%",options="header",]
 |===
 |*Requirement /req/++[++classM++]++/++[++reqN++]++*
@@ -376,6 +378,7 @@ where /req/++[++classM++]++/++[++reqN++]++ identifies the requirement or recomme
 
 Conformance to this specification is possible at a number of levels, specified by conformance classes (Annex A). Each conformance class is summarized using the following template:
 
+[%unnumbered%]
 [width="100%",cols="29%,71%",options="header",]
 |===
 |*Conformance class* |
@@ -391,6 +394,7 @@ W3C Schema (XSD) and ISO Schematron (SCH) files are considered as part of this s
 
 Schematron files explicitly specify which requirements are being tested in the title of the schematron pattern.
 
+[%unnumbered%]
 [source,xml]
 ----
 <pattern id="unit-of-measure">
@@ -405,25 +409,28 @@ Schematron files explicitly specify which requirements are being tested in the t
 
 The normative provisions in this specification are denoted by a URI constructed using this pattern:
 
-link:++http://www.opengis.net/spec/++{++standard}/++{++m.n}++[]
+link:++http://www.opengis.net/spec/++{++standard}/++{++m.n}++[\http://www.opengis.net/spec/++{++standard}/++{++m.n}]
 
 All requirements and conformance tests that appear in this document are denoted by a partial URI which is relative to this base. The identifier supports cross-referencing of class membership, dependencies, and links from each conformance test to the requirements tested. In this specification identifiers are expressed as partial URIs or paths, which can be appended to a base URI that identifies the specification as a whole in order to construct a complete URI for identification in an external context.
 
 The URI for each requirements class has the form:
 
-link:++http://www.opengis.net/spec/geosciml/4.1/req/++++[++classM++]++.
+link:++http://www.opengis.net/spec/geosciml/4.1/req/++++[++classM++]++[\http://www.opengis.net/spec/geosciml/4.1/req/++[++classM++]++]
 
 The URI for each requirement or recommendation has the form:
 
-link:++http://www.opengis.net/spec/geosciml/4.1/req/++++[++classM++]++/++[++reqN++]++.
+link:++http://www.opengis.net/spec/geosciml/4.1/req/++++[++classM++]++/++[++reqN++]++[\http://www.opengis.net/spec/geosciml/4.1/req/++[++classM++]/++[++reqN++]]
+
 
 The URI for each conformance class has the form:
 
-link:++http://www.opengis.net/spec/geosciml/4.1/conf/++++[++classM++]++.
+link:++http://www.opengis.net/spec/geosciml/4.1/conf/++++[++classM++]++[\http://www.opengis.net/spec/geosciml/4.1/conf/++[++classM++]++]
+
 
 The URI for each conformance test has the form:
 
-link:++http://www.opengis.net/spec/geosciml/4.1/conf/++++[++classM++]++/++[++testN++]++.
+link:++http://www.opengis.net/spec/geosciml/4.1/conf/++++[++classM++]++/++[++testN++]++[\http://www.opengis.net/spec/geosciml/4.1/req/++[++classM++]/++[++testN++]]
+
 
 === Classifiers
 
@@ -441,7 +448,7 @@ For the sake of readability, and also because some HollowWorld package names do 
 
 W3C XPath will be used in XML instances.  XML entities will be identified using their full qualified name (namespace, identified by its prefix, and entity name).
 
-* `gsmlb:GeologicUnit` refers to an instance of GeologicUnit, from namespace `xmlns:gsmlb="link:++http://www.opengis.net/gsml/4.1/GeoSciML-Basic"`++[]
+* `gsmlb:GeologicUnit` refers to an instance of GeologicUnit, from namespace xmlns:gsmlb="\http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
 * `gsmlb:GeologicUnit/gml:name` refers to the name property of GeologicUnit
 * `gsmlb:GeologicUnit/gml:name/@codeName` refers to the codeName attribute of the name property of GeologicUnit
 
@@ -458,7 +465,7 @@ image::images/image1.png[width=601,height=520]
 
 GeoSciML has been through 4 major releases and a few minor releases since 2005.  Each version brought a different interpretation of what is essentially the same conceptual model.  The reader looking at all iterations will see, with few exceptions, the same concepts, the same associations and the same properties, but packaged differently.  GeoSciML increasingly adopted other domain models as it evolved; it replaced XMML (eXploration and Mining Markup Languages, developed by CSIRO) by Observations and Measurements (ISO19156), custom data types for ranges and categories by SWE Common, and removed custom vocabularies to use web resources.
 
-This fourth iteration is essentially a repackaging of the previous version 3.2 from 13 packages organised by themes into 6 packages organised by use cases (Figure 2):
+This fourth iteration is essentially a repackaging of the previous version 3.2 from 13 packages organised by themes into 6 packages organised by use cases (<<img_geosciml_packages>>):
 
 * *GeoSciML Basic*: a set of core geologic features, aligned to the INSPIRE Data Specification on Geology.
 * *GeoSciML Extension*: an extension providing detailed description of basic features which adds additional properties and associations.
@@ -467,6 +474,7 @@ This fourth iteration is essentially a repackaging of the previous version 3.2 f
 * *GeoSciML Laboratory and Analysis*: a model for laboratory analytical metadata, geological sampling and specimens, and isotopic age observation results.
 * *GeoSciML Lite*: previously known as “GeoSciML Portrayal” in version 3.2; a simplified alternate implementation of the conceptual model for layer based applications.
 
+[[img_geosciml_packages]]
 .GeoSciML 4.1 packages
 image::images/image2.png[width=601,height=525]
 
@@ -476,11 +484,13 @@ image::images/image2.png[width=601,height=525]
 
 GeoSciML describes geological features from the mapping perspective, articulated around the concept of a MappedFeature – the cartographic element shown on a map, and the GeologicFeature it represents.  All geologic concepts that can be represented on a map are subtypes of GeologicFeature.
 
+[[img_highlevel_model]]
 .High-level model
 image::images/image3.png[width=562,height=330]
 
-GeologicFeature is an abstract class materialised into four concrete classes (Figure 4) - GeologicEvent, GeologicStructure, GeologicUnit and GeomorphologicFeature.   The other main features of the GeoSciML model are not geologic features themselves, but features related to the activity of sampling and observing geology (such as Borehole or GeologicSpecimen) and are therefore modelled as SF++_++SamplingFeature (O&M) subtypes.
+GeologicFeature is an abstract class materialised into four concrete classes (<<img_core_feature_model>>) - GeologicEvent, GeologicStructure, GeologicUnit and GeomorphologicFeature.   The other main features of the GeoSciML model are not geologic features themselves, but features related to the activity of sampling and observing geology (such as Borehole or GeologicSpecimen) and are therefore modelled as SF++_++SamplingFeature (O&M) subtypes.
 
+[[img_core_feature_model]]
 .Core feature model for GeoSciML
 image::images/image4.png[width=601,height=333]
 
@@ -490,13 +500,15 @@ In order to provide a simple entry level model for data providers, but also to a
 
 ==== AbstractDescription classes
 
-The technique to add extended properties to an existing class is normally to create a subtype to carry the new properties (Figure 5).
+The technique to add extended properties to an existing class is normally to create a subtype to carry the new properties (<<img_adding_properties_by_extension>>).
 
+[[img_adding_properties_by_extension]]
 .Adding properties by extension
 image::images/image5.png[width=601,height=892]
 
-But this only works when properties need to be added to a leaf class.  Properties added by subtyping a class higher up in the chain of inheritance will create a new branch, and new properties won’t propagate to existing subtypes in the main branch. GeoSciML 4 adopts an extension pattern using abstract property blocks or ‘AbstractDescription’ classes (Figure 6).  Blocks of extended properties are organized in their own Datatype, subtyping AbstractDescription.
+But this only works when properties need to be added to a leaf class.  Properties added by subtyping a class higher up in the chain of inheritance will create a new branch, and new properties won’t propagate to existing subtypes in the main branch. GeoSciML 4 adopts an extension pattern using abstract property blocks or ‘AbstractDescription’ classes (<<img_extension_pattern>>).  Blocks of extended properties are organized in their own Datatype, subtyping AbstractDescription.
 
+[[img_extension_pattern]]
 .Extension pattern using a property block (AbstractDescription class)
 image::images/image6.png[width=601,height=300]
 
@@ -505,11 +517,12 @@ This pattern has two main advantages:
 * It does not require the creation of a new feature type to add properties to core features.
 * Extra properties can be defined and used by other user communities (e.g., properties added by a geophysical application could be reused by groundwater applications).
 
-GeoSciML Basic contains nine stub AbstractDescription classes ultimately materialised in GeoSciML Extension (Table 1).
+GeoSciML Basic contains nine stub AbstractDescription classes ultimately materialised in GeoSciML Extension (<<tbl_stub_abstract_description_classes>>).
 
+[[tbl_stub_abstract_description_classes]]
+.GeoSciML Basic stub AbstractDescription classes.
 [width="100%",cols="^50%,^50%",options="header",]
 |===
-|*Table 1: GeoSciML Basic stub AbstractDescription classes.* |
 |*Class* |*Description*
 |*AbstractFeatureRelation* |Association class placeholder to describe relations between geologic features.
 |*EarthMaterialAbstractDescription* |Detailed earth material description placeholder for GeologicUnit and EarthMaterial.
@@ -534,6 +547,7 @@ Each property of GeoSciML Lite classes is derived from a subset of the propertie
 
 Some fields are external references, in the form of HTTP URI, to provide hyperlinks for applications to access linked data definitions to externally governed vocabulary terms and/or complex representations of the features when required.
 
+[[img_example_of_linkage]]
 .Example of linkage between a GeoSciML Lite feature and other GeoSciML packages and vocabulary term URI’s.  An instance of GeologicUnitView matches an instance of MappedFeature
 image::images/image7.png[width=571,height=413]
 
@@ -546,30 +560,33 @@ GeoSciML is an ISO Feature Model implementation of NADM and this created subtle 
 
 Sampling and analytical metadata features (Borehole and GeologicSpecimen in particular) are extensions of Observations and Measurements (10-004r3) and as such implement the underlying Observations and Measurements conceptual model.  Borehole introduces engineering concepts known to the industry without a formal conceptual model.  It has been recognised that Boreholes are features that are common outside the geological mapping realms (like the energy and mineral resources industries, hydrogeology, civil engineering, etc) and more formal work could be carried by those interested parties.  Therefore, Borehole in GeoSciML is a essentially placeholder waiting to be replaced by a more formal Borehole model that is applicable across more domains than geology. It is expected that the Laboratory Analysis model could also be formalised by parties interested in (geo)chemical analysis. 
 
-[width="100%",cols="9%,91%",options="header",]
-|===
-|*Requirements class* |
-|/http://www.opengis.net/spec/waterml/2.0/req/xsd-xml-rules[*[.underline]#req/gsml4-conceptual#*] |
-|*Target type* |Logical Model
-|*Name* |GeoSciML conceptual model
-|*Dependency* |ISO19101:2002 Reference Model Clause 7
-|*Dependency* |ISO19103 2015 Conceptual Model Language
-|*Dependency* |ISO19104:2008
-|*Dependency* |Unified Modeling Language (UML). Version 2.3. May 2010
-|*Requirement* a|
-*/req/gsml4-conceptual/similarity*
+[[req_class_geosciml_conceptual_model]]
 
-A target logical model, when claiming compliance with this conceptual model, SHALL implement its components (classes, attributes, relationships) respecting the conceptual model definitions and intent, such that high semantic similarity is obtained between the logical and conceptual model components.
+[requirements_class]
+.Requirements Class 'GeoSciML conceptual model'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-conceptual++[]
+subject:: Logical Model
+inherit:: ISO19101:2002 Reference Model Clause 7
+inherit:: ISO19103 2015 Conceptual Model Language
+inherit:: ISO19104:2008
+inherit:: Unified Modeling Language (UML). Version 2.3. May 2010
+requirement:: /req/gsml-conceptual/similarity
+====
 
-|===
+
 
 Target logical models that are compliant with the conceptual model shall implement components of the conceptual model respecting their semantics, i.e. their definition and intent. In other words, the logical model must be highly semantically similar to components of the conceptual model. Semantic similarity can be tested in multiple ways, including but not limited to: (i) direct comparison of UML components, (ii) comparison after mapping components to a common expressive knowledge representation language, such as first order logic or common logic, or (iii) comparison after mapping components to a reference ontology. The target can reuse and adapt existing logical models.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-conceptual/similarity*
-|A target logical model, when claiming compliance with this conceptual model, SHALL implement its components (classes, attributes, relationships) respecting the conceptual model definitions and intent, such that high semantic similarity is obtained between the logical and conceptual model components.
-|===
+[[req_gsml_conceptual_similarity]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-conceptual/similarity
+part:: A target logical model, when claiming compliance with this conceptual model, SHALL implement its components (classes, attributes, relationships) respecting the conceptual model definitions and intent, such that high semantic similarity is obtained between the logical and conceptual model components.
+====
 
 == Logical Model
 
@@ -617,104 +634,94 @@ The following shortcuts are used to refer to external (non GeoSciML) classifiers
 
 === GeoSciML Core Abstract Requirements Class (Normative)
 
-[width="100%",cols="10%,90%",options="header",]
-|===
-|*Abstract Requirements Class* |
-|/req/gsml4-core |
-|*Target type* |Encoding
-|*Dependency* |ISO19103:2005 Conceptual Schema Language
-|*Dependency* |ISO19107:2003 Spatial Schema
-|*Dependency* |ISO19109:2015 Rules for application schemas
-|*Dependency* |RFC 3986 Uniform Resource Identifier (URI): Generic Syntax
-|*Dependency* |ISO19115-3 Metadata
-|*Requirement* a|
-*/req/gsml4-core/uml-entity-name*
+[[req_class_a]]
 
-When the target implementation allows it, the exact name of the classifier SHALL be used.
+[requirements_class]
+.Requirements Class 'GeoSciML Core'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-core++[]
+subject:: Encoding
+requirement:: /req/gsml-core/uml-entity-name
+requirement:: /req/gsml-core/uml-cardinality
+requirement:: /req/gsml-core/uml-abstract
+requirement:: /req/gsml-core/uml-polymorphism
+requirement:: /req/gsml-core/quantities-uom
+requirement:: /req/gsml-core/quantities-single-range
+requirement:: /req/gsml-core/codelist
+====
 
-|*Requirement* a|
-*/req/gsml4-core/uml-cardinality*
 
-If the target implementation allows it, it SHALL implement the same cardinality of properties and associations as defined in the UML.
 
-|*Requirement* a|
-*/req/gsml4-core/uml-abstract*
-
-Abstract classes SHALL NOT be materialised.
-
-|*Requirement* a|
-*/req/gsml4-core/uml-polymorphism*
-
-A target implementation SHALL implement type substitutions inferred from the UML model.
-
-|*Requirement* a|
-*/req/gsml4-core/quantities-uom*
-
-Quantities and measurements SHALL have explicit units of measure from a governed ontology.
-
-|*Requirement* a|
-*/req/gsml4-core/quantities-single-range*
-
-QuantityRange properties that must report a single value SHALL assign both lower and upper value as equal to that single value.
-
-|*Requirement* a|
-/req/gsml4-core/codelist
-
-Empty classes with stereotype ++<<++CodeList++>>++ SHALL be implemented as externally governed vocabularies which terms are encoded as URI (RFC 3986).
-
-|===
 
 This section presents requirements to which all target encodings must conform in to order to claim compliance to GeoSciML 4.1.
 
 ==== Naming of entities
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/uml-entity-name*
-|When the target implementation allows it, the exact name of the classifier SHALL be used.
-|===
+[[req_gsml-core_uml-entity-name]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/uml-entity-name
+part:: When the target implementation allows it, the exact name of the classifier SHALL be used.
+====
 
 If a target implementation is capable of encoding all the artefacts (classes and properties) using the same names used in UML, it shall do so.  Some target implementations might prevent it; for example, dBase (DBF files) column names are restricted to 10 characters or some RDBMS limits the use of camel case names.  But if the target allows it, the exact names shall be used.
 
 ==== Cardinality
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/uml-cardinality*
-|If the target implementation allows it, it SHALL implement the same cardinality of properties and associations as defined in the UML.
-|===
+
+[[req_gsml-core_uml-cardinality]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/uml-cardinality
+part:: If the target implementation allows it, it SHALL implement the same cardinality of properties and associations as defined in the UML.
+====
 
 Cardinality shall be the same as defined in UML model.  Since essentially all properties are optional, this clause addresses the upper bounds of cardinality: “1” or “many” in almost all cases.  Therefore, if the UML model limits a property’s maximum cardinality to “1”, then the target implementation cardinality cannot be “many”.
 
 ==== Abstract classes
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/uml-abstract*
-|Abstract classes SHALL NOT be materialised.
-|===
 
- 
+[[req_gsml-core_uml-abstract]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/uml-abstract
+part:: Abstract classes SHALL NOT be materialised.
+====
 
 Not all physical implementations support the concept of an abstract class, or even inheritance and polymorphism.  XSD does support that concept and all its implications, but JSON does not – although JavaScript can somewhat.  This requirement specifies that the encoding specification shall not allow materialisation of an instance of a class stereotyped as abstract.
 
 ==== Polymorphism
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/uml-polymorphism*
-|A target implementation SHALL implement type substitutions inferred from the UML model.
-|===
+
+[[req_gsml-core_uml-polymorphism]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/uml-polymorphism
+part:: A target implementation SHALL implement type substitutions inferred from the UML model.
+====
 
 The type hierarchy of the UML model implies type substitutions for property values.  For instance, a property value of type GeologicEvent can be substituted by a value of type DisplacementEvent because DisplacementEvent is a subtype of GeologicEvent.  Many property types are abstract types and only a concrete subtype may be materialised (as per /req/gsml4-core/uml-abstract).  A target implementation shall consider type substitutions using mechanisms available for this implementation.
 
 ==== Quantities
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/quantities-uom*
-|Quantities and measurements SHALL have explicit units of measure from a governed ontology.
-|===
+
+[[req_gsml-core_quantities-uom]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/quantities-uom
+part:: Quantities and measurements SHALL have explicit units of measure from a governed ontology.
+====
 
 The quantities and measurements units of measure shall be taken from a standard vocabulary governed by an appropriate community, for example the Unified Code for Units of Measure (UCUM).
 
@@ -722,27 +729,35 @@ The quantities and measurements units of measure shall be taken from a standard 
 
 A QuantityRange is a quantity formed of a lower and upper value forming a range of values.  If a single value needs to be represented as a QuantityRange, where the single value is assigned to both lower and upper properties.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/quantities-single-range*
-|
-|QuantityRange properties that must report a single value SHALL assign both lower and upper value as equal to that single value.
-|===
+
+[[req_gsml-core_quantities-single-range]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/quantities-single-range
+part:: QuantityRange properties that must report a single value SHALL assign both lower and upper value as equal to that single value.
+====
 
 ==== Code lists
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-core/codelist*
-|Empty classes with stereotype ++<<++CodeList++>>++ SHALL be implemented as externally governed vocabularies which terms are encoded as URI (RFC 3986).
-|===
 
-All properties that require formal vocabularies are modelled in the UML as classes having the stereotype ++<<++CodeList++>>++.  The list of valid terms is either prescribed by this specification, with a list of possible entries (Figure 9) or open (i.e., without any terms).
+[[req_gsml-core_codelist]]
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-core/codelist
+part:: Empty classes with stereotype `++<++<CodeList++>++>` SHALL be implemented as externally governed vocabularies which terms are encoded as URI (RFC 3986).
+====
+
+All properties that require formal vocabularies are modelled in the UML as classes having the stereotype ++<<++CodeList++>>++.  The list of valid terms is either prescribed by this specification, with a list of possible entries (<<img_example_codelists>>) or open (i.e., without any terms).
+
+[[img_example_codelists]]
 .Example CodeLists, with a) a prescribed list of terms (DescriptionPurpose) and b) 'open' with no prescribed terms (GeologicUnitHierarchyRoleTerm)
 image::images/image9.png[width=118,height=96]
 
-When the list is open, the vocabulary is managed externally over the web where each vocabulary term should be encoded as a resource.  Vocabulary term identifiers are URIs representing concepts from a standard vocabulary governed by an appropriate community - for example, the IUGS CGI Geoscience Terminology Working Group (link:++http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html++[[.underline]#http://www.cgi-iugs.org/tech++_++collaboration/geoscience++_++terminology++_++working++_++group.html#] and link:++http://resource.geosciml.org/++[[.underline]#http://resource.geosciml.org#]) or INSPIRE ++[++8++]++.
+When the list is open, the vocabulary is managed externally over the web where each vocabulary term should be encoded as a resource.  Vocabulary term identifiers are URIs representing concepts from a standard vocabulary governed by an appropriate community - for example, the IUGS CGI Geoscience Terminology Working Group (link:++http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html++[\http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html] and link:++http://resource.geosciml.org/++[\http://resource.geosciml.org/]) or INSPIRE ++[++8++]++.
 
 This requirement does not require that URIs be actually dereferenceable, but just that a vocabulary term is associated with a syntactically correct URI.
 
@@ -778,6 +793,22 @@ External references to an entity conforming to ++[++/req/gsml4-lod/identifier++]
 
 |===
 
+[[req_class_gsml4-lob]]
+
+[requirements_class]
+.Requirements Class 'Linked Open Data'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lob++[]
+subject:: Encoding
+requirement:: /req/gsml-lod/codelistURI
+requirement:: /req/gsml-lod/identifier
+requirement:: /req/gsml-lod/gsml-representation
+requirement:: /req/gsml-lod/byref
+====
+
+
+
 Although OGC standards are not restricted to a web environment, they are strongly influenced by this environment.  GeoSciML was originally developed specifically for XML, but many other encodings are suitable hypermedia formats (RDF/XML, JSON-LD, HTML).  This requirements class describes extra rules that shall be implemented to turn GeoSciML data instances into hypermedia compatible with Linked Open Data principles.
 
 Linked Open Data is a method to publish structured data on the web.  It leverages existing web technologies such as HTTP (transfer protocol) and URI (addressing over the web) to connect structured resources.  The principle is similar to interconnected web pages through hyperlinks, except that pages are replace with structured information that can be processed by machines.
@@ -794,6 +825,15 @@ It is important to note that a HTTP URI in this context is [.underline]#both# 
 |URI used for vocabulary terms SHALL be dereferenceable to one or more representations of the vocabulary term.
 |===
 
+[[req_gsml-lod_codelistURI]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lod/codelistURI
+part:: URI used for vocabulary terms SHALL be dereferenceable to one or more representations of the vocabulary term.
+====
+
 The requirement described at 8.2.7  in Abstract Requirements Class demand that a vocabulary reference be encoded as a URI, but does not require that the URI actually resolve to anything (it could, but it is not required).  In this class, the target must ensure that the URI used to identify vocabulary terms SHALL dereference to one or more representations of a definition of the term (eg, RDF/SKOS, HTML, GML Definition, etc.)
 
 ==== Identifier
@@ -804,6 +844,15 @@ The requirement described at 8.2.7  in Abstract Requirements Class demand that 
 |HTTP URI used as entity identifiers SHALL be to one or more representations of that entity.
 |===
 
+[[req_gsml-lod_identifier]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lod/identifier
+part:: HTTP URI used as entity identifiers SHALL be to one or more representations of that entity.
+====
+
 This requirement demands that the target ensures that a data instance exposes a URI as a unique identifier for this feature and this identifier SHALL be dereferenceable to one or more representations of that feature.
 
 [width="100%",cols="100%",options="header",]
@@ -811,6 +860,15 @@ This requirement demands that the target ensures that a data instance exposes a 
 |*Requirement /req/gsml4-lod/gsml-representation*
 |Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML 4.1 as one of its representations.
 |===
+
+[[req_gsml-lod_gsml-representation]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lod/gsml-representation
+part:: Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML 5.0 as one of its representations.
+====
 
 It is expected that one of the representations should be a XML (GML) or any GeoSciML compliant representations, including any profiles derived from this specification.
 
@@ -821,6 +879,15 @@ It is expected that one of the representations should be a XML (GML) or any GeoS
 |*Requirement /req/gsml4-lod/byref*
 |External references to an entity conforming to ++[++/req/gsml4-lod/identifier++]++ shall be expressed using this entity identifier.
 |===
+
+[[req_gsml-lod_byref]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lod/byref
+part:: External references to an entity conforming to [/req/gsml-lod/identifier] shall be expressed using this entity identifier.
+====
 
 Serialization of a dataset will often omit the full description of a feature and replace the property value with an external reference.  A reference to this feature is formed by the dereferenceable identifier described in clause 8.3.2. A client ingesting the dataset can use this reference to extract a feature representation if need be.  Over the web, this reference shall be a HTTP URI that can be dereferenced to one or more representations of that feature.
 
