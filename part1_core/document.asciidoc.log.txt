@@ -2891,6 +2891,20 @@ Observations at outcrop SHOULD be encoded using the pattern described at clause 
 
 |===
 
+[[req_class_a]]
+
+[requirements_class]
+.Requirements Class 'A'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/ABCD/m.n/req/req-class-a++[]
+subject:: Web API
+requirement:: /req/req-class-a/req-name-1
+requirement:: /req/req-class-a/req-name-2
+====
+
+
+
 The LaboratoryAnalysis-Specimen application model extends the ISO19156 model for Observations, Measurements and Sampling.  It specifically describes processes and results related to the analysis of (geological) samples using instruments, commonly in a laboratory environment. The design of this package is also informed by the MOLES v3 data model ++[++21++]++. 
 
 image::images/image84.png[LaboratoryAnalysis and Specimen dependencies.,width=601,height=506]Figure: 82: LaboratoryAnalysis and Specimen dependencies.
@@ -2909,6 +2923,15 @@ The "sampledFeature" association links the OM::SF++_++SamplingFeature to the fea
 |OM::SF++_++SamplingFeature::sampledFeature SHALL not be an instance of OM::SF++_++SamplingFeature.
 |===
 
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
+
 ===== OM++_++Observation::resultQuality
 
 OM::OM++_++Observation::resultQuality::DQ++_++QuantitativeAttributeAccuracy attribute shall be used to represent analytical errors and detection limits for each analytical measurement.
@@ -2923,6 +2946,15 @@ image::images/image85.png[DQ++_++Element from ISO19115:2003.,width=415,height=18
 |For analytical error and detection limits, both DQ++_++QuantitativeAttributeAccuracy::nameOfMeasure and DQ++_++QuantitativeAttributeAccuracy::result SHALL NOT be null.
 |===
 
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
+
 The CharacterString in "nameOfMeasure" should be a term from a controlled vocabulary.
 
 [width="100%",cols="100%",options="header",]
@@ -2930,6 +2962,15 @@ The CharacterString in "nameOfMeasure" should be a term from a controlled vocabu
 |*Requirement /req/gsml4-lab-analysis/accuracy-vocabulary*
 |The value of DQ++_++Element::nameOfMeasure SHOULD be a term from a controlled vocabulary.
 |===
+
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
 
 ===== OM++_++Observation::parameter
 
@@ -3039,6 +3080,15 @@ When the image is available online, the identifier of the image, a HTTP URI, sho
 |The identifier of the image SHOULD be a HTTP URI referring to a representation of the image.
 |===
 
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
+
 The samplingMethod (inherited from OM::SF++_++SamplingFeature) value for an image should be an identifier for a camera.
 
 [width="100%",cols="100%",options="header",]
@@ -3046,6 +3096,15 @@ The samplingMethod (inherited from OM::SF++_++SamplingFeature) value for an imag
 |*Requirement /req/gsml4-lab-analysis/image-process*
 |The image om:procedure SHOULD make reference to a camera.
 |===
+
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
 
 ==== Geochronology
 
@@ -3166,11 +3225,12 @@ The property parameter (OM::NamedValue) contains a name/value pair to describe a
 
 ==== GeoSciML LaboratoryAnalysis-Specimen vocabularies
 
-Vocabularies used in the LaboratoryAnalysis-Specimen package are listed Table 8:
+Vocabularies used in the LaboratoryAnalysis-Specimen package are listed <<tbl_lab_analysis_and_specimen_vocabularies>>:
 
+[[tbl_lab_analysis_and_specimen_vocabularies]]
+.Laboratory analysis and specimen vocabularies
 [width="100%",cols="^38%,^62%",options="header",]
 |===
-|*Table 8: Laboratory analysis and specimen vocabularies.* |
 |*Vocabulary* |*Description*
 |*AnalyticalMethodTerm* |Refers to a vocabulary of terms describing the analytical method used in an analytical session (e.g., XRF mass spectrometry, ICPMS, SHRIMP geochronology).
 |*InstrumentTypeTerm* |Refers to a vocabulary of Instrument types (e.g., XRF, ICPMS, SHRIMP, etc.).
@@ -3194,6 +3254,15 @@ SamplingFeatureCollection might also be used to represent dredge hauls, measured
 |*Requirement /req/gsml4-lab-analysis/outcrop-pattern*
 |Observations at outcrop SHOULD be encoded using the pattern described at clause 8.8.5
 |===
+
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====
 
 === GeoSciML Lite Requirements Class (Normative)
 
