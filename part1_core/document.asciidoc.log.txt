@@ -521,7 +521,7 @@ GeoSciML Basic contains nine stub AbstractDescription classes ultimately materia
 
 [[tbl_stub_abstract_description_classes]]
 .GeoSciML Basic stub AbstractDescription classes.
-[width="100%",cols="^50%,^50%",options="header",]
+[width="100%",cols="^50%,^50%",options="header",align="left"]
 |===
 |*Class* |*Description*
 |*AbstractFeatureRelation* |Association class placeholder to describe relations between geologic features.
@@ -622,7 +622,7 @@ Which option is most useful for a community is left to that community to decide.
 The following shortcuts are used to refer to external (non GeoSciML) classifiers.
 
 [%unnumbered%]
-[width="100%",cols="16%,84%",options="header",]
+[width="100%",cols="16%,84%",options="header",align="left"]
 |===
 |*Shortcut* |*Full path (HollowWorld)*
 |*OM* |ISO TC211/ISO 19156 All/ISO 19156:2011 Observations and Measurements
@@ -771,7 +771,7 @@ This requirement does not require that URIs be actually dereferenceable, but jus
 .Requirements Class 'Linked Open Data'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lob++[]
+identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lod++[]
 subject:: Encoding
 inherit:: URI
 inherit:: HTTP
@@ -919,7 +919,7 @@ The property purpose:DescriptionPurpose specifies the intended purpose/level of 
 
 [[valid_purpose_values]]
 .Valid “purpose” values
-[width="100%",cols="^17%,^83%",options="header",]
+[width="100%",cols="^17%,^83%",options="header",align="left"]
 |===
 |*Purpose* |*Description*
 |*instance* |And instance is a description that is specific to a particular observed occurrence. This is 'raw data', and its classification may start out as very general. There are kinds of narrowly defined ControlledConcepts that might not allow 'instances' that are different from the DefiningNorm. It might be worth considering a different relationship between MappedFeature and an Instance GeologicEntity, with the GeologicEntity role being 'description'.
@@ -1333,7 +1333,7 @@ This requirements class does not impose any encoding style for Union stereotype,
 
 [[tbl_types_of_GSMLItem_members]]
 .Types of GSMLItem members
-[width="100%",cols="^24%,^76%",options="header",]
+[width="100%",cols="^24%,^76%",options="header",align="left"]
 |===
 |*Property* |*Description*
 |*earthMaterialItem* |The earthMaterialItem attribute is a placeholder for the EarthMaterial class that is included as a member of a GSML Collection.
@@ -1446,7 +1446,7 @@ image::images/image28.png[Context diagram for QuantityRange making lower and upp
 The lowerValue shall be less than or equal to the upperValue.
 
 
-[[req_gsml-basic/quantity-range-order]]
+[[req_gsml-basic_quantity-range-order]]
 
 [requirement]
 ====
@@ -1486,7 +1486,7 @@ Geology is a descriptive science and uses vocabularies extensively.  <<tbl_voca
 
 [[tbl_vocabularies_used_in_geosciml_basic]]
 .Vocabularies used in GeoSciML Basic
-[width="100%",cols="^34%,^66%",options="header",]
+[width="100%",cols="^34%,^66%",options="header",align="left"]
 |===
 |*Vocabulary* |*Description*
 |CompositionPartRoleTerm |This class is a blank placeholder for a vocabulary of terms to describe the role that a compositional part plays in a geologic unit.
@@ -1701,7 +1701,8 @@ EarthMaterialDescription abstract class is materialised into a series of concret
 * MetamorphicDescription
 * CompoundMaterialDescription
 
-Overview of earth material description
+[[img_overview_of_earth_material_description]]
+.Overview of earth material description
 image::images/image38.png[Overview of earth material description.,width=601,height=427]
 
 ===== AlterationDescription
@@ -2246,7 +2247,7 @@ Vocabularies used in GeoSciML Extension are listed in <<tbl_geosciml_extension>>
 
 [[tbl_geosciml_extension]]
 .GeoSciML Extension vocabularies
-[width="100%",cols="^37%,^63%",options="header",]
+[width="100%",cols="^37%,^63%",options="header",align="left"]
 |===
 |*Vocabulary* |*Description*
 |*GeologicRelationshipTerm* |Refers to a vocabulary of terms describing a relationship between geologic features or objects.
@@ -2478,7 +2479,7 @@ The GeologicTime package has only one vocabulary (<<tbl_geologic_time_vocabulary
 
 [[tbl_geologic_time_vocabulary]]
 .Geologic time vocabulary
-[width="100%",cols="^27%,^73%",options="header",]
+[width="100%",cols="^27%,^73%",options="header",align="left"]
 |===
 |*Vocabulary* |*Description*
 |*GeochronologicEraRank* a|
@@ -2818,7 +2819,7 @@ Vocabularies used in Borehole package are listed in <<tbl_geosciml_borehole_voca
 
 [[tbl_geosciml_borehole_vocabularies]]
 .GeoSciML Borehole vocabularies
-[width="100%",cols="^32%,^68%",options="header",]
+[width="100%",cols="^32%,^68%",options="header",align="left"]
 |===
 |*Vocabulary* |*Description*
 |*BoreholeDrillingMethodCode* |This class is an indicative placeholder only for a vocabulary of terms describing the borehole drilling method.  Users are encouraged to use a vocabulary of terms managed by the CGI vocabularies working group. (e.g., auger, hand auger, air core, cable tool, diamond core, rotary air blast, etc.).
@@ -3182,7 +3183,7 @@ Vocabularies used in the LaboratoryAnalysis-Specimen package are listed <<tbl_la
 
 [[tbl_lab_analysis_and_specimen_vocabularies]]
 .Laboratory analysis and specimen vocabularies
-[width="100%",cols="^38%,^62%",options="header",]
+[width="100%",cols="^38%,^62%",options="header",align="left"]
 |===
 |*Vocabulary* |*Description*
 |*AnalyticalMethodTerm* |Refers to a vocabulary of terms describing the analytical method used in an analytical session (e.g., XRF mass spectrometry, ICPMS, SHRIMP geochronology).
@@ -3214,137 +3215,47 @@ part:: Observations at outcrop SHOULD be encoded using the pattern described at 
 
 === GeoSciML Lite Requirements Class (Normative)
 
-[width="100%",cols="11%,89%",options="header",]
-|===
-|*Requirements Class* |
-|/req/gsml4-lite |
-|*Target type* |Encoding
-|*Dependency* |/req/gsml4-conceptual
-|*Dependency* |GML Simple Feature SF-0 OGC 10-100r3
-|*Dependency* |ISO 8601 (Date and Time format)
-|*Dependency* |Linked Open Data
-|*Dependency* |RFC 3986 (HTTP URI)
-|*Requirement* a|
-*/req/gsml4-lite/geomtype*
 
-A dataset SHALL use a single geometry type (Point, Line, Polygon, etc.).
+[[req_class_gsml-lite]]
 
-|*Requirement* a|
-*/req/gsml4-lite/string*
+[requirements_class]
+.Requirements Class 'GeoSciML Lite'
+====
+[%metadata]
+identifier::  link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lite++[]
+subject:: Encoding
+inherit:: /req/gsml-conceptual
+inherit:: GML Simple Feature SF-0 OGC 10-100r3
+inherit:: ISO 8601 (Date and Time format)
+inherit:: Linked Open Data
+inherit:: RFC 3986 (HTTP URI)
+requirement:: /req/gsml-lite/geomtype
+requirement:: /req/gsml-lite/string
+recommendation:: /rec/gsml-lite/formal-syntax
+requirement:: /req/gsml-lite/datetime
+requirement:: /req/gsml-lite/uri
+recommendation:: /rec/gsml-lite/resolvable-uri
+requirement:: /req/gsml-lite/user-defined
+requirement:: /req/gsml-lite/identifier-unique
+requirement:: /req/gsml-lite/identifier-uri
+recommendation:: /rec/gsml-lite/geologicunitview-identifier
+requirement:: /req/gsml-lite/geologicunitview-representativeLithology
+requirement:: /req/gsml-lite/geologicunitview-representativeAge
+requirement:: /req/gsml-lite/geologicunitview-representativeOlderAge
+requirement:: /req/gsml-lite/geologicunitview-representativeYoungerAge
+recommendation:: /rec/gsml-lite/geologicunitview-specification
+recommendation:: /rec/gsml-lite/boreholeview-identifier
+requirement:: /req/gsml-lite/boreholeview-elevation-crs
+recommendation:: /rec/gsml-lite/boreholeview-parentBorehole-uri
+recommendation:: /rec/gsml-lite/contactview-identifier
+recommendation:: /rec/gsml-lite/geologicspecimenview-identifier
+recommendation:: /rec/gsml-lite/geomorphologicunitview-identifier
+recommendation:: /rec/gsml-lite/sheardisplacemenstructureview-identifier
+recommendation:: /rec/gsml-lite/siteobservationview-identifier
+requirement:: /req/gsml-lite/siteobservationview-symbolRotation
+====
 
-Properties of type “CharacterString” SHALL contain human readable text.
 
-|*Recommendation* a|
-*/req/gsml4-lite/formal-syntax*
-
-Syntax of text in character string properties SHOULD be formalised.
-
-|*Requirement* a|
-*/req/gsml4-lite/datetime*
-
-Calendar date and time SHALL be formatted according to ISO 8601.
-
-|*Requirement* a|
-/req/gsml4-lite/uri
-
-Properties which name end with “++_++uri” SHALL contain a string conformant to URI format as specified in RFC 3986.
-
-|*Recommendation* a|
-/req/gsml4-lite/resolvable-uri
-
-Properties containing a valid URI SHOULD be dereferenceable.
-
-|*Requirement* a|
-/req/gsml4-lite/user-defined
-
-Features delivered with user defined properties SHALL be conformant to GML Simple Feature Level 0.
-
-|*Requirement* a|
-/req/gsml4-lite/identifier-unique
-
-Identifiers SHALL be unique to a dataset.
-
-|*Requirement* a|
-/req/gsml4-lite/identifier-uri
-
-Identifiers SHALL be formatted as URI according to RFC 3986.
-
-|*Recommendation* a|
-/req/gsml4-lite/geologicunitview-identifier
-
-Where possible, GeologicUnitView identifier SHOULD correspond to an instance of GeoSciML MappedFeature.
-
-|*Requirement* a|
-/req/gsml4-lite/geologicunitview-representativeLithology
-
-representativeLithology++_++uri value SHALL refer to a controlled concept specifying the characteristic or representative lithology of the unit. This may be a concept that defines the super-type of all lithology values present within a GeologicUnit or a concept defining the lithology of the dominant CompositionPart (as defined in GeoSciML) of the unit.
-
-|*Requirement* a|
-/req/gsml4-lite/geologicunitview-representativeAge
-
-representativeAge++_++uri value SHALL refer to a controlled concept specifying the most representative stratigraphic age interval for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature's geological history or a value summarising the all or part of the feature's history.
-
-|*Requirement* a|
-/req/gsml4-lite/geologicunitview-representativeOlderAge
-
-representativeOlderAge++_++uri value SHALL refer to a controlled concept specifying the most representative older value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature's geological history or a value summarising the all or part of the feature's history.
-
-|*Requirement* a|
-/req/gsml4-lite/geologicunitview-representativeYoungerAge
-
-representativeYoungerAge++_++uri value SHALL refer to a controlled concept specifying the most representative younger value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature's geological history or a value summarising the all or part of the feature's history.
-
-|*Recommendation* a|
-/req/gsml4-lite/geologicunitview-specification
-
-specification++_++uri value SHOULD refer the GeoSciML GeologicUnit feature that describes the instance in detail.
-
-|*Recommendation* a|
-/req/gsml4-lite/boreholeview-identifier
-
-identifier SHOULD resolve to a representation of a GeoSciML Borehole.
-
-|*Requirement* a|
-/req/gsml4-lite/boreholeview-elevation-crs
-
-If present, elevation++_++srs SHALL resolve to a valid EPSG vertical datum in the range EPSG:5600 to EPSG:5799
-
-|*Recommendation* a|
-/req/gsml4-lite/boreholeview-parentBorehole-uri
-
-If present, parentBorehole++_++uri SHOULD resolve to a representation of a GeoSciML borehole.
-
-|*Recommendation* a|
-/req/gsml4-lite/contactview-identifier
-
-identifier SHOULD correspond to an instance of GeoSciML MappedFeature.
-
-|*Recommendation* a|
-/req/gsml4-lite/geologicspecimenview-identifier
-
-identifier SHOULD correspond to an instance of GeoSciML GeologicSpecimen.
-
-|*Recommendation* a|
-/req/gsml4-lite/geomorphologicunitview-identifier
-
-identifier SHOULD correspond to a representation of GeoSciML MappedFeature.
-
-|*Recommendation* a|
-/req/gsml4-lite/sheardisplacemenstructureview-identifier
-
-identifier SHOULD correspond to a representation of GeoSciML MappedFeature.
-
-|*Recommendation* a|
-/req/gsml4-lite/siteobservationview-identifier
-
-identifier SHOULD correspond to a representation of OM::OM++_++Observation.
-
-|*Requirement* a|
-/req/gsml4-lite/siteobservationview-symbolRotation
-
-If present, the symbolRotation SHALL be a value in the range ++[++0,360++[++.
-
-|===
 
 GeoSciML Lite is a simplification of parts of GeoSciML and Observations and Measurements (ISO 19156) for map-based applications.  It was developed to provide a simple schema to deliver geologic map unit, contact, borehole, located sample, geomorphologic unit and shear displacement structure (fault and ductile shear zone) descriptions in web map services. The intention is to support interoperable map services, for which interoperability is based on a shared data schema and the use of standard vocabulary terms for basic type classification of contacts and faults, age of geologic units and faults, and lithology of geologic units.
 
@@ -3352,7 +3263,8 @@ Use of standard vocabularies enables map display using a shared legend (symboliz
 
 By linking the simple feature WMS with a GeoSciML WFS, clients can acquire geologic feature descriptions that can be used in web-mapping applications to construct custom legends. Linking to full GeoSciML features allows the Lite schema to be used in a map browsing and query interface to identify and select features for further processing that can be acquired as highly structured, information-rich GML features.
 
-image::images/image99.png[Package dependency for GeoSciML Lite.,width=524,height=498]Figure: 97: Package dependency for GeoSciML Lite.
+.Package dependency for GeoSciML Lite
+image::images/image99.png[Package dependency for GeoSciML Lite.,width=524,height=498]
 
 GeoSciML Lite conforms to the Level 0 of the Simple Features Profile for GML (OGC 10-100r, OGC 06-049). The simple features profile supports only a limited subset of possible GML geometry types that may be used to describe feature geographic location and shape. For the purposes of GeoSciML simple features, these include GEO::Point, GEO::LineString, GEO::Curve, GEO::Polygon, GEO::Surface, GEO::MultiPoint, GEO::MultiCurve, GEO::MultiSurface and multi-geometry types consisting of collections of these base types.
 
@@ -3363,10 +3275,6 @@ In addition, some features include an (optional) identifier for a specification 
 ==== Property mapping
 
 Lite properties are mapped to existing GeoSciML or O&M properties.  Values from GeoSciML and O&M complex properties are converted into GML SF-0 valid basic types (OGC 10-100r2, Clause 8.4.4.1). Different transformations scenarios are possible:
-
-____
- 
-____
 
 * The GeoSciML property is already a basic type and the value is used as-is
 * A representative element of the complex type is used. For example; only SWE::Category::value.
@@ -3380,37 +3288,26 @@ For each GeoSciML Lite view, a table provides the mapping between Lite and GeoSc
 
 For example:
 
-image::images/image100.png[Mapping of key GeologicUnitView properties to GeoSciML,width=601,height=375]Figure: 98: Mapping of key GeologicUnitView properties to GeoSciML
+[[img_Mapping_of_key_GeologicUnitView_props]]
+.Mapping of key GeologicUnitView properties to GeoSciML
+image::images/image100.png[Mapping of key GeologicUnitView properties to GeoSciML,width=601,height=375]
 
-Figure 98 shows mapping for some GeologicUnitView properties.  Number 3 on this figure maps GeologicUnitView::lithology to RockMaterial, which requires a traverse from the base type (MappedFeature) to GeologicUnit, CompositionPart and then RockMaterial.
-
- 
+<<img_Mapping_of_key_GeologicUnitView_props>> shows mapping for some GeologicUnitView properties.  Number 3 on this figure maps GeologicUnitView::lithology to RockMaterial, which requires a traverse from the base type (MappedFeature) to GeologicUnit, CompositionPart and then RockMaterial.
 
 In OCL,
 
-specification:GeomorphologicUnit::unitDescription++[++1++]++:GeologicUnit::compos
-
-ition++[++1++]++:CompositionPart::material:RockMaterial::lithology
+specification:GeomorphologicUnit::unitDescription++[++1++]++:GeologicUnit::composition++[++1++]++:CompositionPart::material:RockMaterial::lithology
 
 The base type (MappedFeature) is not included as it is the context type.  Package names are not shown to keep the path readable.
 
- 
 
 A W3C XPath equivalent (using prefixes proposed in 9.1)
 
- 
-
-gsmlb:Specification/gsmlb:GeomorphologicUnit/gsmlb:unitDescription++[++1++]++/gsm
-
-lb:GeologicUnit/gsmlb:composition++[++1++]++/gsmlb:CompositionPart/gsmlb:material
+gsmlb:Specification/gsmlb:GeomorphologicUnit/gsmlb:unitDescription++[++1++]++/gsmlb:GeologicUnit/gsmlb:composition++[++1++]++/gsmlb:CompositionPart/gsmlb:material
 
 /gsmlb:RockMaterial/gsmlb:lithology
 
 An exact path is provided when possible (e.g., see 8.9.3.1), for instance to a property of compatible types.  But there are cases where the type cannot be expressed directly in OCL.
-
-____
- 
-____
 
 * Part of the model, such as classifiers with ++<<++CodeList++>>++ don’t have specific model.  XML implement them as external references (xlink:href), other encoding might implement them otherwise. 
 * Any property modelled as part as metadata (MD++_++Metadata) as there are no explicit requirements on how GML metaDataProperty should be implemented.
@@ -3423,41 +3320,57 @@ In such cases, guidance will be provided.
 
 ===== Geometry type
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geomtype*
-|A dataset SHALL use a single geometry type (Point, Line, Polygon, etc.). 
-|===
+
+[[req_gsml-lite_geomtype]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/geomtype
+part:: A dataset SHALL use a single geometry type (Point, Line, Polygon, etc.).
+====
 
 A dataset (for example, a GML document or a GeoJSON instance or an ESRI shapefile) SHALL use a single geometry type. Most GIS applications and software which render a dataset containing geometry do not expect mixed geometries.
 
 ===== String properties
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/string*
-|Properties of type “CharacterString” SHALL contain human readable text.
-|===
+
+[[req_gsml-lite_string]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/string
+part:: Properties of type “CharacterString” SHALL contain human readable text.
+====
 
 String properties SHALL provide information easily readable by human.  The intent of string field is to display, not to query. The string properties can be translated according to the language of the user as needed while URI properties should not.
 
 ===== Formal Syntax
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/formal-syntax*
-|Syntax of text in character string properties SHOULD be formalised.
-|===
+
+[[rec_gsml-lite_formal-syntax]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/formal-syntax
+part:: Syntax of text in character string properties SHOULD be formalised.
+====
 
 Some string properties can be constructed using formal syntax, such as comma delimited list or any other text based structure (JSON for example).  Where possible, this syntax SHOULD be formalised in a profile of this specification.
 
 ===== Date and Time formatting
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/datetime*
-|Calendar date and time SHALL be formatted according to ISO 8601.
-|===
+
+[[req_gsml-lite_datetime]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/datetime
+part:: Calendar date and time SHALL be formatted according to ISO 8601.
+====
 
 All dates and times, excluding geological ages, shall be formatted using ISO 8601 format (YYYY-MM-DD).  When a time must be specified, time zone shall be provided.
 
@@ -3471,35 +3384,47 @@ Examples:
 
 Properties which names end with “++_++uri” shall contain a *single* absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/uri*
-|Properties which name end with “++_++uri” SHALL contain a string conformant to URI format as specified in RFC 3986.
-|===
+
+[[req_gsml-lite_uri]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/uri
+part:: Properties which name end with “_uri” SHALL contain a string conformant to URI format as specified in RFC 3986.
+====
 
 Properties containing a URI should, unless stated otherwise, resolve following Linked Open Data principles.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/resolvable-uri*
-|Properties containing a valid URI SHOULD be dereferenceable.
-|===
+
+[[rec_gsml-lite_resolvable-uri]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/resolvable-uri
+part:: Properties containing a valid URI SHOULD be dereferenceable.
+====
 
 Although many vocabulary terms are defined as URI, not all URIs are actually supported by a formal Linked Open Data infrastructure.   URIs are just a convenient mechanism to build unique vocabulary identifiers.  Note that in some situations, some “++_++uri” properties might require that the URI SHALL resolve to some valid content.  Those cases will be explicitly stated. Some community might create a profile of this requirements class and add more constraints, such as mandatory resolution of the URI to one or more resources and impose mandatory mime-types (GeoSciML/XML or GeoSciML/GeoJSON).
 
-image::images/image101.png[GeoSciML Lite feature types.,width=601,height=453]Figure: 99: GeoSciML Lite feature types.
+[[img_lite_feature_types]]
+.GeoSciML Lite feature types
+image::images/image101.png[GeoSciML Lite feature types.,width=601,height=453]
 
-Figure 99 shows the seven Lite feature types specified by GeoSciML 4.1.  Each feature type is equivalent to a layer in a GIS or a Web Map Service. 
+<<img_lite_feature_types>> shows the seven Lite feature types specified by GeoSciML 4.1.  Each feature type is equivalent to a layer in a GIS or a Web Map Service. 
 
 ===== User defined properties
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/user-defined*
-|Features delivered with user defined properties SHALL be conformant to GML Simple Feature Level 0.
-|===
 
- 
+[[req_gsml-lite_user-defined]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/user-defined
+part:: Features delivered with user defined properties SHALL be conformant to GML Simple Feature Level 0.
+====
 
 New properties added by the data provider shall keep the feature conformant to GML Simple Feature Level 0.  For example, no duplicate property names, nor extra geometry properties.
 
@@ -3507,31 +3432,40 @@ New properties added by the data provider shall keep the feature conformant to G
 
 Globally unique identifier:Primitive::CharacterString shall uniquely identifies a tuple within the dataset.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/identifier-unique*
-|Identifier SHALL be unique to a dataset.
-|===
+
+[[req_gsml-lite_identifier-unique]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/identifier-unique
+part:: Identifiers SHALL be unique to a dataset.
+====
 
 Identifiers shall be formatted as URI according to RFC 3986.  This URI could be used to access more detailed, such as a GeoSciML Basic, representation of the feature.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/identifier-URI*
-|Identifiers SHALL be formatted as URI according to RFC 3986.
-|===
+
+[[req_gsml-lite_identifier-uri]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/identifier-uri
+part:: Identifiers SHALL be formatted as URI according to RFC 3986.
+====
 
 ==== GeologicUnitView
 
-image::images/image102.png[GeologicUnitView feature type.,width=302,height=382]Figure: 100: GeologicUnitView feature type.
+.GeologicUnitView feature type
+image::images/image102.png[GeologicUnitView feature type.,width=302,height=382]
 
 GeologicUnitView is a simplified view of a GeoSciML MappedFeature feature with key property values from an associated GeologicUnit.   The GeologicUnitView property values are summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
 ===== Mapping
 
-[width="100%",cols="^35%,^65%",options="header",]
+.Mapping of GeologicUnitView properties to the GeoSciML data model
+[width="100%",cols="^35%,^65%",options="header",align="left"]
 |===
-|*Table 9: Mapping of GeologicUnitView properties to the GeoSciML data model.* |
 |*Property* |*Mapping from MappedFeature*
 |*identifier* |identifier
 |*name* |specification:GeologicUnit::name ^1^
@@ -3586,25 +3520,28 @@ GeologicEvent::olderNamedAge ^3^
 |*metadata++_++uri* |specification:GeologicUnit::metaDataProperty ^3^
 |*genericSymbolizer* |
 |*shape* |shape
-a|
+|===
+
 **^1^ In cases where multiple values are delivered for these elements in GeoSciML, data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
 
 **^3^ Use a **reference** or an identifier that can be used to reach a representation.**
 
-|
-|===
 
 ===== identifier
 
 The identifier should have the same value as the corresponding GeoSciML MappedFeature identifier, if available.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicunitview-identifier*
-|Where possible, GeologicUnitView identifier SHOULD correspond to an instance of MappedFeature.
-|===
+
+[[rec_gsml-lite_geologicunitview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/geologicunitview-identifier
+part:: Where possible, GeologicUnitView identifier SHOULD correspond to an instance of GeoSciML MappedFeature.
+====
 
 ===== name
 
@@ -3658,51 +3595,71 @@ The property geologicUnitType++_++uri:Primitive::CharacterString contains a URI 
 
 The property representativeLithology++_++uri:Primitive::CharacterString shall contain a URI referring to a controlled concept specifying the characteristic or representative lithology of the unit. This may be a concept that defines the super-type of all lithology values present within a GeologicUnit or a concept defining the lithology of the dominant CompositionPart (as defined in GeoSciML) of the unit.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicunitview-representativeLithology*
-|representativeLithology++_++uri value SHALL refer to a controlled concept specifying the characteristic or representative lithology of the unit. This may be a concept that defines the super-type of all lithology values present within a GeologicUnit or a concept defining the lithology of the dominant CompositionPart (as defined in GeoSciML) of the unit.
-|===
+
+[[req_gsml-lite_geologicunitview-representativeLithology]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/geologicunitview-representativeLithology
+part:: representativeLithology_uri value SHALL refer to a controlled concept specifying the characteristic or representative lithology of the unit. This may be a concept that defines the super-type of all lithology values present within a GeologicUnit or a concept defining the lithology of the dominant CompositionPart (as defined in GeoSciML) of the unit.
+====
 
 ===== representativeAge++_++uri
 
 The property representativeAge++_++uri:Primitive::CharacterString shall  contain a URI referring to a controlled concept specifying the most representative stratigraphic age interval for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature’s geological history or a value summarising the all or part of the feature’s history.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicunitview-representativeAge*
-|representativeAge++_++uri value SHALL refer to a controlled concept specifying the most representative stratigraphic age interval for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature's geological history or a value summarising the all or part of the feature's history.
-|===
+
+[[req_gsml-lite_geologicunitview-representativeAge]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/geologicunitview-representativeAge
+part:: representativeAge_uri value SHALL refer to a controlled concept specifying the most representative stratigraphic age interval for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature’s geological history or a value summarising the all or part of the feature’s history.
+====
 
 ===== representativeOlderAge++_++uri
 
 The property representativeOlderAge++_++uri:Primitive::CharacterString shall contain a URI referring to a controlled concept specifying the most representative older value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature’s geological history or a value summarising the all or part of the feature’s history.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicunitview-representativeOlderAge*
-|representativeOlderAge++_++uri value SHALL refer to a controlled concept specifying the most representative older value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature's geological history or a value summarising the all or part of the feature's history.
-|===
+
+[[req_gsml-lite_geologicunitview-representativeOlderAge]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/geologicunitview-representativeOlderAge
+part:: representativeOlderAge_uri value SHALL refer to a controlled concept specifying the most representative older value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature’s geological history or a value summarising the all or part of the feature’s history.
+====
 
 ===== representativeYoungerAge++_++uri
 
 The property representativeYoungerAge++_++uri:Primitive::CharacterString shall contain a URI referring to a controlled concept specifying the most representative younger value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature’s geological history or a value summarising the all or part of the feature’s history.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicunitview-representativeYoungerAge*
-|representativeYoungerAge++_++uri value SHALL refer to a controlled concept specifying the most representative younger value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature's geological history or a value summarising the all or part of the feature's history.
-|===
+
+[[req_gsml-lite_geologicunitview-representativeYoungerAge]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/geologicunitview-representativeYoungerAge
+part:: representativeYoungerAge_uri value SHALL refer to a controlled concept specifying the most representative younger value in a range of stratigraphic age intervals for the GeologicUnit. This will be defined entirely at the discretion of the data provider and may be a single event selected from the geologic feature’s geological history or a value summarising the all or part of the feature’s history.
+====
 
 ===== specification++_++uri
 
 If present, the property specification++_++uri:Primitive::CharacterString shall contain a URI referring the GeoSciML GeologicUnit feature that describes the instance in detail.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicunitview-specification*
-|specification++_++uri value SHOULD refer the GeoSciML GeologicUnit feature that describes the instance in detail.
-|===
+
+[[rec_gsml-lite_geologicunitview-specification]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/geologicunitview-specification
+part:: specification_uri value SHOULD refer the GeoSciML GeologicUnit feature that describes the instance in detail.
+====
 
 ===== metadata++_++uri
 
@@ -3724,15 +3681,15 @@ A data provider may add an arbitrary number of extra properties, as long as the 
 
 BoreholeView is a simplified view of a GeoSciML Borehole. In GeoSciML terms, this will be an instance of a Borehole feature with key property values summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
- 
 
-image::images/image103.png[BoreholeView feature type.,width=294,height=410]Figure: 101: BoreholeView feature type.
+.BoreholeView feature type
+image::images/image103.png[width=294,height=410]
 
 ===== Mapping
 
-[width="100%",cols="^25%,^75%",options="header",]
+.Mapping of BoreholeView properties to the GeoSciML Borehole data model
+[width="100%",cols="^25%,^75%",options="header",align="left"]
 |===
-|*Table 10: Mapping of BoreholeView properties to the GeoSciML Borehole data model.* |
 |*Property* |*Mapping from Borehole*
 |*identifier* |identifier
 |*Name* |name ^1^
@@ -3756,25 +3713,28 @@ image::images/image103.png[BoreholeView feature type.,width=294,height=410]Figur
 |*metadata++_++uri* |metaDataProperty:MD++_++Metadata ^3^
 |*genericSymbolizer* |
 |*shape* |shape
-a|
+|===
+
 **^1^ In cases where multiple values are delivered for these elements in GeoSciML,  data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
 
 **^3^ Use a **reference** or an identifier that can be used to reach a representation.**
 
-|
-|===
 
 ===== identifier
 
 The identifier:Primitive::CharacterString property shall contain a unique identifier for this borehole and be should formatted as an absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/boreholeview-identifier*
-|identifier SHOULD resolve to a representation of a GeoSciML Borehole.
-|===
+
+[[rec_gsml-lite_boreholeview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/boreholeview-identifier
+part:: identifier SHOULD resolve to a representation of a GeoSciML Borehole.
+====
 
 ===== name
 
@@ -3836,15 +3796,17 @@ If present, the property elevation++_++m:Primitive::Number reports the elevation
 
 If present, the property elevation++_++srs:Primitive::CharacterString is a URI of a spatial reference system of the elevation value. (e.g., mean sea level). Mandatory if elevation++_++m is populated. The SRS shall be a one dimensional vertical SRS (i.e., EPSG code in the range 5600-5799).
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/boreholeview-elevation-crs*
-|If present, elevation++_++srs SHALL resolve to a valid EPSG vertical datum in the range EPSG:5600 to EPSG:5799
-|===
 
- 
+[[req_gsml-lite_boreholeview-elevation-crs]]
 
-Example: link:++https://epsg.io/5711.gml++[]
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/boreholeview-elevation-crs
+part:: If present, elevation_srs SHALL resolve to a valid EPSG vertical datum in the range EPSG:5600 to EPSG:5799
+====
+
+Example: link:++https://epsg.org/crs/gml/id/5711++[]
 
 ===== positionalAccuracy
 
@@ -3860,13 +3822,15 @@ If present, the source:Primitive::CharacterString property describes details and
 
 When present, the parentBorehole++_++uri:Primitive::CharacterString contains a URI referring to one or more representations of a parent borehole (e.g., a parent well of a sidetrack wellbore).
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/boreholeview-parentBorehole-uri*
-|If present, parentBorehole++_++uri SHOULD resolve to a representation of a GeoSciML borehole.
-|===
 
- 
+[[rec_gsml-lite_boreholeview-parentBorehole-uri]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/boreholeview-parentBorehole-uri
+part:: If present, parentBorehole_uri SHOULD resolve to a representation of a GeoSciML borehole.
+====
 
 If the borehole does not have any parent, this field shall be empty.
 
@@ -3888,15 +3852,16 @@ A data provider may add an arbitrary number of extra properties, as long as the 
 
 ==== ContactView
 
-image::images/image104.png[ContactView feature type.,width=287,height=258]Figure: 102: ContactView feature type.
+.ContactView feature type
+image::images/image104.png[ContactView feature type.,width=287,height=258]
 
 ContactView is a simplified view of a GeoSciML MappedFeature with key property values from an associated Contact feature.  These properties are summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
 ===== Mapping
 
-[width="100%",cols="^27%,^73%",options="header",]
+.Mapping of ContactView properties to the GeoSciML data model
+[width="100%",cols="^27%,^73%",options="header",align="left"]
 |===
-|*Table 11: Mapping of ContactView properties to the GeoSciML data model.* |
 |*Property* |*Mapping from MappedFeature*
 |*identifier* |specification:Contact::identifier
 |*name* |specification:Contact::name ^1^
@@ -3910,27 +3875,29 @@ ContactView is a simplified view of a GeoSciML MappedFeature with key property v
 |*metadata++_++uri* |specification::Contact::metaDataProperty ^3^
 |*genericSymbolizer* |
 |*Shape* |shape
-a|
+
+|===
+
 **^1^ In cases where multiple values are delivered for these elements in GeoSciML, data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
 
 **^3^ Use a **reference** or an identifier that can be used to reach a representation.**
 
-|
-|===
 
 ===== identifier
 
 Globally unique identifier:Primitive::CharacterString shall uniquely identifies a tuple within the dataset and be formatted as an absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/contactview-identifier*
-|identifier SHOULD correspond to an instance of MappedFeature.
-|===
 
- 
+[[rec_gsml-lite_contactview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/contactview-identifier
+part:: identifier SHOULD correspond to an instance of GeoSciML MappedFeature.
+====
 
 It should have the same value as the corresponding GeoSciML MappedFeature identifier if available.
 
@@ -3984,15 +3951,16 @@ A data provider can add an arbitrary number of extra properties, as long as the 
 
 ==== GeologicSpecimenView
 
-image::images/image105.png[GeologicSpecimenView feature type.,width=287,height=303]Figure: 103: GeologicSpecimenView feature type.
+.GeologicSpecimenView feature type
+image::images/image105.png[GeologicSpecimenView feature type.,width=287,height=303]
 
 GeologicSpecimenView is a simplified view of a point-located specimen from GeoSciML GeologicSpecimen (an extension of Observations & Measurements - ISO19156) with key property values summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
 ===== Mapping
 
-[width="100%",cols="^21%,^79%",options="header",]
+.Mapping of GeologicSpecimenView properties to Observations and Measurements
+[width="100%",cols="^21%,^79%",options="header",align="left"]
 |===
-|*Table 12: Mapping of GeologicSpecimenView properties to Observations and Measurements.* |
 |*Property* |*Mapping from OM::SF++_++Specimen*
 |*identifier* |identifier
 |*label* |name ^1^
@@ -4009,27 +3977,28 @@ GeologicSpecimenView is a simplified view of a point-located specimen from GeoSc
 |*metadata++_++uri* |metadataProperty ^3^
 |*genericSymbolizer* |
 |*shape* |samplingLocation
-a|
+|===
+
 **^1^ In cases where multiple values are delivered for these elements in GeoSciML, data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
 
 **^3^ Use a **reference** or an identifier that can be used to reach a representation.**
 
-|
-|===
 
 ===== identifier
 
 Globally unique identifier:Primitive::CharacterString uniquely identifies a tuple within the dataset and be formatted as an absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geologicspecimenview-identifier*
-|identifier SHOULD correspond to an instance of GeoSciML GeologicSpecimen.
-|===
 
- 
+[[rec_gsml-lite_geologicspecimenview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/geologicspecimenview-identifier
+part:: identifier SHOULD correspond to an instance of GeoSciML GeologicSpecimen.
+====
 
 If present, the URI should resolve to a representation that corresponds to an instance of GeoSciML GeologicSpecimen.
 
@@ -4100,7 +4069,8 @@ A data provider can add an arbitrary number of extra properties, as long as the 
 
 ==== GeomorphologicUnitView*
 
-image::images/image106.png[GeomorphologicUnitView feature type.,width=318,height=397]Figure: 104: GeomorphologicUnitView feature type.
+.GeomorphologicUnitView feature type
+image::images/image106.png[GeomorphologicUnitView feature type.,width=318,height=397]
 
 GeomorphologicUnitView is a simplified view of a GeoSciML GeomorphologicUnit. In GeoSciML terms this will be in instance of a MappedFeature with key property values from the associated GeomorphologicUnit feature summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
@@ -4108,9 +4078,9 @@ GeomorphologicUnitView is a simplified view of a GeoSciML GeomorphologicUnit. In
 
 ===== Mapping*
 
-[width="100%",cols="^23%,^77%",options="header",]
+.Mapping of GeomporphologicUnitView properties to GeoSciML
+[width="100%",cols="^23%,^77%",options="header",align="left"]
 |===
-|*Table 13: Mapping of GeomporphologicUnitView properties to GeoSciML.* |
 |*Property* |*Mapping from GeomorphologicUnit*
 |*identifier* |identifier
 |*name* |specification:NaturalGeomorphologicFeature::name ^1^
@@ -4151,27 +4121,28 @@ GeologicEvent:NumericAge ^1^
 |*metadata++_++uri* |specification:GeologicUnit:metaDataProperty ^3^
 |*genericSymbolizer* |
 |*shape* |shape
-a|
+|===
+
 **^1^ In cases where multiple values are delivered for these elements in GeoSciML, data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
 
 **^3^ Use a **reference** or an identifier that can be used to reach a representation.**
 
-|
-|===
 
 ===== identifier*
 
 Globally unique identifier:Primitive::CharacterString shall uniquely identifies a tuple within the dataset and be formatted as an absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/geomorphologicunitview-identifier*
-|identifier SHOULD correspond to a representation of GeoSciML MappedFeature.
-|===
 
- 
+[[rec_gsml-lite_geomorphologicunitview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/geomorphologicunitview-identifier
+part:: identifier SHOULD correspond to a representation of GeoSciML MappedFeature.
+====
 
 If present, the URI should resolve to a representation that corresponds to an instance of GeoSciML MappedFeature.
 
@@ -4261,15 +4232,16 @@ A data provider can add an arbitrary number of extra properties, as long as the 
 
 ==== ShearDisplacementStructureView
 
-image::images/image107.png[ShearDisplacementStructureView feature type.,width=303,height=407]Figure: 105: ShearDisplacementStructureView feature type.
+.ShearDisplacementStructureView feature type
+image::images/image107.png[ShearDisplacementStructureView feature type.,width=303,height=407]
 
 ShearDisplacementStructureView is a simplified view of a GeoSciML ShearDisplacementStructure. In GeoSciML terms this will be an instance of a MappedFeature with key property values from the associated ShearDisplacementStructure feature summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
 ===== Mapping
 
-[width="100%",cols="^21%,^79%",options="header",]
+.Mapping of ShearDisplacementStructureView properties to GeoSciML
+[width="100%",cols="^21%,^79%",options="header",align="left"]
 |===
-|*Table 14: Mapping of ShearDisplacementStructureView properties to GeoSciML.* |
 |*Property* |*Mapping from MappedFeature*
 |*identifier* |identifier
 |*name* |specification:ShearDisplacementStructure::name ^1^
@@ -4294,27 +4266,28 @@ ShearDisplacementStructureView is a simplified view of a GeoSciML ShearDisplacem
 |*metadata++_++uri* |metadataProperty ^3^
 |*genericSymbolizer* |
 |*shape* |shape
-a|
+|===
+
 **^1^ In case where multiple values are delivered for these elements in GeoSciML, data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
 
 **^3^ Use a **reference** or an identifier that can be used to reach a representation.**
 
-|
-|===
-
- 
 
 ===== identifier
 
 Globally unique identifier:Primitive::CharacterString shall uniquely identifies a tuple within the dataset and be formatted as an absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/sheardisplacemenstructureview-identifier*
-|identifier SHOULD correspond to a representation of GeoSciML MappedFeature.
-|===
+
+[[rec_gsml-lite_sheardisplacemenstructureview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/sheardisplacemenstructureview-identifier
+part:: identifier SHOULD correspond to a representation of GeoSciML MappedFeature.
+====
 
 It should have the same value as the corresponding GeoSciML MappedFeature identifier if available.
 
@@ -4412,15 +4385,16 @@ A data provider can add an arbitrary number of extra properties, as long as the 
 
 ==== SiteObservationView
 
-image::images/image108.png[SiteObservationView feature type.,width=287,height=349]Figure: 106: SiteObservationView feature type.
+.SiteObservationView feature type
+image::images/image108.png[SiteObservationView feature type.,width=287,height=349]
 
 SiteObservationView is a simplified view of a generally point-located geological observation, like a structural measurement. This is a simplified instance of a sampling geometry from Observations & Measurements (ISO19156) with an associated geological observation. Each tuple should represent a single observation. Key property values are summarised as labels (unconstrained character strings) or arbitrarily selected classifiers to be used for thematic mapping purposes. The latter are the properties suffixed with “++_++uri” and will contain URIs referring to controlled concepts in published vocabularies.
 
 ===== Mapping
 
-[width="100%",cols="^34%,^66%",options="header",]
+.Mapping of SiteObservationView properties to Observations & Measurements
+[width="100%",cols="^34%,^66%",options="header",align="left"]
 |===
-|*Table 15: Mapping of SiteObservationView properties to Observations & Measurements.* |
 |*Property* |*Mapping from OM::OM++_++Observation*
 |*identifier* |identifier
 |*siteName* |SF++_++SamplingFeature::name ^1,4^
@@ -4440,7 +4414,8 @@ SiteObservationView is a simplified view of a generally point-located geological
 |*genericSymbolizer* |
 |*symbolRotation* |
 |*shape* |featureOfInterest:(…):GM++_++Object
-a|
+|===
+
 **^1^ In cases where multiple values are delivered for these elements in GeoSciML, data providers should **choose** one, or merge, or concatenate values into a representative single value for use in GeoSciML Lite**
 
 **^2^ Use an appropriate **human readable label** for the vocabulary**
@@ -4451,20 +4426,20 @@ a|
 
 *5 OM++_++Measurement::value type is any type and might or might not have a unit of measurement.  The property carrying depend of the result type.*
 
-|
-|===
 
 ===== identifier
 
 Globally unique identifier:Primitive::CharacterString shall uniquely identifies a tuple within the dataset and be formatted as an absolute URI conformant to RFC 3986.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/siteobservationview-identifier*
-|identifier SHOULD correspond to a representation of OM::OM++_++Observation .
-|===
 
- 
+[[rec_gsml-lite_siteobservationview-identifier]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsml-lite/siteobservationview-identifier
+part:: identifier SHOULD correspond to a representation of OM::OM_Observation.
+====
 
 The URI should resolve to an instance of OM++_++Observation.
 
@@ -4536,11 +4511,15 @@ If present, the property genericSymbolizer:Primitive::CharacterString contains a
 
 If present, the symbolRotation:Integer property contains an integer value between 0 and 359 to specify rotation of symbol at this location, e.g. rotation of a geologic strike and dip symbol to reflect the strike azimuth.  The angular convention shall be geographic angle (clockwise with 0 at geographic north pole, therefore 90 degree is east).
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4-lite/siteobservationview-symbolRotation*
-|If present, the symbolRotation SHALL be a value in the range ++[++0,360++[++.
-|===
+
+[[req_gsml-lite_siteobservationview-symbolRotation]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsml-lite/siteobservationview-symbolRotation
+part:: If present, the symbolRotation SHALL be a value in the range [0,360].
+====
 
 ===== shape
 
@@ -4556,338 +4535,227 @@ add or remove annexes after "A" as necessary
 [appendix]
 == Conformance Class Abstract Test Suite (Normative)
 
+=== GeoSciML Conceptual
 
-[width="100%",cols="10%,7%,83%",options="header",]
-|===
-|*A.1 Conformance class: GeoSciML Conceptual* | |
-|*/conf/gsml4-conceptual* | |
-|*Requirements* |req/gsml4-conceptual |
-|*Test* |*/conf/gsml4-conceptual/similarity* |
-| |*Requirement* |*/req/gsml4-conceptual/similarity*
-| |*Test purpose* |Ensure that the target logical model is compatible with the conceptual model.
-| |*Test method* |Determine semantic similarity between the logical model and conceptual model using an established method such as: (i) visual comparison of the UML diagrams, (ii) comparison of logical and conceptual components expressed in a common knowledge representation language such as first order logic, or (iii) comparison after mapping to a reference ontology.
-| |*Test type* |Capability
-|===
+[[conf_gsml-conceptual,/conf/gsml-conceptual]]
+.GeoSciML Conceptual
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-conceptual
+target:: /req/gsml-conceptual
 
- 
+abstract-test:: */conf/gsml-conceptual/similarity*
 
-[width="100%",cols="11%,9%,80%",options="header",]
-|===
-|*A.2.           Conformance class: GeoSciML Core Abstract* | |
-|/conf/gsml4-core | |
-|*Requirements* |/req/gsml4-core |
-|*Dependency* |Urn:iso:dis:iso:19156:clause:A.1.1 |
-|*Dependency* |RFC 3986 |
-|*Test* |*/conf/gsml4-core/uml-entity-name* |
-| |*Requirement* |/req/gsml4-core/uml-entity-name
-| |*Test purpose* |Ensure that the names used in the target implementation matches the names in the logical model
-| |*Test method* |Visual inspection that, when possible, name used in the target implementation matches the names in the logical model.
-| |*Test type* |
-|*Test* |*/conf/gsml4-core/uml-cardinality* |
-| |*Requirement* |/req/gsml4-core/uml-cardinality
-| |*Test purpose* |Ensure that the cardinalities of the properties are the same as the logical model
-| |*Test method* |Visually inspect the target implementation and validate that all properties have the same cardinality as the one expressed in the logical model.
-| |*Test type* |
-|*Test* |*/conf/gsml4-core/uml-abstract* |
-| |*Requirement* |/req/gsml4-core/uml-abstract
-| |*Test purpose* |Ensure that target implementation does not allow materialisation of abstract classes
-| |*Test method* |Visually inspect the target implementation and validate that no classifiers (Feature, Type or Datatype) marked as abstract can be materialised.
-| |*Test type* |Capability
-|*Test* |*/conf/gsml4-core/uml-polymorphism* |
-| |*Requirement* |/req/gsml4-core/uml-polymorphism
-| |*Test purpose* |Ensure that target implementation has mechanisms to allow type substitutions for property values.
-| |*Test method* |Visually check the target implementation accept all substitutable types for property values
-| |*Test type* |Capability
-|*Test* |*/conf/gsml4-core/quantities-uom* |
-| |*Requirement* |/req/gsml4-core/quantities-uom
-| |*Test purpose* |Ensure that quantities have a governed unit of measure
-| |*Test method* |Visually check that the target implementation has a mechanism to enforce a unit of measure from a governed source.
-| |*Test type* |Capability
-|*Test* |*/conf/gsml4-core/codelist* |
-| |*Requirement* |/req/gsml4-core/codelist
-| |*Test purpose* |Ensure that vocabulary terms are encode as URI according to RFC3986
-| |*Test method* |Visually check that the target implementation has a mechanism to enforce a unit of measure from a governed source.
-| |*Test type* |Capability
-|===
+====
 
- 
+=== GeoSciML Core Abstract
 
-[width="100%",cols="10%,7%,83%",options="header",]
-|===
-|*A.3.           Conformance class: GeoSciML Linked Open Data* | |
-|/conf/gsml4-core | |
-|*Requirements* |/req/gsml4-core |
-|*Dependency* |RFC 3986 |
-|*Test* |*/conf/gsml4-lod/codelistURI* |
-| |*Requirement* |/req/gsml4-lod/codelistURI
-| |*Test purpose* |Ensure that the implementation check that vocabulary terms are dereferenceable URI
-| |*Test method* |Visual inspection of the target implementation and check that it provides a mechanism to verify that URI are dereferenceable
-| |*Test type* |Capability
-|*Test* |*/conf/gsml4-lod/identifier* |
-| |*Requirement* |/req/gsml4-lod/identifier
-| |*Test purpose* |Ensure that the URI identifier can be dereferenced.
-| |*Test method* |Visually inspect the target implementation and check that it provides a mechanism to verify that the identifier can be dereferenced and return a representation of the resource assigned to the identifier
-| |*Test type* |Capability
-|*Test* |*/conf/gsml4-lod/byref* |
-| |*Requirement* |/req/gsml4-lod/byref
-| |*Test purpose* |Ensure that for properties that reference an external resource using a HTTP URI identifier, this URI is dereferenceable.
-| |*Test method* |Visual inspection of the target implementation and check that it provides a mechanism to verify that URI are dereferenceable
-| |*Test type* |Capability
-|===
+[[conf_gsml-core,/conf/gsml-core]]
+.GeoSciML Core Abstract
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-core
+target:: /req/gsml-core
 
- 
+inherit:: Urn:iso:dis:iso:19156:clause:A.1.1
 
-[width="100%",cols="10%,8%,82%",options="header",]
-|===
-|*A.4.           Conformance class: GeoSciML Basic Logical Model* | |
-|/conf/gsml4-basic | |
-|*Requirements* |/req/gsml4-basic |
-|*Dependency* |/conf/gsml4-core |
-|*Test* |/conf/gsml4-basic/geologicfeature-purpose |
-| |*Requirement* |/req/gsml4-basic/geologicfeature-purpose
-| |*Test purpose* |Ensure that the target implementation enforces the purpose property to be restricted to the values provided in Table 2 (instance, typicalNorm, definingNorm) of 8.4.1.1.2
-| |*Test method* |Visual inspection that the target implementation has a mechanism to limit the property value to those provided in Table 2
-| |*Test type* |
-|*Test* |/conf/gsml4-basic/geologicevent-non-null |
-| |*Requirement* |/req/gsml4-basic/geologicevent-non-null
-| |*Test purpose* |Ensure that a GeologicEvent instance has either a olderNamedAge or youngerNamedAge as a non-null value
-| |*Test method* |Visual inspection that the target implementation has a mechanism to prevent a GeologicEvent to have both olderNamedAge or youngerNamedAge equals to null.
-| |*Test type* |
-|*Test* |/conf/gsml4-basic/plane-pol-dip-az-not-null |
-| |*Requirement* |/req/gsml4-basic/plane-pol-dip-az-not-null
-| |*Test purpose* |Ensure that a GSML++_++PlanarOrientation instance has either polarity, azimuth or dip as a non-null value
-| |*Test method* |Visual inspection that the target implementation has a mechanism to prevent a GSML++_++PlanarOrientation to have all polarity, azimuth or dip equal to null.
-| |*Test type* |Capacity
-|*Test* |/conf/gsml4-basic/linear-trend-plunge-not-null |
-| |*Requirement* |/req/gsml4-basic/linear-trend-plunge-not-null
-| |*Test purpose* |Ensure that a GSML++_++LinearOrientation instance has either trend or plunge as a non-null value
-| |*Test method* |Visual inspection that the target implementation has a mechanism to prevent a GSML++_++LinearOrientation to have both trend and plunge equals to null.
-| |*Test type* |
-|*Test* |/conf/gsml4-basic/quantity-range-order |
-| |*Requirement* |/req/gsml4-basic/quantity-range-order
-| |*Test purpose* |Ensure that a GSML++_++QuantityRange lowerValue is less or equal to upperValue
-| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain lowerValue to be less or equal to upperValue.
-| |*Test type* |
-|*Test* |/conf/gsml4-basic/quantity-range-repeat |
-| |*Requirement* |/req/gsml4-basic/quantity-range-repeat
-| |*Test purpose* |Ensure that a GSML++_++QuantityRange lowerValue and upperValue matches the quantities in the “value” property
-| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain lowerValue to match value++[++0++]++ and upperValue to match value++[++1++]++
-| |*Test type* |
-|===
+inherit:: RFC 3986
 
- 
+abstract-test:: */conf/gsml-core/uml-entity-name*
 
- 
+abstract-test:: */conf/gsml-core/uml-cardinality*
 
-[width="100%",cols="10%,7%,83%",options="header",]
-|===
-|*A.5.           Conformance class: GeoSciML Extension Logical Model* | |
-|/conf/gsml4-extension | |
-|*Requirements* |/req/gsml4-extension |
-|*Dependency* |/conf/gsml4-basic |
-|*Test* |/conf/gsml4-extension/geologicfeature-history |
-| |*Requirement* |/req/gsml4-extension/geologicfeature-history
-| |*Test purpose* |Ensure that the target implementation restricts GeologicEvent describing the age of GeologicUnit to geologicHistory property
-| |*Test method* |Visual inspection that the target implementation has a mechanism to limit GeologicEvent describing age of GeologicFeature to geologicHistory.
-| |*Test type* |
-|*Test* |/conf/gsml4-extension/contact-chronoboundary |
-| |*Requirement* |/req/gsml4-extension/contact-chronoboundary
-| |*Test purpose* |Ensure that the target implementation restricts ContactDescription::correlatesWith value to an instance of GeochronologicBondary only when ContactDescription::contactType is ChronostratigraphicBoundary
-| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain the value of correlatesWith
-| |*Test type* |
-|*Test* |/conf/gsml4-extension/slipComponents-slip |
-| |*Requirement* |/req/gsml4-extension/slipComponents-slip
-| |*Test purpose* |Ensure that a slipComponent has at least one of heave, horizontalSlip or throw as a non-null
-| |*Test method* |Visual inspection that the target implementation has a mechanism to constrain on of heave, horizontalSlip or throw to be non-null
-| |*Test type* |
-|===
+abstract-test:: */conf/gsml-core/uml-abstract*
 
- 
+abstract-test:: */conf/gsml-core/uml-polymorphism*
 
- 
+abstract-test:: */conf/gsml-core/quantities-uom*
 
-[width="100%",cols="10%,7%,83%",options="header",]
-|===
-|*A.6.           Conformance class: GeoSciML Timescale Logical Model* | |
-|/conf/gsml4-timescale | |
-|*Requirements* |/req/gsml4-timescale |
-|*Dependency* |/conf/gsml4-basic |
-|*Test* |/conf/gsml4-timescale/start |
-| |*Requirement* |/req/gsml4-timescale/start
-| |*Test purpose* |Ensure that the start TimeOrdinalEraBoundary is older that the end TimeOrdinalBoundaryEra
-| |*Test method* |Visual inspection that the target implementation has a mechanism to check that the age of the start TimeOrdinalEraBoundary is older than the age of the “end” TimeOrdinalEraBoundary
-| |*Test type* |
-|===
+abstract-test:: */conf/gsml-core/codelist*
 
- 
+====
 
- 
+=== GeoSciML Linked Open Data
 
-[width="100%",cols="9%,8%,83%",options="header",]
-|===
-|*A.7.           Conformance class: GeoSciML Borehole Logical Model* | |
-|/conf/gsml4-borehole | |
-|*Requirements* |/req/gsml4-borehole |
-|*Dependency* |/conf/gsml4-basic |
-|*Dependency* |ISO 19156 Annex A |
-|*Test* |/conf/gsml4-borehole/value-intervalBegin |
-| |*Requirement* |/req/gsml4-borehole/value-intervalBegin
-| |*Test purpose* |Ensure that the target implementation enforces the DillingDetails::intervalBegin value is less or equal to DillingDetails::intervalEnd
-| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure that DillingDetails::intervalBegin is less or equal to . DillingDetails::intervalEnd
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/drill-interval-1D |
-| |*Requirement* |/req/gsml4-borehole/drill-interval-1D
-| |*Test purpose* |Ensure that the target implementation enforces the presence a 1D geometry for DrillingDetails::interval
-| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure DrillingDetails::interval is a 1D geometry
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/drill-interval-1D-CRS |
-| |*Requirement* |/req/gsml4-borehole/drill-interval-1D-CRS
-| |*Test purpose* |Ensure that the target implementation enforces DillingDetails::intervalEnd geometries CRS to be a valid vertical datum
-| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure that DillingDetails::intervalEnd datum is a valid vertical datum.
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/value-mappedIntervalBegin |
-| |*Requirement* |/req/gsml4-borehole/value-mappedIntervalBegin
-| |*Test purpose* |Ensure that the target implementation enforces the BoreholeInterval::mappedIntervalBegin value is less or equal to BoreholeInterval::mappedIntervalEnd
-| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure that BoreholeInterval::mappedIntervalBegin is less or equal to  BoreholeInterval::mappedIntervalEnd
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/interval-1D |
-| |*Requirement* |/req/gsml4-borehole/interval-1D
-| |*Test purpose* |Ensure that the target implementation enforces the presence a GM++_++LineString geometry composed of  a pair of 1D coordinates for BoreholeInterval::shape
-| |*Test method* |Visual inspection that the target implementation has a mechanism to ensure BoreholeInterval::shape is a GM++_++LineString composed of a pair of 1D coordinates.
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/interval-1D-CRS |
-| |*Requirement* |/req/gsml4-borehole/interval-1D-CRS
-| |*Test purpose* |Ensure that the target implementation constrain the CRS to a relevant vertical datum
-| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain the CRS to a 1D vertical datum.
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/borehole-position-null |
-| |*Requirement* |/req/gsml4-borehole/borehole-position-null
-| |*Test purpose* |Ensure that the target implementation enforce a OGC nil when there are no GM++_++Point available
-| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain either a GM++_++Point or a OGC nil marker.
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/borehole-elevation-dim |
-| |*Requirement* |/req/gsml4-borehole/borehole-elevation-dim
-| |*Test purpose* |Ensure that the target implementation enforces that the OriginPosition::elevation has a dimension of 1
-| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain OriginPosition::elevation coordinate to have a single dimension
-| |*Test type* |
-|*Test* |/conf/gsml4-borehole/borehole-elevation-CRS |
-| |*Requirement* |/req/gsml4-borehole/borehole-elevation-CRS
-| |*Test purpose* |Ensure that the target implementation enforces the Origin::elevation geometry CRS to be a valid 1D vertical datum
-| |*Test method* |Visual inspection to check that the target implementation has a mechanism to constrain OriginPosition::elevation CRS to a value in the range EPSG:5600 to EPSG:5799
-| |*Test type* |
-|===
+[[conf_gsml-lod,/conf/gsml-lod]]
+.GeoSciML Linked Open Data
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-lod
+target:: /req/gsml-lod
 
- 
+inherit:: RFC 3986
 
- 
+abstract-test:: */conf/gsml-lod/codelistURI*
 
-[width="100%",cols="10%,9%,81%",options="header",]
-|===
-|*A.8.           Conformance class: GeoSciML LaboratoryAnalysis-Specimen Logical Model* | |
-|/conf/gsml4-lab-analysis | |
-|*Requirements* |/req/gsml4-lab-analysis |
-|*Dependency* |/conf/gsml4-basic |
-|*Dependency* |ISO 19156 Annex A |
-|*Test* |/conf/gsml4-lab-analysis/sampledFeature |
-| |*Requirement* |/req/gsml4-lab-analysis/sampledFeature
-| |*Test purpose* |Ensure that the SF++_++SamplingFeature::sampledFeature is not an instance of SF++_++SamplingFeature
-| |*Test method* |Verify that the target implementation has a mechanism to prevent sampledFeature target to be an instance of SF++_++SamplingFeature or any of its subtypes.
-| |*Test type* |
-|*Test* |/conf/ gsml4-lab-analysis/accuracy-measure |
-| |*Requirement* |/req/gsml4-lab-analysis/accuracy-measure
-| |*Test purpose* |Ensure that DQ++_++Element::nameOfMeasure and ::result are not null
-| |*Test method* |Verify that the target implementation has a mechanism to enforce a non-null value for DQ++_++Element::nameOfMeasure and DQ++_++Element::result
-| |*Test type* |
-|*Test* |/conf/gsml4-lab-analysis/accuracy-vocabulary |
-| |*Requirement* |/req/gsml4-lab-analysis/accuracy-vocabulary
-| |*Test purpose* |Ensure that nameOfMeasure is a term from a controlled vocabulary
-| |*Test method* |Visually check target implementation for the presence of the mechanism that verifies that the nameOfMeasure is a term from a controlled vocabulary
-| |*Test type* |
-|===
+abstract-test:: */conf/gsml-lod/identifier*
 
- 
+abstract-test:: */conf/gsml-lod/byref*
 
- 
+====
 
-[width="100%",cols="12%,9%,79%",options="header",]
-|===
-|*A.9.           Conformance class: GeoSciML Lite Logical* | |
-|/conf/gsml4-lite | |
-|*Requirements* |/req/gsml4-lite |
-|*Dependency* |/conf/gsml4-core |
-|*Test* |/conf/gsml4-lite/geomtype |
-| |*Requirement* |/req/gsml4-lite/geomtype
-| |*Test purpose* |Ensure that the target implementation only allow a single geometry per instance
-| |*Test method* |Visual inspection that the target implementation has a mechanism to limit a single geometry per instance
-| |*Test type* |
-|*Test* |*/conf/gsml4-lite/string* |
-| |*Requirement* |/req/gsml4-lite/string
-| |*Test purpose* |Ensure that human readable strings are allowed in all properties of type CharacterString
-| |*Test method* |Visual inspection that the target implementation does not prevent human readable string (by ensuring that property data types are used)
-| |*Test type* |
-|*Test* |*/conf/gsml4-lite/datetime* |
-| |*Requirement* |/req/gsml4-lite/datetime
-| |*Test purpose* |Ensure that all representation of date and time uses ISO8601
-| |*Test method* |Visual inspection that the target implementation has mechanism or rules to enforce the usage of ISO8601 date and time
-| |*Test type* |
-|*Test* |*/conf/gsml4-lite/uri* |
-| |*Requirement* |/req/gsml4-lite/uri
-| |*Test purpose* |Ensure that all properties ending in URI contain a URI
-| |*Test method* |Check that the target implementation enforces the content to RFC 3986
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**user-defined |
-| |*Requirement* |/req/gsml4-lite/user-defined
-| |*Test purpose* |Ensure that user defined properties conform to GML Simple Feature Level 0
-| |*Test method* |Check that the target implementation enforces user defined properties to be conform to GML Simple Feature Level 0
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**identifier-unique |
-| |*Requirement* |/req/gsml4-lite/identifier-unique
-| |*Test purpose* |Ensure that the identifier is unique for the dataset
-| |*Test method* |Check that the target implementation implement a unique key constrain or mechanism to ensure that identifier property is unique.
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**identifier-uri |
-| |*Requirement* |/req/gsml4-lite/identifier-uri
-| |*Test purpose* |Ensure that the identifier field is formatted as a URI
-| |*Test method* |Check that the target implementation implement a formatting constraint on the identifier field that check its compliance to RFC3986
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeLithology |
-| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeLithology
-| |*Test purpose* |Ensure that the geologic unit view representative lithology come from a controlled vocabulary
-| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeAge |
-| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeAge
-| |*Test purpose* |Ensure that the geologic unit view representative age come from a controlled vocabulary
-| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeOlderAge |
-| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeOlderAge
-| |*Test purpose* |Ensure that the geologic unit view representative older age come from a controlled vocabulary
-| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**geologicunitview-representativeYoungerAge |
-| |*Requirement* |/req/gsml4-lite/geologicunitview-representativeYoungerAge
-| |*Test purpose* |Ensure that the geologic unit view representative older age come from a controlled vocabulary
-| |*Test method* |Check that the target implementation implements a mechanism to ensure that the term comes from a controlled vocabulary
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**boreholeview-elevation-srs |
-| |*Requirement* |/req/gsml4-lite/boreholeview-elevation-srs
-| |*Test purpose* |Ensure that the elevation is using a valid SRS
-| |*Test method* |Check that the target implementation implements a proper CRS reference to a EPSG vertical datum
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**contactview-contacttype |
-| |*Requirement* |/req/gsml4-lite/contactview-contacttype
-| |*Test purpose* |Ensure that the contact’s contact type come from a controlled vocabulary
-| |*Test method* |Check that the target implementation implements mechanism to ensure that the term comes from a controlled vocabulary.
-| |*Test type* |
-|*Test* |**/conf/gsml4-lite/**siteobservationview-symbolRotation |
-| |*Requirement* |/req/gsml4-lite/siteobservationview-symbolRotation
-| |*Test purpose* |Ensure that the symbol rotation is the range ++[++0,360++[++
-| |*Test method* |Check that the target implementation implements mechanism to ensure that the rotation is in the range ++[++0,360++[++
-| |*Test type* |
-|===
+=== GeoSciML Basic Logical Model
 
- 
+[[conf_gsml-basic,/conf/gsml-basic]]
+.GeoSciML Basic Logical Model
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-basic
+target:: /req/gsml-basic
+
+inherit:: /conf/gsml-core
+
+abstract-test:: /conf/gsml-basic/geologicfeature-purpose
+
+abstract-test:: /conf/gsml-basic/geologicevent-non-null
+
+abstract-test:: /conf/gsml-basic/plane-pol-dip-az-not-null
+
+abstract-test:: /conf/gsml-basic/linear-trend-plunge-not-null
+
+abstract-test:: /conf/gsml-basic/quantity-range-order
+
+abstract-test:: /conf/gsml-basic/quantity-range-repeat
+
+====
+
+=== GeoSciML Extension Logical Model
+
+[[conf_gsml-extension,/conf/gsml-extension]]
+.GeoSciML Extension Logical Model
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-extension
+target:: /req/gsml-extension
+
+inherit:: /conf/gsml-basic
+
+abstract-test:: /conf/gsml-extension/geologicfeature-history
+
+abstract-test:: /conf/gsml-extension/contact-chronoboundary
+
+abstract-test:: /conf/gsml-extension/slipComponents-slip
+
+====
+
+=== GeoSciML Timescale Logical Model
+
+[[conf_gsml-timescale,/conf/gsml-timescale]]
+.GeoSciML Timescale Logical Model
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-timescale
+target:: /req/gsml-timescale
+
+inherit:: /conf/gsml-basic
+
+abstract-test:: /conf/gsml-timescale/start
+
+====
+
+=== GeoSciML Borehole Logical Model
+
+[[conf_gsml-borehole,/conf/gsml-borehole]]
+.GeoSciML Borehole Logical Model
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-borehole
+target:: /req/gsml-borehole
+
+inherit:: /conf/gsml-basic
+
+inherit:: ISO 19156 Annex A
+
+abstract-test:: /conf/gsml-borehole/value-intervalBegin
+
+abstract-test:: /conf/gsml-borehole/drill-interval-1D
+
+abstract-test:: /conf/gsml-borehole/drill-interval-1D-CRS
+
+abstract-test:: /conf/gsml-borehole/value-mappedIntervalBegin
+
+abstract-test:: /conf/gsml-borehole/interval-1D
+
+abstract-test:: /conf/gsml-borehole/interval-1D-CRS
+
+abstract-test:: /conf/gsml-borehole/borehole-position-null
+
+abstract-test:: /conf/gsml-borehole/borehole-elevation-dim
+
+abstract-test:: /conf/gsml-borehole/borehole-elevation-CRS
+
+====
+
+=== GeoSciML LaboratoryAnalysis-Specimen Logical Model
+
+[[conf_gsml-lab-analysis,/conf/gsml-lab-analysis]]
+.GeoSciML LaboratoryAnalysis-Specimen Logical Model
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-lab-analysis
+target:: /req/gsml-lab-analysis
+
+inherit:: /conf/gsml-basic
+
+inherit:: ISO 19156 Annex A
+
+abstract-test:: /conf/gsml-lab-analysis/sampledFeature
+
+abstract-test:: /conf/ gsml-lab-analysis/accuracy-measure
+
+abstract-test:: /conf/gsml-lab-analysis/accuracy-vocabulary
+
+====
+
+=== GeoSciML Lite Logical
+
+[[conf_gsml-lite,/conf/gsml-lite]]
+.GeoSciML Lite Logical
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsml-lite
+target:: /req/gsml-lite
+
+inherit:: /conf/gsml-core
+
+abstract-test:: /conf/gsml-lite/geomtype
+
+abstract-test:: */conf/gsml-lite/string*
+
+abstract-test:: */conf/gsml-lite/datetime*
+
+abstract-test:: */conf/gsml-lite/uri*
+
+abstract-test:: **/conf/gsml-lite/**user-defined
+
+abstract-test:: **/conf/gsml-lite/**identifier-unique
+
+abstract-test:: **/conf/gsml-lite/**identifier-uri
+
+abstract-test:: **/conf/gsml-lite/**geologicunitview-representativeLithology
+
+abstract-test:: **/conf/gsml-lite/**geologicunitview-representativeAge
+
+abstract-test:: **/conf/gsml-lite/**geologicunitview-representativeOlderAge
+
+abstract-test:: **/conf/gsml-lite/**geologicunitview-representativeYoungerAge
+
+abstract-test:: **/conf/gsml-lite/**boreholeview-elevation-srs
+
+abstract-test:: **/conf/gsml-lite/**contactview-contacttype
+
+abstract-test:: **/conf/gsml-lite/**siteobservationview-symbolRotation
+
+====
 
 [appendix,obligation="informative"]
 == Abbreviations and Acronyms
