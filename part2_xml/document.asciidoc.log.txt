@@ -1,0 +1,1000 @@
+= DRAFT OGC Geoscience Markup Language (GeoSciML) - Part 2: XML Encoding
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+:docnumber: YY-999
+:received-date: 2029-03-30
+:issued-date: 2029-03-30
+:published-date: 2029-03-30
+:fullname: Editor One
+:fullname_2: Editor Two
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, API, openapi, html
+:submitting-organizations: Organization One; Organization Two
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+
+////
+NOTE: Uncomment ISO section if necessary
+
+*ISO Declaration*
+
+ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO member bodies). The work of preparing International Standards is normally carried out through ISO technical committees. Each member body interested in a subject for which a technical committee has been established has the right to be represented on that committee. International organizations, governmental and non-governmental, in liaison with ISO, also take part in the work. ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of electrotechnical standardization.
+
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2.
+
+The main task of technical committees is to prepare International Standards. Draft International Standards adopted by the technical committees are circulated to the member bodies for voting. Publication as an International Standard requires approval by at least 75 % of the member bodies casting a vote.
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
+////
+
+[abstract]
+== Abstract
+
+<Insert Abstract Text here>
+
+== Preface
+
+<Insert Preface Text here>
+
+== Security considerations
+
+//If no security considerations have been made for this Standard, use the following text.
+
+No security considerations have been made for this Standard.
+
+////
+If security considerations have been made for this Standard, follow the examples found in IANA or IETF documents. Please see the following example.
+“VRRP is designed for a range of internetworking environments that may employ different security policies. The protocol includes several authentication methods ranging from no authentication, simple clear text passwords, and strong authentication using IP Authentication with MD5 HMAC. The details on each approach including possible attacks and recommended environments follows.
+Independent of any authentication type VRRP includes a mechanism (setting TTL=255, checking on receipt) that protects against VRRP packets being injected from another remote network. This limits most vulnerabilities to local attacks.
+NOTE: The security measures discussed in the following sections only provide various kinds of authentication. No confidentiality is provided at all. This should be explicitly described as outside the scope....”
+////
+
+
+
+== Submitters
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+|*Name* |*Affiliation*
+| |
+|===
+
+== Contributors
+
+//This clause is optional.
+
+Additional contributors to this Standard include the following:
+
+Individual name(s), Organization
+
+== Scope
+[NOTE]
+====
+Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.
+====
+
+== Conformance
+This standard defines XXXX.
+
+Requirements for N standardization target types are considered:
+
+* AAAA
+* BBBB
+
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+
+In order to conform to this OGC® interface standard, a software implementation shall choose to implement:
+
+* Any one of the conformance levels specified in Annex A (normative).
+* Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).
+
+All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
+
+[bibliography]
+== References
+
+The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
+
+[NOTE]
+====
+Insert References here. If there are no references, leave this section empty.
+
+References are to follow the Springer LNCS style, with the exception that optional information may be appended to references: DOIs are added after the date and web resource references may include an access date at the end of the reference in parentheses. See examples from Springer and OGC below.
+====
+
+* [[[Smith81,Identification of Common Molecular Subsequences]]],
+_Identification of Common Molecular Subsequences_.
+Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195–197 (1981)
+
+* [[[May06,ZIB Structure Prediction Pipeline]]],
+_ZIB Structure Prediction Pipeline: Composing a Complex Biological Workflow through Web Services_.
+May, P., Ehrlich, H.C., Steinke, T. In: Nagel, W.E., Walter,
+W.V., Lehner, W. (eds.) Euro-Par 2006. LNCS, vol. 4128, pp. 1148–1158. Springer,
+Heidelberg (2006)
+
+* [[[Grid,The Grid]]], _The Grid: Blueprint for a New Computing Infrastructure._,
+Foster, I., Kesselman, C.. Morgan Kaufmann, San Francisco (1999).
+
+* [[[Czajkowski01,Grid Information Services for Distributed Resource Sharing]]],
+_Grid Information Services for Distributed Resource Sharing._
+Czajkowski, K., Fitzgerald, S., Foster, I., Kesselman, C. In: 10th IEEE International Symposium on High
+Performance Distributed Computing, pp. 181–184. IEEE Press, New York (2001)
+
+* [[[Foster02,The Physiology of the Grid]]],
+_The Physiology of the Grid: an Open Grid Services Architecture for Distributed Systems Integration._
+Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Forum (2002)
+
+* [[[NCBI,NCBI]]], _National Center for Biotechnology Information_, link:++http://www.ncbi.nlm.nih.gov++[]
+
+* [[[ISO19101-1,ISO 19101-1:2014]]], Geographic information -- Reference model -- Part 1: Fundamentals
+
+* [[[ISO19115-1,ISO 19115-1:2014]]], _Geographic information -- Metadata -- Part 1: Fundamentals_
+
+* [[[ISO19157,ISO 19157:2013]]], _Geographic information -- Data quality_
+
+* [[[ISO19139,ISO 19139:2007]]], _Geographic information -- Metadata -- XML schema implementation_
+
+* [[[ISO19115-3,ISO 19115-3]]], _Geographic information -- Metadata -- Part 3: XML schemas_ (2016)
+
+* [[[OGC15-097,OGC 15-097]]], _OGC Geospatial User Feedback Standard: Conceptual Model_ (2016)
+
+* [[[OGC12-019,OGC 12-019]]], _OGC City Geography Markup Language (CityGML) Encoding Standard_ (2012)
+
+* [[[OGC14-005r3,OGC 14-005r3]]], _OGC IndoorGML_ (2014)
+
+* [[[OGC06121r9,OGC 06-121r9]]], _OGC Web Service Common Implementation Specification_, April 7, 2010. link:++http://portal.opengeospatial.org/files/?artifact_id=38867++[]
+
+== Terms and definitions
+
+This document uses the terms defined in OGC Policy Directive 49, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "`shall`" (not "`must`") is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+
+For the purposes of this document, the following additional terms and definitions apply.
+
+=== example term
+
+term used for exemplary purposes
+
+[.source]
+<<ISO19101-1>>
+
+NOTE: An example note.
+
+[example]
+Here's an example of an example term.
+
+== Conventions
+
+This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+
+=== Identifiers
+The normative provisions in this standard are denoted by the URI
+
+`http://www.opengis.net/spec/{standard}/{m.n}`
+
+All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
+
+== XML Encoding Requirement classes (Normative)
+
+XSD schemas were derived from the UML model following GML 3.3 encoding (OGC ISO19136-2, OGC 10-129r1) that extends and supersedes some of ISO 19136-2007, specifically clauses 11 (CodeType encoding) and 12.3 (Association encoding)
+
+.XML Encoding requirements classes dependencies (external dependencies not shown)
+image:images/image109.png[width=601,height=256]
+
+The normative artefacts for XML encoding are the W3C XSD documents and W3C schematron SCH documents provided online with this specification.  Those documents explicitly provide the requirements that must be met by any XML instance claiming compliance to this specification.  Any requirements that cannot be expressed in XSD or SCH are described in the relevant XML encoding section of this document.  Therefore, compliant XML instances shall
+
+[arabic]
+.   validate with XSD schemas,
+.   pass schematron rules and then
+.   pass compliance tests listed in relevant compliance sections.
+
+=== Prefixes used in examples
+
+For brevity in XML examples, namespace declarations might be omitted.  Throughout this document, the following namespace mappings will be assumed:
+
+//Table 16 in original
+
+.Default prefix mapping for xml snippets
+[width="100%",cols="^15%,^85%",options="header",]
+|===
+|*Prefix* |*Namespace URI*
+|*cit* |http://standards.iso.org/iso/19115/-3/cit/1.0[[.underline]#http://standards.iso.org/iso/19115/-3/cit/1.0#]
+|*cv* |http://www.opengis.net/cv/0.2/gml32[[.underline]#http://www.opengis.net/cv/0.2/gml32#]
+|*gco* |http://www.isotc211.org/2005/gco[[.underline]#http://www.isotc211.org/2005/gco#]
+|*gmd* |http://www.isotc211.org/2005/gmd[[.underline]#http://www.isotc211.org/2005/gmd#]
+|*gml* |http://www.opengis.net/gml/3.2[[.underline]#http://www.opengis.net/gml/3.2#]
+|*gmlr* |http://www.opengis.net/gml/3.3/lr[[.underline]#http://www.opengis.net/gml/3.3/lr#]
+|*gmlexr* |http://www.opengis.net/gml/3.3/exr[[.underline]#http://www.opengis.net/gml/3.3/exr#]
+|*gsmlb* |http://www.opengis.net/gsml/4.1/GeoSciML-Basic[[.underline]#http://www.opengis.net/gsml/4.1/GeoSciML-Basic#]
+|*gsmlbh* |http://www.opengis.net/gsml/4.1/Borehole[[.underline]#http://www.opengis.net/gsml/4.1/Borehole#]
+|*gsmle* |http://www.opengis.net/gsml/4.1/GeoSciML-Extension[[.underline]#http://www.opengis.net/gsml/4.1/GeoSciML-Extension#]
+|*gsmlgt* |http://www.opengis.net/gsml/4.1/GeologicTime[[.underline]#http://www.opengis.net/gsml/4.1/GeologicTime#]
+|*gsmlla* |http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen[[.underline]#http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen#]
+|*gsmlp* |http://www.opengis.net/gsml/4.1/Geosciml-Lite[[.underline]#http://www.opengis.net/gsml/4.1/Geosciml-Lite#]
+|*mrl* |http://standards.iso.org/iso/19115/-3/mrl/1.0[[.underline]#http://standards.iso.org/iso/19115/-3/mrl/1.0#]
+|*om* |http://www.opengis.net/om/2.0[[.underline]#http://www.opengis.net/om/2.0#]
+|*sam* |http://www.opengis.net/sampling/2.0[[.underline]#http://www.opengis.net/sampling/2.0#]
+|*sams* |http://www.opengis.net/samplingSpatial/2.0[[.underline]#http://www.opengis.net/samplingSpatial/2.0#]
+|*spec* |http://www.opengis.net/samplingSpecimen/2.0[[.underline]#http://www.opengis.net/samplingSpecimen/2.0#]
+|*swe* |http://www.opengis.net/swe/2.0[[.underline]#http://www.opengis.net/swe/2.0#]
+|*wfs* |http://www.opengis.net/wfs/2.0[[.underline]#http://www.opengis.net/wfs/2.0#]
+|*xlink* |http://www.w3.org/1999/xlink[[.underline]#http://www.w3.org/1999/xlink#]
+|===
+
+Also to improve readability, the following XML entities are used in instance examples.
+
+[%unnumbered%]
+[source,xml]
+----
+<!ENTITY guid “http://www.ietf.org/rfc/rfc2616”>
+<!ENTITY resource " http://resource.geosciml.org">
+<!ENTITY nil “http://www.opengis.net/def/nil/OGC/0/unknown”>
+]>
+----
+
+=== GeoSciML Core XML Abstract Requirements Class (Normative)
+
+
+[[req_class_gsmlxsd_core]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Core XML'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-core++[]
+subject:: Data instance
+inherit:: Web API
+inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-core++[]
+inherit:: W3C XML Schema Definition Language 1.1
+inherit:: ISO19118 Encoding
+inherit:: ISO 19136:2007 Geography Markup Language (GML)
+inherit:: ISO19136-2:2015 Geography Markup Language (GML)  Part 2: Extended schemas and encoding rules
+inherit:: OMXML link:++http://www.opengis.net/doc/IS/OMXML/2.0++[]
+inherit:: SWE Common 2.0 08-094r1 Clause 8
+inherit:: ISO19115-3 encoding (preliminary)
+requirement:: /req/gsmlxsd/xsd
+requirement:: /req/gsmlxsd/sch
+requirement:: /req/gsmlxsd/codelist
+requirement:: /req/gsmlxsd/time-zone
+recommendation:: /rec/gsmlxsd/identifier-uri
+recommendation:: /rec/gsmlxsd/iso8601-time
+====
+
+
+
+This requirements class is shared by all GML/XML GeoSciML instances.
+
+
+==== XML document validation*
+
+An XML instance shall validate to both the XSD and schematron rules provided by this specification for each of the XML requirements classes.
+
+
+[[req_gsmlxsd_xsd]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd/xsd
+part:: An XML instance SHALL validate against XSD schema.
+====
+ 
+
+
+[[req_gsmlxsd_sch]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd/sch
+part:: An XML instance SHALL pass schematron rules.
+====
+
+==== CodeList
+
+Open code lists (see 8.2.7) are encoded as gml:ReferenceType which is a sequence of gml:OwnershipAttributeGroup and gml:AssociationAttributeGroup, providing a series of xml attributes from W3C XLINK (link:++http://www.w3.org/TR/xlink11/++[[.underline]#http://www.w3.org/TR/xlink11/#]).  A vocabulary term reference has mandatory xlink:href and xlink:title attributes.
+
+[%unnumbered%]
+[source,xml]
+----
+<gsmlb:lithology link:href="http://resource.geosciml.org/ classifier/cgi/lithology/granite" xlink:title="granite"/>
+----
+
+The xlink:href contains an absolute HTTP URI that should resolve to a resource representation (often a SKOS document).  The resource can have multiple representations and it is not guaranteed that an XML parsable document can be obtained from the vocabulary service.
+
+
+[[req_gsmlxsd_codelist]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd/codelist
+part:: Vocabulary term SHALL be encoded with HTTP URI in xlink:href and provide a human readable description in xlink:title.
+====
+
+==== Identifiers
+
+The GeoSciML community has developed a best practice of using link:++http://www.ietf.org/rfc/rfc2616++[[.underline]#http://www.ietf.org/rfc/rfc2616#] as a codespace for string with authority to designate string that are resolvable HTTP URI.
+
+gml:identifier’s flagged with the specific codeSpace “http://www.ietf.org/rfc/rfc2616” should be resolvable HTTP URI that return an instance of itself.
+
+
+[[rec_gsmlxsd_identifier_uri]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsmlxsd/identifier-uri
+part:: Feature identifiers (unique name) provided in gml:identifier and @codeSpace = “http://www.ietf.org/rfc/rfc2616” SHOULD be URI of resource using Linked Open Data principles.
+====
+
+[%unnumbered%]
+[source,xml]
+----
+<gml:identifier
+    codeSpace="http://www.ietf.org/rfc/rfc2616/">
+       http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947</gml:identifier>
+----
+
+
+Resolving link:++http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947++[[.underline]#http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947#] shall return:
+
+
+[%unnumbered%]
+[source,xml]
+----
+<gsmlb:GeologicUnit gml:id=“G1”>
+(…)
+<gml:identifier codeSpace="
+    http://www.ietf.org/rfc/rfc2616/">
+       http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947</gml:identifier>
+(…)
+</gsmlb:GeologicUnit>
+
+----
+
+
+==== Nillables or Voidables
+
+A nillable property (identified as “voidable” in the UML model) is a property than can document the reason that a value is not provided.  There are two ways to identify a nil value.
+
+* Using XSD xsi:nil=”true” and nilReason.  Where available, this encoding method should be used to indicate nilled property values.
+* Using a HTTP URI identifier defined by a community as representing a null value.  OGC uses link:++http://www.opengis.net/def/nil/OGC/0/%7bnilReason%7d++[[.underline]#http://www.opengis.net/def/nil/OGC/0/++{++nilReason}#] (OGC 12-110).
+
+==== Date encoding
+
+The date-time values shall conform to ISO 8601 standards.  Although this is already a GML 3.2 encoding rule (clause 14.2.2.7), this format should also be used in any string that should contain a date, or date and time.
+
+
+[[rec_gsmlxsd_iso8601_time]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsmlxsd/iso8601-time
+part:: All date-time occurrences SHOULD be encoded using ISO8601 extended time format.
+====
+
+Note that this precludes the use of time-coordinate systems such as UNIX time. This is specified in order to be maximally consistent with TimeSeriesML requirements.
+
+The time zone shall be included in the time element.
+
+
+[[req_gsmlxsd_time_zone]]
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd/time-zone
+part:: The value of each time element SHALL include a time zone definition using a signed 4 digit character or a ‘Z’ to represent Zulu or Greenwich Mean Time (GMT). This is defined by the following regular expression:
++
+(Z{vbar}++[++{plus}-++]++HH:MM).
+
+====
+
+Greenwich Mean Time (GMT or Zulu)
+
+
+[%unnumbered%]
+[source,xml]
+---
+<om:phenomenonTime>
+  <gml:TimeInstant gml:id="ti.1">
+         <gml:timePosition>1981-09-12T00:00:00Z</gml:timePosition>
+  </gml:TimeInstant>
+</om:phenomenonTime>
+---
+
+Time Zone (example is Newfoundland time zone -3:30)
+
+[%unnumbered%]
+[source,xml]
+---
+<om:phenomenonTime>
+  <gml:TimeInstant gml:id="ti.2">
+         <gml:timePosition>1981-09-12T00:00:00-03:30</gml:timePosition>
+  </gml:TimeInstant>
+</om:phenomenonTime>
+---
+
+
+=== GeoSciML Basic XML Requirements Class (Normative)
+
+
+
+[width="100%",cols="11%,89%",options="header",]
+|===
+|*Requirements Class* |
+|/req/gsml4xsd-basic |
+|*Target type* |Data instance
+|*Dependency* |/req/gsml4-basic
+|*Dependency* |/req/gsml4xsd-core
+|*Requirement* a|
+/req/gsml4xsd-basic/xsd
+
+An XML instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[]
+
+|*Requirement* a|
+/req/gsml4xsd-basic/sch
+
+An XML instance document shall pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[].
+
+|===
+
+[[req_class_gsmlxsd-basic]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Basic XML'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-basic++[]
+subject:: Data instance
+inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-basic++[]
+inherit:: /req/gsmlxsd-core
+requirement:: /req/gsmlxsd-basic/xsd
+requirement:: /req/gsmlxsd-basic/sch
+====
+
+
+
+All the elements from the basic package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd#]
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-basic/xsd*
+|An XML instance document SHALL validate with schema located at  link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[].
+|===
+
+[[req_gsmlxsd_basic_xsd]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-basic/xsd
+part:: An XML instance document SHALL validate with schema located at  link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[].
+====
+
+All the elements from basic package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch#].
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-basic/sch*
+|An XML instance document SHALL pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[].
+|===
+
+[[req_gsmlxsd_basic_sch]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-basic/sch
+part:: An XML instance document SHALL pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[].
+====
+
+Some properties links to stub property blocks (see 5.1) whose values are empty abstract classes in the GeoSciML Basic package.  Since abstract description classes are DataType, the property is inline only and therefore an empty property is not schema valid.
+
+ 
+
+This instance is *not* XSD valid:
+
+[%unnumbered%]
+[source,xml]
+----
+<?xml version=“1.0” encoding=“UTF-8”?>
+<GeologicUnit xmlns="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+     xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="x1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.geosciml.org/GeoSciML-Basic/4.1
+     http://schemas.geosciml.org/geosciml/4.1/geoSciMLBasic.xsd">
+…
+         <gbMaterialDescription></gbMaterialDescription>
+      …
+</GeologicUnit>
+----
+
+==== relatedFeature
+
+In GeoSciML Basic, relatedFeature is byReference only.  AbstractFeatureRelation subtypes are materialized in Extension package.
+
+===  GeoSciML Extension XML Requirements Class (Normative)
+
+[[req_class_gsmlxsd_extension]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Extension XML'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-extension++[]
+subject:: Data instance
+inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-extension++[]
+inherit:: /req/gsmlxsd-basic
+inherit:: /req/gsmlxsd-geologictime
+requirement:: /req/gsmlxsd-extension/xsd
+requirement:: /req/gsmlxsd-extension/sch
+====
+
+
+
+All the elements from the GeoSciML Extension package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd#].
+
+
+[[req_gsmlxsd_extension_xsd]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-extension/xsd
+part:: An XML instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/++[] geoSciMLExtension.xsd.
+====
+
+All the elements from the GeoSciML Extension package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch#].
+
+
+[[req_gsmlxsd-extension_sch]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-extension/sch
+part:: An XML instance document SHALL pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch++[].
+====
+
+=== GeoSciML GeologicTime XML Requirements Class (Normative)
+
+[[req_class_gsmlxsd-geologictime]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML GeologicTime XML'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-geologictime++[]
+subject:: Data instance
+inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-geologictime++[]
+inherit:: /req/gsmlxsd-core
+requirement:: /req/gsmlxsd-geologictime/xsd
+requirement:: /req/gsmlxsd-geologictime/sch
+====
+
+
+
+
+
+All the elements from the GeoSciML Geologic Time package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/geologicTime.xsd#].
+
+
+[[req_gsmlxsd-_eologictime_xsd]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-geologictime/xsd
+part:: An XML instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[].
+====
+
+All the elements from the GeoSciML Geologic Time package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geologictime.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geologictime.sch#].
+
+
+[[req_gsmlxsd_geologictime_sch]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-geologictime/sch
+part:: An XML instance document SHALL pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geologicTime.sch++[].
+====
+
+=== GeoSciML Borehole XML Requirements Class (Normative)
+
+[[req_class_gsmlxsd-borehole]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Borehole XML'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-borehole++[]
+subject:: Data instance
+inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-borehole++[]
+inherit:: /req/gsmlxsd-core
+requirement:: /req/gsmlxsd-borehole/xsd
+requirement:: /req/gsmlxsd-borehole/sch
+====
+
+
+
+All the elements from the Borehole package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/borehole.xsd#].
+
+
+[[req_gsmlxsd_borehole_xsd]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-borehole/xsd
+part:: An XML instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[].
+====
+
+All the elements from the Borehole package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/borehole.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/borehole.sch#].
+
+
+[[req_gsmlxsd_borehole_sch]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmlxsd-borehole/sch
+part:: An XML instance document shall pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/borehole.sch++[].
+====
+
+=== GeoSciML LaboratoryAnalysis-Specimen XML Requirements Class (Normative)
+
+[[req_class_gsmlxsd-lab]]
+
+[requirements_class]
+.Requirements Class 'A'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-lab++[]
+subject:: Web API
+requirement:: /req/req-class-a/req-name-1
+requirement:: /req/req-class-a/req-name-2
+====
+
+
+
+
+[width="100%",cols="10%,90%",options="header",]
+|===
+|*Requirements Class* |
+|/req/gsml4xsd-lab |
+|*Target type* |Data instance
+|*Dependency* |/req/gsml4-lab
+|*Dependency* |/req/gsml4xsd-core
+|*Requirement* a|
+/req/gsml4xsd-lab/xsd
+
+An XML instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[]
+
+|*Requirement* a|
+/req/gsml4xsd-lab/sch
+
+An XML instance document SHALL pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch++[]
+
+|===
+
+All the elements from the GeoSciML Laboratory Analysis & Specimen package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd#].
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lab/xsd*
+|An XML instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[].
+|===
+
+All the elements from the GeoSciML Laboratory Analysis & Specimen package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch#].
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lab/sch*
+|XML instance document SHALL pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch++[].
+|===
+
+=== Abstract GeoSciML Lite XML Requirements Class (Normative)
+
+[[req_class_gsmlxsd-lite]]
+
+[requirements_class]
+.Requirements Class 'A'
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-lite++[]
+subject:: Web API
+requirement:: /req/req-class-a/req-name-1
+requirement:: /req/req-class-a/req-name-2
+====
+
+
+
+
+[width="100%",cols="19%,81%",options="header",]
+|===
+|*Requirements Class* |
+|/req/gsml4xsd-lite |
+|*Target type* |Data instance
+|*Dependency* |/req/gsml4-lite
+|*Dependency* |/req/gsml4xsd
+|*Dependency* |GML Simple Feature OGC 10-100r3 SF-0
+|*Requirement* a|
+/req/gsml4xsd-lite/SF-0
+
+An XML instance document SHALL be compliant to GML Simple Feature Level 0.
+
+|*Recommendation* a|
+/req/gsml4xsd-lite/SF-0-simpletype
+
+User defined elements SHOULD be XSD simpleType.
+
+|*Recommendation* a|
+/req/gsml4xsd-lite/user-xsd
+
+An XSD schema SHOULD be provided by data provider to validate user defined properties.
+
+|*Recommendation* a|
+/req/gsml4xsd-lite/user-ns
+
+User properties SHOULD be defined in a namespace unique to a community or a data provider.
+
+|===
+
+The abstract GeoSciML Lite encoding sets general encoding rules for XML targets, regardless of version of GML.
+
+==== Simple Feature
+
+GeoSciML Lite schemas are meant to deliver simple content, consistent with simple scenarios described in GML Simple Feature Level 0 (OGC 10-100r3).  User defined properties must respect the same constrains as defined in SF-0 specification.
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lite/SF-0*
+|An XML instance document SHALL be compliant to GML Simple Feature Level 0.
+|===
+
+ 
+
+Simple Feature defines 3 compliance levels summarized in Table17.
+
+//Table 17 in the original
+
+.Reproduction of Table 1 of 10-100r3 (Clause 2.1)
+[width="100%",cols="^36%,^18%,^23%,^23%",options="header",]
+|===
+|* * |*Level SF-0* |*Level SF-1* |*Level SF-2*
+a|
+restricted set of built-in nonspatial
+
+property types
+
+|Yes^1^ |Yes^1^ |No
+|Restricted set of property-types |Yes^2^ |Yes^2^ |Yes^2^
+|user-defined property types |No |Yes |Yes
+|use of nillable and xsi:nil |No |Yes |Yes
+|cardinality of properties |0..1 |0..unbounded |0..unbounded
+a|
+non-spatial property values
+
+references
+
+|Yes^3^ |Yes^3^ |Yes
+a|
+spatial property values
+
+references
+
+|Yes^3^ |Yes^3^ |Yes
+a|
+[arabic]
+. string, integer, me**a**surement, date, real, binary, boolean, URI
+. Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve, MultiSurface, MultiGeometry
+. In levels 0 and 1, remote values for properties are supported **only **through the use of the type gml:ReferenceType. The more generalized GML property-type pattern allowing mixed inline and byReference encoded property values within the same instance document is disallowed.
+
+| | |
+|===
+
+==== Simple Content
+
+SF-0 allows the definition of complex content (Clause 9.3.2 of OGC 10-100r3). To be consistent with the most common scenario encountered in GIS which is a direct mapping from a database table to XML, this specification recommends that user defined content be restricted to simple type.
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lite/SF-0-simpletype*
+|User defined elements SHOULD be XSD simpleType.
+|===
+
+GeoSciML Lite allows user defined properties to be appended at the end of the list of feature properties using xsd:any
+
+[%unnumbered%]
+[source,xml]
+----
+<any processContents="lax" minOccurs="0" maxOccurs="unbounded">
+      <annotation>
+            <documentation>A placeholder allowing any user-defined
+                attributes to be delivered in addition to those specified above.</documentation>
+      </annotation>
+</any>
+
+----
+
+Process content is set to “lax”, which means the validator will attempt to validate user defined property only if a schema is.  To help client applications and developers to validate instance containing user defined properties, a XSD schema should be provided in the instance’s schemaLocation attribute.
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lite/user-xsd*
+|An XSD schema SHOULD be provided by data provider to validate user defined properties.
+|===
+
+==== User Defined Namespaces
+
+This specification does not prescribe if the user types are to be defined in GeoSciML Lite namespace or using a different namespace.  It is understood that this might be constrained by the technology used to generate the instance.  But to avoid potential conflict with future minor changes to GeoSciML Lite, or name conflicts when aggregating results from many sources, it is recommended that the data providers, or the community, use different namespaces, if possible.
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lite/user-ns*
+|User properties SHOULD be defined in a namespace unique to a community or a data provider.
+|===
+
+=== GeoSciML Lite GML 3.1 profile (Normative)
+
+[width="100%",cols="11%,89%",options="header",]
+|===
+|*Requirements Class* |
+|/req/gsml4xsd-lite-31 |
+|*Target type* |Data instance
+|*Dependency* |/req/gsml4-lite
+|*Dependency* |/req/gsml4xsd-lite
+|*Requirement* a|
+/req/gsml4xsd-lite-31/xsd
+
+An XML instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geosciml-lite.xsd++[].
+
+|*Requirement* a|
+/req/gsml4xsd-lite-31/sch
+
+An XML instance document shall pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geosciml-lite.sch++[].
+
+|===
+
+Because of the limited availability of WFS 2.0 compliant servers and clients, GeoSciML SWG officially supports WFS 1.1.0 and GML 3.1.1 for delivery of Lite features. 
+
+All the elements from the GeoSciML Lite package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geosciml-lite.xsd++[].
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lite-31/xsd*
+|An XML instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geosciml-portrayal.xsd++[].
+|===
+
+All the elements from the GeoSciML Lite package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geosciml-lite.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geosciml-lite.sch#].
+
+[width="100%",cols="100%",options="header",]
+|===
+|*Requirement /req/gsml4xsd-lite-31/sch*
+|An XML instance document shall pass schematron rules defined in schematron file located at   link:++http://schemas.opengis.net/gsml/4.1/geosciml-lite.sch++[].
+|===
+
+== Media Types for any data encoding(s)
+
+GeoSciML 4.1 data conforming to clause 8 is encoded in GML-conformant XML documents.  The standard MIME-type and sub-type for GML data should be used to indicate the encoding in internet exchange, as specified in _MIME Media Types for GML,_ namely
+
+`application/gml+xml`
+
+////
+add or remove annexes after "A" as necessary
+////
+[appendix]
+== Conformance Class Abstract Test Suite (Normative)
+
+[NOTE]
+Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)
+
+=== Conformance Class A
+
+[[ats_example1,/conf/example1]]
+[conformance_class]
+====
+[%metadata]
+identifier:: link:++http://www.opengis.net/spec/name-of-standard/1.0/conf/example1++[]
+target:: link:++http://www.opengis.net/spec/ABCD/m.n/req/req-class-a++[]
+classification:: Target Type:Web API
+abstract-test:: /conf/core/map-response
+abstract-test:: /conf/core/http
+====
+
+==== Example 1
+
+[[ats_core_api-definition-op]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/core/map-response
+target:: /req/req-class-a/req-name-1
+test-purpose:: Verify that the implementation's response for the map retrieval operation is correct
+test-method:: A single step test method can be documented as a single line.
+====
+
+==== Example 2
+
+[[ats_core_http]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/core/http
+target:: /req/req-class-a/req-name-2
+test-purpose:: Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+A sequential multi-step test method can be documented as shown here. This is the first step.
+--
+
+[.component,class=step]
+--
+This is the second step.
+--
+=====
+====
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+[appendix]
+== Revision History
+
+[width="90%",options="header",align="left"]
+|===
+|Date |Release |Editor | Primary clauses modified |Description
+|2016-04-28 |0.1 |G. Editor |all |initial version
+|===
+
+[bibliography]
+[[Bibliography]]
+== Bibliography
+
+[NOTE]
+.Example Bibliography (Delete this note).
+===============================================
+The TC has approved Springer LNCS as the official document citation type.
+
+Springer LNCS is widely used in technical and computer science journals and other publications
+
+* For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
+
+– Actual References:
+
+[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
+
+[n] Web: Author Surname, A.: Title, link:++http://Website-Url++[]
+
+===============================================
+
+* [[[OGC2015,OGCTB12]]], _OGC: OGC Testbed 12 Annex B: Architecture_ (2015).
