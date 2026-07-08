@@ -24,6 +24,10 @@
 :doc-uri: ./document.doc
 :edition: 5.0-draft
 
+
+:spec-part1-uri: https://www.opengis.net/spec/geosciml-part1/5.0
+:spec-part2-uri: https://www.opengis.net/spec/geosciml-part2/5.0
+
 ////
 Make sure to complete each included document
 ////
@@ -72,6 +76,7 @@ NOTE: The security measures discussed in the following sections only provide var
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
+[%unnumbered%]
 [width="100%",cols="30%,70%",options="header",]
 |===
 |*Name* |*Affiliation*
@@ -96,13 +101,12 @@ GeoSciML (Geoscience Markup Language) covers the domain of geology (earth materi
 
 == Conformance
 
-This standard defines a logical model and an XML encoding which conform to OGC GML 3.3 encoding rules, itself, an iteration over ISO 19136 (2007).
+This standard defines a logical model.
 
-Requirements for three standardization target types are considered:
+Requirements for two standardization target types are considered:
 
 * Logical Model
 * Encoding
-* Data instance
 
 Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web sitehttps://docs.ogc.org/is/16-008/16-008.html#_ftnref1[^[.underline]#++[++1++]++#^].
 
@@ -111,23 +115,6 @@ All requirements-classes and conformance-classes described in this document are 
 [bibliography]
 == References
 
-The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
-
-[NOTE]
-====
-
-
-
-
-
-
-
-
-
-
-
-
-====
 
 * [[[OGC06-121r9,OGC 06-121r9]]], _OGC® Web Services Common Standard (2010)_
 
@@ -181,9 +168,7 @@ The following normative documents contain provisions that, through reference in 
 
 == Terms and definitions
 
-This document uses the terms defined in OGC Policy Directive 49, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "`shall`" (not "`must`") is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
 
-For the purposes of this document, the following additional terms and definitions apply.
 
 === classifier
 
@@ -415,21 +400,21 @@ All requirements and conformance tests that appear in this document are denoted 
 
 The URI for each requirements class has the form:
 
-link:++http://www.opengis.net/spec/geosciml%2F4.1%2Freq%2F%5BclassM%5D++[\http://www.opengis.net/spec/geosciml/4.1/req/++[++classM++]++]
+link:++http://www.opengis.net/spec/geosciml-part1%2F5.0%2Freq%2F%5BclassM%5D++[\http://www.opengis.net/spec/geosciml-part1/5.0/req/++[++classM++]++]
 
 The URI for each requirement or recommendation has the form:
 
-link:++http://www.opengis.net/spec/geosciml%2F4.1%2Freq%2F%5BclassM%5D%2F%5BreqN%5D++[\http://www.opengis.net/spec/geosciml/4.1/req/++[++classM++]/++[++reqN++]]
+link:++http://www.opengis.net/spec/geosciml-part1%2F5.0%2Freq%2F%5BclassM%5D%2F%5BreqN%5D++[\http://www.opengis.net/spec/geosciml-part1/5.0/req/++[++classM++]/++[++reqN++]]
 
 
 The URI for each conformance class has the form:
 
-link:++http://www.opengis.net/spec/geosciml%2F4.1%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml/4.1/conf/++[++classM++]++]
+link:++http://www.opengis.net/spec/geosciml-part1%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml-part1/5.0/conf/++[++classM++]++]
 
 
 The URI for each conformance test has the form:
 
-link:++http://www.opengis.net/spec/geosciml%2F4.1%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B%2F%2B%2B%5B%2B%2BtestN%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml/4.1/req/++[++classM++]/++[++testN++]]
+link:++http://www.opengis.net/spec/geosciml-part1%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B%2F%2B%2B%5B%2B%2BtestN%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml-part1/5.0/req/++[++classM++]/++[++testN++]]
 
 
 === Classifiers
@@ -448,7 +433,7 @@ For the sake of readability, and also because some HollowWorld package names do 
 
 W3C XPath will be used in XML instances.  XML entities will be identified using their full qualified name (namespace, identified by its prefix, and entity name).
 
-* `gsmlb:GeologicUnit` refers to an instance of GeologicUnit, from namespace xmlns:gsmlb="\http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+* `gsmlb:GeologicUnit` refers to an instance of GeologicUnit, from namespace xmlns:gsmlb="\http://www.opengis.net/gsml/5.0/GeoSciML-Basic"
 * `gsmlb:GeologicUnit/gml:name` refers to the name property of GeologicUnit
 * `gsmlb:GeologicUnit/gml:name/@codeName` refers to the codeName attribute of the name property of GeologicUnit
 
@@ -566,7 +551,7 @@ Sampling and analytical metadata features (Borehole and GeologicSpecimen in part
 .Requirements Class 'GeoSciML conceptual model'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-conceptual++[]
+identifier:: {spec-part1-uri}/req/gsml-conceptual
 subject:: Logical Model
 inherit:: ISO19101:2002 Reference Model Clause 7
 inherit:: ISO19103 2015 Conceptual Model Language
@@ -641,7 +626,7 @@ The following shortcuts are used to refer to external (non GeoSciML) classifiers
 .Requirements Class 'GeoSciML Core'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-core++[]
+identifier:: {spec-part1-uri}/req/gsml-core
 subject:: Encoding
 requirement:: /req/gsml-core/uml-entity-name
 requirement:: /req/gsml-core/uml-cardinality
@@ -771,7 +756,7 @@ This requirement does not require that URIs be actually dereferenceable, but jus
 .Requirements Class 'Linked Open Data'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lod++[]
+identifier:: {spec-part1-uri}/req/gsml-lod
 subject:: Encoding
 inherit:: URI
 inherit:: HTTP
@@ -854,7 +839,7 @@ Serialization of a dataset will often omit the full description of a feature and
 .Requirements Class 'GeoSciML Basic'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-basic++[]
+identifier:: {spec-part1-uri}/req/gsml-basic
 subject:: Encoding
 inherit:: Spatial Schema ISO19107
 inherit:: Conceptual schema language ISO19103
@@ -1602,7 +1587,7 @@ image::images/image33.png[width=601,height=484]
 .Requirements Class 'GeoSciML Extension'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-extension++[]
+identifier:: {spec-part1-uri}/req/gsml-extension
 subject:: Encoding
 inherit:: /req/gsml-basic
 inherit:: /req/gsml-geologictime
@@ -2276,7 +2261,7 @@ Vocabularies used in GeoSciML Extension are listed in <<tbl_geosciml_extension>>
 .Requirements Class 'GeoSciML GeologicTime'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-geologictime++[]
+identifier:: {spec-part1-uri}/req/gsml-geologictime
 subject:: Encoding
 inherit:: ISO 19108 Temporal Schema
 inherit:: SWE Common 2.0 08-094r1 Clause 7
@@ -2503,7 +2488,7 @@ For example:
 .Requirements Class 'GeoSciML Borehole'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-borehole++[]
+identifier:: {spec-part1-uri}/req/gsml-borehole
 subject:: Encoding
 inherit:: /req/gsml-core
 inherit:: ISO 19103 Conceptual Model Language
@@ -2854,7 +2839,7 @@ Examples may include:
 .Requirements Class 'GeoSciML LaboratoryAnalysis-Specimen'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lab-analysis++[]
+identifier:: {spec-part1-uri}/req/gsml-lab-analysis
 subject:: Encoding
 inherit:: ISO 19103 Conceptual Model Language
 inherit:: ISO 19107 Spatial Schema
@@ -3222,7 +3207,7 @@ part:: Observations at outcrop SHOULD be encoded using the pattern described at 
 .Requirements Class 'GeoSciML Lite'
 ====
 [%metadata]
-identifier::  link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lite++[]
+identifier::  {spec-part1-uri}/req/gsml-lite
 subject:: Encoding
 inherit:: /req/gsml-conceptual
 inherit:: GML Simple Feature SF-0 OGC 10-100r3
@@ -5008,7 +4993,7 @@ inherit:: ISO 19156 Annex A
 
 abstract-test:: /conf/gsml-lab-analysis/sampledFeature
 
-abstract-test:: /conf/ gsml-lab-analysis/accuracy-measure
+abstract-test:: /conf/gsml-lab-analysis/accuracy-measure
 
 abstract-test:: /conf/gsml-lab-analysis/accuracy-vocabulary
 
