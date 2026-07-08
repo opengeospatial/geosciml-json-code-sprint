@@ -24,8 +24,8 @@
 :doc-uri: ./document.doc
 :edition: 1.0
 
-
-:spec-uri: http://www.opengis.net/spec/geosciml-part2/5.0
+:spec-part1-uri: http://www.opengis.net/spec/geosciml-part1/5.0
+:spec-part2-uri: http://www.opengis.net/spec/geosciml-part2/5.0
 
 ////
 Make sure to complete each included document
@@ -267,10 +267,10 @@ Also to improve readability, the following XML entities are used in instance exa
 .Requirements Class 'GeoSciML Core XML'
 ====
 [%metadata]
-identifier:: link:++http://www.abc.net/spec/geosciml-part2/5.0/req/gsmlxsd-core++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-core
 subject:: Data instance
 inherit:: Web API
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-core++[]
+inherit:: {spec-part1-uri}/req/gsml-core
 inherit:: W3C XML Schema Definition Language 1.1
 inherit:: ISO19118 Encoding
 inherit:: ISO 19136:2007 Geography Markup Language (GML)
@@ -455,9 +455,9 @@ Time Zone (example is Newfoundland time zone -3:30)
 .Requirements Class 'GeoSciML Basic XML'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-basic++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-basic
 subject:: Data instance
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-basic++[]
+inherit:: {spec-part1-uri}/req/gsml-basic
 inherit:: /req/gsmlxsd-core
 requirement:: /req/gsmlxsd-basic/xsd
 requirement:: /req/gsmlxsd-basic/sch
@@ -523,9 +523,9 @@ In GeoSciML Basic, relatedFeature is byReference only.  AbstractFeatureRelation
 .Requirements Class 'GeoSciML Extension XML'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-extension++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-extension
 subject:: Data instance
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-extension++[]
+inherit:: {spec-part1-uri}/req/gsml-extension
 inherit:: /req/gsmlxsd-basic
 inherit:: /req/gsmlxsd-geologictime
 requirement:: /req/gsmlxsd-extension/xsd
@@ -567,9 +567,9 @@ part:: An XML instance document SHALL pass schematron rules defined in schematro
 .Requirements Class 'GeoSciML GeologicTime XML'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-geologictime++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-geologictime
 subject:: Data instance
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-geologictime++[]
+inherit:: {spec-part1-uri}/req/gsml-geologictime
 inherit:: /req/gsmlxsd-core
 requirement:: /req/gsmlxsd-geologictime/xsd
 requirement:: /req/gsmlxsd-geologictime/sch
@@ -612,9 +612,9 @@ part:: An XML instance document SHALL pass schematron rules defined in schematro
 .Requirements Class 'GeoSciML Borehole XML'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-borehole++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-borehole
 subject:: Data instance
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-borehole++[]
+inherit:: {spec-part1-uri}/req/gsml-borehole
 inherit:: /req/gsmlxsd-core
 requirement:: /req/gsmlxsd-borehole/xsd
 requirement:: /req/gsmlxsd-borehole/sch
@@ -655,7 +655,7 @@ part:: An XML instance document shall pass schematron rules defined in schematro
 .Requirements Class 'GeoSciML LaboratoryAnalysis-Specimen XML'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-lab++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-lab
 subject:: Data instance
 inherit:: /req/gsml-lab
 inherit:: /req/gsmlxsd-core
@@ -701,9 +701,9 @@ part:: XML instance document SHALL pass schematron rules defined in schematron f
 .Requirements Class 'Abstract GeoSciML Lite XML'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-lite++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-lite
 subject:: Data instance
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lite++[]
+inherit:: {spec-part1-uri}/req/gsml-lite
 inherit:: /req/gsmlxsd-core
 inherit:: GML Simple Feature OGC 10-100r3 SF-0
 requirement:: /req/gsmlxsd-lite/SF-0
@@ -840,9 +840,9 @@ part:: User properties SHOULD be defined in a namespace unique to a community or
 .Requirements Class 'GeoSciML Lite GML 3.1 profile'
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/geosciml-part2/5.0/req/gsmlxsd-lite-31++[]
+identifier:: {spec-part2-uri}/req/gsmlxsd-lite-31
 subject:: Data instance
-inherit:: link:++http://www.opengis.net/spec/geosciml/5.0/req/gsml-lite++[]
+inherit:: {spec-part1-uri}/req/gsml-lite
 inherit:: /req/gsmlxsd-lite
 requirement:: /req/gsmlxsd-lite-31/xsd
 requirement:: /req/gsmlxsd-lite-31/sch
