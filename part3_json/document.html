@@ -1,0 +1,2499 @@
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  vertical-align: baseline;
+}
+
+html, body, div, span, applet, object, iframe,
+p, blockquote,
+a, abbr, acronym, address, big, cite,
+del, dfn, em, img, ins, q, s,
+small, strike, strong, sub, sup, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: "Overpass",sans-serif;
+}
+
+code, pre, tt, kbd, samp {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+}
+
+code *, pre *, tt *, kbd *, samp * {
+  font-family: "Space Mono",monospace !important;
+  font-variant-ligatures: none;
+}
+
+p code, dt code, li code, label code, legend code, caption code, th code, td code,
+p tt, dt tt, li tt, label tt, legend tt, caption tt, th tt, td tt,
+p kbd, dt kbd, li kbd, label kbd, legend kbd, caption kbd, th kbd, td kbd,
+p samp, dt samp, li samp, label samp, legend samp, caption samp, th samp, td samp {
+  font-size: 0.8em;
+}
+
+sub, sup {
+  font-size: 0.75em;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Overpass",sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Overpass",sans-serif;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+.h2Annex {
+  font-family: "Overpass",sans-serif;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+dl dt p, dl dd p {
+  margin-top: 0;
+}
+dl dt {
+  grid-column-start: 1;
+}
+dl dd {
+  grid-column-start: 2;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+div.document-stage-band, div.document-type-band {
+  background-color: #333333;
+}
+
+a.TableFootnoteRef, span.TableFootnoteRef,
+a.FootnoteRef, span.FootnoteRef {
+  vertical-align: super;
+}
+
+.addition {
+  color: blue;
+}
+
+.deletion {
+  color: red;
+  text-decoration: line-through;
+}
+
+ruby {
+  ruby-position: over;
+  -webkit-ruby-position: before;
+}
+
+ruby ruby {
+  ruby-position: under;
+  -webkit-ruby-position: after;
+}
+
+/* code highlighting with line numbers */
+table.rouge-line-table td.rouge-gutter {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  padding-right: 1em;
+}
+
+table.rouge-line-table td.rouge-code {
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -webkit-user-select: all;
+  user-select: all;
+}
+
+table.rouge-line-table,
+table.rouge-line-table th,
+table.rouge-line-table td {
+  width: auto;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+table.rouge-line-table pre {
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;
+  font-size: 100%;
+}
+
+/* header § links */
+a.header {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.header:hover {
+  color: #a53221 !important;
+  background: inherit;
+  box-shadow: none;
+}
+
+a.header:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.anchor {
+  position: absolute;
+  z-index: 1001;
+  width: 1.5ex;
+  margin-left: -1.5ex;
+  display: block;
+  text-decoration: none !important;
+  visibility: hidden;
+  text-align: center;
+  font-weight: 400;
+}
+
+a.anchor::before {
+  content: "§";
+  font-size: 0.85em;
+  display: block;
+  padding-top: 0.1em;
+}
+
+a.anchor:hover {
+  color: #a53221;
+  background: inherit;
+  box-shadow: none;
+}
+
+h1 > a.anchor:hover,
+h2 > a.anchor:hover,
+h3 > a.anchor:hover,
+h4 > a.anchor:hover,
+h5 > a.anchor:hover,
+h6 > a.anchor:hover,
+.inline-header > a.anchor:hover,
+h1:hover > a.anchor,
+h2:hover > a.anchor,
+h3:hover > a.anchor,
+h4:hover > a.anchor,
+h5:hover > a.anchor,
+h6:hover > a.anchor,
+.inline-header:hover > a.anchor {
+  visibility: visible;
+}
+
+/* collapsible snippets: collapsible before hidable */
+.hidable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 3px 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: "▼";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.active:after {
+  content: "▲";
+}
+
+/* collapsible: */
+.collapsible + .hidable {
+  margin-top: 0;
+}
+
+.collapsible:not(.active) + .hidable {
+  overflow: hidden;
+  padding: 0;
+}
+
+.svg-container {
+  width: 100%; /* or any desired width */
+  display: block; /* ← removes unwanted inline spacing */
+}
+
+svg {
+  width: 100%;
+  height: auto; /* ← key to maintaining aspect ratio */
+  display: block; /* ← removes unwanted inline spacing */
+}
+
+#standard-band {
+  background-color: #0AC442;
+}
+
+#standard {
+  border-bottom: solid 3px #0AC442;
+}
+
+#directive-band {
+  background-color: #540D6E;
+}
+
+#directive {
+  border-bottom: solid 3px #540D6E;
+}
+
+#guide-band {
+  background-color: #D183C9;
+}
+
+#guide {
+  border-bottom: solid 3px #D183C9;
+}
+
+#specification-band {
+  background-color: #65AFFF;
+}
+
+#specification {
+  border-bottom: solid 3px #65AFFF;
+}
+
+#report-band {
+  background-color: #3A405A;
+}
+
+#report {
+  border-bottom: solid 3px #3A405A;
+}
+
+#amendment-band {
+  background-color: #F26430;
+}
+
+#amendment {
+  border-bottom: solid 3px #F26430;
+}
+
+#corrigendum-band {
+  background-color: #C84630;
+}
+
+#corrigendum {
+  border-bottom: solid 3px #C84630;
+}
+
+#administrative-band {
+  background-color: #BFAE48;
+}
+
+#administrative {
+  border-bottom: solid 3px #BFAE48;
+}
+
+#advisory-band {
+  background-color: #BD9391;
+}
+
+#advisory {
+  border-bottom: solid 3px #BD9391;
+}
+
+#proposal-band {
+  background-color: #39A0ED;
+}
+
+#proposal {
+  border-bottom: solid 3px #39A0ED;
+}
+
+#working-draft-band {
+  background-color: #2D7393;
+}
+
+#working-draft {
+  border-bottom: solid 3px #2D7393;
+}
+
+#committee-draft-band {
+  background-color: #2A6B7C;
+}
+
+#committee-draft {
+  border-bottom: solid 3px #2A6B7C;
+}
+
+#draft-standard-band {
+  background-color: #1C7F7A;
+}
+
+#draft-standard {
+  border-bottom: solid 3px #1C7F7A;
+}
+
+#final-draft-band {
+  background-color: #53C170;
+}
+
+#final-draft {
+  border-bottom: solid 3px #53C170;
+}
+
+#published-band {
+  background-color: #069E2D;
+}
+
+#published {
+  border-bottom: solid 3px #069E2D;
+}
+
+#withdrawn-band {
+  background-color: #004E64;
+}
+
+#withdrawn {
+  border-bottom: solid 3px #004E64;
+}
+
+#cancelled-band {
+  background-color: #2E382E;
+}
+
+#cancelled {
+  border-bottom: solid 3px #2E382E;
+}
+
+.coverpage-maturity, .coverpage-stage {
+  font-family: "Overpass",sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  margin: 0 0 2em 0;
+  text-transform: uppercase;
+}
+
+.icon-svg {
+  width: 100%;
+  color: #5ecf86;
+}
+
+.wrapper-top {
+  background: rgb(0, 51, 91);
+  background: linear-gradient(130deg, rgb(0, 51, 91) 45%, rgb(241, 248, 255) 100%);
+  color: #ffffff;
+  padding: 5em 0;
+  width: 100%;
+}
+
+.wrapper-top-bottom {
+  width: 0;
+  height: 0;
+  border-top: 100px solid #00335b;
+  border-right: 100px solid transparent;
+  position: absolute;
+}
+
+.document-type-band {
+  top: 260px;
+}
+
+.document-stage-band > :first-child {
+  height: 240px;
+}
+
+.coverpage-metadata {
+  margin-top: 35px;
+  padding-top: 15px;
+  margin-right: 25px;
+  border-top: solid 1px white;
+}
+
+.coverpage-metadata,
+.coverpage-alt-formats {
+  font-size: 12px;
+  font-family: "Overpass",sans-serif;
+  margin-left: 1em;
+  text-align: left;
+}
+.coverpage-metadata span,
+.coverpage-alt-formats span {
+  display: block;
+  text-align: left;
+}
+.coverpage-metadata span a,
+.coverpage-alt-formats span a {
+  color: white;
+}
+.coverpage-metadata span a:hover,
+.coverpage-alt-formats span a:hover {
+  text-decoration: underline;
+  background: none;
+  box-shadow: none !important;
+  font-weight: 400;
+}
+.coverpage-metadata .value,
+.coverpage-alt-formats .value {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.coverpage-metadata .label,
+.coverpage-alt-formats .label {
+  font-size: 12px;
+  padding: 0;
+}
+
+.coverpage-alt-formats span {
+  display: inline;
+  text-align: left;
+}
+.coverpage-alt-formats span a {
+  padding-right: 5px;
+}
+
+.coverpage-title {
+  padding-bottom: 0.5em;
+  font-family: "Overpass",sans-serif;
+  font-weight: 100;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.coverpage-title span {
+  font-family: "Overpass",sans-serif;
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.docstage-box table {
+  width: auto;
+}
+.docstage-box th {
+  background-color: #93c0d6;
+}
+.docstage-box td {
+  vertical-align: top;
+  background-color: #daeef3;
+  padding: 0.5em;
+  border: 0;
+}
+.docstage-box th:first-child {
+  border-radius: 1em 0 0 0;
+}
+.docstage-box th:last-child {
+  border-radius: 0 1em 0 0;
+}
+.docstage-box tr:first-child {
+  border-radius: 0 0 0 1em;
+}
+.docstage-box tr:last-child {
+  border-radius: 0 1em 0 0;
+}
+.docstage-box tr:last-child > td:first-child {
+  border-radius: 0 0 0 1em;
+}
+.docstage-box tr:last-child > td:last-child {
+  border-radius: 0 0 1em 0;
+}
+
+.WordSection11 {
+  padding: 0 2em 0 3em;
+}
+
+.info-section {
+  padding: 0 2em 0 5em;
+}
+
+.prefatory-section {
+  padding: 0 3em 0 6em;
+}
+
+.zzSTDTitle1, .MsoCommentText {
+  display: none;
+}
+
+.coverpage {
+  text-align: center;
+  padding-left: 1.5em;
+}
+
+.coverpage-logo span, .coverpage-tc-name span {
+  font-family: "Overpass",sans-serif;
+  text-transform: none;
+  font-weight: 300;
+  margin-left: 1em;
+}
+
+.coverpage-logo img {
+  width: 500px;
+  height: auto;
+}
+
+.coverpage-tc-name {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.25em 0;
+}
+
+.copyright {
+  padding: 1em;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+/* Document Identity */
+.coverpage-doc-identity {
+  font-size: 2em;
+  line-height: 2em;
+}
+
+.coverpage-title .title-second {
+  display: none;
+}
+
+.coverpage-stage-block {
+  font-family: "Overpass",sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin: 2em 0em 2em 0em;
+  text-transform: uppercase;
+}
+
+.authors {
+  margin-top: 2em;
+}
+.authors span {
+  display: block;
+  line-height: 2;
+}
+.authors span.roletag {
+  display: inline-block;
+  font-size: 12px;
+  color: #00335b;
+  background-color: white;
+  padding: 2px 5px;
+  margin-left: 7px;
+  border-radius: 5px;
+}
+
+/* Draft Warning */
+.coverpage-warning {
+  border: #f36f36 solid 2px;
+  color: #f36f36 !important;
+  margin: 1em 2em;
+  color: #2e81c2;
+  padding: 2em 1em 1em 1em;
+  border-radius: 25px;
+}
+.coverpage-warning h1 {
+  font-family: "Overpass",sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+@media print {
+  .document-info, .copyright {
+    page-break-before: always;
+  }
+  .coverpage {
+    height: 23cm;
+  }
+  .info-section {
+    display: none;
+  }
+  .wrapper-top {
+    top: 0;
+    padding-top: 4cm;
+    padding-bottom: 4cm;
+  }
+  .wrapper-top-bottom {
+    margin-top: -5px;
+    display: none;
+  }
+}
+/* For Requirement Test anchors */
+p.RecommendationTitle:hover > a.anchor,
+p.RecommendationTitle > a.anchor:hover,
+p.RecommendationTestTitle:hover > a.anchor,
+p.RecommendationTestTitle > a.anchor:hover {
+  visibility: visible;
+}
+
+table a.anchor {
+  margin-left: -2em;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #00335b;
+  background-color: #f6f8fa;
+}
+body main {
+  margin: 0 3em 0 6em;
+}
+@media screen and (min-width: 768px) {
+  body {
+    padding-left: 360px;
+  }
+}
+@media print {
+  body {
+    padding-left: 0;
+  }
+}
+
+dl {
+  grid-template-columns: minmax(0, 1fr) 93%;
+}
+dl pre {
+  overflow-x: scroll;
+}
+
+#toc ul, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#toc ul li a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul li a {
+  padding: 5px 10px;
+}
+#toc ul a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a {
+  color: #00335b;
+  text-decoration: none;
+  display: block;
+}
+#toc ul a:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a:hover {
+  box-shadow: none;
+  color: white;
+}
+#toc .h2, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h2 {
+  padding-left: 30px;
+}
+#toc .h3, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h3 {
+  padding-left: 50px;
+}
+#toc .h4, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h4 {
+  padding-left: 70px;
+}
+#toc .h5, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h5 {
+  padding-left: 90px;
+}
+#toc .h6, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h6 {
+  padding-left: 110px;
+}
+#toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+  background: #00335b;
+  box-shadow: inset -5px 0px 10px -5px #00335b !important;
+}
+#toc .toc-active a, #toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+  color: white;
+}
+@media print {
+  #toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+    background: white;
+    box-shadow: none !important;
+  }
+  #toc .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a {
+    color: #00335b;
+  }
+  #toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+    color: black;
+  }
+}
+#toc li a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li a {
+  font-size: 14px;
+}
+#toc li::before, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li::before {
+  content: " ";
+  display: none;
+}
+#toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+  font-weight: 600;
+}
+#toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+  background: none;
+  box-shadow: none;
+}
+
+#toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 323px;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0 0 0 30px;
+    background-color: #f1f8ff;
+  }
+}
+@media print {
+  nav {
+    position: relative;
+    width: auto;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0;
+    margin-right: 0;
+    background-color: white;
+  }
+}
+@media screen and (min-width: 768px) {
+  nav {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #toggle {
+    position: fixed;
+    height: 100%;
+    width: 30px;
+    background-color: #00335b;
+    color: white !important;
+    cursor: pointer;
+    z-index: 100;
+  }
+  #toggle span {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+@media screen and (max-width: 768px) {
+  #toggle {
+    display: none;
+  }
+}
+@media print {
+  #toggle {
+    display: none;
+  }
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: #00335b;
+  margin: 2em 0;
+}
+@media screen and (min-width: 768px) {
+  .rule.toc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1.toc-contents {
+    margin-top: 1em;
+  }
+  ul#toc-list, ul#toc-list > :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+    padding: 0;
+    margin: 0;
+  }
+}
+#toc-list ul {
+  margin-bottom: 0.25em;
+}
+#toc-list li {
+  list-style-type: none;
+}
+
+.figure .FigureTitle, .figure .figure-title {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+.figure > img, .figure > svg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.figure {
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto;
+}
+
+table div.figure {
+  padding: 0;
+  margin: 0;
+}
+
+.document-stage-band {
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 101;
+  box-shadow: -5px 0px 10px #1d1d1d;
+}
+.document-stage-band > :first-child {
+  position: relative;
+  width: 25px;
+  font-weight: 300;
+  height: 160px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-left: 6px;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+}
+@media print {
+  .document-stage-band {
+    display: none;
+  }
+}
+
+.document-type-band {
+  left: 0;
+  top: 180px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 102;
+}
+.document-type-band > :first-child {
+  position: relative;
+  width: 25px;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-left: 6px;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+}
+@media print {
+  .document-type-band {
+    display: none;
+  }
+}
+.document-type-band .document-type {
+  top: 20px;
+}
+
+#governance-band p.document-type {
+  font-weight: 400;
+  height: 230px !important;
+}
+
+#standard-band p {
+  height: 135px;
+}
+
+#proposal-band p {
+  height: 150px;
+}
+
+#standard-band,
+#published-band {
+  color: rgb(123, 168, 18);
+}
+
+#standard,
+#published {
+  color: #9ABD48;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #00335b;
+  font-weight: 400;
+  margin-top: 1.6em;
+  margin-bottom: 0.3em;
+}
+
+h1, .h1 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+h1 #content, .h1 #content {
+  margin-top: 2em;
+}
+
+h2, .h2 {
+  margin-top: 1.3em;
+  font-size: 1.7em;
+  font-weight: 300;
+}
+h2 p, .h2 p {
+  display: inline;
+}
+
+h3, .h3 {
+  margin-top: 1.3em;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+h4, .h4 {
+  font-size: 1.4em;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  background: none;
+  box-shadow: 0 0 0 0;
+}
+.contact-info a, .contact-info a:hover {
+  color: #00335b;
+}
+.contact-info {
+  padding: 2em;
+  margin-top: 5em;
+  width: 280px;
+  text-align: left;
+  border: #00335b solid 2px;
+  color: #00335b !important;
+  border-radius: 25px;
+}
+.contact-info p, .contact-info a {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+  font-weight: 400;
+}
+.contact-info #boilerplate-name {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+.contact-info #boilerplate-address {
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-top: 0;
+}
+
+ul, ol {
+  margin-left: 1.2em;
+}
+
+ul > li {
+  list-style: none;
+}
+ul > li::before {
+  content: "—";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+ul > li p:first-child {
+  display: inline;
+}
+ul > li:first-child {
+  margin-top: 1em;
+}
+
+ul ul > li:first-child {
+  margin-top: 0;
+}
+
+ol ul > li:first-child {
+  margin-top: 0;
+}
+
+span.keyword {
+  font-weight: 600;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+}
+table, table th, table td {
+  border: 1px solid black;
+  font-size: 0.95em;
+}
+table th, table td {
+  padding: 1em;
+}
+table td.header {
+  font-weight: 400;
+}
+table {
+  /*color: #010d16;*/
+}
+table thead tr th {
+  background-color: #5d99d6;
+}
+table td, table th {
+  padding: 1em;
+}
+table td.header {
+  font-weight: 400;
+}
+
+.docstage-box table,
+.docstage-box table th,
+.docstage-box table td {
+  border: none;
+}
+
+table.modspec {
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+}
+table.modspec, table.modspec th, table.modspec td {
+  border: none !important;
+  font-size: 0.95em;
+}
+table.modspec th, table.modspec td {
+  padding: 1em;
+}
+table.modspec td.header {
+  font-weight: 400;
+}
+table.modspec {
+  color: #010d16;
+}
+table.modspec tr:nth-child(even) {
+  background: #ffffff;
+}
+table.modspec tr:nth-child(odd) {
+  background: #ffffff;
+}
+table.modspec thead tr th {
+  background-color: #5d99d6;
+}
+table.modspec td, table.modspec th {
+  padding: 1em;
+}
+table.modspec td.header {
+  font-weight: 400;
+}
+
+td > p:first-child, th > p:first-child {
+  margin-top: 0em;
+}
+
+td > p:last-child, th > p:last-child {
+  margin-bottom: 0em;
+}
+
+p.TableTitle {
+  text-align: center;
+  margin-top: 2.5em;
+  font-weight: 400;
+}
+
+/* Terms */
+.TermNum {
+  font-weight: 300;
+}
+
+.TermNum, .Terms, .AltTerms {
+  color: #00335b;
+  font-family: "Overpass",sans-serif;
+}
+
+h2.TermNum {
+  margin-bottom: 0;
+}
+
+p.AltTerms {
+  font-size: 24px;
+  margin-top: 1em;
+}
+
+span.AdmittedLabel, span.DeprecatedLabel {
+  color: #00335b;
+  background-color: #CFE2F3;
+  font-size: 70%;
+  vertical-align: top;
+}
+
+/* Links, selection */
+a, a:visited {
+  text-decoration: none;
+  color: #2e81c2;
+}
+
+a:hover {
+  color: #00335b;
+  background: #39CCCC;
+  box-shadow: 3px 0 0 #39CCCC, -3px 0 0 #39CCCC;
+}
+
+*::selection {
+  background: #39CCCC;
+  color: #00335b;
+}
+
+*::-moz-selection {
+  background: #39CCCC;
+  color: #00335b;
+}
+
+/* Bibliograhy */
+p.Biblio, p.NormRef {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+
+/* Blocks */
+.SourceTitle, .FigureTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.ListTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+  text-align: left;
+}
+
+pre, .sourcecode {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+  background-color: #f7f7f7;
+  font-size: 0.8em;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow-y: auto;
+  overflow-x: scroll;
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+}
+
+.Admonition .AdmonitionTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+.Admonition {
+  padding: 1em 1.2em 1.2em 1.2em;
+  margin: 1em 0 1em 0;
+  background-color: #fcad88;
+  border-top: 10px solid #eb5a06;
+  color: #290404;
+}
+.Admonition.Important {
+  background-color: #f58cff;
+  color: #5d1364;
+  border-top: 10px solid #9503a8;
+}
+.Admonition.Warning {
+  background-color: #ff989d;
+  color: #270204;
+  border-top: 10px solid #e4010c;
+}
+.Admonition p, .Admonition.Important p, .Admonition.Warning p {
+  margin: 0;
+}
+
+.figure, pre, .pseudocode, .sourcecode {
+  background-color: #e1eef1;
+  color: #424242;
+  font-size: 0.8em;
+}
+
+.Note {
+  background-color: #fff8bb;
+  color: #7d760b;
+  padding: 1.2em;
+  margin: 1em 0 1em 0;
+}
+.Note p {
+  margin: 0;
+}
+
+.example {
+  background-color: #e1eef1;
+  color: #424242;
+  padding: 1.2em;
+  margin: 2em 0 1em 0;
+  padding-left: 2em;
+}
+.example .example-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-left: -1.5em;
+}
+.example pre, .example .pseudocode {
+  background: none;
+}
+
+.Quote {
+  background-color: #e1eef1;
+  font-style: italic;
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formula {
+  background-color: #f6f6f6;
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.recommend .RecommendationTitle, .recommendtest .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.require .RecommendationTitle, .requiretest .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.permission .RecommendationTitle, .permissiontest .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.RecommendationTestTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+/*
+.recommend {
+  &, .example_label {
+    background-color: #f8ffbd;
+  }
+  .example_label {
+    font-weight: bold;
+  }
+}
+
+.permission {
+  &, .example_label {
+    background-color: #cdfdbe;
+  }
+  .example_label {
+    font-weight: bold;
+  }
+}
+
+.require {
+  &, .example_label {
+    background-color: #d3e6ff;
+  }
+  .example_label {
+    font-weight: bold;
+  }
+}
+*/
+.recommend .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.require .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.permission .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+tbody td.recommend p.RecommendationTitle, tbody td.recommend p.RecommendationTitle, tbody td.recommend p.RecommendationTitle {
+  font-weight: normal;
+  text-align: left;
+}
+
+#myBtn {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #00335b;
+  opacity: 0.15;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px;
+}
+#myBtn:hover {
+  opacity: 1;
+}
+@media print {
+  #myBtn {
+    display: none;
+  }
+}
+
+a.anchorjs-link:hover {
+  background: none;
+  color: #2e81c2;
+  box-shadow: none;
+}
+
+@page {
+  margin: 2cm 1cm;
+}
+@media print {
+  h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+    page-break-after: avoid;
+    margin-top: 1.2em;
+  }
+  h1, .h1 {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+  h1.content, .h1.content {
+    margin-top: 2em;
+    line-height: 2.5em;
+  }
+  h2, .h2 {
+    font-size: 1.2em;
+  }
+  h3, .h3 {
+    font-size: 1em;
+  }
+  .prefatory-section {
+    page-break-before: always;
+  }
+  .note, .pseudocode {
+    page-break-inside: avoid;
+  }
+  .Note {
+    background-color: #fff495;
+    color: #47430c;
+    padding: 5px;
+    margin: 2em 0 1em 0;
+  }
+  .Note p {
+    padding: 0 5px 0 5px;
+  }
+  nav {
+    line-height: 1;
+  }
+}
+/* Footnotes */
+a.footnote-number {
+  vertical-align: super;
+  font-size: 0.8em;
+}
+
+.footnote {
+  font-size: 0.9em;
+}
+
+span.fmt-hi {
+  background-color: yellow;
+}
+</style><style>pre.sourcecode table td { padding: 5px; }
+pre.sourcecode table pre { margin: 0; }
+pre.sourcecode, pre.sourcecode .w {
+  color: #444444;
+}
+pre.sourcecode .cp {
+  color: #CC00A3;
+}
+pre.sourcecode .cs {
+  color: #CC00A3;
+}
+pre.sourcecode .c, pre.sourcecode .ch, pre.sourcecode .cd, pre.sourcecode .cm, pre.sourcecode .cpf, pre.sourcecode .c1 {
+  color: #1E90FF;
+}
+pre.sourcecode .kc {
+  color: #C34E00;
+}
+pre.sourcecode .kd {
+  color: #0000FF;
+}
+pre.sourcecode .kr {
+  color: #007575;
+}
+pre.sourcecode .k, pre.sourcecode .kn, pre.sourcecode .kp, pre.sourcecode .kt, pre.sourcecode .kv {
+  color: #0000FF;
+}
+pre.sourcecode .s, pre.sourcecode .sb, pre.sourcecode .sc, pre.sourcecode .ld, pre.sourcecode .sd, pre.sourcecode .s2, pre.sourcecode .se, pre.sourcecode .sh, pre.sourcecode .si, pre.sourcecode .sx, pre.sourcecode .sr, pre.sourcecode .s1, pre.sourcecode .ss {
+  color: #009C00;
+}
+pre.sourcecode .sa {
+  color: #0000FF;
+}
+pre.sourcecode .nb, pre.sourcecode .bp {
+  color: #C34E00;
+}
+pre.sourcecode .nt {
+  color: #0000FF;
+}
+</style><title>DRAFT OGC Geoscience Markup Language (GeoSciML) - Part 3: JSON Encoding</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--TOC script import-->
+<script type="text/javascript" src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
+<script type="text/javascript">function toclevel() { return "h1:not(:empty):not(.TermNum):not(.noTOC),h2:not(:empty):not(.TermNum):not(.noTOC)";}
+</script>
+
+<!--Google fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Space+Mono:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,600,900" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Teko:300,400,500" rel="stylesheet" />
+
+<!--Font awesome import for the link icon-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous" />
+<style class="anchorjs"></style>
+<meta name="keywords" content="ogcdoc, OGC document, API, openapi, html" /><meta name="DC.subject" lang="en" content="ogcdoc, OGC document, API, openapi, html" xml:lang="en" /><meta name="description" content="GeoSciML (Geoscience Markup Language) is a Standard for representing geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The Standard is composed of multiple parts. Part 1 describes a logical model. Part 3 (this document) describes encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. The encoding rules define an application of Features and Geometry JSON, also known as JSON-FG." />
+<meta name="DC.description" lang="en" content="GeoSciML (Geoscience Markup Language) is a Standard for representing geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The Standard is composed of multiple parts. Part 1 describes a logical model. Part 3 (this document) describes encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. The encoding rules define an application of Features and Geometry JSON, also known as JSON-FG." xml:lang="en" /><meta name="DC.title" lang="en" content="DRAFT OGC Geoscience Markup Language (GeoSciML) - Part 3: JSON Encoding" xml:lang="en" /><link rel="profile" href="http://dublincore.org/documents/2008/08/04/dc-html/" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.language" content="en" />
+<meta name="DC.rights" lang="en" content="CC-BY-4.0" xml:lang="en" />
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<link rel="DCTERMS.license" href="https://www.ogc.org/license" />
+</head><body lang="EN-US" link="blue" vlink="#954F72" xml:lang="EN-US" class="container"><div class="title-section"><div class="document-stage-band" id="draft-band">
+    <p class="document-stage">Draft</p>
+</div>
+
+<div class="document-type-band" id="standard-band">
+    <p class="document-type">OGC Standard</p>
+</div>
+
+
+
+  <div id="toggle"> <span>•</span> </div>
+
+  <header>
+
+<!--<div class="WordSection1">-->
+  <div class="coverpage">
+    <div class="wrapper-top">
+
+  <div class="coverpage-doc-identity">
+
+    <div class="coverpage-title">
+      <span class="title-first">DRAFT OGC Geoscience Markup Language (GeoSciML) - Part 3: JSON Encoding</span>
+      <!--<span class="title-second"></span>-->
+    </div>
+  </div>
+
+  <div class="coverpage-logo">
+    <span><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTUxMS42NSA1MDYuNzYiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO30uY2xzLTJ7Y2xpcC1wYXRoOnVybCgjY2xpcC1wYXRoKTt9LmNscy0ze2ZpbGw6IzAwYjFmZjt9PC9zdHlsZT48Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMTkyMCIgaGVpZ2h0PSI5NzguMjUiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBpZD0iQmx1ZV9Ib3Jpem9udGFsX0xvY2t1cCIgZGF0YS1uYW1lPSJCbHVlIEhvcml6b250YWwgTG9ja3VwIj48ZyBjbGFzcz0iY2xzLTIiPjxwb2x5Z29uIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIyMDQuMDcgMzY1LjI3IDIwNC4wNyA1MDYuNzMgMC4wMSAzODguOTEgMCAxNTMuMTUgMjA0LjA3IDI3MC45NyAyMDQuMDcgMzE4LjExIDE2My4zNCAyOTQuNjEgMTQyLjkzIDI4Mi44MiAxNDIuOTIgMjgyLjgyIDQwLjg0IDIyMy44OCA0MC44NCAzNjUuMzMgMTYzLjM0IDQzNi4wNiAxNjMuMzQgMzg4LjkxIDEwMi4wOSAzNTMuNTUgMTAyLjA5IDMyOS45NyAxMDIuMDkgMzA2LjQgMjA0LjA3IDM2NS4yNyIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTQyOC42OCwyMzUuNzYsMjI0LjUsMzUzLjY0LDQyOC42OCw0NzEuNTIsNjMyLjg1LDM1My42NFptMCwxODguNjFMMzA2LjE3LDM1My42NGwxMjIuNTItNzAuNzMsMTIyLjQ5LDcwLjczLTIwLjQxLDExLjc5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIzMjYuNzggMjcwLjQgMzY3LjYyIDI0Ni44MyA0MDguNDUgMjIzLjI1IDQwOC40NiAyNzAuNCA0NDkuMTggMjQ2Ljg5IDQ0OS4xOCAxNTMuMTIgMjQ1LjEyIDI3MC45NCAyNDUuMTIgMzE3LjU1IDI0NS4xMiAzMTcuNTUgMjQ1LjEyIDMzMS42MyAyNDUuMTIgNTA2LjE3IDI0NS4wMSA1MDYuMTEgMjQ1LjAxIDUwNi43NiA0NDkuMTggMzg4Ljg4IDQ0OS4xOCAyOTQuMDQgNDA4LjQ2IDMxNy41NiA0MDguNDYgMzY0LjcxIDI4NS45NSA0MzUuNDQgMjg1Ljk2IDI5My45OCAzMjYuNzggMjcwLjQiLz48ZyBjbGFzcz0iY2xzLTIiPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTg4MC41NywzOTguMTdjLTMyLjgxLDAtNTctMjQuMDYtNTctNTYuMDVzMjQuMi01Ni4wNSw1Ny01Ni4wNSw1Ni45MSwyNCw1Ni45MSw1Ni4wNS0yNC4xNSw1Ni4wNi01Ni45MSw1Ni4wNlptMzguODctNTYuMDVjMC0yMi4zLTE2LjU5LTM5LTM4Ljg3LTM5cy0zOSwxNi44NC0zOSwzOSwxNi42OSwzOSwzOSwzOSwzOC44Ny0xNi42OSwzOC44Ny0zOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTEwMDAuNDgsMzEwLjc2YzI0Ljk0LDAsNDMuMTgsMTguNjIsNDMuMTgsNDMuNzFzLTE4LjI0LDQzLjc1LTQzLjE4LDQzLjc1YTQxLjY3LDQxLjY3LDAsMCwxLTI3LjY3LTEwLjA5VjQyNkg5NTUuNjdWMzEyLjhoMTEuNTVMOTcwLjQ0LDMyM2E0MS41LDQxLjUsMCwwLDEsMzAtMTIuMjZabTI1Ljg0LDQzLjcxYzAtMTUuNzEtMTEuNDctMjcuMzUtMjcuMTktMjcuMzVzLTI3LjMsMTEuNzUtMjcuMywyNy4zNSwxMS41OSwyNy4zNSwyNy4zLDI3LjM1LDI3LjE5LTExLjY0LDI3LjE5LTI3LjM1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTE0MS4xOSwzNTQuNjdhNTYuMTUsNTYuMTUsMCwwLDEtLjM1LDUuNjNoLTY3LjY1YzIuMTQsMTMuNSwxMS44NiwyMS44MSwyNS41MSwyMS44MSwxMCwwLDE4LTQuNjEsMjIuNDItMTIuMjFoMThjLTYuNjMsMTcuNi0yMS44NSwyOC4yOC00MC40NiwyOC4yOC0yNC4zNywwLTQyLjgzLTE4LjgxLTQyLjgzLTQzLjcxczE4LjQyLTQzLjcsNDIuODMtNDMuN2MyNS41MSwwLDQyLjQ5LDE5LjY0LDQyLjQ5LDQzLjlabS02Ny41OC04LjNIMTEyNGMtMy4wOC0xMi42Ni0xMi42Mi0yMC4xMy0yNS4zMS0yMC4xMy0xMi44OSwwLTIyLjI4LDcuNzctMjUuMDksMjAuMTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMjAzLjUsMzEwLjljMTkuNDksMCwzMS42NiwxNC41MywzMS42NiwzNS4wNnY1MC4xOUgxMjE4VjM0OS40NGMwLTE1LjE0LTYuNTktMjMuMTgtMTkuMTItMjMuMTgtMTMuMSwwLTIyLjM5LDEwLjU0LTIyLjM5LDI1LjI2djQ0LjYzaC0xNy4xNFYzMTIuOGgxMS45NWwzLjMyLDExLjYzYzYuMzEtOC40MSwxNi42MS0xMy41MywyOC44NS0xMy41M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik05MzMuNDUsNDkwLjJjLS40NCwzMy4xMi0yMi44LDU2Ljg5LTU0LjU0LDU2Ljg5cy01NS4zLTIzLjctNTUuMy01NiwyMy4yOS01Niw1NC45NS01NmMyNi4zNSwwLDQ4LjQsMTYuNTksNTMuMjgsNDAuMUg5MTMuNTZjLTQuNjMtMTMuODktMTguMzYtMjIuOTQtMzQuNjUtMjIuOTQtMjEuODQsMC0zNy4yNiwxNi0zNy4yNiwzOC44M3MxNSwzOC44NiwzNy4yNiwzOC44NmMxNy4yNSwwLDMxLjI3LTkuNzUsMzUuMzEtMjQuNDNIODc1LjdWNDkwLjE5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTEwMzEuMzEsNTAzLjU4YTUzLjE5LDUzLjE5LDAsMCwxLS4zNiw1LjYzSDk2My4zYzIuMTQsMTMuNTEsMTEuODcsMjEuODEsMjUuNTEsMjEuODEsMTAsMCwxOC00LjYsMjIuNDMtMTIuMmgxOGMtNi42NCwxNy41OS0yMS44NSwyOC4yNy00MC40NiwyOC4yNy0yNC4zNywwLTQyLjgzLTE4LjgxLTQyLjgzLTQzLjdzMTguNDItNDMuNzEsNDIuODMtNDMuNzFjMjUuNSwwLDQyLjQ5LDE5LjY1LDQyLjQ5LDQzLjlabS02Ny41OC04LjI5aDUwLjRjLTMuMDgtMTIuNjYtMTIuNjItMjAuMTQtMjUuMzItMjAuMTQtMTIuODgsMC0yMi4yNyw3Ljc4LTI1LjA4LDIwLjE0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTA4Ny45NCw1NDcuMDljLTI1LjQ5LDAtNDQuNTYtMTguNjUtNDQuNTYtNDMuNzFzMTkuMDctNDMuNyw0NC41Ni00My43LDQ0LjU2LDE4LjYxLDQ0LjU2LDQzLjcxUzExMTMuMzksNTQ3LjA5LDEwODcuOTQsNTQ3LjA5Wm0yNy4xMi00My43MWMwLTE1Ljk1LTExLjM0LTI3LjM0LTI3LjEyLTI3LjM0cy0yNy4xMiwxMS4zOS0yNy4xMiwyNy4zNCwxMS4zNCwyNy4zNSwyNy4xMiwyNy4zNSwyNy4xMi0xMS4zOSwyNy4xMi0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTExNDQuNDQsNTE4LjZoMTYuNzRjLjQ0LDguODEsNy44NCwxMy40MSwxNy44OCwxMy40MSw5LjIxLDAsMTYuMjgtMy44OSwxNi4yOC0xMC44NiwwLTcuOS04Ljk0LTkuNzEtMTkuMTUtMTEuNDMtMTMuODktMi4zOC0zMC4yNS01LjUzLTMwLjI1LTI0Ljg1LDAtMTQuOTUsMTIuOTItMjUuMTksMzIuMzEtMjUuMTlzMzEuOTMsMTAuNTQsMzIuMjYsMjYuNzFoLTE2LjIyYy0uMzMtNy45My02LjM3LTEyLjE5LTE2LjQ0LTEyLjE5LTkuNDcsMC0xNS4zMyw0LTE1LjMzLDEwLjEyLDAsNy4zNSw4LjUsOC44MSwxOC41NiwxMC40NiwxNC4wOCwyLjM2LDMxLjE5LDUuMDcsMzEuMTksMjUuNjIsMCwxNi4xOS0xMy40OSwyNi42OS0zMy44LDI2LjY5cy0zMy41OS0xMS4yLTM0LTI4LjQ5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTI3NS40OSw0NTkuNjhjMjQuOTQsMCw0My4xOCwxOC42MSw0My4xOCw0My43MXMtMTguMjQsNDMuNzUtNDMuMTgsNDMuNzVhNDEuNjUsNDEuNjUsMCwwLDEtMjcuNjctMTAuMXYzNy45aC0xNy4xNFY0NjEuNzFoMTEuNTVsMy4yMiwxMC4yNGE0MS40OCw0MS40OCwwLDAsMSwzMC0xMi4yN1ptMjUuODUsNDMuN2MwLTE1LjcxLTExLjQ4LTI3LjM0LTI3LjE5LTI3LjM0cy0yNy4zMSwxMS43NC0yNy4zMSwyNy4zNCwxMS41OSwyNy4zNSwyNy4zMSwyNy4zNSwyNy4xOS0xMS42MywyNy4xOS0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0MjAsNDYxLjY3VjU0NWgtMTMuODJsLTEuNjctMTAuMTRhNDEuODQsNDEuODQsMCwwLDEtMzAuMjIsMTIuMjFjLTI0Ljg0LDAtNDMuNC0xOC43Ni00My40LTQzLjc1czE4LjU2LTQzLjY2LDQzLjQtNDMuNjZjMTIuMjgsMCwyMi45MSw0LjY0LDMwLjQ4LDEyLjQxbDItMTAuNDJabS0xNy4xOCw0MS42N2MwLTE1LjcxLTExLjQ4LTI3LjM0LTI3LjE5LTI3LjM0cy0yNy4zLDExLjc0LTI3LjMsMjcuMzQsMTEuNTksMjcuMzUsMjcuMywyNy4zNSwyNy4xOS0xMS42NCwyNy4xOS0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0OTEuMDgsNTI5LjV2MTUuNTZoLTEyLjczYy0xOC4yNiwwLTI5LjUzLTExLjI2LTI5LjUzLTI5LjY4di0zOWgtMTQuOTF2LTMuMzJsMjktMzAuODJoMi45MXYxOS40NmgyNC44djE0LjY4SDE0NjZWNTE0YzAsOS45Myw1LjUzLDE1LjQ3LDE1LjYzLDE1LjQ3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE1MDcuNDIsNDMxLjEyaDE3Ljd2MTcuNjdoLTE3LjdabS4yOCwzMC41OWgxNy4xNHY4My4zNUgxNTA3LjdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTYzMi4yLDQ2MS42N1Y1NDVoLTEzLjgybC0xLjY3LTEwLjE0YTQxLjg0LDQxLjg0LDAsMCwxLTMwLjIyLDEyLjIxYy0yNC44MywwLTQzLjQtMTguNzYtNDMuNC00My43NXMxOC41Ny00My42Niw0My40LTQzLjY2YzEyLjI4LDAsMjIuOTEsNC42NCwzMC40OCwxMi40MWwyLTEwLjQyWk0xNjE1LDUwMy4zNGMwLTE1LjcxLTExLjQ4LTI3LjM0LTI3LjE5LTI3LjM0cy0yNy4zLDExLjc0LTI3LjMsMjcuMzQsMTEuNTksMjcuMzUsMjcuMywyNy4zNVMxNjE1LDUxOS4wNSwxNjE1LDUwMy4zNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxyZWN0IGNsYXNzPSJjbHMtMyIgeD0iMTQ1Mi40NSIgeT0iMTk2LjA4IiB3aWR0aD0iMTcuMTQiIGhlaWdodD0iMTEzLjIzIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNODIzLjYxLDY0MGMwLTMyLjMzLDIzLjU3LTU2LDU1LjU0LTU2LDI1LjU2LDAsNDYuMDUsMTUuOTMsNTEuNzIsNDAuMjVoLTE4Yy01LjE2LTE0LjM5LTE3Ljc3LTIzLjA5LTMzLjc3LTIzLjA5LTIxLjY0LDAtMzcuNSwxNi4yOC0zNy41LDM4LjgzczE1Ljg2LDM4Ljc0LDM3LjUsMzguNzRjMTYuNTEsMCwyOS4yNy05LjMyLDM0LjE0LTI0LjY0aDE4Yy01LjYxLDI1LjQxLTI2LjEsNDEuOC01Mi4xMyw0MS44LTMyLDAtNTUuNTQtMjMuNjYtNTUuNTQtNTUuOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTk4Ni44Niw2OTZjLTI1LjUsMC00NC41Ny0xOC42Ni00NC41Ny00My43MXMxOS4wNy00My43MSw0NC41Ny00My43MSw0NC41NiwxOC42Miw0NC41Niw0My43MVMxMDEyLjMsNjk2LDk4Ni44Niw2OTZaTTEwMTQsNjUyLjNjMC0xNS45NS0xMS4zNS0yNy4zNS0yNy4xMi0yNy4zNXMtMjcuMTMsMTEuNC0yNy4xMywyNy4zNSwxMS4zNSwyNy4zNSwyNy4xMywyNy4zNVMxMDE0LDY2OC4yNSwxMDE0LDY1Mi4zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTA5My43Nyw2MDguNzNjMTkuNDksMCwzMS42NiwxNC41MywzMS42NiwzNS4wNlY2OTRIMTEwOC4zVjY0Ny4yN2MwLTE1LjEzLTYuNTktMjMuMTgtMTkuMTItMjMuMTgtMTMuMSwwLTIyLjM5LDEwLjU0LTIyLjM5LDI1LjI2VjY5NGgtMTcuMTRWNjEwLjYzaDExLjk1bDMuMzMsMTEuNjNjNi4zLTguNDEsMTYuNi0xMy41MywyOC44NC0xMy41M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMTQyLjQzLDY2Ny41MWgxNi43NGMuNDQsOC44Miw3Ljg0LDEzLjQyLDE3Ljg5LDEzLjQyLDkuMiwwLDE2LjI3LTMuOSwxNi4yNy0xMC44NiwwLTcuOTEtOC45NC05LjcyLTE5LjE1LTExLjQzLTEzLjg4LTIuMzgtMzAuMjUtNS41NC0zMC4yNS0yNC44NiwwLTE0Ljk1LDEyLjkzLTI1LjE4LDMyLjMxLTI1LjE4czMxLjk0LDEwLjU0LDMyLjI3LDI2LjdoLTE2LjIzYy0uMzMtNy45My02LjM3LTEyLjE4LTE2LjQ0LTEyLjE4LTkuNDcsMC0xNS4zMyw0LTE1LjMzLDEwLjExLDAsNy4zNiw4LjUxLDguODEsMTguNTYsMTAuNDcsMTQuMDksMi4zNSwzMS4yLDUuMDcsMzEuMiwyNS42MiwwLDE2LjE5LTEzLjUsMjYuNjktMzMuODEsMjYuNjlzLTMzLjU5LTExLjIxLTM0LTI4LjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMjY3LjEyLDY5NmMtMjUuNSwwLTQ0LjU3LTE4LjY2LTQ0LjU3LTQzLjcxczE5LjA3LTQzLjcxLDQ0LjU3LTQzLjcxLDQ0LjU2LDE4LjYyLDQ0LjU2LDQzLjcxUzEyOTIuNTYsNjk2LDEyNjcuMTIsNjk2Wm0yNy4xMi00My43MWMwLTE1Ljk1LTExLjM1LTI3LjM1LTI3LjEyLTI3LjM1UzEyNDAsNjM2LjM1LDEyNDAsNjUyLjNzMTEuMzUsMjcuMzUsMjcuMTMsMjcuMzUsMjcuMTItMTEuNCwyNy4xMi0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTEzNzcuMzMsNjEwLjE2djE2LjE5aC05Yy0xNC4xNywwLTIxLjI0LDguMDgtMjEuMjQsMjMuMThWNjk0aC0xNy4xNFY2MTAuNjNoMTEuNTlsMi45LDExLjM3YzYtNy45LDE0LjE0LTExLjg0LDI1LjUyLTExLjg0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0MzcuNTMsNjc4LjQxVjY5NGgtMTIuNzRjLTE4LjI2LDAtMjkuNTItMTEuMjctMjkuNTItMjkuNjh2LTM5aC0xNC45MVY2MjJsMjktMzAuODJoMi45MnYxOS40NmgyNC44VjYyNS4zSDE0MTIuNHYzNy42NGMwLDkuOTQsNS41MywxNS40NywxNS42MiwxNS40N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNDUzLjg2LDU4MGgxNy43MXYxNy42N2gtMTcuNzFabS4yOSwzMC41OWgxNy4xM1Y2OTRoLTE3LjEzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0OTQuMzYsNjU4Ljc4VjYxMC42M2gxNy4xNHY0NS43NWMwLDE0LjQ4LDcuOSwyMy4yNywyMC43NywyMy4yN1MxNTUzLDY3MC43LDE1NTMsNjU2LjM4VjYxMC42M2gxNy4xNHY0OC4xNWMwLDIyLjQzLTE0Ljg3LDM3LjIzLTM3Ljg3LDM3LjIzcy0zNy45MS0xNC44LTM3LjkxLTM3LjIzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTY4Ni4zOSw2MDguNzNjMTcuNTcsMCwyOS40MywxMy4zNywyOS40MywzMi4yNHY1M2gtMTcuMTN2LTQ4LjhjMC0xMy40Mi01LjgzLTIxLjA5LTE2LjIxLTIxLjA5LTExLDAtMTkuNTUsMTAuMTItMTkuNTUsMjQuMzFWNjk0SDE2NDYuMnYtNDguOGMwLTEzLjQyLTUuNzktMjEuMDktMTYuMjQtMjEuMDktMTEuMDgsMC0xOS42MywxMC4xMi0xOS42MywyNC4zMVY2OTRIMTU5My4yVjYxMC42M2gxMi4xNGwzLDEwLjc3YTMzLjM4LDMzLjM4LDAsMCwxLDI1Ljg5LTEyLjY3YzExLjMsMCwyMC4yNSw1LjU1LDI1LDE0LjU5YTMzLDMzLDAsMCwxLDI3LjItMTQuNTlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PC9nPjwvZz48L2c+PC9zdmc+" alt="Open Geospatial Consortium" width="" height="" /></span>
+  </div>
+
+  <!--
+  <div class="coverpage-tc-name">
+    <span>Technical</span>
+  </div>
+  -->
+
+  <div class="authors">
+    
+    
+    
+
+    
+    
+    <span>Editor One <span class="roletag">Editor</span></span>
+    
+    <span>Editor Two <span class="roletag">Editor</span></span>
+    
+    
+  </div>
+
+    <div class="coverpage-metadata">
+      <span class="label">Submission Date: </span> <span class="value">2029-03-30</span>
+      <span class="label">Approval Date: </span> <span class="value">2029-03-30</span>
+      <span class="label">Publication Date: </span> <span class="value">2029-03-30</span>
+      <span class="label">External identifier of this OGC® document: <span class="docnumber value">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</span></span>
+      <span class="label">Internal identifier of this OGC® document: <span class="docnumber value">YY-999</span></span>
+      
+      
+    </div>
+
+    <div class="coverpage-alt-formats">
+      
+      <span class="label">Version: </span> <span class="value">1.0</span><br />
+      
+    
+      <span class="label">Additional Formats: </span>
+      
+      <span class="value"><a href="./document.xml"><i class="far fa-file-code"></i>XML</a></span>
+      
+      
+      <span class="value"><a href="./document.pdf"><i class="far fa-file-pdf"></i>PDF</a></span>
+      
+      
+      <span class="value"><a href="./document.doc"><i class="far fa-file-word"></i>DOC</a></span>
+      
+      </div>
+    
+    </div>
+
+  </div>
+
+    <div class="wrapper-top-bottom"></div>
+
+  <div class="WordSection11">
+  <div class="coverpage-stage-block">
+    <span class="coverpage-stage" id="standard">OGC Standard</span>
+  </div>
+
+  <div class="coverpage-stage-block">
+    <p><span class="coverpage-maturity" id="draft">Draft</span></p>
+  </div>
+</div>
+
+  <div class="coverpage-warning">
+    <div class="boilerplate-legal">
+
+<div id="_d969cbc1-a2ce-fc29-9ca8-2b6bf8626cdf"><h1 class="IntroTitle"><a class="anchor" href="#_d969cbc1-a2ce-fc29-9ca8-2b6bf8626cdf"></a><a class="header" href="#_d969cbc1-a2ce-fc29-9ca8-2b6bf8626cdf">Notice for Drafts</a></h1>
+
+<p id="_da556f2c-cb53-8902-19fe-a5f8a6222f48">This document is not an OGC Standard. This document is distributed for review and comment. This document is subject to change without notice and may not be referred to as an OGC Standard.</p>
+
+<p id="_e8629e34-594d-6076-a18a-23d7b5df19ba">Recipients of this document are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.</p>
+</div>
+</div>
+ </div>
+         
+
+
+<div class="docstage-box">
+  <table>
+    <tr><td>Document number:</td><td>YY-999</td></tr>
+    <tr><td>Document type:</td><td>OGC Standard</td></tr>
+    <tr><td align="right">Document subtype:</td><td align="right">Implementation</td></tr>
+    <tr><td align="right">Document stage:</td><td align="right">Draft</td></tr>
+    <tr><td align="right">Document language:</td><td align="right">English</td></tr>
+  </table>
+</div>
+
+<div class="info-section">
+<div class="copyright">
+  <div class="boilerplate-copyright">
+
+<div id="_e63a44fa-a301-00ff-d2aa-6801901f4ef4"><h1 class="IntroTitle"><a class="anchor" href="#_e63a44fa-a301-00ff-d2aa-6801901f4ef4"></a><a class="header" href="#_e63a44fa-a301-00ff-d2aa-6801901f4ef4">Copyright notice</a></h1>
+
+<p id="_40768efa-fc98-1961-899c-6813fb6d417b" style="text-align:center;">Copyright © 2026 Open Geospatial Consortium<br /> To obtain additional rights of use, visit<a href="https://www.ogc.org/legal">https://www.ogc.org/legal</a></p>
+</div>
+
+<div id="_6908548e-204b-56e7-9062-6924cccf2315"><h1 class="IntroTitle"><a class="anchor" href="#_6908548e-204b-56e7-9062-6924cccf2315"></a><a class="header" href="#_6908548e-204b-56e7-9062-6924cccf2315">Note</a></h1>
+
+<p id="_e1d5d5c4-54c3-2761-be2c-22547f01c057" style="text-align:left;">Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p>
+
+<p id="_02892e94-7b43-630a-129c-d2e0f75ff92b" style="text-align:left;">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p>
+</div>
+</div>
+</div>
+
+<div class="rule"></div>
+</div>
+  </header>
+</div><br /><div class="prefatory-section"><div class="license">
+  <div class="boilerplate-license">
+
+<div id="_45f6bdf5-80f3-f775-9740-2adafc90b1f7"><h1 class="IntroTitle"><a class="anchor" href="#_45f6bdf5-80f3-f775-9740-2adafc90b1f7"></a><a class="header" href="#_45f6bdf5-80f3-f775-9740-2adafc90b1f7">License Agreement</a></h1>
+
+<p id="_772872dd-928c-666f-92c5-676f7f5d3071">Use of this document is subject to the license agreement at <a href="https://www.ogc.org/license">https://www.ogc.org/license</a></p>
+</div>
+</div>
+
+
+<div class="boilerplate-feedback">
+
+<div id="boilerplate-standard-feedback"><p id="_cb0581b2-acf2-995c-21c5-080c40d2dfd0">Suggested additions, changes and comments on this document are welcome and encouraged. Such suggestions may be submitted using the online change request form on OGC web site: <a href="http://ogc.standardstracker.org/">http://ogc.standardstracker.org/</a></p>
+</div>
+</div>
+
+
+</div>
+
+<nav>
+  <div id="toc"><h1 class="IntroTitle"><a class="anchor" href="#_13d7055e-30fc-845a-c60e-8972faf092d9"></a><a class="header" href="#_13d7055e-30fc-845a-c60e-8972faf092d9">Contents</a></h1><ul><li class="h1"><a href="#_249f2611-3057-e619-b8a7-18d21ca99c43">      
+  
+  I.  Abstract
+</a></li>
+<li class="h1"><a href="#_c264b7ea-2776-b4a1-d084-2e1f2341d4b6">      
+  
+  II.  Keywords
+</a></li>
+<li class="h1"><a href="#_ea4a94cb-6d6e-a020-2ade-cb1ca236d46d">      
+  
+  III.  Preface
+</a></li>
+<li class="h1"><a href="#_2e706609-6654-db2b-33a0-c3cb4d57c048">      
+  
+  IV.  Security considerations
+</a></li>
+<li class="h1"><a href="#_76a5a8b9-fe1f-cdd2-5c70-5bf418f488e7">      
+  
+  V.  Submitting Organizations
+</a></li>
+<li class="h1"><a href="#_a273ee4c-e549-f228-69ef-c9a85b298a0d">      
+  
+  VI.  Submitters
+</a></li>
+<li class="h1"><a href="#_bb599baa-9939-bf9c-da56-14a7d1a792af">      
+  
+  VII.  Contributors
+</a></li>
+<li class="h1"><a href="#_f43c291a-e958-8b70-7313-75c911f86a26">      
+  
+  1.  Scope
+</a></li>
+<li class="h1"><a href="#_8653d692-5921-b783-bcab-8315dce3b762">      
+  
+  2.  Conformance
+</a></li>
+<li class="h1"><a href="#_a65b5fe0-244c-4610-aad3-e4b6e3674eaa">      3.  Normative references</a></li>
+<li class="h1"><a href="#_c18bb27e-04c7-727f-6e8a-12a552d03f1f">      
+  
+  4.  Terms and definitions
+</a></li>
+<li class="h1"><a href="#_8e317b23-c34a-a959-b692-b014ad3e6954">      
+  
+  5.  Conventions
+</a></li>
+<li class="h2"><a href="#_84b77e51-4070-15b7-2f19-43216605ef36">      
+  
+  5.1.  Identifiers
+</a></li>
+<li class="h1"><a href="#_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7">      
+  
+  6.  JSON Encoding Requirement classes (Normative)
+</a></li>
+<li class="h2"><a href="#_3441f136-4dfb-c903-9ac7-531b818d9853">      
+  
+  6.1.  GeoSciML Core JSON Abstract Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_2a71e9e1-147f-bc3f-ac58-816a6376d883">      
+  
+  6.2.  GeoSciML Basic JSON Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_9227373c-d796-4009-3bcf-3b324594e911">      
+  
+  6.3.  GeoSciML Extension JSON Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_b6ff1386-8723-2e69-a458-e53a9449c303">      
+  
+  6.4.  GeoSciML GeologicTime JSON Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_b73a5619-7dd8-45da-85b0-32d382790216">      
+  
+  6.5.  GeoSciML Borehole JSON Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_999a028c-8823-9f57-0cb8-9f1a75417cb0">      
+  
+  6.6.  GeoSciML LaboratoryAnalysis-Specimen JSON Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_70c96c53-14a7-dcbb-55dd-857b24186a35">      
+  
+  6.7.  Abstract GeoSciML Lite JSON Requirements Class (Normative)
+</a></li>
+<li class="h2"><a href="#_de7efecc-10d4-167e-8f51-83140c48f4e2">      
+  
+  6.8.  GeoSciML Lite GML 3.1 profile (Normative)
+</a></li>
+<li class="h1"><a href="#_3c7de26d-f675-24f6-8f2a-05229231d4a7">      
+  
+  7.  Media Types for any data encoding(s)
+</a></li>
+<li class="h1"><a href="#_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d">      
+  
+  Annex A (informative) Conformance Class Abstract Test Suite (Normative)
+</a></li>
+<li class="h2"><a href="#_5509d42a-02e9-d5df-a903-9a7a23727bab">      
+  
+  A.1.  Conformance Class A
+</a></li>
+<li class="h1"><a href="#_96ac1666-e590-c0bc-6189-9b06cae0e238">      
+  
+  Annex B (informative) Title
+</a></li>
+<li class="h1"><a href="#_86ce8e65-c445-b308-465c-eba6a1493662">      
+  
+  Annex C (informative) Revision History
+</a></li>
+<li class="h1"><a href="#_ce465506-2789-4081-a8dc-157479ff475b">      Bibliography</a></li></ul></div>
+
+</nav>
+
+
+<div class="rule toc"></div>
+</div><br /><main class="main-section"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button><div class="authority">
+
+
+
+
+
+
+</div><br /><br /><div id="_249f2611-3057-e619-b8a7-18d21ca99c43"><h1 class="AbstractTitle" id="_99320238-552e-4800-aea2-5554fffb1692"><a class="anchor" href="#_249f2611-3057-e619-b8a7-18d21ca99c43"></a><a class="header" href="#_249f2611-3057-e619-b8a7-18d21ca99c43">I.  Abstract</a></h1><p id="_58773996-b4be-f99e-1215-966e9a1c391a">GeoSciML (Geoscience Markup Language) is a Standard for representing geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The Standard is composed of multiple parts. Part 1 describes a logical model. Part 3 (this document) describes encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. The encoding rules define an application of Features and Geometry JSON, also known as JSON-FG.</p></div><div class="Section3" id="_c264b7ea-2776-b4a1-d084-2e1f2341d4b6"><h1 class="IntroTitle" id="_7bbd78fc-5f70-4877-b02b-d9d1a8af3276"><a class="anchor" href="#_c264b7ea-2776-b4a1-d084-2e1f2341d4b6"></a><a class="header" href="#_c264b7ea-2776-b4a1-d084-2e1f2341d4b6">II.  Keywords</a></h1><p>The following are keywords to be used by search engines and document catalogues.</p><p>ogcdoc, OGC document, API, openapi, html</p></div><br /><div id="_ea4a94cb-6d6e-a020-2ade-cb1ca236d46d"><h1 class="ForewordTitle" id="_2f5c4a16-fd93-4e7f-9ad7-f8123d110e19"><a class="anchor" href="#_ea4a94cb-6d6e-a020-2ade-cb1ca236d46d"></a><a class="header" href="#_ea4a94cb-6d6e-a020-2ade-cb1ca236d46d">III.  Preface</a></h1><p id="_96169a21-b709-c0e4-d854-8a2937f88e1b">The primary goal of this specification is to capture the schema, and encoding syntax of key elements described and portrayed in geological maps and databases, in order to enable information systems to interoperate with such data.</p></div><div class="Section3" id="_2e706609-6654-db2b-33a0-c3cb4d57c048"><h1 class="IntroTitle" id="_ae6c7fa5-ccf1-43bb-9415-acb248c56aaf"><a class="anchor" href="#_2e706609-6654-db2b-33a0-c3cb4d57c048"></a><a class="header" href="#_2e706609-6654-db2b-33a0-c3cb4d57c048">IV.  Security considerations</a></h1><p id="_b2512eeb-995a-eabe-4ee2-ae30853fc76e">No security considerations have been made for this Standard.</p></div><div class="Section3" id="_76a5a8b9-fe1f-cdd2-5c70-5bf418f488e7"><h1 class="IntroTitle" id="_859cac3d-0887-49aa-abe3-fba63c9e5a28"><a class="anchor" href="#_76a5a8b9-fe1f-cdd2-5c70-5bf418f488e7"></a><a class="header" href="#_76a5a8b9-fe1f-cdd2-5c70-5bf418f488e7">V.  Submitting Organizations</a></h1><p>The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><ul id="_fc6f1a9b-069b-6533-ffd4-b711904a38fc"><li id="_2c517e84-d312-a74a-2e48-6da85e445abb">Organization One</li>
+<li id="_84ea2b0c-24b5-f5d2-f044-8bef555fdcaa">Organization Two</li></ul></div></div><div class="Section3" id="_a273ee4c-e549-f228-69ef-c9a85b298a0d"><h1 class="IntroTitle" id="_1a9cfeda-9f96-4b39-9364-9a5f3f8767dc"><a class="anchor" href="#_a273ee4c-e549-f228-69ef-c9a85b298a0d"></a><a class="header" href="#_a273ee4c-e549-f228-69ef-c9a85b298a0d">VI.  Submitters</a></h1><p id="_6e1b734b-e32c-864b-59a1-81792b76695c">All questions regarding this submission should be directed to the editor or the submitters:</p><table id="_c390e102-184a-5778-fcb1-87ae77c7376d" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Name</b></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Affiliation</b></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table></div><div class="Section3" id="_bb599baa-9939-bf9c-da56-14a7d1a792af"><h1 class="IntroTitle" id="_571cf51c-6363-4fa7-afbd-7a0632d89a74"><a class="anchor" href="#_bb599baa-9939-bf9c-da56-14a7d1a792af"></a><a class="header" href="#_bb599baa-9939-bf9c-da56-14a7d1a792af">VII.  Contributors</a></h1><p id="_78b14988-4979-b0d8-d987-b5229e533d0d">Additional contributors to this Standard include the following:</p><p id="_3c1dbd69-78e0-c330-a3a8-e9a494eb0b58">Individual name(s), Organization</p></div><div id="_f43c291a-e958-8b70-7313-75c911f86a26"><h1 id="_0618d75e-6ef4-4f1d-9772-7a5586a05aba"><a class="anchor" href="#_f43c291a-e958-8b70-7313-75c911f86a26"></a><a class="header" href="#_f43c291a-e958-8b70-7313-75c911f86a26">1.  Scope</a></h1><p id="_2d3cd192-abce-67e2-c8dc-82a3e571877a">Part 3 of GeoSciML covers the representation in JSON of features from the domain of geology (earth materials, geological units and stratigraphy, geological time, geological structures, geomorphology, geochemistry) and sampling features common to the practice of geoscience, such as boreholes and geological specimens.</p></div><div id="_8653d692-5921-b783-bcab-8315dce3b762"><h1 id="_27f9bb9e-c7b7-4182-81d2-5bd281d4e11a"><a class="anchor" href="#_8653d692-5921-b783-bcab-8315dce3b762"></a><a class="header" href="#_8653d692-5921-b783-bcab-8315dce3b762">2.  Conformance</a></h1><p id="_e0edd1da-871f-7857-6aeb-96433055823c">This standard defines a JSON encoding which conforms to the OGC JSON-FG 1.0.0 encoding rules.</p><p id="_fd3e729e-83d7-f592-be56-919650186546">Requirements for one standardization target type are considered:</p><div class="ul_wrap"><ul id="_76b9b803-cb08-ee0b-0cdd-3cab2046b2b9"><li id="_f9631d67-c7fc-2e7b-d6a3-cc0c6debaf38"><p id="_9e6e26dc-e07c-35da-d9cc-1f756b701c56">Data instance</p>
+</li>
+</ul></div><p id="_b7c44433-d7e1-7765-b7fa-79da270da36c">The normative artefacts for JSON encoding are the JSON Schema files provided online with this specification. Those documents explicitly provide the requirements that must be met by any JSON instance document claiming compliance to this specification. Any requirements that cannot be expressed in JSON Schema are described in the relevant section of this document. Therefore, compliant JSON instances shall:</p><div class="ol_wrap"><ol type="1" id="_cc689d41-1886-21b0-017a-83645fcb0d77"><li id="_a7ac1520-cfc7-2669-8a8c-f8b3f1082d57"><p id="_55b75f30-653e-0691-47ed-4b2e71bc9abc">validate with JSON Schema files,</p>
+</li>
+<li id="_01051d4f-1a49-44ae-ed4d-c3a83f8abb74"><p id="_93938a2c-a4b9-0638-6bdd-c5c65eb01d42">pass compliance tests listed in relevant compliance sections.</p>
+</li>
+</ol></div><p id="_b92188a2-135e-bc1f-b76a-4197463579a7">Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web sitehttps://docs.ogc.org/is/16-008/16-008.html#_ftnref1[<sup><span style="text-decoration: underline">[1]</span></sup>].</p><p id="_987e9ab6-355d-6d3e-13ee-4f2c4194ede1">All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.</p></div><div><h1 id="_a65b5fe0-244c-4610-aad3-e4b6e3674eaa">3.  Normative references</h1>
+<p id="_49996d2b-65c1-916b-9bbf-42b933aa0025">The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+
+<p id="OGC06-121r9" class="NormRef">Arliss Whiteside, Jim Greenwood: OGC 06-121r9, <i>OGC Web Service Common Implementation Specification</i>. Open Geospatial Consortium (2010). <a href="https://docs.ogc.org/is/06-121r9/06-121r9/pdf">https://docs.ogc.org/is/06-121r9/06-121r9/pdf</a>.</p>
+<p id="ISO19103_2005" class="NormRef">ISO: ISO/TS 19103:2005, <i>Geographic information — Conceptual schema language</i>. International Organization for Standardization, Geneva (2005). <a href="https://www.iso.org/standard/37800.html">https://www.iso.org/standard/37800.html</a>.</p>
+<p id="ISO19107_2003" class="NormRef">ISO: ISO 19107:2003, <i>Geographic information — Spatial schema</i>. International Organization for Standardization, Geneva (2003). <a href="https://www.iso.org/standard/26012.html">https://www.iso.org/standard/26012.html</a>.</p>
+<p id="ISO19108_2006" class="NormRef">ISO: ISO 19108:2002/Cor 1:2006, <i>Geographic information — Temporal schema — Technical Corrigendum 1</i>. International Organization for Standardization, Geneva (2002). <a href="https://www.iso.org/standard/44883.html">https://www.iso.org/standard/44883.html</a>.</p>
+<p id="ISO8601" class="NormRef">ISO: ISO 8601, <i>Data elements and interchange formats — Information interchange — Representation of dates and times</i>. International Organization for Standardization, Geneva <a href="https://www.iso.org/standard/40874.html">https://www.iso.org/standard/40874.html</a>.</p>
+<p id="ISO19136_2007" class="NormRef">ISO: ISO 19136:2007, <i>Geographic information — Geography Markup Language (GML)</i>. International Organization for Standardization, Geneva (2007). <a href="https://www.iso.org/standard/32554.html">https://www.iso.org/standard/32554.html</a>.</p>
+<p id="ISO19156_2011" class="NormRef">ISO: ISO 19156:2011, <i>Geographic information — Observations and measurements</i>. International Organization for Standardization, Geneva (2011). <a href="https://www.iso.org/standard/32574.html">https://www.iso.org/standard/32574.html</a>.</p>
+<p id="ISO19111_2007" class="NormRef">ISO: ISO 19111:2007, <i>Geographic information — Spatial referencing by coordinates</i>. International Organization for Standardization, Geneva (2007). <a href="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</a>.</p>
+<p id="ISO19115_2003" class="NormRef">ISO: ISO 19115:2003, <i>Geographic information — Metadata</i>. International Organization for Standardization, Geneva (2003). <a href="https://www.iso.org/standard/26020.html">https://www.iso.org/standard/26020.html</a>.</p>
+<p id="ISO19101_2002" class="NormRef">ISO: ISO 19101:2002, <i>Geographic information — Reference model</i>. International Organization for Standardization, Geneva (2002). <a href="https://www.iso.org/standard/26002.html">https://www.iso.org/standard/26002.html</a>.</p>
+<p id="OGC07-036" class="NormRef">Clemens Portele: OGC 07-036, <i>OpenGIS Geography Markup Language (GML) Encoding Standard</i>. Open Geospatial Consortium (2007). <a href="https://docs.ogc.org/is/07-036/07-036/pdf">https://docs.ogc.org/is/07-036/07-036/pdf</a>.</p>
+<p id="OGC10-025r1" class="NormRef">Simon Cox: OGC 10-025r1, <i>Observations and Measurements — XML Implementation</i>. Open Geospatial Consortium (2011). <a href="https://docs.ogc.org/is/10-025r1/10-025r1/pdf">https://docs.ogc.org/is/10-025r1/10-025r1/pdf</a>.</p>
+<p id="OGC08-094r1" class="NormRef">Alexandre Robin: OGC 08-094r1, <i>OGC® SWE Common Data Model Encoding Standard</i>. Open Geospatial Consortium (2011). <a href="https://docs.ogc.org/is/08-094r1/08-094r1/pdf">https://docs.ogc.org/is/08-094r1/08-094r1/pdf</a>.</p>
+<p id="RFC3986" class="NormRef">T. Berners-Lee, R. Fielding, L. Masinter: IETF RFC 3986, <i>Uniform Resource Identifier (URI): Generic Syntax</i>. RFC Publisher (2005). <a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>.</p>
+<p id="ISOIEC19757-3" class="NormRef">ISO/IEC: ISO/IEC 19757-3, <i>Information technology — Document Schema Definition Languages (DSDL) — Part 3: Rule-based validation using Schematron</i>. International Organization for Standardization, International Electrotechnical Commission, Geneva <a href="https://www.iso.org/standard/74515.html">https://www.iso.org/standard/74515.html</a>.</p>
+<p id="OGC08-131r3" class="NormRef">Policy SWG: OGC 08-131r3, <i>The Specification Model — Standard for Modular specifications</i>. Open Geospatial Consortium (2009). <a href="https://docs.ogc.org/pol/08-131r3/08-131r3/pdf">https://docs.ogc.org/pol/08-131r3/08-131r3/pdf</a>.</p>
+<p id="OMGUML" class="NormRef">OMG: Unified Modeling Language (UML). Version 2.3</p>
+<p id="UCUM201" class="NormRef">Schadow, G. and McDonald, C. J.: Unified Code for Units of Measure (UCUM) — Version 2.0.1</p>
+<p id="MurphySalvador1994" class="NormRef">Murphy, M. A. and Salvador, A.: <i>International Stratigraphic Guide – an abridged version accessed online at URL (<a href="http://www.stratigraphy.org/index.php/ics-stratigraphicguide">http://www.stratigraphy.org/index.php/ics-stratigraphicguide</a> (1994)</i></p>
+<p id="W3CXML" class="NormRef">W3C: <i>Extensible Markup Language (XML) — Version 1.0 (Fourth Edition) (2006)</i></p>
+<p id="W3CXSD" class="NormRef">W3C: <i>XML Schema — Version 1.0 (Second Edition) (2004)</i></p>
+<p id="INSPIRE" class="NormRef">INSPIRE Thematic Woring Group Geology: <i>INSPIRE Data Specification for the spatial data theme Geology Version 3.0. European Commission Joint Research Centre (2013)</i></p>
+<p id="NAGMDM_SC" class="NormRef">North American Geologic Map Data Model Steering Committee: <i>NADM Conceptual Model 1.0—A conceptual model for geologic map information. U.S. Geological Survey Open-File Report 2004-1334, 58 p., accessed online at URL link:http://pubs.usgs.gov/of/2004/1334http://pubs.usgs.gov/of/2004/1334] (2004)</i></p>
+<p id="NAGMDM_Science" class="NormRef">North American Geologic Map Data Model science language products _(<a href="http://ngmdb.usgs.gov/www-nadm/sltt/products.html)_">http://ngmdb.usgs.gov/www-nadm/sltt/products.html)_</a></p>
+</div><div id="_c18bb27e-04c7-727f-6e8a-12a552d03f1f"><h1 id="_6efd7bce-2775-4a65-a38a-510bc160e204"><a class="anchor" href="#_c18bb27e-04c7-727f-6e8a-12a552d03f1f"></a><a class="header" href="#_c18bb27e-04c7-727f-6e8a-12a552d03f1f">4.  Terms and definitions</a></h1>
+<p id="_8c49041f-8363-1e0b-0484-6e1046987489">This document uses the terms defined in <a href="https://portal.ogc.org/public_ogc/directives/directives.php">OGC Policy Directive 49</a>, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this document and OGC documents do not use the equivalent phrases in the ISO/IEC Directives, Part 2.</p>
+
+<p id="_7bbae1f8-9cf5-3d71-b33b-b85f9ba4c251">This document also uses terms defined in the OGC Standard for Modular specifications (<a href="https://portal.opengeospatial.org/files/?artifact_id=34762">OGC 08-131r3</a>), also known as the ‘ModSpec’. The definitions of terms such as standard, specification, requirement, and conformance test are provided in the ModSpec.</p>
+
+<p id="_548e409e-2890-5c36-8c0d-528166f290d6">For the purposes of this document, the following additional terms and definitions apply.</p>
+
+<div id="term-classifier"><h2 class="TermNum" style="text-align:left;" id="_e6bbd1ac-84dd-42b7-93f8-f79b538fba31"><a class="anchor" href="#term-classifier"></a><a class="header" href="#term-classifier">4.1. <b>classifier</b></a></h2></div>
+<p id="_78cdc7e5-1991-ea9d-f6fb-a71dbcdb0f9b">A classifier is an abstract UML metaclass which describes (classifies) a set of instances having common features (not to be confused with the “Feature” stereotype from the OGC Feature Model). A feature declares a structural or behavioral characteristic of instances of classifiers. (<a href="http://www.uml-diagrams.org/classifier.html">http://www.uml-diagrams.org/classifier.html</a>). Classes, Interfaces, Association, and Types are kinds of classifiers.</p>
+
+
+<div id="term-domain-feature"><h2 class="TermNum" style="text-align:left;" id="_39298ae5-4b75-4ca1-96d1-c32afdd5bafe"><a class="anchor" href="#term-domain-feature"></a><a class="header" href="#term-domain-feature">4.2. <b>domain feature</b></a></h2></div>
+<p id="_f3093b9d-180a-d067-12eb-6c52b84cef18">Feature of a type defined within a particular application domain.</p>
+
+
+
+
+ <div id="_3f1a75f2-e682-5385-17d5-f5e93dd6e48d" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>This may be contrasted with observations and sampling features, which are features of types defined for cross-domain purposes.</p></div><p>[<b>SOURCE:</b> ISO 19156:2011]</p>
+
+<div id="term-element-_XML_"><h2 class="TermNum" style="text-align:left;" id="_078eb4e8-84eb-4c87-a4c1-91443c578e10"><a class="anchor" href="#term-element-_XML_"></a><a class="header" href="#term-element-_XML_">4.3. <b>element &#x3c;XML&#x3e;</b></a></h2></div>
+<p id="_fecf1350-4bf9-6ee7-b1c4-61d2765acdce">Basic information item of an XML document containing child elements, attributes and character data.</p>
+
+
+ <p>[<b>SOURCE:</b> <a href="#OGC07-036">OGC 07-036</a>]</p>
+
+<div id="term-feature"><h2 class="TermNum" style="text-align:left;" id="_49b31763-bbe8-405f-9857-5fe4cdb81e96"><a class="anchor" href="#term-feature"></a><a class="header" href="#term-feature">4.4. <b>feature</b></a></h2></div>
+<p id="_aeeedd79-badc-3bb5-c499-2b4a2c41d523">Abstraction of a real-world phenomenon.</p>
+
+
+ <p>[<b>SOURCE:</b> ISO 19101:2002]</p>
+
+<div id="term-GML-application-schema"><h2 class="TermNum" style="text-align:left;" id="_0d3d1f85-a0a1-477f-90fc-593260abbe73"><a class="anchor" href="#term-GML-application-schema"></a><a class="header" href="#term-GML-application-schema">4.5. <b>GML application schema</b></a></h2></div>
+<p id="_d627e6b5-abda-9717-cb44-8d3114363aa6">Application schema written in XML Schema in accordance with the rules specified in OGC GML 3.3</p>
+
+
+ <p>[<b>SOURCE:</b> <a href="#OGC07-036">OGC 07-036</a>]</p>
+
+<div id="term-GML-document"><h2 class="TermNum" style="text-align:left;" id="_0a9d8d6c-e075-47a8-a423-7f1130c426fc"><a class="anchor" href="#term-GML-document"></a><a class="header" href="#term-GML-document">4.6. <b>GML document</b></a></h2></div>
+<p id="_750d50ba-6888-8650-e35d-0267cf5c9cc7">XML document with a root element that is one of the elements AbstractFeature, Dictionary or TopoComplex, specified in the GML schema or any element of a substitution group of any of these elements.</p>
+
+
+ <p>[<b>SOURCE:</b> <a href="#OGC07-036">OGC 07-036</a>]</p>
+
+<div id="term-GML-schema"><h2 class="TermNum" style="text-align:left;" id="_0fc2c2d0-a142-4acf-9d2e-f2345d3a2774"><a class="anchor" href="#term-GML-schema"></a><a class="header" href="#term-GML-schema">4.7. <b>GML schema</b></a></h2></div>
+<p id="_7ff6eb6f-2653-457b-cc94-b757ea6f7fbf">Schema components in the XML namespace ― as specified in OGC GML 3.3</p>
+
+
+ <p>[<b>SOURCE:</b> <a href="#OGC07-036">OGC 07-036</a>]</p>
+
+<div id="term-measurement"><h2 class="TermNum" style="text-align:left;" id="_71dd796d-7835-4183-bc2e-49adebeeaed5"><a class="anchor" href="#term-measurement"></a><a class="header" href="#term-measurement">4.8. <b>measurement</b></a></h2></div>
+<p id="_5e479b73-cdf7-4149-f296-ea07e89b38c0">Set of operations having the objective of determining the value of a quantity.</p>
+
+
+ <p>[<b>SOURCE:</b> ]</p>
+
+<div id="term-observation"><h2 class="TermNum" style="text-align:left;" id="_cb2838fe-9b62-47f4-a2e3-a083d2068a6b"><a class="anchor" href="#term-observation"></a><a class="header" href="#term-observation">4.9. <b>observation</b></a></h2></div>
+<p id="_634019d8-626f-72c2-18a9-d2f038e4a6fe">Act of observing a property.</p>
+
+
+
+
+ <div id="_229ec9e5-c8ba-f924-e990-a8cee7be5d0f" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>The goal of an observation may be to measure or otherwise determine the value of a property.</p></div><p>[<b>SOURCE:</b> ]</p>
+
+<div id="term-observation-procedure"><h2 class="TermNum" style="text-align:left;" id="_97ec501b-d502-4d70-9930-4af928db516a"><a class="anchor" href="#term-observation-procedure"></a><a class="header" href="#term-observation-procedure">4.10. <b>observation procedure</b></a></h2></div>
+<p id="_dc7fcbb1-6211-50c3-dab9-dc30d5acf71f">Method, algorithm or instrument, or system which may be used in making an observation.</p>
+
+
+ <p>[<b>SOURCE:</b> ISO 19156:2011]</p>
+
+<div id="term-observation-result"><h2 class="TermNum" style="text-align:left;" id="_bdd399f8-2177-4555-a4cd-f162157e6543"><a class="anchor" href="#term-observation-result"></a><a class="header" href="#term-observation-result">4.11. <b>observation result</b></a></h2></div>
+<p id="_481920ab-3d72-64c6-ae43-02ddde44f31e">Estimate of the value of a property determined through a known procedure.</p>
+
+
+ <p>[<b>SOURCE:</b> ISO 19156:2011]</p>
+
+<div id="term-property-_General-Feature-Model_"><h2 class="TermNum" style="text-align:left;" id="_65bda255-a946-4fae-bd62-99ace8ba7b17"><a class="anchor" href="#term-property-_General-Feature-Model_"></a><a class="header" href="#term-property-_General-Feature-Model_">4.12. <b>property &#x3c;General Feature Model&#x3e;</b></a></h2></div>
+<p id="_4f56c785-3dec-eb2d-c5b6-da8ed50ef186">Facet or attribute of an object referenced by a name.</p>
+
+
+ <p class="SourceTitle" style="text-align:center;">Example</p><div id="_60d12e56-4928-c7a0-1441-6539b42b7e71" class="example"><p id="_1195f8ff-5bb2-c244-07f7-1e9a1386dec8">Abby’s car has the color red, where “color red” is a property of the car instance.</p>
+</div>
+
+<div id="term-sampled-feature"><h2 class="TermNum" style="text-align:left;" id="_6d0e1467-a7da-48e0-9132-c94a7bbd9528"><a class="anchor" href="#term-sampled-feature"></a><a class="header" href="#term-sampled-feature">4.13. <b>sampled feature</b></a></h2></div>
+<p id="_7285f9c9-fdad-0550-1d3b-a062d2f82e91">The real-world domain feature of interest, such as a geological unit or structure which is observed.</p>
+
+
+ <p>[<b>SOURCE:</b> ISO 19156:2011]</p>
+
+<div id="term-sampling-feature"><h2 class="TermNum" style="text-align:left;" id="_c4265134-c5ff-4b0b-bd63-6f455c98ce40"><a class="anchor" href="#term-sampling-feature"></a><a class="header" href="#term-sampling-feature">4.14. <b>sampling feature</b></a></h2></div>
+<p id="_600db72c-bd33-4ea8-ad5d-9c343ffc1ad1">Feature, such as a station, outcrop, borehole, section or specimen, which is involved in making observations of a domain feature.</p>
+
+
+
+
+ <div id="_a903f65b-63f1-1d48-e66f-c34318b4f055" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>A sampling feature is purely an artefact of the observational strategy, and has no significance independent of the observational campaign.</p></div><p>[<b>SOURCE:</b> ISO 19156:2011]</p>
+
+<div id="term-schema-_XML-Schema_"><h2 class="TermNum" style="text-align:left;" id="_59b411ad-90da-44b2-b85b-fbfacf9d467e"><a class="anchor" href="#term-schema-_XML-Schema_"></a><a class="header" href="#term-schema-_XML-Schema_">4.15. <b>schema &#x3c;XML Schema&#x3e;</b></a></h2></div>
+<p id="_48d4cc47-b715-d491-2309-a7794a4117d2">XML document containing a collection of schema component definitions and declarations within the same target namespace.</p><p id="_16d58649-286e-3247-ccba-7c875d7ea656">Example Schema components of W3C XML Schema are types, elements, attributes, groups, etc.</p>
+
+
+
+
+
+
+ <div id="_3dafe88e-d954-e814-ff1d-ea4c789c3ac6" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>The W3C XML Schema provides an XML interchange format for schema information. A single schema document provides descriptions of components associated with a single XML namespace, but several documents may describe components in the same schema, i.e. the same target namespace.</p></div><p>[<b>SOURCE:</b> <a href="#OGC07-036">OGC 07-036</a>]</p>
+</div><div id="_8e317b23-c34a-a959-b692-b014ad3e6954"><h1 id="_6ae5e69c-b67a-4f1e-96a3-0b1436e7cb84"><a class="anchor" href="#_8e317b23-c34a-a959-b692-b014ad3e6954"></a><a class="header" href="#_8e317b23-c34a-a959-b692-b014ad3e6954">5.  Conventions</a></h1><p id="_87fee229-ff6c-bb90-5546-852478e6f22e">This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.</p><div id="_84b77e51-4070-15b7-2f19-43216605ef36"><h2 id="_158b5256-9f2f-46f0-bf2d-c8987c3f93c3"><a class="anchor" href="#_84b77e51-4070-15b7-2f19-43216605ef36"></a><a class="header" href="#_84b77e51-4070-15b7-2f19-43216605ef36">5.1.  Identifiers</a></h2>
+
+<p id="_db80390b-c7ac-9d07-7897-e3fa61b9fd4a">The normative provisions in this specification are denoted by a URI constructed using this pattern:</p>
+
+<p id="_1dc348b0-46b1-8cf9-5865-71c75df3a0c6"><a href="http://www.opengis.net/spec/{standard}/{m.n}">http://www.opengis.net/spec/{standard}/{m.n}</a></p>
+
+<p id="_4d161ce7-9235-eea3-ace6-00af381e1807">All requirements and conformance tests that appear in this document are denoted by a partial URI which is relative to this base. The identifier supports cross-referencing of class membership, dependencies, and links from each conformance test to the requirements tested. In this specification identifiers are expressed as partial URIs or paths, which can be appended to a base URI that identifies the specification as a whole in order to construct a complete URI for identification in an external context.</p>
+
+<p id="_d21fe95f-15a4-7820-b559-320102a537d9">The URI for each requirements class has the form:</p>
+
+<p id="_671d0cae-c621-ba02-2b3f-5966953e282a"><a href="http://www.opengis.net/spec/geosciml-part2%2F5.0%2Freq%2F%5BclassM%5D">http://www.opengis.net/spec/geosciml-part2/5.0/req/[classM]</a></p>
+
+<p id="_fd705ace-aa64-e94c-5758-24df41ee8518">The URI for each requirement or recommendation has the form:</p>
+
+<p id="_9afead78-0468-3142-769f-9405a0aa43e3"><a href="http://www.opengis.net/spec/geosciml-part2%2F5.0%2Freq%2F%5BclassM%5D%2F%5BreqN%5D">http://www.opengis.net/spec/geosciml-part2/5.0/req/[classM]/[reqN</a>]</p>
+
+<p id="_6910b575-63e2-9e76-04da-ac660e3b6f2e">The URI for each conformance class has the form:</p>
+
+<p id="_dc938a57-f4e5-5adb-35b5-4180659125f7"><a href="http://www.opengis.net/spec/geosciml-part2%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B">http://www.opengis.net/spec/geosciml-part2/5.0/conf/[classM]</a></p>
+
+<p id="_41f48701-dcd6-e1d0-792d-4dd75f0ddab6">The URI for each conformance test has the form:</p>
+
+<p id="_503d4349-baaa-199b-73d3-c0396fe5f474"><a href="http://www.opengis.net/spec/geosciml-part2%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B%2F%2B%2B%5B%2B%2BtestN%2B%2B%5D%2B%2B">http://www.opengis.net/spec/geosciml-part2/5.0/req/[classM]/[testN</a>]</p>
+</div></div><div id="_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7"><h1 id="_1e8859fd-4413-4b99-94e4-504884bf0ffb"><a class="anchor" href="#_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7"></a><a class="header" href="#_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7">6.  JSON Encoding Requirement classes (Normative)</a></h1><p id="_63a4ca63-22a7-c3da-6c38-0f6e30e896b8">JSON Schema files were derived from the UML model following the <a href="https://docs.ogc.org/bp/24-017r1.html">OGC Best Practice for UML to JSON Encoding Rules (OGC 24-017r1)</a>.<div id="_8e8cea6a-6ea4-bbc7-2c3e-d48fd12beaef" class="Note"><p><span class="note_label">NOTE:  </span>The SWG should replace this with a diagram from Enterprise Architect</p></div></p><p class="collapsible active"> </p><div id="_5c1b7756-00c6-d02e-33f3-713462b55b9b" class="figure hidable">
+
+<img src="data:image/png;base64,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" height="245" width="781" /></div><p class="FigureTitle" style="text-align:center;">Figure 1 — JSON Encoding requirements classes dependencies (external dependencies not shown)</p><div id="_3441f136-4dfb-c903-9ac7-531b818d9853"><h2 id="_d32bddde-2700-45d9-814b-438cb5cb92b2"><a class="anchor" href="#_3441f136-4dfb-c903-9ac7-531b818d9853"></a><a class="header" href="#_3441f136-4dfb-c903-9ac7-531b818d9853">6.1.  GeoSciML Core JSON Abstract Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_c69b01dc-b44c-4470-8cdd-fb09731c03d9"><table id="req_class_gsmljson_core" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson_core"></a><a class="header" href="#req_class_gsmljson_core">Requirements class 1: Requirements Class ‘GeoSciML Core JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Web API<br />https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core<br />JSON Schema<br />ISO 19118:2011 Geographic information — Encoding<br />OGC Features and Geometries JSON — Part 1: Core v1.0.0<br />OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0<br />OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statements</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><a id="_db9aed0a-396c-2d95-44a3-c85d9c14e9cb"></a>Recommendation 1: <tt><a href="#rec_gsmljson_core_identifier_uri">/rec/gsmljson-core/identifier-uri</a></tt><br /><a id="_b4e8ac1f-9bbc-958a-094f-3539f7893818"></a>Recommendation 2: <tt><a href="#rec_gsmljson_core_iso8601_time">/rec/gsmljson-core/iso8601-time</a></tt><br /><a id="_a3dd796f-e746-9e5c-1f81-c7b190ab7620"></a>Requirement 1: <tt><a href="#req_gsmljson_core_json">/req/gsmljson-core/json</a></tt><br /><a id="_b4186c05-7f39-a938-32f3-eac27cda6b62"></a>Requirement 2: <tt><a href="#req_gsmljson_core_codelist">/req/gsmljson-core/codelist</a></tt><br /><a id="_1409ed81-36b4-2260-e3a1-1ad31135f6d7"></a>Requirement 3: <tt><a href="#req_gsmljson_core_time_zone">/req/gsmljson-core/time-zone</a></tt></td></tr></tbody></table></div>
+
+<p id="_c00d7c60-fd2f-3821-68d3-10566fc6905e">This requirements class is shared by all JSON GeoSciML instances.</p>
+
+<div id="_4f29805d-523c-c067-c279-d7e620700d3d"><h3><a class="anchor" href="#_4f29805d-523c-c067-c279-d7e620700d3d"></a><a class="header" href="#_4f29805d-523c-c067-c279-d7e620700d3d">6.1.1.  JSON document validation</a></h3>
+
+<p id="_d9dbd44e-ea96-8d3c-d628-2bcfa1af3e65">A JSON instance shall validate to JSON encoding rules provided by this specification for each of the JSON requirements classes.</p>
+
+<div class="require" id="_8b3574da-593d-4c8a-bc7f-78a0c26a4136"><table id="req_gsmljson_core_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_core_json"></a><a class="header" href="#req_gsmljson_core_json">Requirement 1</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-core/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 1: <tt><a href="#req_class_gsmljson_core">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_e57f337a-922a-6c3f-5fc0-fe4c313a416b">An JSON instance document SHALL validate against the JSON Schema files provided in this Standard.</p>
+</td></tr></tbody></table></div>
+
+<p id="_60b2d088-4855-c54c-03ea-fef7d77c28a1"> </p>
+</div>
+
+<div id="_8fb7b24e-35bc-3692-24cd-cc92b766ef04"><h3><a class="anchor" href="#_8fb7b24e-35bc-3692-24cd-cc92b766ef04"></a><a class="header" href="#_8fb7b24e-35bc-3692-24cd-cc92b766ef04">6.1.2.  CodeList</a></h3>
+
+<p id="_2c676f06-3e37-b8ee-e2fb-e8f8b5a5ecda">Open code lists (see 8.2.7) are encoded as gml:ReferenceType which is a sequence of gml:OwnershipAttributeGroup and gml:AssociationAttributeGroup, providing a series of xml attributes from W3C XLINK (link:http://www.w3.org/TR/xlink11/http://www.w3.org/TR/xlink11/]).  A vocabulary term reference has mandatory xlink:href and xlink:title attributes.</p>
+
+<p class="collapsible active"> </p><pre id="_969c5ebd-acb5-d28d-6348-95fd2dd3345c" class="sourcecode hidable"><span class="nt">&#x3c;gsmlb:lithology</span> <span class="na">link:href=</span><span class="s">"http://resource.geosciml.org/ classifier/cgi/lithology/granite"</span> <span class="na">xlink:title=</span><span class="s">"granite"</span><span class="nt">/&#x3e;</span></pre>
+
+
+<p id="_c59db23d-facd-fbef-6186-60d0667a6fd7">The xlink:href contains an absolute HTTP URI that should resolve to a resource representation (often a SKOS document).  The resource can have multiple representations and it is not guaranteed that an XML parsable document can be obtained from the vocabulary service.</p>
+
+<div class="require" id="_d9c33dcf-e769-41fd-985d-23745e352849"><table id="req_gsmljson_core_codelist" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_core_codelist"></a><a class="header" href="#req_gsmljson_core_codelist">Requirement 2</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-core/codelist</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 1: <tt><a href="#req_class_gsmljson_core">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_ec0a4b13-acc4-fa76-4f8c-06950f947fa3">Vocabulary term SHALL be encoded with HTTP URI in xlink:href and provide a human readable description in xlink:title.</p>
+</td></tr></tbody></table></div>
+</div>
+
+<div id="_ad458564-085e-cbf1-0cbc-9cb8c5333ea1"><h3><a class="anchor" href="#_ad458564-085e-cbf1-0cbc-9cb8c5333ea1"></a><a class="header" href="#_ad458564-085e-cbf1-0cbc-9cb8c5333ea1">6.1.3.  Identifiers</a></h3>
+
+<p id="_e25c5077-0860-30a0-9715-30d073367ee8">The GeoSciML community has developed a best practice of using <a href="http://www.ietf.org/rfc/rfc2616">http://www.ietf.org/rfc/rfc2616#</a> as a codespace for string with authority to designate string that are resolvable HTTP URI.</p>
+
+<p id="_67abc9e0-5961-2699-eb1e-17391abd5133">gml:identifier’s flagged with the specific codeSpace “http://www.ietf.org/rfc/rfc2616” should be resolvable HTTP URI that return an instance of itself.</p>
+
+<div class="recommend" id="_1404e339-4d62-45f5-959b-5b308d5f4c54"><table id="rec_gsmljson_core_identifier_uri" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#rec_gsmljson_core_identifier_uri"></a><a class="header" href="#rec_gsmljson_core_identifier_uri">Recommendation 1</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/rec/gsmljson-core/identifier-uri</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 1: <tt><a href="#req_class_gsmljson_core">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_d35f73d3-14a8-09f9-51db-dab4c1a389f0">Feature identifiers (unique name) provided in gml:identifier and @codeSpace = “http://www.ietf.org/rfc/rfc2616” SHOULD be URI of resource using Linked Open Data principles.</p>
+</td></tr></tbody></table></div>
+
+<p class="collapsible active"> </p><pre id="_057384ef-935e-6d09-26f6-4fec1fe36766" class="sourcecode hidable"><span class="nt">&#x3c;gml:identifier</span><br />    <span class="na">codeSpace=</span><span class="s">"http://www.ietf.org/rfc/rfc2616/"</span><span class="nt">&#x3e;</span><br />       http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947<span class="nt">&#x3c;/gml:identifier&#x3e;</span></pre>
+
+
+<p id="_3e59831c-3eff-d389-7cca-84d4c31c7e79">Resolving link:http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947] shall return:</p>
+
+<p class="collapsible active"> </p><pre id="_1074b7f0-c816-e070-06f6-1ab89256b43d" class="sourcecode hidable"><span class="nt">&#x3c;gsmlb:GeologicUnit</span> <span class="na">gml:id=</span><span class="s">“G1”</span><span class="nt">&#x3e;</span><br />(…)<br /><span class="nt">&#x3c;gml:identifier</span> <span class="na">codeSpace=</span><span class="s">"<br />    http://www.ietf.org/rfc/rfc2616/"</span><span class="nt">&#x3e;</span><br />       http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947<span class="nt">&#x3c;/gml:identifier&#x3e;</span><br />(…)<br /><span class="nt">&#x3c;/gsmlb:GeologicUnit&#x3e;</span></pre>
+
+</div>
+
+<div id="_485b8bd3-1673-a965-7019-fdd820bc2669"><h3><a class="anchor" href="#_485b8bd3-1673-a965-7019-fdd820bc2669"></a><a class="header" href="#_485b8bd3-1673-a965-7019-fdd820bc2669">6.1.4.  Nillables or Voidables</a></h3>
+
+<p id="_360c6f8b-cb82-dcb0-e8cb-4069bd242f92">A nillable property (identified as “voidable” in the UML model) is a property than can document the reason that a value is not provided.  There are two ways to identify a nil value.</p>
+
+<div class="ul_wrap"><ul id="_bda140ba-a84a-2989-7034-5e32c5095989"><li id="_601eedfd-2134-219e-67c3-876ee9f86dc8"><p id="_54f59ccf-dd33-f770-9b37-09fc9bfec171">Using XSD xsi:nil=”true” and nilReason.  Where available, this encoding method should be used to indicate nilled property values.</p>
+</li>
+<li id="_90d97f11-c7f1-d63e-22b2-44f0a5a41eac"><p id="_fa53de77-1f0e-2361-ee6b-f795e65f7a7f">Using a HTTP URI identifier defined by a community as representing a null value.  OGC uses link:http://www.opengis.net/def/nil/OGC/0/%7bnilReason%7dhttp://www.opengis.net/def/nil/OGC/0/{nilReason}] (OGC 12-110).</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_a27a6df0-f11d-17d3-54e6-3339a5869772"><h3><a class="anchor" href="#_a27a6df0-f11d-17d3-54e6-3339a5869772"></a><a class="header" href="#_a27a6df0-f11d-17d3-54e6-3339a5869772">6.1.5.  Date encoding</a></h3>
+
+<p id="_32811a14-e588-f40f-f8ac-7068bbbf285a">The date-time values shall conform to ISO 8601 standards.  Although this is already a GML 3.2 encoding rule (clause 14.2.2.7), this format should also be used in any string that should contain a date, or date and time.</p>
+
+<div class="recommend" id="_2d3ec582-60f5-4948-a300-0ba760b2df5b"><table id="rec_gsmljson_core_iso8601_time" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#rec_gsmljson_core_iso8601_time"></a><a class="header" href="#rec_gsmljson_core_iso8601_time">Recommendation 2</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/rec/gsmljson-core/iso8601-time</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 1: <tt><a href="#req_class_gsmljson_core">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_b49de59c-ee17-0f70-f9a9-8d384c95dca0">All date-time occurrences SHOULD be encoded using ISO8601 extended time format.</p>
+</td></tr></tbody></table></div>
+
+<p id="_6014d7b6-434f-1eda-51fe-c4d495ede227">Note that this precludes the use of time-coordinate systems such as UNIX time. This is specified in order to be maximally consistent with TimeSeriesML requirements.</p>
+
+<p id="_5336948d-77e0-9208-c751-6fd6a728476e">The time zone shall be included in the time element.</p>
+
+<div class="require" id="_510c80c7-a97d-40a7-8265-f4a3eb592ccb"><table id="req_gsmljson_core_time_zone" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_core_time_zone"></a><a class="header" href="#req_gsmljson_core_time_zone">Requirement 3</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-core/time-zone</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 1: <tt><a href="#req_class_gsmljson_core">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_aa35bfc9-ed7d-5c22-b3c5-612bd385d3e1">The value of each time element SHALL include a time zone definition using a signed 4 digit character or a ‘Z’ to represent Zulu or Greenwich Mean Time (GMT). This is defined by the following regular expression:</p>
+<p id="_e00038ca-c5cd-9f67-edf5-8af1952b310b">(Z|[+-]HH:MM).</p>
+</td></tr></tbody></table></div>
+
+<p id="_16b99d1c-5932-bbc7-7167-e95ee1d6148d">Greenwich Mean Time (GMT or Zulu)</p>
+
+<p class="collapsible active"> </p><pre id="_d56cc55b-de0e-f381-ed29-b0d4d4efd759" class="sourcecode hidable">---<br /><span class="nt">&#x3c;om:phenomenonTime&#x3e;</span><br />  <span class="nt">&#x3c;gml:TimeInstant</span> <span class="na">gml:id=</span><span class="s">"ti.1"</span><span class="nt">&#x3e;</span><br />         <span class="nt">&#x3c;gml:timePosition&#x3e;</span>1981-09-12T00:00:00Z<span class="nt">&#x3c;/gml:timePosition&#x3e;</span><br />  <span class="nt">&#x3c;/gml:TimeInstant&#x3e;</span><br /><span class="nt">&#x3c;/om:phenomenonTime&#x3e;</span><br />---</pre>
+
+
+<p id="_238d2122-0978-ee41-0530-485600546c24">Time Zone (example is Newfoundland time zone -3:30)</p>
+
+<p class="collapsible active"> </p><pre id="_3f22e23e-bdc7-687b-ddd2-6b43a9feaba3" class="sourcecode hidable">---<br /><span class="nt">&#x3c;om:phenomenonTime&#x3e;</span><br />  <span class="nt">&#x3c;gml:TimeInstant</span> <span class="na">gml:id=</span><span class="s">"ti.2"</span><span class="nt">&#x3e;</span><br />         <span class="nt">&#x3c;gml:timePosition&#x3e;</span>1981-09-12T00:00:00-03:30<span class="nt">&#x3c;/gml:timePosition&#x3e;</span><br />  <span class="nt">&#x3c;/gml:TimeInstant&#x3e;</span><br /><span class="nt">&#x3c;/om:phenomenonTime&#x3e;</span><br />---</pre>
+
+</div>
+</div><div id="_2a71e9e1-147f-bc3f-ac58-816a6376d883"><h2 id="_658169b1-91d6-4136-a33e-5efef0541455"><a class="anchor" href="#_2a71e9e1-147f-bc3f-ac58-816a6376d883"></a><a class="header" href="#_2a71e9e1-147f-bc3f-ac58-816a6376d883">6.2.  GeoSciML Basic JSON Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_bbdb63a3-2deb-40da-9d5d-9a2ce20508f4"><table id="req_class_gsmljson-basic" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson-basic"></a><a class="header" href="#req_class_gsmljson-basic">Requirements class 2: Requirements Class ‘GeoSciML Basic JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-basic</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-basic<br />/req/gsmljson-core</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statement</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;">Requirement 4: <tt><a href="#req_gsmljson_basic_json">/req/gsmljson-basic/json</a></tt></td></tr></tbody></table></div>
+
+<p id="_84296bcf-a458-402b-c9e2-270304541335">All the elements from the basic package must be schema valid according to the XSD document provided at link:http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsdhttp://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd]</p>
+
+<div class="require" id="_f3288863-fb7a-47a7-a7de-4873d573a213"><table id="req_gsmljson_basic_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_basic_json"></a><a class="header" href="#req_gsmljson_basic_json">Requirement 4</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-basic/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 2: <tt><a href="#req_class_gsmljson-basic">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-basic</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_39032882-0163-0f69-3d66-cc87589e3354">A JSON instance document SHALL validate with schema located at  <a href="http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd">http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd</a>.</p>
+</td></tr></tbody></table></div>
+
+<p id="_217f695a-3dba-bd87-b434-16ced577f7ca">All the elements from basic package must pass the schematron rules defined in the schematron file located at link:http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.schhttp://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch].</p>
+
+<p id="_273404a9-6a6e-e830-3966-22739728ad53">Some properties links to stub property blocks (see 5.1) whose values are empty abstract classes in the GeoSciML Basic package.  Since abstract description classes are DataType, the property is inline only and therefore an empty property is not schema valid.</p>
+
+<p id="_9f4a3c0c-22ef-b3fc-d0b7-83931fa72e76"> </p>
+
+<p id="_eb73370e-b004-2d54-6c3d-6ac9eea4c2ff">This instance is <b>not</b> XSD valid:</p>
+
+<p class="collapsible active"> </p><pre id="_3132e312-b5b4-9907-3408-a51d5603f63e" class="sourcecode hidable"><span class="cp">&#x3c;?xml version=“1.0” encoding=“UTF-8”?&#x3e;</span><br /><span class="nt">&#x3c;GeologicUnit</span> <span class="na">xmlns=</span><span class="s">"http://www.opengis.net/gsml/4.1/GeoSciML-Basic"</span><br />     <span class="na">xmlns:gml=</span><span class="s">"http://www.opengis.net/gml/3.2"</span> <span class="na">gml:id=</span><span class="s">"x1"</span><br />     <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><br />     <span class="na">xsi:schemaLocation=</span><span class="s">"http://xmlns.geosciml.org/GeoSciML-Basic/4.1<br />     http://schemas.geosciml.org/geosciml/4.1/geoSciMLBasic.xsd"</span><span class="nt">&#x3e;</span><br />…<br />         <span class="nt">&#x3c;gbMaterialDescription&#x3e;&#x3c;/gbMaterialDescription&#x3e;</span><br />      …<br /><span class="nt">&#x3c;/GeologicUnit&#x3e;</span></pre>
+
+
+<div id="_d961b112-b840-a68a-cb0e-93d35f23efbc"><h3><a class="anchor" href="#_d961b112-b840-a68a-cb0e-93d35f23efbc"></a><a class="header" href="#_d961b112-b840-a68a-cb0e-93d35f23efbc">6.2.1.  relatedFeature</a></h3>
+
+<p id="_e5f394e3-3ec5-616d-46d1-976b8a872787">In GeoSciML Basic, relatedFeature is byReference only.  AbstractFeatureRelation subtypes are materialized in Extension package.</p>
+</div>
+</div><div id="_9227373c-d796-4009-3bcf-3b324594e911"><h2 id="_a6e7cdc3-ba6f-4b1e-a711-72a4beb6014f"><a class="anchor" href="#_9227373c-d796-4009-3bcf-3b324594e911"></a><a class="header" href="#_9227373c-d796-4009-3bcf-3b324594e911">6.3.  GeoSciML Extension JSON Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_cd2653a4-0dcd-47fe-9ab9-165fa08b6f14"><table id="req_class_gsmljson_extension" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson_extension"></a><a class="header" href="#req_class_gsmljson_extension">Requirements class 3: Requirements Class ‘GeoSciML Extension JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-extension</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-extension<br />/req/gsmljson-basic<br />/req/gsmljson-geologictime</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statement</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;">Requirement 5: <tt><a href="#req_gsmljson_extension_json">/req/gsmljson-extension/json</a></tt></td></tr></tbody></table></div>
+
+<p id="_c7c70d35-acb8-4b77-5ad4-c7076c00c62d">All the elements from the GeoSciML Extension package must be schema valid according to the XSD document provided at link:http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsdhttp://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd].</p>
+
+<div class="require" id="_75932fc6-fdb1-4a89-8edb-bce48206ffff"><table id="req_gsmljson_extension_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_extension_json"></a><a class="header" href="#req_gsmljson_extension_json">Requirement 5</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-extension/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 3: <tt><a href="#req_class_gsmljson_extension">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-extension</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_0aec9a18-5d1b-ceb8-1868-2166caa7f35e">A JSON instance document SHALL validate with schema located at   <a href="http://schemas.opengis.net/gsml/4.1/">http://schemas.opengis.net/gsml/4.1/</a> geoSciMLExtension.xsd.</p>
+</td></tr></tbody></table></div>
+
+<p id="_ca88cfbc-8f23-2e19-a123-5599df262dcf">All the elements from the GeoSciML Extension package must pass the schematron rules defined in the schematron file located at link:http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.schhttp://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch].</p>
+</div><div id="_b6ff1386-8723-2e69-a458-e53a9449c303"><h2 id="_56999f13-9f96-411c-bc39-979e98596497"><a class="anchor" href="#_b6ff1386-8723-2e69-a458-e53a9449c303"></a><a class="header" href="#_b6ff1386-8723-2e69-a458-e53a9449c303">6.4.  GeoSciML GeologicTime JSON Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_0e0b6e81-7a96-4941-8b6d-41572244efd6"><table id="req_class_gsmljson-geologictime" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson-geologictime"></a><a class="header" href="#req_class_gsmljson-geologictime">Requirements class 4: Requirements Class ‘GeoSciML GeologicTime JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-geologictime</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-geologictime<br />/req/gsmljson-core</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statement</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;">Requirement 6: <tt><a href="#req_gsmljson-_eologictime_json">/req/gsmljson-geologictime/json</a></tt></td></tr></tbody></table></div>
+
+<p id="_4f7f6075-c8c1-3aad-e0c5-e3019e174a12">All the elements from the GeoSciML Geologic Time package must be schema valid according to the XSD document provided at link:http://schemas.opengis.net/gsml/4.1/geologicTime.xsdhttp://schemas.opengis.net/gsml/4.1/geologicTime.xsd].</p>
+
+<div class="require" id="_cbbe8f66-745f-4b12-9229-af8bc228a12c"><table id="req_gsmljson-_eologictime_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson-_eologictime_json"></a><a class="header" href="#req_gsmljson-_eologictime_json">Requirement 6</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-geologictime/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 4: <tt><a href="#req_class_gsmljson-geologictime">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-geologictime</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_461c35c7-6502-ee00-c745-faf4defc2e9a">A JSON instance document SHALL validate with schema located at   <a href="http://schemas.opengis.net/gsml/4.1/geologicTime.xsd">http://schemas.opengis.net/gsml/4.1/geologicTime.xsd</a>.</p>
+</td></tr></tbody></table></div>
+
+<p id="_a2d23f8d-984b-8753-708b-f26bb987bbae">All the elements from the GeoSciML Geologic Time package must pass the schematron rules defined in the schematron file located at link:http://schemas.opengis.net/gsml/4.1/geologictime.schhttp://schemas.opengis.net/gsml/4.1/geologictime.sch].</p>
+</div><div id="_b73a5619-7dd8-45da-85b0-32d382790216"><h2 id="_002e74d1-a4ed-40f7-a750-a8fec279e6fc"><a class="anchor" href="#_b73a5619-7dd8-45da-85b0-32d382790216"></a><a class="header" href="#_b73a5619-7dd8-45da-85b0-32d382790216">6.5.  GeoSciML Borehole JSON Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_83f99cb3-b86a-4dec-b07e-ac5a8d5f8982"><table id="req_class_gsmljson-borehole" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson-borehole"></a><a class="header" href="#req_class_gsmljson-borehole">Requirements class 5: Requirements Class ‘GeoSciML Borehole JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-borehole</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-borehole<br />/req/gsmljson-core</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statement</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;">Requirement 7: <tt><a href="#req_gsmljson_borehole_json">/req/gsmljson-borehole/json</a></tt></td></tr></tbody></table></div>
+
+<p id="_8186c7ee-9bd9-bc03-26f0-ebe7caf356ce">All the elements from the Borehole package must be schema valid according to the XSD document provided at link:http://schemas.opengis.net/gsml/4.1/borehole.xsdhttp://schemas.opengis.net/gsml/4.1/borehole.xsd].</p>
+
+<div class="require" id="_51fdb7ba-aadf-4dc0-92b0-4c6908779ebc"><table id="req_gsmljson_borehole_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_borehole_json"></a><a class="header" href="#req_gsmljson_borehole_json">Requirement 7</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-borehole/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 5: <tt><a href="#req_class_gsmljson-borehole">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-borehole</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_40868a36-05cd-aa68-829a-d78064aff1dc">A JSON instance document shall validate with schema located at   <a href="http://schemas.opengis.net/gsml/4.1/borehole.xsd">http://schemas.opengis.net/gsml/4.1/borehole.xsd</a>.</p>
+</td></tr></tbody></table></div>
+
+<p id="_3e6aa187-79b4-0442-4483-2a5af23f5f3f">All the elements from the Borehole package must pass the schematron rule defined in the schematron file located at link:http://schemas.opengis.net/gsml/4.1/borehole.schhttp://schemas.opengis.net/gsml/4.1/borehole.sch].</p>
+</div><div id="_999a028c-8823-9f57-0cb8-9f1a75417cb0"><h2 id="_dcf13baf-2daf-4d31-95ab-c6cfadf00f40"><a class="anchor" href="#_999a028c-8823-9f57-0cb8-9f1a75417cb0"></a><a class="header" href="#_999a028c-8823-9f57-0cb8-9f1a75417cb0">6.6.  GeoSciML LaboratoryAnalysis-Specimen JSON Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_d95d6734-266e-471e-a48d-ab6df0e4c19f"><table id="req_class_gsmljson_lab" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson_lab"></a><a class="header" href="#req_class_gsmljson_lab">Requirements class 6: Requirements Class ‘GeoSciML LaboratoryAnalysis-Specimen JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lab</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">/req/gsml-lab<br />/req/gsmljson-core</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statement</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;">Requirement 8: <tt><a href="#req_gsmljson_lab_json">/req/gsmljson-lab/json</a></tt></td></tr></tbody></table></div>
+
+<p id="_048d4cfe-21d3-c091-31a6-fe2299857145">All the elements from the GeoSciML Laboratory Analysis &#x26; Specimen package must be schema valid according to the XSD document provided at link:http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsdhttp://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd].</p>
+
+<div class="require" id="_9fff4cfc-cd4d-4ef8-8afd-4f1d54b0fc0f"><table id="req_gsmljson_lab_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_lab_json"></a><a class="header" href="#req_gsmljson_lab_json">Requirement 8</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-lab/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 6: <tt><a href="#req_class_gsmljson_lab">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lab</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_8655aba3-41e6-6c8f-5128-cb2260bd000b">A JSON instance document SHALL validate with schema located at   <a href="http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd">http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd</a>.</p>
+</td></tr></tbody></table></div>
+
+<p id="_2fa7036b-53a2-5358-3f96-fb028fe4b6ca">All the elements from the GeoSciML Laboratory Analysis &#x26; Specimen package must pass the schematron rule defined in the schematron file located at link:http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.schhttp://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch].</p>
+</div><div id="_70c96c53-14a7-dcbb-55dd-857b24186a35"><h2 id="_1ee11fc4-f941-4e65-9e6f-83bdbbd24297"><a class="anchor" href="#_70c96c53-14a7-dcbb-55dd-857b24186a35"></a><a class="header" href="#_70c96c53-14a7-dcbb-55dd-857b24186a35">6.7.  Abstract GeoSciML Lite JSON Requirements Class (Normative)</a></h2>
+
+<div class="require" id="_db1fa18d-0928-45a8-9bfa-97d9d78fc0c7"><table id="req_class_gsmljson-lite" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson-lite"></a><a class="header" href="#req_class_gsmljson-lite">Requirements class 7: Requirements Class ‘Abstract GeoSciML Lite JSON’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite<br />/req/gsmljson-core<br />GML Simple Feature OGC 10-100r3 SF-0</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statements</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><a id="_e9ad582e-5f15-3e2b-fc06-c808c04f5d58"></a>Recommendation 7-1: <tt><a href="#_e9ad582e-5f15-3e2b-fc06-c808c04f5d58">/rec/gsmljson-lite/SF-0-simpletype</a></tt><br /><a id="_3686925b-abaa-64bc-5e9e-1e598f2cab61"></a>Recommendation 7-2: <tt><a href="#_3686925b-abaa-64bc-5e9e-1e598f2cab61">/rec/gsmljson-lite/user-json</a></tt><br /><a id="_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf"></a>Recommendation 7-3: <tt><a href="#_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf">/rec/gsmljson-lite/user-ns</a></tt><br /><a id="_6c64b089-cd6e-be2f-e500-23902b8d095b"></a>Requirement 9: <tt><a href="#req_gsmljson_lite_SF0">/req/gsmljson-lite/SF-0</a></tt></td></tr></tbody></table></div>
+
+<p id="_d3664aff-f4b5-861c-57c6-deeefc9abccf">The abstract GeoSciML Lite encoding sets general encoding rules for XML targets, regardless of version of GML.</p>
+
+<div id="_a3ef8a44-dfa9-bad4-92b4-c68b153e23dd"><h3><a class="anchor" href="#_a3ef8a44-dfa9-bad4-92b4-c68b153e23dd"></a><a class="header" href="#_a3ef8a44-dfa9-bad4-92b4-c68b153e23dd">6.7.1.  Simple Feature</a></h3>
+
+<p id="_c83daee3-54fc-6f94-ead9-433965375aa8">GeoSciML Lite schemas are meant to deliver simple content, consistent with simple scenarios described in GML Simple Feature Level 0 (OGC 10-100r3).  User defined properties must respect the same constrains as defined in SF-0 specification.</p>
+
+<div class="require" id="_6a178233-3e2c-4006-8f46-f99417fce18c"><table id="req_gsmljson_lite_SF0" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_lite_SF0"></a><a class="header" href="#req_gsmljson_lite_SF0">Requirement 9</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-lite/SF-0</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 7: <tt><a href="#req_class_gsmljson-lite">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_8051d9f8-196e-c673-f9c5-40921bc570ba">A JSON instance document SHALL be compliant to GML Simple Feature Level 0.</p>
+</td></tr></tbody></table></div>
+
+<p id="_4d83bfc2-d560-a27f-1c44-f36902fdd216">Simple Feature defines 3 compliance levels summarized in Table17.</p>
+
+<p class="TableTitle" style="text-align:center;">Table 1 — Reproduction of Table 1 of 10-100r3 (Clause 2.1)</p><table id="_16f38c35-bf2a-e624-f468-f13cfef47660" class="MsoISOTable" style="border-width:1px;border-spacing:0;width:100%;table-layout:fixed;"><colgroup><col style="width: 36%;" /><col style="width: 18%;" /><col style="width: 23%;" /><col style="width: 23%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col"><b> </b></th><th style="font-weight:bold;text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col"><b>Level SF-0</b></th><th style="font-weight:bold;text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col"><b>Level SF-1</b></th><th style="font-weight:bold;text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col"><b>Level SF-2</b></th></tr></thead><tbody><tr><td style="text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><p id="_44d6677b-9d6c-54d5-c09a-74f59dbddb73">restricted set of built-in nonspatial</p>
+
+<p id="_71e18767-7837-ff5c-e729-be98a4ed62dc">property types</p>
+</td><td style="text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Yes<sup>1</sup></td><td style="text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Yes<sup>1</sup></td><td style="text-align:center;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">No</td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Restricted set of property-types</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>2</sup></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>2</sup></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>2</sup></td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">user-defined property types</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">No</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes</td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">use of nillable and xsi:nil</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">No</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes</td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">cardinality of properties</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">0..1</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">0..unbounded</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">0..unbounded</td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><p id="_5487ff19-a2ec-3093-7449-2caac38ee0d5">non-spatial property values</p>
+
+<p id="_f2337663-64c1-df5b-c3ba-30c763336136">references</p>
+</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>3</sup></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>3</sup></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes</td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><p id="_a3ec6a5e-e335-a84a-f72f-d97240189056">spatial property values</p>
+
+<p id="_9827af6d-27cc-e29d-56f3-c83176fe5139">references</p>
+</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>3</sup></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes<sup>3</sup></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Yes</td></tr><tr><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><div class="ol_wrap"><ol type="1" id="_cec6bb4a-85e9-0e88-2d67-83623847e7cd"><li id="_597aab8c-3f0d-a46e-c391-3db860bdb2ac"><p id="_fab63495-846c-541a-87f2-a802e91040f5">string, integer, me<b>a</b>surement, date, real, binary, boolean, URI</p>
+</li>
+<li id="_369cf1fb-9b9a-ac69-7659-03309bdbf253"><p id="_f3915d66-5f0f-3c17-1d68-f4c3ac1c1fab">Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve, MultiSurface, MultiGeometry</p>
+</li>
+<li id="_5147e57a-0771-5a3f-0ce1-92070de1df04"><p id="_7e59771a-d8af-7626-737a-f739a323e204">In levels 0 and 1, remote values for properties are supported <b>only </b>through the use of the type gml:ReferenceType. The more generalized GML property-type pattern allowing mixed inline and byReference encoded property values within the same instance document is disallowed.</p>
+</li>
+</ol></div>
+</td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:center;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table>
+</div>
+</div><div id="_de7efecc-10d4-167e-8f51-83140c48f4e2"><h2 id="_6846185f-64fc-4f7d-8889-11696094f979"><a class="anchor" href="#_de7efecc-10d4-167e-8f51-83140c48f4e2"></a><a class="header" href="#_de7efecc-10d4-167e-8f51-83140c48f4e2">6.8.  GeoSciML Lite GML 3.1 profile (Normative)</a></h2>
+
+<div class="require" id="_898d9f3a-19bd-4d74-8b1d-17ac6c7d0598"><table id="req_class_gsmljson-lite31" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_class_gsmljson-lite31"></a><a class="header" href="#req_class_gsmljson-lite31">Requirements class 8: Requirements Class ‘GeoSciML Lite GML 3.1 profile’</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite-31</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Data instance</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Prerequisites</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite<br />/req/gsmljson-lite</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Normative statement</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;">Requirement 10: <tt><a href="#req_gsmljson_lite_31_json">/req/gsmljson-lite-31/json</a></tt></td></tr></tbody></table></div>
+
+<p id="_a66f768f-6a3b-6ffb-38f9-02a3212fab1f">Because of the limited availability of WFS 2.0 compliant servers and clients, GeoSciML SWG officially supports WFS 1.1.0 and GML 3.1.1 for delivery of Lite features. </p>
+
+<p id="_d29a2278-7889-3c4e-e577-bfb35e5d6447">All the elements from the GeoSciML Lite package must be schema valid according to the XSD document provided at <a href="http://schemas.opengis.net/gsml/4.1/geosciml-lite.xsd">http://schemas.opengis.net/gsml/4.1/geosciml-lite.xsd</a>.</p>
+
+<div class="require" id="_e5718292-aa56-4895-9683-1d447360e72e"><table id="req_gsmljson_lite_31_json" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#req_gsmljson_lite_31_json"></a><a class="header" href="#req_gsmljson_lite_31_json">Requirement 10</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/req/gsmljson-lite-31/json</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Included in</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Requirements class 8: <tt><a href="#req_class_gsmljson-lite31">https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite-31</a></tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">A</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_27d2b610-8b41-6035-b812-64922bdf7ddc">A JSON instance document shall validate with schema located at   <a href="http://schemas.opengis.net/gsml/4.1/geosciml-portrayal.xsd">http://schemas.opengis.net/gsml/4.1/geosciml-portrayal.xsd</a>.</p>
+</td></tr></tbody></table></div>
+</div></div><div id="_3c7de26d-f675-24f6-8f2a-05229231d4a7"><h1 id="_b5051968-6454-4820-b68a-97eb1740cd68"><a class="anchor" href="#_3c7de26d-f675-24f6-8f2a-05229231d4a7"></a><a class="header" href="#_3c7de26d-f675-24f6-8f2a-05229231d4a7">7.  Media Types for any data encoding(s)</a></h1><p id="_d6304c3a-41cb-cb21-f447-30c28e46f8f6">GeoSciML 5.0 data conforming to the logical model defined in Part 1 of GeoSciML can be encoded in documents conforming to JSON-FG.  The standard MIME-type and sub-type for JSON-FG data should be used to indicate the encoding in internet exchange, as specified in <a href="https://docs.ogc.org/is/21-045r1/21-045r1.html#media-types">OGC 21-045r1</a>,_ namely</p><p id="_c1af95a0-bbb4-6d3b-2aee-4bf65684ef04"><tt>application/geo+json</tt></p></div><br /><div id="_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d" class="Section3"><h1 class="Annex" id="_d0f1cb29-7190-41dd-a88a-281690dacf6b"><a class="anchor" href="#_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d"></a><a class="header" href="#_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d"><b>Annex A</b><br />(informative)<br /><b>Conformance Class Abstract Test Suite (Normative)</b></a></h1><div id="_63e4b0a0-3d94-7020-361f-fcac21929de5" class="Note"><p><span class="note_label">NOTE:  </span>Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)</p></div><div id="_5509d42a-02e9-d5df-a903-9a7a23727bab"><h2 id="_4c693e27-aae8-47b6-9edb-52dbb82a5ef7"><a class="anchor" href="#_5509d42a-02e9-d5df-a903-9a7a23727bab"></a><a class="header" href="#_5509d42a-02e9-d5df-a903-9a7a23727bab">A.1.  Conformance Class A</a></h2>
+
+<div class="require" id="_1e184e54-1983-4e57-b419-6efaccaf3089"><table id="ats_example1" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTitle"><a class="anchor" href="#ats_example1"></a><a class="header" href="#ats_example1">Conformance class A.1</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>http://www.opengis.net/spec/name-of-standard/1.0/conf/example1</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Requirements class</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;"><a href="http://www.opengis.net/spec/ABCD/m.n/req/req-class-a">http://www.opengis.net/spec/ABCD/m.n/req/req-class-a</a></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Target Type</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">Web API</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Conformance tests</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><a id="_ff77108c-a8f6-08c6-601e-e28822716dd7"></a>Abstract test A.1: <tt><a href="#ats_core_api-definition-op">/conf/core/map-response</a></tt><br /><a id="_e72c02a8-3296-118e-700f-50a080090cc6"></a>Abstract test A.2: <tt><a href="#ats_core_http">/conf/core/http</a></tt></td></tr></tbody></table></div>
+
+<div id="_95170162-0a0f-09f5-cd34-24d3c5f42816"><h3><a class="anchor" href="#_95170162-0a0f-09f5-cd34-24d3c5f42816"></a><a class="header" href="#_95170162-0a0f-09f5-cd34-24d3c5f42816">A.1.1.  Example 1</a></h3>
+
+<div class="require" id="_84391774-beb9-4389-ac0f-6c36bea5c9c6"><table id="ats_core_api-definition-op" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTestTitle"><a class="anchor" href="#ats_core_api-definition-op"></a><a class="header" href="#ats_core_api-definition-op">Abstract test A.1</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/conf/core/map-response</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Requirement</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">/req/req-class-a/req-name-1</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Test purpose</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;"><p id="_8f5557b7-9b6a-5dd2-4976-db599b7e4496">Verify that the implementation’s response for the map retrieval operation is correct</p>
+</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Test method</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><p id="_f110e3a8-8d6f-3aeb-cd60-cfd8b7247cac">A single step test method can be documented as a single line.</p>
+</td></tr></tbody></table></div>
+</div>
+
+<div id="_82e8b1bf-9c75-b737-7086-c7d15e69e1fe"><h3><a class="anchor" href="#_82e8b1bf-9c75-b737-7086-c7d15e69e1fe"></a><a class="header" href="#_82e8b1bf-9c75-b737-7086-c7d15e69e1fe">A.1.2.  Example 2</a></h3>
+
+<div class="require" id="_662ab6cd-3427-41fc-b957-bdfb7aa0fe07"><table id="ats_core_http" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTestTitle"><a class="anchor" href="#ats_core_http"></a><a class="header" href="#ats_core_http">Abstract test A.2</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Identifier</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>/conf/core/http</tt></td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Requirement</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">/req/req-class-a/req-name-2</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Test purpose</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;"><p id="_d8c68c9c-a138-50a6-08e1-d7f10bbdfeba">Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.</p>
+</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Test method</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><div class="ol_wrap"><ol type="a"><li><p>A sequential multi-step test method can be documented as shown here. This is the first step.</p>
+</li><li><p>This is the second step.</p>
+</li></ol></div>
+</td></tr></tbody></table></div>
+</div>
+</div></div><br /><div id="_96ac1666-e590-c0bc-6189-9b06cae0e238" class="Section3"><h1 class="Annex" id="_71e5bb7d-9f1c-4da9-99e3-4685aa004bc2"><a class="anchor" href="#_96ac1666-e590-c0bc-6189-9b06cae0e238"></a><a class="header" href="#_96ac1666-e590-c0bc-6189-9b06cae0e238"><b>Annex B</b><br />(informative)<br /><b>Title</b></a></h1><div id="_159a4ec6-3751-b292-9d8b-e31170a42309" class="Note"><p><span class="note_label">NOTE:  </span>Place other Annex material in sequential annexes beginning with “B” and leave final two annexes for the Revision History and Bibliography</p></div></div><br /><div id="_86ce8e65-c445-b308-465c-eba6a1493662" class="Section3"><h1 class="Annex" id="_bb5a1d33-8c00-4c87-82c7-cf085ea93888"><a class="anchor" href="#_86ce8e65-c445-b308-465c-eba6a1493662"></a><a class="header" href="#_86ce8e65-c445-b308-465c-eba6a1493662"><b>Annex C</b><br />(informative)<br /><b>Revision History</b></a></h1><p class="TableTitle" style="text-align:center;">Table C.1</p><table id="_0faf00c7-cf79-9959-f614-3126c05f4ab8" class="MsoISOTable" style="border-width:1px;border-spacing:0;width:90%;"><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Date</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Release</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Editor</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Primary clauses modified</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Description</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">2016-04-28</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">0.1</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">G. Editor</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">all</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">initial version</td></tr></tbody></table></div><br /><div><h1 class="Section3" id="_ce465506-2789-4081-a8dc-157479ff475b">Bibliography</h1>
+
+<div id="_10a323b2-5229-6080-817c-9d678de711c3" class="Note"><p><span class="note_label">NOTE:  </span>The TC has approved Springer LNCS as the official document citation type.</p><p id="_ff7c4e4e-cc44-7de3-a376-8622db4fe0d2">Springer LNCS is widely used in technical and computer science journals and other publications</p><p id="_46e7f4b6-afcb-f5e5-1d4d-dc83a1b1f70e">– Actual References:</p><p id="_b05a8017-4ca6-79cd-d2da-2a4d3d6e1aec">[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)</p></div><p id="OGC2015" class="Biblio">[1]  <i>OGC: OGC Testbed 12 Annex B: Architecture</i> (2015).</p>
+
+
+</div></main><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "STIX",
+      linebreaks: {
+        automatic: true,
+        width: "container"  // or specify something like "90%"/"30em"
+      }
+    },
+    MathML: {
+      linebreaks: {
+        automatic: true
+      }
+    },
+    asciimath2jax: { delimiters: [['(#(', ')#)']] }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=MML_HTMLorMML-full" async="async"></script>
+  <script>
+    $("#toc").on('click', 'li', function(e) {
+    $(this).parent().find('li.toc-active').removeClass('toc-active');
+    $(this).addClass('toc-active');
+});
+  </script>
+
+  <script>
+    //TOC toggle animation
+    (function() {
+      const jqNav = $('nav');
+      const jqBody = $('body');
+      const jqToggle = $('#toggle');
+      const animationSpeed = 'slow';
+
+      jqToggle.on('click', function() {
+        const isNavVisible = jqNav.is(':visible');
+        const fullNavWidth = jqNav.outerWidth();
+        const navLeft = isNavVisible ? '-' + fullNavWidth + 'px' : '0px';
+        const bodyMarginLeft = isNavVisible ? '0px' : fullNavWidth + 'px';
+
+        // Stop current animations
+        jqNav.stop(true, true);
+        jqBody.stop(true, true);
+
+        if(!isNavVisible) {
+            jqNav.show();
+        }
+        jqNav.animate({'left': navLeft}, animationSpeed, function() {
+          if(isNavVisible) {jqNav.hide()}
+        });
+        jqBody.animate({'marginLeft': bodyMarginLeft}, animationSpeed);
+
+      });
+    })();
+  </script>
+
+<script>
+    // Scroll to top button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<script>
+/*
+  $(document).ready(function() {
+	  $('[id^=toc]').each(function ()
+	  {
+	     var currentToc = $(this);
+       var url = window.location.href;
+            currentToc.wrap("<a href='" + url + "#" + currentToc.attr("id") + "'></a>");
+	  });
+});
+*/
+</script>
+
+  <script>
+    document.querySelectorAll('*|svg a').forEach(function(item) {
+      var loc = item.getAttribute('href');
+      if (loc !== null && loc.startsWith('#')) {
+  item.setAttribute('href', location.pathname + loc);
+      }
+});
+  </script>
+
+
+<script>
+
+// jQuery Inline Footnotes v1.0.3
+// Copyright (c) 2011 Vesa Vänskä, released under the MIT License.
+
+// Generated by CoffeeScript 1.6.1
+(function() {
+
+  (function($) {
+    $.inlineFootnote = function(el, options) {
+      var _this = this;
+      this.el = $(el);
+      this.el.data("inlineFootnote", this);
+      this.initialize = function() {
+        this.options = $.extend({}, $.inlineFootnote.defaultOptions, options);
+        this.footnoteId = this.el.attr("href").match(/#(.*)/)[1];
+        if (this.footnoteId) {
+          this.el.mouseenter(this.openBox);
+          return $("body").mousemove(this.closeBox);
+        }
+      };
+      this.openBox = function(event) {
+        var footnoteContent, linkOffset;
+        if (!_this.box) {
+          footnoteContent = $("[id='" + _this.footnoteId + "']").children().filter(":not('" + _this.options.hideFromContent + "')");
+          linkOffset = _this.el.offset();
+          _this.box = $("<div />", {
+            id: _this.options.boxId,
+            html: footnoteContent.clone().find(_this.options.hideFromContent).remove().end(),
+            css: {
+              position: "absolute",
+              top: linkOffset.top,
+              left: linkOffset.left + _this.el.outerWidth()
+            }
+          }).appendTo("body");
+          return _this.positionBox();
+        }
+      };
+      this.closeBox = function(event) {
+        if (_this.box) {
+          if (_this.isHoveringFootnote(event)) {
+            clearTimeout(_this.closeTimeout);
+            return _this.closeTimeout = null;
+          } else {
+            if (!_this.closeTimeout) {
+              return _this.closeTimeout = setTimeout((function() {
+                _this.box.remove();
+                return _this.box = null;
+              }), _this.options.hideDelay);
+            }
+          }
+        }
+      };
+      this.isHoveringFootnote = function(event) {
+        return this.box.is(event.target) || $(event.target).closest(this.box).length > 0 || event.target === this.el[0];
+      };
+      this.positionBox = function() {
+        var boxHorizontalPadding, boxLeft, boxWidth, linkLeftOffset, windowWidth;
+        boxHorizontalPadding = parseInt(this.box.css("padding-left")) + parseInt(this.box.css("padding-right"));
+        linkLeftOffset = this.el.offset().left;
+        windowWidth = $(window).width();
+        if ((windowWidth / 2) > linkLeftOffset) {
+          boxLeft = linkLeftOffset + 20;
+          boxWidth = windowWidth - boxLeft - boxHorizontalPadding - this.options.boxMargin * 2;
+          if (boxWidth > this.options.maximumBoxWidth) {
+            boxWidth = this.options.maximumBoxWidth;
+          }
+        } else {
+          boxWidth = linkLeftOffset - boxHorizontalPadding - this.options.boxMargin * 2;
+          if (boxWidth > this.options.maximumBoxWidth) {
+            boxWidth = this.options.maximumBoxWidth;
+          }
+          boxLeft = linkLeftOffset - boxWidth - this.options.boxMargin * 2;
+        }
+        return this.box.css({
+          width: boxWidth,
+          left: boxLeft
+        });
+      };
+      return this.initialize();
+    };
+    $.inlineFootnote.defaultOptions = {
+      boxMargin: 20,
+      hideDelay: 200,
+      hideFromContent: "[rel=footnote]",
+      maximumBoxWidth: 500,
+      boxId: "footnote_box"
+    };
+    return $.fn.inlineFootnote = function(options) {
+      return this.each(function() {
+        return new $.inlineFootnote(this, options);
+      });
+    };
+  })(jQuery);
+
+}).call(this);
+</script>
+
+<script>
+      $(function() {
+        $("[rel=footnote]").inlineFootnote();
+        });
+</script>
+  <script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.2.2 - 2020-04-20
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2020 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function f(A){A.icon=A.hasOwnProperty("icon")?A.icon:"",A.visible=A.hasOwnProperty("visible")?A.visible:"hover",A.placement=A.hasOwnProperty("placement")?A.placement:"right",A.ariaLabel=A.hasOwnProperty("ariaLabel")?A.ariaLabel:"Anchor",A.class=A.hasOwnProperty("class")?A.class:"",A.base=A.hasOwnProperty("base")?A.base:"",A.truncate=A.hasOwnProperty("truncate")?Math.floor(A.truncate):64,A.titleText=A.hasOwnProperty("titleText")?A.titleText:""}function p(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new Error("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],f(this.options),this.isTouchDevice=function(){return!!("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,i,n,o,s,a,r,c,h,l,u,d=[];if(f(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=p(A=A||"h2, h3, h4, h5, h6")).length)return this;for(!function(){if(null!==document.head.querySelector("style.anchorjs"))return;var A,e=document.createElement("style");e.className="anchorjs",e.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(e):document.head.insertBefore(e,A);e.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",e.sheet.cssRules.length),e.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",e.sheet.cssRules.length),e.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",e.sheet.cssRules.length),e.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',e.sheet.cssRules.length)}(),t=document.querySelectorAll("[id]"),i=[].map.call(t,function(A){return A.id}),o=0;o<e.length;o++)if(this.hasAnchorJSLink(e[o]))d.push(o);else{if(e[o].hasAttribute("id"))n=e[o].getAttribute("id");else if(e[o].hasAttribute("data-anchor-id"))n=e[o].getAttribute("data-anchor-id");else{for(c=r=this.urlify(e[o].textContent),a=0;void 0!==s&&(c=r+"-"+a),a+=1,-1!==(s=i.indexOf(c)););s=void 0,i.push(c),e[o].setAttribute("id",c),n=c}(h=document.createElement("a")).className="anchorjs-link "+this.options.class,h.setAttribute("aria-label",this.options.ariaLabel),h.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(h.title=this.options.titleText),u=document.querySelector("base")?window.location.pathname+window.location.search:"",u=this.options.base||u,h.href=u+"#"+n,"always"===l&&(h.style.opacity="1"),""===this.options.icon&&(h.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(h.style.lineHeight="inherit")),"left"===this.options.placement?(h.style.position="absolute",h.style.marginLeft="-1em",h.style.paddingRight="0.5em",e[o].insertBefore(h,e[o].firstChild)):(h.style.paddingLeft="0.375em",e[o].appendChild(h))}for(o=0;o<d.length;o++)e.splice(d[o]-o,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,i=p(A),n=0;n<i.length;n++)(t=i[n].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(i[n]))&&this.elements.splice(e,1),i[n].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){return this.options.truncate||f(this.options),A.trim().replace(/\'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),t=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||t||!1}}});
+// @license-end
+  </script>
+    <script>
+  anchors.options = {
+  placement: 'left'
+};
+anchors.add('h1, h2, h3, h4');
+</script>
+
+<script>
+// use .collapsible element to toggle visibility of element following it
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+<script>
+const activeBtns = document.querySelectorAll('.collapsible.active')
+
+// check if there are any active buttons, and open the content for each of them as default
+if (activeBtns.length) {
+    activeBtns.forEach(btn => {
+        const content = btn.nextElementSibling
+        content.style.maxHeight = content.scrollHeight + 'px'
+    })
+}
+</script>
+
+</html>
