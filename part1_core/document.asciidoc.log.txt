@@ -4024,7 +4024,7 @@ If present, the property samplingMethod:Primitive::CharacterString reports the m
 
 If present, the property currentLocation:Primitive::CharacterString reports the current location of the specimen (e.g., a warehouse or other repository location).
 
-===== source*
+===== source
 
 If present, the property source:Primitive::CharacterString reports the citation of the source of the data (e.g., a publication, map, etc.).
 
@@ -4225,7 +4225,7 @@ ShearDisplacementStructureView is a simplified view of a GeoSciML ShearDisplacem
 ===== Mapping
 
 .Mapping of ShearDisplacementStructureView properties to GeoSciML
-[width="100%",cols="^21%,^79%",options="header",align="left"]
+[width="100%",cols=",",options="header",align="left"]
 |===
 |*Property* |*Mapping from MappedFeature*
 |*identifier* |identifier
