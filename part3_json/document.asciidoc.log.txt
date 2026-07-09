@@ -148,58 +148,106 @@ All requirements-classes and conformance-classes described in this document are 
 
 * [[[INSPIRE]]], INSPIRE Thematic Woring Group Geology: _INSPIRE Data Specification for the spatial data theme Geology Version 3.0. European Commission Joint Research Centre (2013)_
 
+
+* [[[OGC21-045r1,OGC 21-045r1]]],
+
+* [[[ISO19101-1:2014,ISO 19101-1:2014]]],
+
+
 == Terms and definitions
 
 
 
 [[feature-definition]]
-=== *feature*
 
-Unresolved directive in sections/clause_4_terms_and_definitions.adoc - include::glossaries/iso_tc211/168_feature.adoc[]
+=== feature
+
+abstraction of real world phenomena
+
+NOTE: A feature may occur as a type or an instance. Feature type or feature instance shall be used when only one is meant.
+
+[.source]
+<<ISO19101-1:2014>>
 
 [[feature-collection-definition]]
-=== *feature collection*
 
-Unresolved directive in sections/clause_4_terms_and_definitions.adoc - include::glossaries/iso_tc211/2500_feature_collection.adoc[]
+=== feature collection
+
+set of features from a dataset
+
+[.source]
+<<ISO 19168-1:2020>>
 
 
-feature schema
-schema that describes the properties of a feature type
 
-feature type
-class of features having common characteristics [ISO 19156:2023]
 
-JSON document
+=== JSON document
+
 an information resource (series of octets) described by the "application/json" media type [JSON Schema 2020-12]
 
-Note
-The terms "JSON document," "JSON text," and "JSON value" are interchangeable.
-JSON object
+NOTE: The terms "JSON document," "JSON text," and "JSON value" are interchangeable.
+
+[.source]
+<<OGC21-045r1>>
+
+
+=== JSON object
+
 an unordered set of name/value pairs mapping the name to a JSON value [JSON Schema 2020-12, modified]
 
-JSON-FG document
+=== JSON-FG document
+
 a JSON document that contains a JSON-FG root object
 
-JSON-FG feature
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG feature
+
 a JSON object that validates against the JSON-FG feature schema
 
-JSON-FG feature collection
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG feature collection
+
 a JSON object that validates against the JSON-FG feature collection schema
 
-JSON-FG geometry
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG geometry
+
 a JSON object that validates against the JSON-FG geometry schema
 
-JSON-FG object
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG object
+
 a JSON object that is either a JSON-FG feature, a JSON-FG feature collection, or a JSON-FG geometry
 
-JSON-FG root object
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG root object
+
 a JSON-FG object that is not a direct children of another JSON-FG object
 
-<JSON> key
+[.source]
+<<OGC21-045r1>>
+
+=== <JSON> key
 the name of a member
 
-<JSON> member
+[.source]
+<<OGC21-045r1>>
+
+=== <JSON> member
 a name/value pair in a JSON object
+
+[.source]
+<<OGC21-045r1>>
 
 == Conventions
 
@@ -321,7 +369,7 @@ part:: An JSON instance document SHALL validate against the JSON Schema files pr
 
 ==== CodeList
 
-Open code lists (see 8.2.7) are encoded as gml:ReferenceType which is a sequence of gml:OwnershipAttributeGroup and gml:AssociationAttributeGroup, providing a series of xml attributes from W3C XLINK (link:++http://www.w3.org/TR/xlink11/++[[.underline]#http://www.w3.org/TR/xlink11/#]).  A vocabulary term reference has mandatory xlink:href and xlink:title attributes.
+Open code lists (see 8.2.7) are encoded as gml:ReferenceType which is a sequence of gml:OwnershipAttributeGroup and gml:AssociationAttributeGroup, providing a series of xml attributes from W3C XLINK (link:++http://www.w3.org/TR/xlink11/++[\http://www.w3.org/TR/xlink11/]).  A vocabulary term reference has mandatory xlink:href and xlink:title attributes.
 
 [%unnumbered%]
 [source,xml]
@@ -366,7 +414,7 @@ part:: Feature identifiers (unique name) provided in gml:identifier and @codeSpa
 ----
 
 
-Resolving link:++http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947++[[.underline]#http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947#] shall return:
+Resolving link:++http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947++[\http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947] shall return:
 
 
 [%unnumbered%]
@@ -388,7 +436,7 @@ Resolving link:++http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno
 A nillable property (identified as “voidable” in the UML model) is a property than can document the reason that a value is not provided.  There are two ways to identify a nil value.
 
 * Using XSD xsi:nil=”true” and nilReason.  Where available, this encoding method should be used to indicate nilled property values.
-* Using a HTTP URI identifier defined by a community as representing a null value.  OGC uses link:++http://www.opengis.net/def/nil/OGC/0/%7bnilReason%7d++[[.underline]#http://www.opengis.net/def/nil/OGC/0/++{++nilReason}#] (OGC 12-110).
+* Using a HTTP URI identifier defined by a community as representing a null value.  OGC uses link:++http://www.opengis.net/def/nil/OGC/0/%7bnilReason%7d++[\http://www.opengis.net/def/nil/OGC/0/++{++nilReason}] (OGC 12-110).
 
 ==== Date encoding
 
@@ -467,7 +515,7 @@ requirement:: /req/gsmljson-basic/json
 
 
 
-All the elements from the basic package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd#]
+All the elements from the basic package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[\http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd]
 
 
 [[req_gsmljson_basic_json]]
@@ -479,7 +527,7 @@ identifier:: /req/gsmljson-basic/json
 part:: A JSON instance document SHALL validate with schema located at  link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[].
 ====
 
-All the elements from basic package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch#].
+All the elements from basic package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[\http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch].
 
 
 Some properties links to stub property blocks (see 5.1) whose values are empty abstract classes in the GeoSciML Basic package.  Since abstract description classes are DataType, the property is inline only and therefore an empty property is not schema valid.
@@ -526,7 +574,7 @@ requirement:: /req/gsmljson-extension/json
 
 
 
-All the elements from the GeoSciML Extension package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd#].
+All the elements from the GeoSciML Extension package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd++[\http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd].
 
 
 [[req_gsmljson_extension_json]]
@@ -538,7 +586,7 @@ identifier:: /req/gsmljson-extension/json
 part:: A JSON instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/++[] geoSciMLExtension.xsd.
 ====
 
-All the elements from the GeoSciML Extension package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch#].
+All the elements from the GeoSciML Extension package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch++[\http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch].
 
 
 === GeoSciML GeologicTime JSON Requirements Class (Normative)
@@ -561,7 +609,7 @@ requirement:: /req/gsmljson-geologictime/json
 
 
 
-All the elements from the GeoSciML Geologic Time package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/geologicTime.xsd#].
+All the elements from the GeoSciML Geologic Time package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[\http://schemas.opengis.net/gsml/4.1/geologicTime.xsd].
 
 
 [[req_gsmljson-_eologictime_json]]
@@ -573,7 +621,7 @@ identifier:: /req/gsmljson-geologictime/json
 part:: A JSON instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[].
 ====
 
-All the elements from the GeoSciML Geologic Time package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geologictime.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geologictime.sch#].
+All the elements from the GeoSciML Geologic Time package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geologictime.sch++[\http://schemas.opengis.net/gsml/4.1/geologictime.sch].
 
 
 === GeoSciML Borehole JSON Requirements Class (Normative)
@@ -594,7 +642,7 @@ requirement:: /req/gsmljson-borehole/json
 
 
 
-All the elements from the Borehole package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/borehole.xsd#].
+All the elements from the Borehole package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[\http://schemas.opengis.net/gsml/4.1/borehole.xsd].
 
 
 [[req_gsmljson_borehole_json]]
@@ -606,7 +654,7 @@ identifier:: /req/gsmljson-borehole/json
 part:: A JSON instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[].
 ====
 
-All the elements from the Borehole package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/borehole.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/borehole.sch#].
+All the elements from the Borehole package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/borehole.sch++[\http://schemas.opengis.net/gsml/4.1/borehole.sch].
 
 
 === GeoSciML LaboratoryAnalysis-Specimen JSON Requirements Class (Normative)
@@ -628,7 +676,7 @@ requirement:: /req/gsmljson-lab/json
 
 
 
-All the elements from the GeoSciML Laboratory Analysis & Specimen package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[[.underline]#http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd#].
+All the elements from the GeoSciML Laboratory Analysis & Specimen package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[\http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd].
 
 
 
@@ -641,7 +689,7 @@ identifier:: /req/gsmljson-lab/json
 part:: A JSON instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[].
 ====
 
-All the elements from the GeoSciML Laboratory Analysis & Specimen package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch#].
+All the elements from the GeoSciML Laboratory Analysis & Specimen package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch++[\http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch].
 
 
 
@@ -846,21 +894,4 @@ Bibliography should be the last annex
 [[Bibliography]]
 == Bibliography
 
-[NOTE]
-.Example Bibliography (Delete this note).
-===============================================
-The TC has approved Springer LNCS as the official document citation type.
-
-Springer LNCS is widely used in technical and computer science journals and other publications
-
-* For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
-
-– Actual References:
-
-[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
-
-[n] Web: Author Surname, A.: Title, link:++http://Website-Url++[]
-
-===============================================
-
-* [[[OGC2015,OGCTB12]]], _OGC: OGC Testbed 12 Annex B: Architecture_ (2015).
+* [[[ISO19168-1:2020,ISO 19168-1:2020]]],

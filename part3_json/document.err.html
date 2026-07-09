@@ -8,30 +8,20 @@ thead th { font-weight: bold; background-color: aqua; }
 .severity3 { font-style: italic; color: grey; }
 </style>
 </head><body><h1>./document.err.html errors</h1>
-<ul><li><p><b><a href="#Include">Include</a></b>: Severity 0: <b>2</b> errors</p></li>
+<ul><li><p><b><a href="#Document_Attributes">Document Attributes</a></b>: Severity 2: <b>2</b> errors</p></li>
 
-<li><p><b><a href="#Document_Attributes">Document Attributes</a></b>: Severity 2: <b>1</b> error</p></li>
+<li><p><b><a href="#AsciiDoc_Input">AsciiDoc Input</a></b>: Severity 1: <b>1</b> error</p></li>
 
-<li><p><b><a href="#AsciiDoc_Input">AsciiDoc Input</a></b>: Severity 1: <b>2</b> errors</p></li>
+<li><p><b><a href="#Crossreferences">Crossreferences</a></b>: Severity 2: <b>1</b> error</p></li>
 
-<li><p><b><a href="#Relaton">Relaton</a></b>: Severity 3: <b>6</b> errors</p></li>
+<li><p><b><a href="#Relaton">Relaton</a></b>: Severity 3: <b>4</b> errors</p></li>
 
 <li><p><b><a href="#Style">Style</a></b>: Severity 2: <b>12</b> errors</p></li>
 
 <li><p><b><a href="#Requirements">Requirements</a></b>: Severity 2: <b>46</b> errors</p></li>
+
+<li><p><b><a href="#Metanorma_XML_Syntax">Metanorma XML Syntax</a></b>: Severity 2: <b>71</b> errors</p></li>
 </ul>
-<h2 id="Include">Include</h2>
-<table border="1">
-<thead><th width="5%">Line</th><th width="20%">ID</th><th width="10%">Error</th>
-<th width="20%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
-<tbody>
-<tr class="severity0">
-<td></td><th><code>--</code></th><td>STANDOC_41</td>
-<td>Unresolved directive in sections/​clause_4_​terms_and_​definitions­.adoc - include::​glossaries­/iso_​tc211/168_​feature.adoc[]</td><td><pre></pre></td><td>0</td></tr>
-<tr class="severity0">
-<td></td><th><code>--</code></th><td>STANDOC_41</td>
-<td>Unresolved directive in sections/​clause_4_​terms_and_​definitions­.adoc - include::​glossaries­/iso_​tc211/2500_​feature_​collection.​adoc[]</td><td><pre></pre></td><td>0</td></tr>
-</tbody></table>
 <h2 id="Document_Attributes">Document Attributes</h2>
 <table border="1">
 <thead><th width="5%">Line</th><th width="20%">ID</th><th width="10%">Error</th>
@@ -40,6 +30,9 @@ thead th { font-weight: bold; background-color: aqua; }
 <tr class="severity2">
 <td></td><th><code>--</code></th><td>OGC_17</td>
 <td>'Interface' is not a permitted subtype of Standard:​ reverting to 'implementation'</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>--</code></th><td>OGC_2</td>
+<td>draft is not an allowed status for standard</td><td><pre></pre></td><td>2</td></tr>
 </tbody></table>
 <h2 id="AsciiDoc_Input">AsciiDoc Input</h2>
 <table border="1">
@@ -51,13 +44,16 @@ thead th { font-weight: bold; background-color: aqua; }
 <td>no anchor on reference, markup may be malformed: see
 https://www.metanorma.org/author/topics/sections/bibliography/ ,
 https://www.metanorma.org/author/iso/topics/markup/#bibliographies : [[[ISO/​TS19101-2:2008,​ISO/TS 19101-2:2008]]]​,
-</td><td><pre>#&lt;Asciidoctor::List@9360 {context: :ulist, style: &quot;bibliography&quot;, items: 13}&gt;</pre></td><td>1</td></tr>
-<tr class="severity1">
-<td></td><th><code><a href='./document.html#Bibliography'>Bibliography</a></code></th><td>STANDOC_43</td>
-<td>no anchor on reference, markup may be malformed: see
-https://www.metanorma.org/author/topics/sections/bibliography/ ,
-https://www.metanorma.org/author/iso/topics/markup/#bibliographies : For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
-</td><td><pre>#&lt;Asciidoctor::List@9380 {context: :ulist, style: nil, items: 1}&gt;</pre></td><td>1</td></tr>
+</td><td><pre>#&lt;Asciidoctor::List@9360 {context: :ulist, style: &quot;bibliography&quot;, items: 15}&gt;</pre></td><td>1</td></tr>
+</tbody></table>
+<h2 id="Crossreferences">Crossreferences</h2>
+<table border="1">
+<thead><th width="5%">Line</th><th width="20%">ID</th><th width="10%">Error</th>
+<th width="20%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
+<tbody>
+<tr class="severity2">
+<td>001031</td><th><code><a href='./document.html#feature-collection-definition'>feature-collection-definition</a></code></th><td>STANDOC_32</td>
+<td>ISO 19168-1:2020 does not have a corresponding anchor ID in the bibliography!</td><td><pre>&lt;origin bibitemid=&quot;ISO 19168-1:2020&quot; type=&quot;inline&quot; citeas=&quot;&quot;/&gt;</pre></td><td>2</td></tr>
 </tbody></table>
 <h2 id="Relaton">Relaton</h2>
 <table border="1">
@@ -70,12 +66,6 @@ https://www.metanorma.org/author/iso/topics/markup/#bibliographies : For citatio
 <tr class="severity3">
 <td></td><th><code>INSPIRE</code></th><td>RELATON_4</td>
 <td>(Error from Relaton) <code>INSPIRE</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>OGCTB12</code></th><td>RELATON_4</td>
-<td>(Error from Relaton) <code>OGCTB12</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>OGCTB12</code></th><td>RELATON_4</td>
-<td>(Error from Relaton) <code>OGCTB12</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
 <tr class="severity3">
 <td></td><th><code>OMGUML</code></th><td>RELATON_4</td>
 <td>(Error from Relaton) <code>OMGUML</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
@@ -95,10 +85,10 @@ https://www.metanorma.org/author/iso/topics/markup/#bibliographies : For citatio
 &lt;/tr&gt; &lt;tr id=&quot;_13598cd4-db11-673e-d537-de96647f688d&quot;&gt; &lt;td id=&quot;_aa2c8956-3c8b-ef8e-9c74-e05dd72b238f&quot; valign=&quot;middle&quot; align=&quot;left&quot;/&gt; &lt;td id=&quot;_e6dd41da-9900-c23b-1a3f-d300498120e2&quot; valign=&quot;middle&quot; align=&quot;left&quot;/&gt; &lt;/tr&gt; &lt;/tbody&gt;
 &lt;/table&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000078</td><th><code><a href='./document.html#_153ab4f8-83e1-4df5-abe3-4c2b8a88e5bf'>_153ab4f8-83e1-4df5-abe3-4c2b8a88e5bf</a></code></th><td>STANDOC_14</td>
-<td>Style override set for ordered list</td><td><pre>&lt;ol id=&quot;_153ab4f8-83e1-4df5-abe3-4c2b8a88e5bf&quot; type=&quot;arabic&quot;&gt; &lt;li&gt; &lt;p id=&quot;_307366e9-6599-49ef-b970-aeff307880fd&quot;&gt;validate with JSON Schema files,&lt;/p&gt;
+<td>000078</td><th><code><a href='./document.html#_a3a58c28-dbcc-44b4-8c5f-0dcff8106467'>_a3a58c28-dbcc-44b4-8c5f-0dcff8106467</a></code></th><td>STANDOC_14</td>
+<td>Style override set for ordered list</td><td><pre>&lt;ol id=&quot;_a3a58c28-dbcc-44b4-8c5f-0dcff8106467&quot; type=&quot;arabic&quot;&gt; &lt;li&gt; &lt;p id=&quot;_61c67e68-a630-40bf-9cbc-46d8cb90d30b&quot;&gt;validate with JSON Schema files,&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt; &lt;p id=&quot;_2c893555-a0ef-491a-a8aa-606ce28a5326&quot;&gt;pass compliance tests listed in relevant compliance sections.&lt;/p&gt;
+&lt;li&gt; &lt;p id=&quot;_4564f0e0-55bd-4369-98ce-f8f87761bc18&quot;&gt;pass compliance tests listed in relevant compliance sections.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
@@ -109,68 +99,68 @@ https://www.metanorma.org/author/iso/topics/markup/#bibliographies : For citatio
 &lt;td id=&quot;_95800f1e-7cb8-6b7c-381c-c4b1d614e017&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Interactive Instruments&lt;/td&gt;
 &lt;/tr&gt; &lt;tr id=&quot;_e3c454a8-5059-7103-aeff-cec69ae3d67d&quot;&gt; &lt;td id=&quot;_add16775-e94e-ef01-a959-34c80306c846&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Clemens Portele&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000177</td><th><code><a href='./document.html#_8e317b23-c34a-a959-b692-b014ad3e6954'>_8e317b23-c34a-a959-b692-b014ad3e6954</a></code></th><td>STANDOC_48</td>
+<td>000251</td><th><code><a href='./document.html#_8e317b23-c34a-a959-b692-b014ad3e6954'>_8e317b23-c34a-a959-b692-b014ad3e6954</a></code></th><td>STANDOC_48</td>
 <td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_8e317b23-c34a-a959-b692-b014ad3e6954&quot; obligation=&quot;normative&quot;&gt;
 &lt;title id=&quot;_6948b4ae-f705-e7f5-8bc1-a5f5e5f04db2&quot;&gt;Conventions&lt;/title&gt;
 &lt;p id=&quot;_87fee229-ff6c-bb90-5546-852478e6f22e&quot;&gt;This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.&lt;/p&gt;
 
 &lt;clause id=&quot;_84b77e51-4070-15b7-2f19-43216605ef36&quot; obligation=&quot;normative&quot;&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000207</td><th><code><a href='./document.html#_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7'>_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7</a></code></th><td>STANDOC_48</td>
-<td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_15bb61a8-4b2b-a67d-9935-c6bf56f4e5d7&quot; obligation=&quot;normative&quot;&gt;
+<td>000281</td><th><code><a href='./document.html#_f83dfd0f-1190-df41-97e0-cea7f84035ad'>_f83dfd0f-1190-df41-97e0-cea7f84035ad</a></code></th><td>STANDOC_48</td>
+<td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_f83dfd0f-1190-df41-97e0-cea7f84035ad&quot; obligation=&quot;normative&quot;&gt;
 &lt;title id=&quot;_624dbeb5-1e17-b0fe-49af-52595d4fdbf7&quot;&gt;JSON Encoding Requirement classes (Normative)&lt;/title&gt;
 &lt;p id=&quot;_63a4ca63-22a7-c3da-6c38-0f6e30e896b8&quot;&gt;JSON Schema files were derived from the UML model following the &lt;link target=&quot;https://docs.ogc.org/bp/24-017r1.html&quot;&gt;OGC Best Practice for UML to JSON Encoding Rules (OGC 24-017r1)&lt;/link&gt;.&lt;note id=&quot;_8e8cea6a-6ea4-bbc7-2c3e-d48fd12beaef&quot;&gt; &lt;p id=&quot;_c51dce9d-2a16-b3ef-406b-95dc7d94e5c0&quot;&gt;The SWG should replace this with a diagram from Enterprise Architect&lt;/p&gt;
 &lt;/note&gt; &lt;/p&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000218</td><th><code><a href='./document.html#_3441f136-4dfb-c903-9ac7-531b818d9853'>_3441f136-4dfb-c903-9ac7-531b818d9853</a></code></th><td>STANDOC_48</td>
-<td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_3441f136-4dfb-c903-9ac7-531b818d9853&quot; obligation=&quot;normative&quot;&gt;
+<td>000292</td><th><code><a href='./document.html#_5ebac4bf-86fa-c897-e595-447254057846'>_5ebac4bf-86fa-c897-e595-447254057846</a></code></th><td>STANDOC_48</td>
+<td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_5ebac4bf-86fa-c897-e595-447254057846&quot; obligation=&quot;normative&quot;&gt;
 &lt;title id=&quot;_c9ba7c5e-f4d9-dddd-a0b9-07690b80cf39&quot;&gt;GeoSciML Core JSON Abstract Requirements Class (Normative)&lt;/title&gt;
 &lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000331</td><th><code><a href='./document.html#_2a71e9e1-147f-bc3f-ac58-816a6376d883'>_2a71e9e1-147f-bc3f-ac58-816a6376d883</a></code></th><td>STANDOC_48</td>
-<td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_2a71e9e1-147f-bc3f-ac58-816a6376d883&quot; obligation=&quot;normative&quot;&gt;
+<td>000405</td><th><code><a href='./document.html#_0235601e-14d5-3f70-723a-5631a1a97041'>_0235601e-14d5-3f70-723a-5631a1a97041</a></code></th><td>STANDOC_48</td>
+<td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_0235601e-14d5-3f70-723a-5631a1a97041&quot; obligation=&quot;normative&quot;&gt;
 &lt;title id=&quot;_12b3187a-ef4f-ada7-d5be-a45e0e9c2582&quot;&gt;GeoSciML Basic JSON Requirements Class (Normative)&lt;/title&gt;
 &lt;requirement id=&quot;_f910b0b7-d4a9-a8d3-315f-2fe0bae55b84&quot; anchor=&quot;req_class_gsmljson-basic&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Basic JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-basic&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_7d4dc458-d3fe-902b-baa5-b2fed5148915&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-basic/json&lt;/identifier&gt; &lt;/requirement&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000434</td><th><code><a href='./document.html#_70c96c53-14a7-dcbb-55dd-857b24186a35'>_70c96c53-14a7-dcbb-55dd-857b24186a35</a></code></th><td>STANDOC_48</td>
+<td>000508</td><th><code><a href='./document.html#_70c96c53-14a7-dcbb-55dd-857b24186a35'>_70c96c53-14a7-dcbb-55dd-857b24186a35</a></code></th><td>STANDOC_48</td>
 <td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_70c96c53-14a7-dcbb-55dd-857b24186a35&quot; obligation=&quot;normative&quot;&gt;
 &lt;title id=&quot;_7f97859c-8b48-daec-3481-77683c68089b&quot;&gt;Abstract GeoSciML Lite JSON Requirements Class (Normative)&lt;/title&gt;
 &lt;requirement id=&quot;_d5cf93b0-6154-191a-031b-152d08de7305&quot; anchor=&quot;req_class_gsmljson-lite&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘Abstract GeoSciML Lite JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;inherit&gt;GML Simple Feature OGC 10-100r3 SF-0&lt;/inherit&gt; &lt;requirement id=&quot;_6c64b089-cd6e-be2f-e500-23902b8d095b&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite/SF-0&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_e9ad582e-5f15-3e2b-fc06-c808c04f5d58&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/SF-0-simpletype&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_3686925b-abaa-64bc-5e9e-1e598f2cab61&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-json&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-ns&lt;/identifier&gt; &lt;/recommendation&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000541</td><th><code><a href='./document.html#_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d'>_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d</a></code></th><td>STANDOC_48</td>
+<td>000615</td><th><code><a href='./document.html#_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d'>_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d</a></code></th><td>STANDOC_48</td>
 <td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;annex id=&quot;_7ffc4e3f-4c1a-0e73-b2a3-7d5b1c4ce84d&quot; obligation=&quot;informative&quot;&gt;
 &lt;title id=&quot;_0ae400d0-fc5b-94a1-586c-a20b12ca10c6&quot;&gt;Conformance Class Abstract Test Suite (Normative)&lt;/title&gt;
 &lt;note id=&quot;_63e4b0a0-3d94-7020-361f-fcac21929de5&quot;&gt; &lt;p id=&quot;_e3b4abfb-677c-1601-a95d-8eb60217c3f8&quot;&gt;Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)&lt;/p&gt;
 &lt;/note&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000546</td><th><code><a href='./document.html#_5509d42a-02e9-d5df-a903-9a7a23727bab'>_5509d42a-02e9-d5df-a903-9a7a23727bab</a></code></th><td>STANDOC_48</td>
+<td>000620</td><th><code><a href='./document.html#_5509d42a-02e9-d5df-a903-9a7a23727bab'>_5509d42a-02e9-d5df-a903-9a7a23727bab</a></code></th><td>STANDOC_48</td>
 <td>(generic warning) Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_5509d42a-02e9-d5df-a903-9a7a23727bab&quot; obligation=&quot;informative&quot;&gt;
 &lt;title id=&quot;_e687ec7b-c3e0-9926-7832-77ede3a8f561&quot;&gt;Conformance Class A&lt;/title&gt;
 &lt;requirement id=&quot;_decc1f24-9f68-e133-ed15-0a9d614f68c6&quot; anchor=&quot;ats_example1&quot; model=&quot;ogc&quot; type=&quot;conformanceclass&quot;&gt; &lt;identifier&gt;http://www.opengis.net/spec/name-of-standard/1.0/conf/example1&lt;/identifier&gt; &lt;classification&gt; &lt;tag&gt;Target Type&lt;/tag&gt; &lt;value&gt;Web API&lt;/value&gt; &lt;/classification&gt; &lt;classification&gt; &lt;tag&gt;target&lt;/tag&gt; &lt;value&gt;http://www.opengis.net/spec/ABCD/m.n/req/req-class-a&lt;/value&gt; &lt;/classification&gt; &lt;requirement id=&quot;_ff77108c-a8f6-08c6-601e-e28822716dd7&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;identifier&gt;/conf/core/map-response&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_e72c02a8-3296-118e-700f-50a080090cc6&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;identifier&gt;/conf/core/http&lt;/identifier&gt; &lt;/requirement&gt;
 &lt;/requirement&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000576</td><th><code><a href='./document.html#_0faf00c7-cf79-9959-f614-3126c05f4ab8'>_0faf00c7-cf79-9959-f614-3126c05f4ab8</a></code></th><td>STANDOC_48</td>
+<td>000650</td><th><code><a href='./document.html#_0faf00c7-cf79-9959-f614-3126c05f4ab8'>_0faf00c7-cf79-9959-f614-3126c05f4ab8</a></code></th><td>STANDOC_48</td>
 <td>(generic warning) Table should have title</td><td><pre>&lt;table id=&quot;_0faf00c7-cf79-9959-f614-3126c05f4ab8&quot; width=&quot;90%&quot;&gt; &lt;thead&gt; &lt;tr id=&quot;_e295cf8c-417f-e642-0ce4-352e31c0fd8b&quot;&gt; &lt;th id=&quot;_b397afae-a25e-891b-937d-99c586497283&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Date&lt;/th&gt;
 &lt;th id=&quot;_a2be7e6d-6c81-6c99-49f8-9468a61cc83f&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Release&lt;/th&gt;
 &lt;th id=&quot;_ed09d515-b1bd-9270-5101-c21a1efd1b63&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Editor&lt;/th&gt;
 &lt;th id=&quot;_079fad58-5f9f-ec34-341e-de9728c62afb&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Primary clauses modified&lt;/th&gt;
 &lt;th id=&quot;_5c52afcc-715d-b89f-e3d6-df82c28edaa5&quot; valign=&quot;middle&quot; align=&quot;left&quot;&gt;Description&lt;/th&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001462</td><th><code><a href='./document.html#_45f12e52-967c-453c-801c-2e8e25884ab8'>_45f12e52-967c-453c-801c-2e8e25884ab8</a></code></th><td>STANDOC_14</td>
-<td>Style override set for ordered list</td><td><pre>&lt;ol id=&quot;_45f12e52-967c-453c-801c-2e8e25884ab8&quot; type=&quot;arabic&quot;&gt; &lt;li&gt; &lt;p id=&quot;_ee7525f3-38ec-40cd-ab9b-3cd4414265ce&quot;&gt;string, integer, me&lt;strong&gt;a&lt;/strong&gt;surement, date, real, binary, boolean, URI&lt;/p&gt;
+<td>001648</td><th><code><a href='./document.html#_a34a06a4-c3dc-4a2d-aac7-53e53ac475ab'>_a34a06a4-c3dc-4a2d-aac7-53e53ac475ab</a></code></th><td>STANDOC_14</td>
+<td>Style override set for ordered list</td><td><pre>&lt;ol id=&quot;_a34a06a4-c3dc-4a2d-aac7-53e53ac475ab&quot; type=&quot;arabic&quot;&gt; &lt;li&gt; &lt;p id=&quot;_a44acdb7-4e72-4f84-bfb3-23921a71e0a6&quot;&gt;string, integer, me&lt;strong&gt;a&lt;/strong&gt;surement, date, real, binary, boolean, URI&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt; &lt;p id=&quot;_40cc6f3c-e4cd-41a2-98f6-f046e34e675a&quot;&gt;Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve, MultiSurface, MultiGeometry&lt;/p&gt;
+&lt;li&gt; &lt;p id=&quot;_54bd771c-b5ad-467a-932d-debba20567c4&quot;&gt;Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve, MultiSurface, MultiGeometry&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt; &lt;p id=&quot;_7c988eae-8793-4191-910b-8d78138134a9&quot;&gt;In levels 0 and 1, remote values for properties are supported &lt;strong&gt;only &lt;/strong&gt;through the use of the type gml:ReferenceType. The more generalized GML property-type pattern allowing mixed inline and byReference encoded property values within the same instance document is disallowed.&lt;/p&gt;</pre></td><td>2</td></tr>
+&lt;li&gt; &lt;p id=&quot;_b477d66e-e19c-47a1-8121-58f76bd42b92&quot;&gt;In levels 0 and 1, remote values for properties are supported &lt;strong&gt;only &lt;/strong&gt;through the use of the type gml:ReferenceType. The more generalized GML property-type pattern allowing mixed inline and byReference encoded property values within the same instance document is disallowed.&lt;/p&gt;</pre></td><td>2</td></tr>
 </tbody></table>
 <h2 id="Requirements">Requirements</h2>
 <table border="1">
@@ -178,268 +168,487 @@ https://www.metanorma.org/author/iso/topics/markup/#bibliographies : For citatio
 <th width="20%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
 <tbody>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite ISO 19118:2011 Geographic information — Encoding outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite JSON Schema outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0 outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite OGC Features and Geometries JSON — ​Part 1: Core v1.0.0 outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9 outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite Web API outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-core outside this document</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000220</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_1</td>
+<td>000294</td><th><code><a href='./document.html#req_class_gsmljson_core'>req_class_​gsmljson_​core</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-core has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_ab6152f1-d4ad-63f6-f338-3d9e8dafe86d&quot; anchor=&quot;req_class_gsmljson_core&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Core JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-core&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;Web API&lt;/inherit&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-core&lt;/inherit&gt; &lt;inherit&gt;JSON Schema&lt;/inherit&gt; &lt;inherit&gt;ISO 19118:2011 Geographic information — Encoding&lt;/inherit&gt; &lt;inherit&gt;OGC Features and Geometries JSON — Part 1: Core v1.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0&lt;/inherit&gt; &lt;inherit&gt;OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9&lt;/inherit&gt; &lt;requirement id=&quot;_a3dd796f-e746-9e5c-1f81-c7b190ab7620&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_b4186c05-7f39-a938-32f3-eac27cda6b62&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_1409ed81-36b4-2260-e3a1-1ad31135f6d7&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_db9aed0a-396c-2d95-44a3-c85d9c14e9cb&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_b4e8ac1f-9bbc-958a-094f-3539f7893818&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000231</td><th><code><a href='./document.html#req_gsmljson_core_json'>req_​gsmljson_core_​json</a></code></th><td>MODSPEC_1</td>
+<td>000305</td><th><code><a href='./document.html#req_gsmljson_core_json'>req_​gsmljson_core_​json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-core/​json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_d402f5db-e987-30d8-e6ca-ae35b1b1a797&quot; anchor=&quot;req_gsmljson_core_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/json&lt;/identifier&gt; &lt;component id=&quot;_c3b5ab70-e4f9-784b-8a93-106f180da6cc&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_e57f337a-922a-6c3f-5fc0-fe4c313a416b&quot;&gt;An JSON instance document SHALL validate against the JSON Schema files provided in this Standard.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000247</td><th><code><a href='./document.html#req_gsmljson_core_codelist'>req_​gsmljson_core_​codelist</a></code></th><td>MODSPEC_1</td>
+<td>000321</td><th><code><a href='./document.html#req_gsmljson_core_codelist'>req_​gsmljson_core_​codelist</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-core/​codelist has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_a9d3e856-c97b-3181-443f-d34a38f6ffc0&quot; anchor=&quot;req_gsmljson_core_codelist&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/codelist&lt;/identifier&gt; &lt;component id=&quot;_64fb22fa-0231-7db4-e0bd-5ec757da54ef&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_ec0a4b13-acc4-fa76-4f8c-06950f947fa3&quot;&gt;Vocabulary term SHALL be encoded with HTTP URI in xlink:href and provide a human readable description in xlink:title.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000258</td><th><code><a href='./document.html#rec_gsmljson_core_identifier_uri'>rec_​gsmljson_core_​identifier_​uri</a></code></th><td>MODSPEC_1</td>
+<td>000332</td><th><code><a href='./document.html#rec_gsmljson_core_identifier_uri'>rec_​gsmljson_core_​identifier_​uri</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /rec/​gsmljson-core/​identifier-uri has no corresponding Conformance test</td><td><pre>&lt;recommendation id=&quot;_8d18e2af-3c1d-0a38-acfc-03cde7baa457&quot; anchor=&quot;rec_gsmljson_core_identifier_uri&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/identifier-uri&lt;/identifier&gt; &lt;component id=&quot;_9ca5042e-42fc-135c-6c46-1a29d2e52201&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_d35f73d3-14a8-09f9-51db-dab4c1a389f0&quot;&gt;Feature identifiers (unique name) provided in gml:identifier and @codeSpace = “http://www.ietf.org/rfc/rfc2616” SHOULD be URI of resource using Linked Open Data principles.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/recommendation&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000294</td><th><code><a href='./document.html#rec_gsmljson_core_iso8601_time'>rec_​gsmljson_core_​iso8601_​time</a></code></th><td>MODSPEC_1</td>
+<td>000368</td><th><code><a href='./document.html#rec_gsmljson_core_iso8601_time'>rec_​gsmljson_core_​iso8601_​time</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /rec/​gsmljson-core/​iso8601-time has no corresponding Conformance test</td><td><pre>&lt;recommendation id=&quot;_18e7d6b0-632b-00ea-74df-2f792bd6ae46&quot; anchor=&quot;rec_gsmljson_core_iso8601_time&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/rec/gsmljson-core/iso8601-time&lt;/identifier&gt; &lt;component id=&quot;_fba40d62-bd68-407f-b9c7-aa5937bf8a40&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_b49de59c-ee17-0f70-f9a9-8d384c95dca0&quot;&gt;All date-time occurrences SHOULD be encoded using ISO8601 extended time format.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/recommendation&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000302</td><th><code><a href='./document.html#req_gsmljson_core_time_zone'>req_​gsmljson_core_​time_zone</a></code></th><td>MODSPEC_1</td>
+<td>000376</td><th><code><a href='./document.html#req_gsmljson_core_time_zone'>req_​gsmljson_core_​time_zone</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-core/​time-zone has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_7049c6f8-9108-7527-e27c-31a726f2e062&quot; anchor=&quot;req_gsmljson_core_time_zone&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-core/time-zone&lt;/identifier&gt; &lt;component id=&quot;_0fa8fd92-1c8d-2a9a-2f16-40c965420ffb&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_aa35bfc9-ed7d-5c22-b3c5-612bd385d3e1&quot;&gt;The value of each time element SHALL include a time zone definition using a signed 4 digit character or a ‘Z’ to represent Zulu or Greenwich Mean Time (GMT). This is defined by the following regular expression:&lt;/p&gt;
 &lt;p id=&quot;_e00038ca-c5cd-9f67-edf5-8af1952b310b&quot;&gt;(Z|[+-]HH:MM).&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000333</td><th><code><a href='./document.html#req_class_gsmljson-basic'>req_class_​gsmljson-basic</a></code></th><td>MODSPEC_2</td>
+<td>000407</td><th><code><a href='./document.html#req_class_gsmljson-basic'>req_class_​gsmljson-basic</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-basic points to Prerequisite /req/​gsmljson-core outside this document</td><td><pre>&lt;requirement id=&quot;_f910b0b7-d4a9-a8d3-315f-2fe0bae55b84&quot; anchor=&quot;req_class_gsmljson-basic&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Basic JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-basic&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_7d4dc458-d3fe-902b-baa5-b2fed5148915&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-basic/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000333</td><th><code><a href='./document.html#req_class_gsmljson-basic'>req_class_​gsmljson-basic</a></code></th><td>MODSPEC_2</td>
+<td>000407</td><th><code><a href='./document.html#req_class_gsmljson-basic'>req_class_​gsmljson-basic</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-basic points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-basic outside this document</td><td><pre>&lt;requirement id=&quot;_f910b0b7-d4a9-a8d3-315f-2fe0bae55b84&quot; anchor=&quot;req_class_gsmljson-basic&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Basic JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-basic&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_7d4dc458-d3fe-902b-baa5-b2fed5148915&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-basic/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000333</td><th><code><a href='./document.html#req_class_gsmljson-basic'>req_class_​gsmljson-basic</a></code></th><td>MODSPEC_1</td>
+<td>000407</td><th><code><a href='./document.html#req_class_gsmljson-basic'>req_class_​gsmljson-basic</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-basic has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_f910b0b7-d4a9-a8d3-315f-2fe0bae55b84&quot; anchor=&quot;req_class_gsmljson-basic&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Basic JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-basic&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_7d4dc458-d3fe-902b-baa5-b2fed5148915&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-basic/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000340</td><th><code><a href='./document.html#req_gsmljson_basic_json'>req_​gsmljson_basic_​json</a></code></th><td>MODSPEC_1</td>
+<td>000414</td><th><code><a href='./document.html#req_gsmljson_basic_json'>req_​gsmljson_basic_​json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-basic/​json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_46e309f5-eaf9-d3b1-09e3-2c1ba63d2488&quot; anchor=&quot;req_gsmljson_basic_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-basic/json&lt;/identifier&gt; &lt;component id=&quot;_1dc3742e-1adb-c035-0abb-90156f5a33a5&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_39032882-0163-0f69-3d66-cc87589e3354&quot;&gt;A JSON instance document SHALL validate with schema located at  &lt;link target=&quot;http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd&quot;/&gt;.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000372</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_2</td>
+<td>000446</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-extension points to Prerequisite /req/​gsmljson-basic outside this document</td><td><pre>&lt;requirement id=&quot;_d2a97fc2-fcee-548c-cb31-550f795026d9&quot; anchor=&quot;req_class_gsmljson_extension&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Extension JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-extension&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-extension&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-geologictime&lt;/inherit&gt; &lt;requirement id=&quot;_a9fbcea1-37c8-c800-3b48-4aa154fdd5e0&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-extension/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000372</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_2</td>
+<td>000446</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-extension points to Prerequisite /req/​gsmljson-geologictime outside this document</td><td><pre>&lt;requirement id=&quot;_d2a97fc2-fcee-548c-cb31-550f795026d9&quot; anchor=&quot;req_class_gsmljson_extension&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Extension JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-extension&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-extension&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-geologictime&lt;/inherit&gt; &lt;requirement id=&quot;_a9fbcea1-37c8-c800-3b48-4aa154fdd5e0&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-extension/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000372</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_2</td>
+<td>000446</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-extension points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-extension outside this document</td><td><pre>&lt;requirement id=&quot;_d2a97fc2-fcee-548c-cb31-550f795026d9&quot; anchor=&quot;req_class_gsmljson_extension&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Extension JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-extension&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-extension&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-geologictime&lt;/inherit&gt; &lt;requirement id=&quot;_a9fbcea1-37c8-c800-3b48-4aa154fdd5e0&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-extension/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000372</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_1</td>
+<td>000446</td><th><code><a href='./document.html#req_class_gsmljson_extension'>req_class_​gsmljson_​extension</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-extension has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_d2a97fc2-fcee-548c-cb31-550f795026d9&quot; anchor=&quot;req_class_gsmljson_extension&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Extension JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-extension&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-extension&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-basic&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-geologictime&lt;/inherit&gt; &lt;requirement id=&quot;_a9fbcea1-37c8-c800-3b48-4aa154fdd5e0&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-extension/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000379</td><th><code><a href='./document.html#req_gsmljson_extension_json'>req_​gsmljson_​extension_json</a></code></th><td>MODSPEC_1</td>
+<td>000453</td><th><code><a href='./document.html#req_gsmljson_extension_json'>req_​gsmljson_​extension_json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-extension/json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_46b45442-90d5-c605-a9d4-4dd3fde3ab0b&quot; anchor=&quot;req_gsmljson_extension_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-extension/json&lt;/identifier&gt; &lt;component id=&quot;_e813d458-c8b6-3847-ecb5-5239078cb159&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_0aec9a18-5d1b-ceb8-1868-2166caa7f35e&quot;&gt;A JSON instance document SHALL validate with schema located at   &lt;link target=&quot;http://schemas.opengis.net/gsml/4.1/&quot;/&gt; geoSciMLExtension.xsd.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000388</td><th><code><a href='./document.html#req_class_gsmljson-geologictime'>req_class_​gsmljson-geologictime</a></code></th><td>MODSPEC_2</td>
+<td>000462</td><th><code><a href='./document.html#req_class_gsmljson-geologictime'>req_class_​gsmljson-geologictime</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-geologictime points to Prerequisite /req/​gsmljson-core outside this document</td><td><pre>&lt;requirement id=&quot;_75192e91-f9cb-a43c-1fc5-e88e58657ae7&quot; anchor=&quot;req_class_gsmljson-geologictime&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML GeologicTime JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-geologictime&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-geologictime&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_2c672055-5835-ff37-983d-8c269e33d760&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-geologictime/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000388</td><th><code><a href='./document.html#req_class_gsmljson-geologictime'>req_class_​gsmljson-geologictime</a></code></th><td>MODSPEC_2</td>
+<td>000462</td><th><code><a href='./document.html#req_class_gsmljson-geologictime'>req_class_​gsmljson-geologictime</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-geologictime points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-geologictime outside this document</td><td><pre>&lt;requirement id=&quot;_75192e91-f9cb-a43c-1fc5-e88e58657ae7&quot; anchor=&quot;req_class_gsmljson-geologictime&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML GeologicTime JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-geologictime&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-geologictime&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_2c672055-5835-ff37-983d-8c269e33d760&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-geologictime/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000388</td><th><code><a href='./document.html#req_class_gsmljson-geologictime'>req_class_​gsmljson-geologictime</a></code></th><td>MODSPEC_1</td>
+<td>000462</td><th><code><a href='./document.html#req_class_gsmljson-geologictime'>req_class_​gsmljson-geologictime</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-geologictime has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_75192e91-f9cb-a43c-1fc5-e88e58657ae7&quot; anchor=&quot;req_class_gsmljson-geologictime&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML GeologicTime JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-geologictime&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-geologictime&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_2c672055-5835-ff37-983d-8c269e33d760&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-geologictime/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000395</td><th><code><a href='./document.html#req_gsmljson-_eologictime_json'>req_​gsmljson-_​eologictime_json</a></code></th><td>MODSPEC_1</td>
+<td>000469</td><th><code><a href='./document.html#req_gsmljson-_eologictime_json'>req_​gsmljson-_​eologictime_json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-geologictime/json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_45188aa4-cb10-d463-9b1a-1a7e154af270&quot; anchor=&quot;req_gsmljson-_eologictime_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-geologictime/json&lt;/identifier&gt; &lt;component id=&quot;_24547d53-71e0-fade-3ca2-db0b1312d1ed&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_461c35c7-6502-ee00-c745-faf4defc2e9a&quot;&gt;A JSON instance document SHALL validate with schema located at   &lt;link target=&quot;http://schemas.opengis.net/gsml/4.1/geologicTime.xsd&quot;/&gt;.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000404</td><th><code><a href='./document.html#req_class_gsmljson-borehole'>req_class_​gsmljson-borehole</a></code></th><td>MODSPEC_2</td>
+<td>000478</td><th><code><a href='./document.html#req_class_gsmljson-borehole'>req_class_​gsmljson-borehole</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-borehole points to Prerequisite /req/​gsmljson-core outside this document</td><td><pre>&lt;requirement id=&quot;_23e4cc66-e9aa-9eff-5ea0-dee62bfa5278&quot; anchor=&quot;req_class_gsmljson-borehole&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Borehole JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-borehole&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-borehole&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_6a7ace27-c738-5ee3-40c4-2372f2941a6d&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-borehole/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000404</td><th><code><a href='./document.html#req_class_gsmljson-borehole'>req_class_​gsmljson-borehole</a></code></th><td>MODSPEC_2</td>
+<td>000478</td><th><code><a href='./document.html#req_class_gsmljson-borehole'>req_class_​gsmljson-borehole</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-borehole points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-borehole outside this document</td><td><pre>&lt;requirement id=&quot;_23e4cc66-e9aa-9eff-5ea0-dee62bfa5278&quot; anchor=&quot;req_class_gsmljson-borehole&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Borehole JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-borehole&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-borehole&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_6a7ace27-c738-5ee3-40c4-2372f2941a6d&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-borehole/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000404</td><th><code><a href='./document.html#req_class_gsmljson-borehole'>req_class_​gsmljson-borehole</a></code></th><td>MODSPEC_1</td>
+<td>000478</td><th><code><a href='./document.html#req_class_gsmljson-borehole'>req_class_​gsmljson-borehole</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-borehole has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_23e4cc66-e9aa-9eff-5ea0-dee62bfa5278&quot; anchor=&quot;req_class_gsmljson-borehole&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Borehole JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-borehole&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-borehole&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_6a7ace27-c738-5ee3-40c4-2372f2941a6d&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-borehole/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000411</td><th><code><a href='./document.html#req_gsmljson_borehole_json'>req_​gsmljson_​borehole_json</a></code></th><td>MODSPEC_1</td>
+<td>000485</td><th><code><a href='./document.html#req_gsmljson_borehole_json'>req_​gsmljson_​borehole_json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-borehole/​json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_450ffee9-7d22-9960-352e-7c824a56a197&quot; anchor=&quot;req_gsmljson_borehole_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-borehole/json&lt;/identifier&gt; &lt;component id=&quot;_0f8110af-f8e5-d742-2c7a-5dda3dab3e6b&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_40868a36-05cd-aa68-829a-d78064aff1dc&quot;&gt;A JSON instance document shall validate with schema located at   &lt;link target=&quot;http://schemas.opengis.net/gsml/4.1/borehole.xsd&quot;/&gt;.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000420</td><th><code><a href='./document.html#req_class_gsmljson_lab'>req_class_​gsmljson_​lab</a></code></th><td>MODSPEC_2</td>
+<td>000494</td><th><code><a href='./document.html#req_class_gsmljson_lab'>req_class_​gsmljson_​lab</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lab points to Prerequisite /req/​gsml-lab outside this document</td><td><pre>&lt;requirement id=&quot;_50d54c78-e676-d23f-c0ec-438d4b4606a2&quot; anchor=&quot;req_class_gsmljson_lab&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML LaboratoryAnalysis-Specimen JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lab&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;/req/gsml-lab&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_d720237f-63c3-fbb0-588e-eee7b1cdb730&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lab/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000420</td><th><code><a href='./document.html#req_class_gsmljson_lab'>req_class_​gsmljson_​lab</a></code></th><td>MODSPEC_2</td>
+<td>000494</td><th><code><a href='./document.html#req_class_gsmljson_lab'>req_class_​gsmljson_​lab</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lab points to Prerequisite /req/​gsmljson-core outside this document</td><td><pre>&lt;requirement id=&quot;_50d54c78-e676-d23f-c0ec-438d4b4606a2&quot; anchor=&quot;req_class_gsmljson_lab&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML LaboratoryAnalysis-Specimen JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lab&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;/req/gsml-lab&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_d720237f-63c3-fbb0-588e-eee7b1cdb730&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lab/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000420</td><th><code><a href='./document.html#req_class_gsmljson_lab'>req_class_​gsmljson_​lab</a></code></th><td>MODSPEC_1</td>
+<td>000494</td><th><code><a href='./document.html#req_class_gsmljson_lab'>req_class_​gsmljson_​lab</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lab has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_50d54c78-e676-d23f-c0ec-438d4b4606a2&quot; anchor=&quot;req_class_gsmljson_lab&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML LaboratoryAnalysis-Specimen JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lab&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;/req/gsml-lab&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;requirement id=&quot;_d720237f-63c3-fbb0-588e-eee7b1cdb730&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lab/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000427</td><th><code><a href='./document.html#req_gsmljson_lab_json'>req_​gsmljson_lab_​json</a></code></th><td>MODSPEC_1</td>
+<td>000501</td><th><code><a href='./document.html#req_gsmljson_lab_json'>req_​gsmljson_lab_​json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-lab/json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_d415c764-cd25-4bd3-69f1-947b9260b4e9&quot; anchor=&quot;req_gsmljson_lab_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-lab/json&lt;/identifier&gt; &lt;component id=&quot;_9c9758ac-381a-4eea-9ccf-a43b56274d45&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_8655aba3-41e6-6c8f-5128-cb2260bd000b&quot;&gt;A JSON instance document SHALL validate with schema located at   &lt;link target=&quot;http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd&quot;/&gt;.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000436</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_2</td>
+<td>000510</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite points to Prerequisite /req/​gsmljson-core outside this document</td><td><pre>&lt;requirement id=&quot;_d5cf93b0-6154-191a-031b-152d08de7305&quot; anchor=&quot;req_class_gsmljson-lite&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘Abstract GeoSciML Lite JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;inherit&gt;GML Simple Feature OGC 10-100r3 SF-0&lt;/inherit&gt; &lt;requirement id=&quot;_6c64b089-cd6e-be2f-e500-23902b8d095b&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite/SF-0&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_e9ad582e-5f15-3e2b-fc06-c808c04f5d58&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/SF-0-simpletype&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_3686925b-abaa-64bc-5e9e-1e598f2cab61&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-json&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-ns&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000436</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_2</td>
+<td>000510</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite points to Prerequisite GML Simple Feature OGC 10-100r3 SF-0 outside this document</td><td><pre>&lt;requirement id=&quot;_d5cf93b0-6154-191a-031b-152d08de7305&quot; anchor=&quot;req_class_gsmljson-lite&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘Abstract GeoSciML Lite JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;inherit&gt;GML Simple Feature OGC 10-100r3 SF-0&lt;/inherit&gt; &lt;requirement id=&quot;_6c64b089-cd6e-be2f-e500-23902b8d095b&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite/SF-0&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_e9ad582e-5f15-3e2b-fc06-c808c04f5d58&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/SF-0-simpletype&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_3686925b-abaa-64bc-5e9e-1e598f2cab61&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-json&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-ns&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000436</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_2</td>
+<td>000510</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-lite outside this document</td><td><pre>&lt;requirement id=&quot;_d5cf93b0-6154-191a-031b-152d08de7305&quot; anchor=&quot;req_class_gsmljson-lite&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘Abstract GeoSciML Lite JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;inherit&gt;GML Simple Feature OGC 10-100r3 SF-0&lt;/inherit&gt; &lt;requirement id=&quot;_6c64b089-cd6e-be2f-e500-23902b8d095b&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite/SF-0&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_e9ad582e-5f15-3e2b-fc06-c808c04f5d58&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/SF-0-simpletype&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_3686925b-abaa-64bc-5e9e-1e598f2cab61&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-json&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-ns&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000436</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_1</td>
+<td>000510</td><th><code><a href='./document.html#req_class_gsmljson-lite'>req_class_​gsmljson-lite</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_d5cf93b0-6154-191a-031b-152d08de7305&quot; anchor=&quot;req_class_gsmljson-lite&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘Abstract GeoSciML Lite JSON’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-core&lt;/inherit&gt; &lt;inherit&gt;GML Simple Feature OGC 10-100r3 SF-0&lt;/inherit&gt; &lt;requirement id=&quot;_6c64b089-cd6e-be2f-e500-23902b8d095b&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite/SF-0&lt;/identifier&gt; &lt;/requirement&gt; &lt;recommendation id=&quot;_e9ad582e-5f15-3e2b-fc06-c808c04f5d58&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/SF-0-simpletype&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_3686925b-abaa-64bc-5e9e-1e598f2cab61&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-json&lt;/identifier&gt; &lt;/recommendation&gt; &lt;recommendation id=&quot;_0f0e3643-9bca-288f-9f80-ebcbe4cc94bf&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/rec/gsmljson-lite/user-ns&lt;/identifier&gt; &lt;/recommendation&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000447</td><th><code><a href='./document.html#req_gsmljson_lite_SF0'>req_​gsmljson_lite_​SF0</a></code></th><td>MODSPEC_1</td>
+<td>000521</td><th><code><a href='./document.html#req_gsmljson_lite_SF0'>req_​gsmljson_lite_​SF0</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-lite/SF-0 has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_73a624e3-eb81-912b-1e1a-6baa58d96db5&quot; anchor=&quot;req_gsmljson_lite_SF0&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite/SF-0&lt;/identifier&gt; &lt;component id=&quot;_ea6d424d-8f16-1ebe-8938-64cce81b2638&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_8051d9f8-196e-c673-f9c5-40921bc570ba&quot;&gt;A JSON instance document SHALL be compliant to GML Simple Feature Level 0.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000512</td><th><code><a href='./document.html#req_class_gsmljson-lite31'>req_class_​gsmljson-lite31</a></code></th><td>MODSPEC_2</td>
+<td>000586</td><th><code><a href='./document.html#req_class_gsmljson-lite31'>req_class_​gsmljson-lite31</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite-31 points to Prerequisite /req/​gsmljson-lite outside this document</td><td><pre>&lt;requirement id=&quot;_bcab8da3-b115-a7c3-2f5d-335a9cfbd78d&quot; anchor=&quot;req_class_gsmljson-lite31&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Lite GML 3.1 profile’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite-31&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-lite&lt;/inherit&gt; &lt;requirement id=&quot;_b02b06e4-6aea-3ae9-7d7c-80a7028156cc&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite-31/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000512</td><th><code><a href='./document.html#req_class_gsmljson-lite31'>req_class_​gsmljson-lite31</a></code></th><td>MODSPEC_2</td>
+<td>000586</td><th><code><a href='./document.html#req_class_gsmljson-lite31'>req_class_​gsmljson-lite31</a></code></th><td>MODSPEC_2</td>
 <td>Requirements linkage: Provision https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite-31 points to Prerequisite https://​www.​opengis.net/spec/​geosciml-part1/​5.0/req/gsml-lite outside this document</td><td><pre>&lt;requirement id=&quot;_bcab8da3-b115-a7c3-2f5d-335a9cfbd78d&quot; anchor=&quot;req_class_gsmljson-lite31&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Lite GML 3.1 profile’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite-31&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-lite&lt;/inherit&gt; &lt;requirement id=&quot;_b02b06e4-6aea-3ae9-7d7c-80a7028156cc&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite-31/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000512</td><th><code><a href='./document.html#req_class_gsmljson-lite31'>req_class_​gsmljson-lite31</a></code></th><td>MODSPEC_1</td>
+<td>000586</td><th><code><a href='./document.html#req_class_gsmljson-lite31'>req_class_​gsmljson-lite31</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement class https://​www.​opengis.net/spec/​geosciml-part3/​5.0/req/​gsmljson-lite-31 has no corresponding Conformance class</td><td><pre>&lt;requirement id=&quot;_bcab8da3-b115-a7c3-2f5d-335a9cfbd78d&quot; anchor=&quot;req_class_gsmljson-lite31&quot; model=&quot;ogc&quot; type=&quot;class&quot;&gt;
 &lt;title&gt;Requirements Class ‘GeoSciML Lite GML 3.1 profile’&lt;/title&gt; &lt;identifier&gt;https://www.opengis.net/spec/geosciml-part3/5.0/req/gsmljson-lite-31&lt;/identifier&gt; &lt;subject&gt;Data instance&lt;/subject&gt; &lt;inherit&gt;https://www.opengis.net/spec/geosciml-part1/5.0/req/gsml-lite&lt;/inherit&gt; &lt;inherit&gt;/req/gsmljson-lite&lt;/inherit&gt; &lt;requirement id=&quot;_b02b06e4-6aea-3ae9-7d7c-80a7028156cc&quot; model=&quot;ogc&quot; type=&quot;general&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite-31/json&lt;/identifier&gt; &lt;/requirement&gt;
 
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000521</td><th><code><a href='./document.html#req_gsmljson_lite_31_json'>req_​gsmljson_lite_​31_json</a></code></th><td>MODSPEC_1</td>
+<td>000595</td><th><code><a href='./document.html#req_gsmljson_lite_31_json'>req_​gsmljson_lite_​31_json</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Requirement /req/​gsmljson-lite-31/json has no corresponding Conformance test</td><td><pre>&lt;requirement id=&quot;_7f29bd63-6fdb-f713-1f11-bc024a31961f&quot; anchor=&quot;req_gsmljson_lite_31_json&quot; model=&quot;ogc&quot;&gt; &lt;identifier&gt;/req/gsmljson-lite-31/json&lt;/identifier&gt; &lt;component id=&quot;_c6848090-0207-ac2f-a77f-21f95bf59569&quot; class=&quot;part&quot;&gt; &lt;p id=&quot;_27d2b610-8b41-6035-b812-64922bdf7ddc&quot;&gt;A JSON instance document shall validate with schema located at   &lt;link target=&quot;http://schemas.opengis.net/gsml/4.1/geosciml-portrayal.xsd&quot;/&gt;.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000548</td><th><code><a href='./document.html#ats_example1'>ats_​example1</a></code></th><td>MODSPEC_1</td>
+<td>000622</td><th><code><a href='./document.html#ats_example1'>ats_​example1</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Conformance class http://​www.opengis.​net/spec/​name-of-standard/​1.0/conf/​example1 has no corresponding Requirement class</td><td><pre>&lt;requirement id=&quot;_decc1f24-9f68-e133-ed15-0a9d614f68c6&quot; anchor=&quot;ats_example1&quot; model=&quot;ogc&quot; type=&quot;conformanceclass&quot;&gt; &lt;identifier&gt;http://www.opengis.net/spec/name-of-standard/1.0/conf/example1&lt;/identifier&gt; &lt;classification&gt; &lt;tag&gt;Target Type&lt;/tag&gt; &lt;value&gt;Web API&lt;/value&gt; &lt;/classification&gt; &lt;classification&gt; &lt;tag&gt;target&lt;/tag&gt; &lt;value&gt;http://www.opengis.net/spec/ABCD/m.n/req/req-class-a&lt;/value&gt; &lt;/classification&gt; &lt;requirement id=&quot;_ff77108c-a8f6-08c6-601e-e28822716dd7&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;identifier&gt;/conf/core/map-response&lt;/identifier&gt; &lt;/requirement&gt; &lt;requirement id=&quot;_e72c02a8-3296-118e-700f-50a080090cc6&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;identifier&gt;/conf/core/http&lt;/identifier&gt; &lt;/requirement&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000553</td><th><code><a href='./document.html#ats_core_api-definition-op'>ats_core_​api-definition-op</a></code></th><td>MODSPEC_1</td>
+<td>000627</td><th><code><a href='./document.html#ats_core_api-definition-op'>ats_core_​api-definition-op</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Conformance test /conf/​core/map-response has no corresponding Requirement</td><td><pre>&lt;requirement id=&quot;_da859a71-6085-ad51-19c2-5aa9f162f1ba&quot; anchor=&quot;ats_core_api-definition-op&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;identifier&gt;/conf/core/map-response&lt;/identifier&gt; &lt;classification&gt; &lt;tag&gt;target&lt;/tag&gt; &lt;value&gt;/req/req-class-a/req-name-1&lt;/value&gt; &lt;/classification&gt; &lt;component id=&quot;_85c56698-5fb3-60d7-84c0-9a8dc916a839&quot; class=&quot;test-purpose&quot;&gt; &lt;p id=&quot;_8f5557b7-9b6a-5dd2-4976-db599b7e4496&quot;&gt;Verify that the implementation’s response for the map retrieval operation is correct&lt;/p&gt;
 &lt;/component&gt; &lt;component id=&quot;_1dec5d8d-6407-cf6e-42cc-39bdec221c22&quot; class=&quot;test-method&quot;&gt; &lt;p id=&quot;_f110e3a8-8d6f-3aeb-cd60-cfd8b7247cac&quot;&gt;A single step test method can be documented as a single line.&lt;/p&gt;
 &lt;/component&gt;
 &lt;/requirement&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000561</td><th><code><a href='./document.html#ats_core_http'>ats_core_​http</a></code></th><td>MODSPEC_1</td>
+<td>000635</td><th><code><a href='./document.html#ats_core_http'>ats_core_​http</a></code></th><td>MODSPEC_1</td>
 <td>Requirements linkage: Conformance test /conf/​core/http has no corresponding Requirement</td><td><pre>&lt;requirement id=&quot;_d534372c-f008-6390-da90-8fd2ffddd13e&quot; anchor=&quot;ats_core_http&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;identifier&gt;/conf/core/http&lt;/identifier&gt; &lt;classification&gt; &lt;tag&gt;target&lt;/tag&gt; &lt;value&gt;/req/req-class-a/req-name-2&lt;/value&gt; &lt;/classification&gt; &lt;component id=&quot;_75e6681c-8759-7d88-5a6e-fd3924459723&quot; class=&quot;test-purpose&quot;&gt; &lt;p id=&quot;_d8c68c9c-a138-50a6-08e1-d7f10bbdfeba&quot;&gt;Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.&lt;/p&gt;
 &lt;/component&gt;
 
 &lt;component exclude=&quot;false&quot; class=&quot;test method&quot;&gt; &lt;component exclude=&quot;false&quot; class=&quot;step&quot;&gt; &lt;p id=&quot;_89bea33c-5ef2-cb52-41a9-e90e99335d26&quot;&gt;A sequential multi-step test method can be documented as shown here. This is the first step.&lt;/p&gt;
 &lt;/component&gt;</pre></td><td>2</td></tr>
+</tbody></table>
+<h2 id="Metanorma_XML_Syntax">Metanorma XML Syntax</h2>
+<table border="1">
+<thead><th width="5%">Line</th><th width="20%">ID</th><th width="10%">Error</th>
+<th width="20%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
+<tbody>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:116</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:124</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:138</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:146</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:164</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:172</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:187</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:195</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:85</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000022:93</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000294:115</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000305:101</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000305:217</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000321:105</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000321:225</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000332:114</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000332:240</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000368:112</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000368:236</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000376:106</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000376:227</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000407:116</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000414:102</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000414:219</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000446:120</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000453:106</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000453:227</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000462:123</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000469:109</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000469:233</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000478:119</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000485:105</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000485:225</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000494:114</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000501:100</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000501:215</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000510:115</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000521:100</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000521:216</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000586:117</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000595:104</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000595:223</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000622:115</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000627:125</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000627:341</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000628:87</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000635:112</code></th><td>STANDOC_7</td>
+<td>attribute "anchor" not allowed here; expected attribute "class", "columns", "filename", "keep-lines-together", "keep-with-next", "model", "multilingual-rendering", "number",​ "obligation", "subsequence", "tag", "type" or "unnumbered"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000635:320</code></th><td>STANDOC_7</td>
+<td>attribute "id" not allowed here; expected attribute "class", "columns", "exclude", "keep-lines-together", "keep-with-next", "multilingual-rendering", "tag" or "type"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000703:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000766:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000835:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000887:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000978:26</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001066:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001132:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001212:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001287:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001435:31</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001435:39</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001436:16</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001436:24</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001437:41</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001437:49</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001438:17</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001438:25</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001439:17</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001439:25</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001440:28</code></th><td>STANDOC_7</td>
+<td>text not allowed here; expected element "taxon" or "vocab"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001440:36</code></th><td>STANDOC_7</td>
+<td>element "keyword" incomplete; missing required element "taxon"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001536:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 001602:22</code></th><td>STANDOC_7</td>
+<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
 </tbody></table>
 </body></html>
