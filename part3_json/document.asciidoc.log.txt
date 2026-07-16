@@ -13,7 +13,7 @@
 :fullname: Editor One
 :fullname_2: Editor Two
 :docsubtype: Interface
-:keywords: ogcdoc, OGC document, API, openapi, html
+:keywords: ogcdoc, OGC document, JSON, JSON-FG, schema, GeoSciML, geology, geoscience
 :submitting-organizations: Organization One; Organization Two
 :mn-document-class: ogc
 :mn-output-extensions: xml,html,doc,pdf
@@ -26,6 +26,7 @@
 
 :spec-part1-uri: https://www.opengis.net/spec/geosciml-part1/5.0
 :spec-part3-uri: https://www.opengis.net/spec/geosciml-part3/5.0
+:json-schema-repo: https://raw.githubusercontent.com/opengeospatial/geosciml-json-code-sprint/refs/heads/main/schemas/json/4.1
 
 ////
 Make sure to complete each included document
@@ -88,6 +89,10 @@ Additional contributors to this Standard include the following:
 |*Name* |*Affiliation*
 | Johannes Echterhoff | Interactive Instruments
 | Clemens Portele | Interactive Instruments
+| Edd Lewis  | British Geological Survey
+| Mark Rattenbury | Earth Sciences New Zealand
+| Add Name |
+| Add Name |
 | Add Name |
 | Add Name |
 | Add Name |
@@ -101,7 +106,7 @@ Part 3 of GeoSciML covers the representation in JSON of features from the domain
 
 == Conformance
 
-This standard defines a JSON encoding which conforms to the OGC JSON-FG 1.0.0 encoding rules.
+This standard defines a JSON encoding which conforms to the OGC JSON-FG 1.0 encoding rules.
 
 Requirements for one standardization target type are considered:
 
@@ -114,7 +119,7 @@ The normative artefacts for JSON encoding are the JSON Schema files provided onl
 . pass compliance tests listed in relevant compliance sections.
 
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web sitehttps://docs.ogc.org/is/16-008/16-008.html#_ftnref1[^[.underline]#++[++1++]++#^].
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the link:++https://docs.ogc.org/pol/08-134r11.html++[OGC Compliance Testing Policies and Procedures] and the link:++https://www.ogc.org/how-our-compliance-program-works/++[OGC Compliance Testing web site].
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
@@ -176,7 +181,7 @@ NOTE: A feature may occur as a type or an instance. Feature type or feature inst
 set of features from a dataset
 
 [.source]
-<<ISO 19168-1:2020>>
+<<ISO19168-1:2020>>
 
 
 
@@ -251,7 +256,7 @@ a name/value pair in a JSON object
 
 == Conventions
 
-This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+This section provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of JSON schema, or special notes regarding how to read the document.
 
 === Identifiers
 
@@ -341,6 +346,7 @@ inherit:: OGC Abstract Specification Topic 20: Observations, measurements and sa
 inherit:: OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9
 requirement:: /req/gsmljson-core/json
 requirement:: /req/gsmljson-core/codelist
+requirement:: /req/gsmljson-core/identifier
 requirement:: /req/gsmljson-core/time-zone
 recommendation:: /rec/gsmljson-core/identifier-uri
 recommendation:: /rec/gsmljson-core/iso8601-time
@@ -369,15 +375,25 @@ part:: An JSON instance document SHALL validate against the JSON Schema files pr
 
 ==== CodeList
 
-Open code lists (see 8.2.7) are encoded as gml:ReferenceType which is a sequence of gml:OwnershipAttributeGroup and gml:AssociationAttributeGroup, providing a series of xml attributes from W3C XLINK (link:++http://www.w3.org/TR/xlink11/++[\http://www.w3.org/TR/xlink11/]).  A vocabulary term reference has mandatory xlink:href and xlink:title attributes.
+Open code lists (see 8.2.7) are encoded simply as an HTTP URI (or HTTPS URI). See the following example that references the 'mudstone' term from a code list.
 
 [%unnumbered%]
-[source,xml]
-----
-<gsmlb:lithology link:href="http://resource.geosciml.org/ classifier/cgi/lithology/granite" xlink:title="granite"/>
+[source,json]
 ----
 
-The xlink:href contains an absolute HTTP URI that should resolve to a resource representation (often a SKOS document).  The resource can have multiple representations and it is not guaranteed that an XML parsable document can be obtained from the vocabulary service.
+        "material": {
+          "type": "Feature",
+          "featureType": "RockMaterial",
+          "id": "hervey-group-mudstone",
+          "geometry": null,
+          "properties": {
+            "lithology": "http://resource.geosciml.org/classifier/cgi/simplelithology/mudstone"
+          }
+        }
+
+----
+
+The URI should resolve to a resource representation (often a SKOS document in Turtle or JSON-LD).  The resource can have multiple representations and it is not guaranteed that a JSON-LD parsable document can be obtained from the vocabulary service.
 
 
 [[req_gsmljson_core_codelist]]
@@ -386,15 +402,21 @@ The xlink:href contains an absolute HTTP URI that should resolve to a resource r
 ====
 [%metadata]
 identifier:: /req/gsmljson-core/codelist
-part:: Vocabulary term SHALL be encoded with HTTP URI in xlink:href and provide a human readable description in xlink:title.
+part:: Vocabulary term SHALL be encoded with an HTTP/HTTPS URI that is resolvable to the definition of that term.
 ====
 
 ==== Identifiers
 
-The GeoSciML community has developed a best practice of using link:++http://www.ietf.org/rfc/rfc2616++[\http://www.ietf.org/rfc/rfc2616#] as a codespace for string with authority to designate string that are resolvable HTTP URI.
+To enable consistent handling of identifiers in GeoJSON and JSON-FG applications, the `id` member of a GeoJSON feature is used to encode the identifier of a GeoSciML feature.
 
-gml:identifier’s flagged with the specific codeSpace “http://www.ietf.org/rfc/rfc2616” should be resolvable HTTP URI that return an instance of itself.
+[[req_gsmljson_core_identifier]]
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-core/identifier
+part:: The `id` member of a GeoJSON feature shall be used to encode the identifier of a GeoSciML feature.
+====
 
 [[rec_gsmljson_core_identifier_uri]]
 
@@ -402,45 +424,25 @@ gml:identifier’s flagged with the specific codeSpace “http://www.ietf.org/rf
 ====
 [%metadata]
 identifier:: /rec/gsmljson-core/identifier-uri
-part:: Feature identifiers (unique name) provided in gml:identifier and @codeSpace = “http://www.ietf.org/rfc/rfc2616” SHOULD be URI of resource using Linked Open Data principles.
+part:: Feature identifiers (unique name) provided in the 'id' property of a feature SHOULD be URI of resource using Linked Open Data principles.
 ====
 
 [%unnumbered%]
-[source,xml]
+[source,json]
 ----
-<gml:identifier
-    codeSpace="http://www.ietf.org/rfc/rfc2616/">
-       http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947</gml:identifier>
-----
-
-
-Resolving link:++http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947++[\http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947] shall return:
-
-
-[%unnumbered%]
-[source,xml]
-----
-<gsmlb:GeologicUnit gml:id=“G1”>
-(…)
-<gml:identifier codeSpace="
-    http://www.ietf.org/rfc/rfc2616/">
-       http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947</gml:identifier>
-(…)
-</gsmlb:GeologicUnit>
-
+{
+  "type": "Feature",
+  "id": "http://example.org/feature/asc/geologicunit/stratno/25947",
+  "featureType": "GeologicUnit",
+  "geometry": null,
+  ...
+}
 ----
 
-
-==== Nillables or Voidables
-
-A nillable property (identified as “voidable” in the UML model) is a property than can document the reason that a value is not provided.  There are two ways to identify a nil value.
-
-* Using XSD xsi:nil=”true” and nilReason.  Where available, this encoding method should be used to indicate nilled property values.
-* Using a HTTP URI identifier defined by a community as representing a null value.  OGC uses link:++http://www.opengis.net/def/nil/OGC/0/%7bnilReason%7d++[\http://www.opengis.net/def/nil/OGC/0/++{++nilReason}] (OGC 12-110).
 
 ==== Date encoding
 
-The date-time values shall conform to ISO 8601 standards.  Although this is already a GML 3.2 encoding rule (clause 14.2.2.7), this format should also be used in any string that should contain a date, or date and time.
+The date-time values shall conform to ISO 8601 standards.  Although this is already supported by JSON-FG, this format should also be used in any string that should contain a date, or date and time.
 
 
 [[rec_gsmljson_core_iso8601_time]]
@@ -474,26 +476,22 @@ Greenwich Mean Time (GMT or Zulu)
 
 
 [%unnumbered%]
-[source,xml]
----
-<om:phenomenonTime>
-  <gml:TimeInstant gml:id="ti.1">
-         <gml:timePosition>1981-09-12T00:00:00Z</gml:timePosition>
-  </gml:TimeInstant>
-</om:phenomenonTime>
----
+[source,json]
+----
+"properties": {
+    "time": ["2025-07-10T08:00:00Z", "2025-07-10T18:00:00Z"],
+}
+----
 
 Time Zone (example is Newfoundland time zone -3:30)
 
 [%unnumbered%]
-[source,xml]
----
-<om:phenomenonTime>
-  <gml:TimeInstant gml:id="ti.2">
-         <gml:timePosition>1981-09-12T00:00:00-03:30</gml:timePosition>
-  </gml:TimeInstant>
-</om:phenomenonTime>
----
+[source,json]
+----
+"properties": {
+    "time": ["2026-07-10T08:00:00-03:30", "2026-07-10T18:00:00-03:30"],
+}
+----
 
 
 === GeoSciML Basic JSON Requirements Class (Normative)
@@ -515,7 +513,7 @@ requirement:: /req/gsmljson-basic/json
 
 
 
-All the elements from the basic package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[\http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd]
+All the elements from the basic package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlBasic.json
 
 
 [[req_gsmljson_basic_json]]
@@ -524,36 +522,15 @@ All the elements from the basic package must be schema valid according to the XS
 ====
 [%metadata]
 identifier:: /req/gsmljson-basic/json
-part:: A JSON instance document SHALL validate with schema located at  link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[].
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/geoscimlBasic.json
 ====
 
-All the elements from basic package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch++[\http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.sch].
+//ORIGINAL A GeoSciML instance document SHALL validate with schema located at  link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[].
 
-
-Some properties links to stub property blocks (see 5.1) whose values are empty abstract classes in the GeoSciML Basic package.  Since abstract description classes are DataType, the property is inline only and therefore an empty property is not schema valid.
-
- 
-
-This instance is *not* XSD valid:
-
-[%unnumbered%]
-[source,xml]
-----
-<?xml version=“1.0” encoding=“UTF-8”?>
-<GeologicUnit xmlns="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
-     xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="x1"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://xmlns.geosciml.org/GeoSciML-Basic/4.1
-     http://schemas.geosciml.org/geosciml/4.1/geoSciMLBasic.xsd">
-…
-         <gbMaterialDescription></gbMaterialDescription>
-      …
-</GeologicUnit>
-----
 
 ==== relatedFeature
 
-In GeoSciML Basic, relatedFeature is byReference only.  AbstractFeatureRelation subtypes are materialized in Extension package.
+In GeoSciML Basic, relatedFeature is byReference only.  AbstractFeatureRelation subtypes are materialized in the Extension package.
 
 ===  GeoSciML Extension JSON Requirements Class (Normative)
 
@@ -574,7 +551,7 @@ requirement:: /req/gsmljson-extension/json
 
 
 
-All the elements from the GeoSciML Extension package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd++[\http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd].
+All the elements from the GeoSciML Extension package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlExtension.json
 
 
 [[req_gsmljson_extension_json]]
@@ -583,10 +560,9 @@ All the elements from the GeoSciML Extension package must be schema valid accord
 ====
 [%metadata]
 identifier:: /req/gsmljson-extension/json
-part:: A JSON instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/++[] geoSciMLExtension.xsd.
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/geoscimlExtension.json
 ====
 
-All the elements from the GeoSciML Extension package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch++[\http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch].
 
 
 === GeoSciML GeologicTime JSON Requirements Class (Normative)
@@ -609,7 +585,7 @@ requirement:: /req/gsmljson-geologictime/json
 
 
 
-All the elements from the GeoSciML Geologic Time package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[\http://schemas.opengis.net/gsml/4.1/geologicTime.xsd].
+All the elements from the GeoSciML Geologic Time package must be schema valid according to the JSON schema provided at {json-schema-repo}/geologicTime.json
 
 
 [[req_gsmljson-_eologictime_json]]
@@ -618,10 +594,9 @@ All the elements from the GeoSciML Geologic Time package must be schema valid ac
 ====
 [%metadata]
 identifier:: /req/gsmljson-geologictime/json
-part:: A JSON instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geologicTime.xsd++[].
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/geologicTime.json
 ====
 
-All the elements from the GeoSciML Geologic Time package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geologictime.sch++[\http://schemas.opengis.net/gsml/4.1/geologictime.sch].
 
 
 === GeoSciML Borehole JSON Requirements Class (Normative)
@@ -642,7 +617,7 @@ requirement:: /req/gsmljson-borehole/json
 
 
 
-All the elements from the Borehole package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[\http://schemas.opengis.net/gsml/4.1/borehole.xsd].
+All the elements from the Borehole package must be schema valid according to the JSON schema provided at {json-schema-repo}/borehole.json
 
 
 [[req_gsmljson_borehole_json]]
@@ -651,10 +626,9 @@ All the elements from the Borehole package must be schema valid according to the
 ====
 [%metadata]
 identifier:: /req/gsmljson-borehole/json
-part:: A JSON instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/borehole.xsd++[].
+part:: A JSON instance document shall validate with schema located at {json-schema-repo}/borehole.json
 ====
 
-All the elements from the Borehole package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/borehole.sch++[\http://schemas.opengis.net/gsml/4.1/borehole.sch].
 
 
 === GeoSciML LaboratoryAnalysis-Specimen JSON Requirements Class (Normative)
@@ -676,7 +650,7 @@ requirement:: /req/gsmljson-lab/json
 
 
 
-All the elements from the GeoSciML Laboratory Analysis & Specimen package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[\http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd].
+All the elements from the GeoSciML Laboratory Analysis & Specimen package must be schema valid according to the JSON schema provided at {json-schema-repo}/laboratoryAnalysisSpecimen.json
 
 
 
@@ -686,10 +660,8 @@ All the elements from the GeoSciML Laboratory Analysis & Specimen package must b
 ====
 [%metadata]
 identifier:: /req/gsmljson-lab/json
-part:: A JSON instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.xsd++[].
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/laboratoryAnalysisSpecimen.json
 ====
-
-All the elements from the GeoSciML Laboratory Analysis & Specimen package must pass the schematron rule defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch++[\http://schemas.opengis.net/gsml/4.1/laboratoryAnalysis-Specimen.sch].
 
 
 
@@ -706,36 +678,24 @@ identifier:: {spec-part3-uri}/req/gsmljson-lite
 subject:: Data instance
 inherit:: {spec-part1-uri}/req/gsml-lite
 inherit:: /req/gsmljson-core
-inherit:: GML Simple Feature OGC 10-100r3 SF-0
-requirement:: /req/gsmljson-lite/SF-0
-recommendation:: /rec/gsmljson-lite/SF-0-simpletype
-recommendation:: /rec/gsmljson-lite/user-json
-recommendation:: /rec/gsmljson-lite/user-ns
+requirement:: /req/gsmljson-lite/json
 ====
 
 
 
 
 
-The abstract GeoSciML Lite encoding sets general encoding rules for XML targets, regardless of version of GML.
+The abstract GeoSciML Lite encoding sets general encoding rules for JSON targets, regardless of version of JSON-FG.
 
 ==== Simple Feature
 
 GeoSciML Lite schemas are meant to deliver simple content, consistent with simple scenarios described in GML Simple Feature Level 0 (OGC 10-100r3).  User defined properties must respect the same constrains as defined in SF-0 specification.
 
-[[req_gsmljson_lite_SF0]]
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/gsmljson-lite/SF-0
-part:: A JSON instance document SHALL be compliant to GML Simple Feature Level 0.
-====
-
-Simple Feature defines 3 compliance levels summarized in Table17.
+The GML Simple Features profile defines 3 compliance levels summarized in <<tbl_sf_compliance_levels>>.
 
 //Table 17 in the original
 
+[[tbl_sf_compliance_levels]]
 .Reproduction of Table 1 of 10-100r3 (Clause 2.1)
 [width="100%",cols="^36%,^18%,^23%,^23%",options="header",]
 |===
@@ -762,47 +722,26 @@ spatial property values
 references
 
 |Yes^3^ |Yes^3^ |Yes
-a|
-[arabic]
-. string, integer, me**a**surement, date, real, binary, boolean, URI
-. Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve, MultiSurface, MultiGeometry
-. In levels 0 and 1, remote values for properties are supported **only **through the use of the type gml:ReferenceType. The more generalized GML property-type pattern allowing mixed inline and byReference encoded property values within the same instance document is disallowed.
-
-| | |
 |===
 
+Notes:
 
-=== GeoSciML Lite GML 3.1 profile (Normative)
+[arabic]
+. string, integer, measurement, date, real, binary, boolean, URI
+. Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve (MultiLineString), MultiSurface (MultiPolygon), MultiGeometry (GeometryCollection)
+. In levels 0 and 1 of GML Simple Features, remote values for properties are supported through the use of the type gml:ReferenceType. In contrast, for this GeoSciML JSON standard, by reference encoding uses link objects through support for the "rel-as-link" profile from OGC API - Features - Part 5 / OGC API - Common - Part 3: Schemas.
 
-[[req_class_gsmljson-lite31]]
-
-[requirements_class]
-.Requirements Class 'GeoSciML Lite GML 3.1 profile'
-====
-[%metadata]
-identifier:: {spec-part3-uri}/req/gsmljson-lite-31
-subject:: Data instance
-inherit:: {spec-part1-uri}/req/gsml-lite
-inherit:: /req/gsmljson-lite
-requirement:: /req/gsmljson-lite-31/json
-====
+All the elements from the GeoSciML Lite package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlLite.json
 
 
 
-
-Because of the limited availability of WFS 2.0 compliant servers and clients, GeoSciML SWG officially supports WFS 1.1.0 and GML 3.1.1 for delivery of Lite features. 
-
-All the elements from the GeoSciML Lite package must be schema valid according to the XSD document provided at link:++http://schemas.opengis.net/gsml/4.1/geosciml-lite.xsd++[].
-
-
-
-[[req_gsmljson_lite_31_json]]
+[[req_gsmljson_lite_json]]
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/gsmljson-lite-31/json
-part:: A JSON instance document shall validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geosciml-portrayal.xsd++[].
+identifier:: /req/gsmljson-lite/json
+part:: A JSON instance document shall validate with schema located at {json-schema-repo}/geoscimlLite.json
 ====
 
 
