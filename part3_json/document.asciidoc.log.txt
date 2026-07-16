@@ -1,0 +1,1022 @@
+= DRAFT OGC Geoscience Markup Language (GeoSciML) - Part 3: JSON Encoding
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+:docnumber: YY-999
+:received-date: 2029-03-30
+:issued-date: 2029-03-30
+:published-date: 2029-03-30
+:fullname: Editor One
+:fullname_2: Editor Two
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, JSON, JSON-FG, schema, GeoSciML, geology, geoscience
+:submitting-organizations: Organization One; Organization Two
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
+
+:spec-part1-uri: https://www.opengis.net/spec/geosciml-part1/5.0
+:spec-part3-uri: https://www.opengis.net/spec/geosciml-part3/5.0
+:json-schema-repo: https://raw.githubusercontent.com/opengeospatial/geosciml-json-code-sprint/refs/heads/main/schemas/json/4.1
+
+////
+Make sure to complete each included document
+////
+
+////
+NOTE: Uncomment ISO section if necessary
+
+*ISO Declaration*
+
+ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO member bodies). The work of preparing International Standards is normally carried out through ISO technical committees. Each member body interested in a subject for which a technical committee has been established has the right to be represented on that committee. International organizations, governmental and non-governmental, in liaison with ISO, also take part in the work. ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of electrotechnical standardization.
+
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2.
+
+The main task of technical committees is to prepare International Standards. Draft International Standards adopted by the technical committees are circulated to the member bodies for voting. Publication as an International Standard requires approval by at least 75 % of the member bodies casting a vote.
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
+////
+
+[abstract]
+== Abstract
+
+GeoSciML (Geoscience Markup Language) is a Standard for representing geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The Standard is composed of multiple parts. Part 1 describes a logical model. Part 3 (this document) describes encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. The encoding rules define an application of Features and Geometry JSON, also known as JSON-FG.
+
+== Preface
+
+The primary goal of this specification is to capture the schema, and encoding syntax of key elements described and portrayed in geological maps and databases, in order to enable information systems to interoperate with such data.
+
+== Security considerations
+
+//If no security considerations have been made for this Standard, use the following text.
+
+No security considerations have been made for this Standard.
+
+////
+If security considerations have been made for this Standard, follow the examples found in IANA or IETF documents. Please see the following example.
+“VRRP is designed for a range of internetworking environments that may employ different security policies. The protocol includes several authentication methods ranging from no authentication, simple clear text passwords, and strong authentication using IP Authentication with MD5 HMAC. The details on each approach including possible attacks and recommended environments follows.
+Independent of any authentication type VRRP includes a mechanism (setting TTL=255, checking on receipt) that protects against VRRP packets being injected from another remote network. This limits most vulnerabilities to local attacks.
+NOTE: The security measures discussed in the following sections only provide various kinds of authentication. No confidentiality is provided at all. This should be explicitly described as outside the scope....”
+////
+
+
+
+== Submitters
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+|*Name* |*Affiliation*
+| |
+|===
+
+== Contributors
+
+//This clause is optional.
+
+Additional contributors to this Standard include the following:
+
+|===
+|*Name* |*Affiliation*
+| Johannes Echterhoff | Interactive Instruments
+| Clemens Portele | Interactive Instruments
+| Edd Lewis  | British Geological Survey
+| Mark Rattenbury | Earth Sciences New Zealand
+| Add Name |
+| Add Name |
+| Add Name |
+| Add Name |
+| Add Name |
+| Add Name |
+|===
+
+
+== Scope
+
+Part 3 of GeoSciML covers the representation in JSON of features from the domain of geology (earth materials, geological units and stratigraphy, geological time, geological structures, geomorphology, geochemistry) and sampling features common to the practice of geoscience, such as boreholes and geological specimens.
+
+== Conformance
+
+This standard defines a JSON encoding which conforms to the OGC JSON-FG 1.0 encoding rules.
+
+Requirements for one standardization target type are considered:
+
+* Data instance
+
+The normative artefacts for JSON encoding are the JSON Schema files provided online with this specification. Those documents explicitly provide the requirements that must be met by any JSON instance document claiming compliance to this specification. Any requirements that cannot be expressed in JSON Schema are described in the relevant section of this document. Therefore, compliant JSON instances shall:
+
+[arabic]
+. validate with JSON Schema files,
+. pass compliance tests listed in relevant compliance sections.
+
+
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the link:++https://docs.ogc.org/pol/08-134r11.html++[OGC Compliance Testing Policies and Procedures] and the link:++https://www.ogc.org/how-our-compliance-program-works/++[OGC Compliance Testing web site].
+
+All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
+
+[bibliography]
+== References
+
+
+* [[[ISO19103:2005,ISO/TS 19103:2005]]], _Conceptual Schema Language (2005)_
+
+* [[[ISO19107:2003,ISO 19107:2003]]], _Spatial Schema (2003)_
+
+* [[[ISO19108:2006,ISO 19108:2002/Cor 1:2006]]], _Temporal Schema (2006)_
+
+* [[[ISO8601,ISO 8601]]],
+
+* [[[ISO/TS19101-2:2008,ISO/TS 19101-2:2008]]],
+
+* [[[ISO19156:2011,ISO 19156:2011]]],
+
+* [[[ISO19111:2007,ISO 19111:2007]]],
+
+* [[[ISO19115:2003,ISO 19115:2003]]],
+
+* [[[ISO19101:2002,ISO 19101:2002]]],
+
+* [[[OGC10-025r1,OGC 10-025r1]]],
+
+* [[[RFC3986,RFC 3986]]],
+
+* [[[OMGUML,OMGUML]]], OMG: Unified Modeling Language (UML). Version 2.3
+
+* [[[INSPIRE]]], INSPIRE Thematic Woring Group Geology: _INSPIRE Data Specification for the spatial data theme Geology Version 3.0. European Commission Joint Research Centre (2013)_
+
+
+* [[[OGC21-045r1,OGC 21-045r1]]],
+
+* [[[ISO19101-1:2014,ISO 19101-1:2014]]],
+
+
+== Terms and definitions
+
+
+
+[[feature-definition]]
+
+=== feature
+
+abstraction of real world phenomena
+
+NOTE: A feature may occur as a type or an instance. Feature type or feature instance shall be used when only one is meant.
+
+[.source]
+<<ISO19101-1:2014>>
+
+[[feature-collection-definition]]
+
+=== feature collection
+
+set of features from a dataset
+
+[.source]
+<<ISO19168-1:2020>>
+
+
+
+
+=== JSON document
+
+an information resource (series of octets) described by the "application/json" media type [JSON Schema 2020-12]
+
+NOTE: The terms "JSON document," "JSON text," and "JSON value" are interchangeable.
+
+[.source]
+<<OGC21-045r1>>
+
+
+=== JSON object
+
+an unordered set of name/value pairs mapping the name to a JSON value [JSON Schema 2020-12, modified]
+
+=== JSON-FG document
+
+a JSON document that contains a JSON-FG root object
+
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG feature
+
+a JSON object that validates against the JSON-FG feature schema
+
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG feature collection
+
+a JSON object that validates against the JSON-FG feature collection schema
+
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG geometry
+
+a JSON object that validates against the JSON-FG geometry schema
+
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG object
+
+a JSON object that is either a JSON-FG feature, a JSON-FG feature collection, or a JSON-FG geometry
+
+[.source]
+<<OGC21-045r1>>
+
+=== JSON-FG root object
+
+a JSON-FG object that is not a direct children of another JSON-FG object
+
+[.source]
+<<OGC21-045r1>>
+
+=== <JSON> key
+the name of a member
+
+[.source]
+<<OGC21-045r1>>
+
+=== <JSON> member
+a name/value pair in a JSON object
+
+[.source]
+<<OGC21-045r1>>
+
+== Conventions
+
+This section provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of JSON schema, or special notes regarding how to read the document.
+
+=== Identifiers
+
+The normative provisions in this specification are denoted by a URI constructed using this pattern:
+
+link:++http://www.opengis.net/spec/++{++standard}/++{++m.n}++[\http://www.opengis.net/spec/++{++standard}/++{++m.n}]
+
+All requirements and conformance tests that appear in this document are denoted by a partial URI which is relative to this base. The identifier supports cross-referencing of class membership, dependencies, and links from each conformance test to the requirements tested. In this specification identifiers are expressed as partial URIs or paths, which can be appended to a base URI that identifies the specification as a whole in order to construct a complete URI for identification in an external context.
+
+The URI for each requirements class has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Freq%2F%5BclassM%5D++[\http://www.opengis.net/spec/geosciml-part2/5.0/req/++[++classM++]++]
+
+The URI for each requirement or recommendation has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Freq%2F%5BclassM%5D%2F%5BreqN%5D++[\http://www.opengis.net/spec/geosciml-part2/5.0/req/++[++classM++]/++[++reqN++]]
+
+
+The URI for each conformance class has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml-part2/5.0/conf/++[++classM++]++]
+
+
+The URI for each conformance test has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B%2F%2B%2B%5B%2B%2BtestN%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml-part2/5.0/req/++[++classM++]/++[++testN++]]
+
+== JSON Encoding Requirement classes (Normative)
+
+JSON Schema files were derived from the UML model following the link:++https://docs.ogc.org/bp/24-017r1.html++[OGC Best Practice for UML to JSON Encoding Rules (OGC 24-017r1)].
+
+NOTE: The SWG should replace this with a diagram from Enterprise Architect
+
+.JSON Encoding requirements classes dependencies (external dependencies not shown)
+[plantuml]
+....
+@startuml
+package "Core JSON" {
+}
+package "Portrayal" {
+}
+package "Laboratory and Specimen" {
+}
+package "GeologicAge" {
+}
+package "Basic" {
+}
+package "Borehole" {
+}
+package "Extension" {
+}
+
+
+[Portrayal] -[dashed]-> [Core JSON] : depends on
+[Laboratory and Specimen] -[dashed]-> [Core JSON] : depends on
+[GeologicAge] -[dashed]-> [Core JSON] : depends on
+[Basic] -[dashed]-> [Core JSON] : depends on
+[Borehole] -[dashed]-> [Core JSON] : depends on
+[Extension] -[dashed]-> [GeologicAge] : depends on
+[Extension] -[dashed]-> [Basic] : depends on
+
+@enduml
+....
+
+
+
+
+
+=== GeoSciML Core JSON Abstract Requirements Class (Normative)
+
+
+[[req_class_gsmljson_core]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Core JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-core
+subject:: Data instance
+inherit:: Web API
+inherit:: {spec-part1-uri}/req/gsml-core
+inherit:: JSON Schema
+inherit:: ISO 19118:2011 Geographic information — Encoding
+inherit:: OGC Features and Geometries JSON - Part 1: Core v1.0.0
+inherit:: OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0
+inherit:: OGC SWE Common Data Model Encoding Standard v3.0.0, Clause 9
+requirement:: /req/gsmljson-core/json
+requirement:: /req/gsmljson-core/codelist
+requirement:: /req/gsmljson-core/identifier
+requirement:: /req/gsmljson-core/time-zone
+recommendation:: /rec/gsmljson-core/identifier-uri
+recommendation:: /rec/gsmljson-core/iso8601-time
+====
+
+
+
+This requirements class is shared by all JSON GeoSciML instances.
+
+
+==== JSON document validation
+
+A JSON instance shall validate to JSON encoding rules provided by this specification for each of the JSON requirements classes.
+
+
+[[req_gsmljson_core_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-core/json
+part:: An JSON instance document SHALL validate against the JSON Schema files provided in this Standard.
+====
+ 
+
+
+==== CodeList
+
+Open code lists (see 8.2.7) are encoded simply as an HTTP URI (or HTTPS URI). See the following example that references the 'mudstone' term from a code list.
+
+[%unnumbered%]
+[source,json]
+----
+
+        "material": {
+          "type": "Feature",
+          "featureType": "RockMaterial",
+          "id": "hervey-group-mudstone",
+          "geometry": null,
+          "properties": {
+            "lithology": "http://resource.geosciml.org/classifier/cgi/simplelithology/mudstone"
+          }
+        }
+
+----
+
+The URI should resolve to a resource representation (often a SKOS document in Turtle or JSON-LD).  The resource can have multiple representations and it is not guaranteed that a JSON-LD parsable document can be obtained from the vocabulary service.
+
+
+[[req_gsmljson_core_codelist]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-core/codelist
+part:: Vocabulary term SHALL be encoded with an HTTP/HTTPS URI that is resolvable to the definition of that term.
+====
+
+==== Identifiers
+
+To enable consistent handling of identifiers in GeoJSON and JSON-FG applications, the `id` member of a GeoJSON feature is used to encode the identifier of a GeoSciML feature.
+
+[[req_gsmljson_core_identifier]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-core/identifier
+part:: The `id` member of a GeoJSON feature shall be used to encode the identifier of a GeoSciML feature.
+====
+
+[[rec_gsmljson_core_identifier_uri]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsmljson-core/identifier-uri
+part:: Feature identifiers (unique name) provided in the 'id' property of a feature SHOULD be URI of resource using Linked Open Data principles.
+====
+
+[%unnumbered%]
+[source,json]
+----
+{
+  "type": "Feature",
+  "id": "http://example.org/feature/asc/geologicunit/stratno/25947",
+  "featureType": "GeologicUnit",
+  "geometry": null,
+  ...
+}
+----
+
+
+==== Date encoding
+
+The date-time values shall conform to ISO 8601 standards.  Although this is already supported by JSON-FG, this format should also be used in any string that should contain a date, or date and time.
+
+
+[[rec_gsmljson_core_iso8601_time]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/gsmljson-core/iso8601-time
+part:: All date-time occurrences SHOULD be encoded using ISO8601 extended time format.
+====
+
+Note that this precludes the use of time-coordinate systems such as UNIX time. This is specified in order to be maximally consistent with TimeSeriesML requirements.
+
+The time zone shall be included in the time element.
+
+
+[[req_gsmljson_core_time_zone]]
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-core/time-zone
+part:: The value of each time element SHALL include a time zone definition using a signed 4 digit character or a ‘Z’ to represent Zulu or Greenwich Mean Time (GMT). This is defined by the following regular expression:
++
+(Z{vbar}++[++{plus}-++]++HH:MM).
+
+====
+
+Greenwich Mean Time (GMT or Zulu)
+
+
+[%unnumbered%]
+[source,json]
+----
+"properties": {
+    "time": ["2025-07-10T08:00:00Z", "2025-07-10T18:00:00Z"],
+}
+----
+
+Time Zone (example is Newfoundland time zone -3:30)
+
+[%unnumbered%]
+[source,json]
+----
+"properties": {
+    "time": ["2026-07-10T08:00:00-03:30", "2026-07-10T18:00:00-03:30"],
+}
+----
+
+
+=== GeoSciML Basic JSON Requirements Class (Normative)
+
+
+[[req_class_gsmljson-basic]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Basic JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-basic
+subject:: Data instance
+inherit:: {spec-part1-uri}/req/gsml-basic
+inherit:: /req/gsmljson-core
+requirement:: /req/gsmljson-basic/json
+====
+
+
+
+All the elements from the basic package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlBasic.json
+
+
+[[req_gsmljson_basic_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-basic/json
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/geoscimlBasic.json
+====
+
+//ORIGINAL A GeoSciML instance document SHALL validate with schema located at  link:++http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd++[].
+
+
+==== relatedFeature
+
+In GeoSciML Basic, relatedFeature is byReference only.  AbstractFeatureRelation subtypes are materialized in the Extension package.
+
+===  GeoSciML Extension JSON Requirements Class (Normative)
+
+[[req_class_gsmljson_extension]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Extension JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-extension
+subject:: Data instance
+inherit:: {spec-part1-uri}/req/gsml-extension
+inherit:: /req/gsmljson-basic
+inherit:: /req/gsmljson-geologictime
+requirement:: /req/gsmljson-extension/json
+====
+
+
+
+All the elements from the GeoSciML Extension package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlExtension.json
+
+
+[[req_gsmljson_extension_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-extension/json
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/geoscimlExtension.json
+====
+
+
+
+=== GeoSciML GeologicTime JSON Requirements Class (Normative)
+
+[[req_class_gsmljson-geologictime]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML GeologicTime JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-geologictime
+subject:: Data instance
+inherit:: {spec-part1-uri}/req/gsml-geologictime
+inherit:: /req/gsmljson-core
+requirement:: /req/gsmljson-geologictime/json
+====
+
+
+
+
+
+All the elements from the GeoSciML Geologic Time package must be schema valid according to the JSON schema provided at {json-schema-repo}/geologicTime.json
+
+
+[[req_gsmljson-_eologictime_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-geologictime/json
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/geologicTime.json
+====
+
+
+
+=== GeoSciML Borehole JSON Requirements Class (Normative)
+
+[[req_class_gsmljson-borehole]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML Borehole JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-borehole
+subject:: Data instance
+inherit:: {spec-part1-uri}/req/gsml-borehole
+inherit:: /req/gsmljson-core
+requirement:: /req/gsmljson-borehole/json
+====
+
+
+
+All the elements from the Borehole package must be schema valid according to the JSON schema provided at {json-schema-repo}/borehole.json
+
+
+[[req_gsmljson_borehole_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-borehole/json
+part:: A JSON instance document shall validate with schema located at {json-schema-repo}/borehole.json
+====
+
+
+
+=== GeoSciML LaboratoryAnalysis-Specimen JSON Requirements Class (Normative)
+
+[[req_class_gsmljson_lab]]
+
+
+[requirements_class]
+.Requirements Class 'GeoSciML LaboratoryAnalysis-Specimen JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-lab
+subject:: Data instance
+inherit:: /req/gsml-lab
+inherit:: /req/gsmljson-core
+requirement:: /req/gsmljson-lab/json
+====
+
+
+
+
+All the elements from the GeoSciML Laboratory Analysis & Specimen package must be schema valid according to the JSON schema provided at {json-schema-repo}/laboratoryAnalysisSpecimen.json
+
+
+
+[[req_gsmljson_lab_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-lab/json
+part:: A JSON instance document SHALL validate with schema located at {json-schema-repo}/laboratoryAnalysisSpecimen.json
+====
+
+
+
+=== Abstract GeoSciML Lite JSON Requirements Class (Normative)
+
+[[req_class_gsmljson-lite]]
+
+
+[requirements_class]
+.Requirements Class 'Abstract GeoSciML Lite JSON'
+====
+[%metadata]
+identifier:: {spec-part3-uri}/req/gsmljson-lite
+subject:: Data instance
+inherit:: {spec-part1-uri}/req/gsml-lite
+inherit:: /req/gsmljson-core
+requirement:: /req/gsmljson-lite/json
+====
+
+
+
+
+
+The abstract GeoSciML Lite encoding sets general encoding rules for JSON targets, regardless of version of JSON-FG.
+
+==== Simple Feature
+
+GeoSciML Lite schemas are meant to deliver simple content, consistent with simple scenarios described in GML Simple Feature Level 0 (OGC 10-100r3).  User defined properties must respect the same constrains as defined in SF-0 specification.
+
+The GML Simple Features profile defines 3 compliance levels summarized in <<tbl_sf_compliance_levels>>.
+
+//Table 17 in the original
+
+[[tbl_sf_compliance_levels]]
+.Reproduction of Table 1 of 10-100r3 (Clause 2.1)
+[width="100%",cols="^36%,^18%,^23%,^23%",options="header",]
+|===
+|* * |*Level SF-0* |*Level SF-1* |*Level SF-2*
+a|
+restricted set of built-in nonspatial
+
+property types
+
+|Yes^1^ |Yes^1^ |No
+|Restricted set of property-types |Yes^2^ |Yes^2^ |Yes^2^
+|user-defined property types |No |Yes |Yes
+|use of nillable and xsi:nil |No |Yes |Yes
+|cardinality of properties |0..1 |0..unbounded |0..unbounded
+a|
+non-spatial property values
+
+references
+
+|Yes^3^ |Yes^3^ |Yes
+a|
+spatial property values
+
+references
+
+|Yes^3^ |Yes^3^ |Yes
+|===
+
+Notes:
+
+[arabic]
+. string, integer, measurement, date, real, binary, boolean, URI
+. Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve (MultiLineString), MultiSurface (MultiPolygon), MultiGeometry (GeometryCollection)
+. By reference encoding uses link objects through support for the "rel-as-link" profile from OGC API - Features - Part 5 / OGC API - Common - Part 3: Schemas.
+
+All the elements from the GeoSciML Lite package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlLite.json
+
+
+
+[[req_gsmljson_lite_json]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gsmljson-lite/json
+part:: A JSON instance document shall validate with schema located at {json-schema-repo}/geoscimlLite.json
+====
+
+
+
+== Media Types for any data encoding(s)
+
+GeoSciML 5.0 data conforming to the logical model defined in Part 1 of GeoSciML can be encoded in documents conforming to JSON-FG.  The standard MIME-type and sub-type for JSON-FG data should be used to indicate the encoding in internet exchange, as specified in link:++https://docs.ogc.org/is/21-045r1/21-045r1.html#media-types++[OGC 21-045r1],_ namely
+
+`application/geo+json`
+
+////
+add or remove annexes after "A" as necessary
+////
+[appendix]
+== Conformance Class Abstract Test Suite (Normative)
+
+=== GeoSciML JSON Encoding Abstract Core
+
+[[conf_gsmljson_core,/conf/gsmljson-core]]
+.GeoSciML JSON Encoding Abstract Core
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core
+target:: /req/gsmljson-core
+
+abstract-test:: /conf/gsmljson-core/json
+
+abstract-test:: /conf/gsmljson-core/codelist
+
+abstract-test:: /conf/gsmljson-core/time-zone
+
+abstract-test:: /conf/gsmljson-core/identifier
+
+====
+
+[[conf_gsmljson-core_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core/json
+target:: /req/gsmljson-core/json
+test-purpose:: Ensure that GeoSciML JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+[[conf_gsmljson-core_codelist]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core/codelist
+target:: /req/gsmljson-core/codelist
+test-purpose:: Ensure that vocabulary reference contain an absolute http URI and this URL resolves to relevant content
+test-method:: Test the URI on the web.  If the URI does not resolve or return a 4xx error, the test fails.
+====
+
+[[conf_gsmljson-core_identifier]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core/identifier
+target:: /req/gsmljson-core/identifier
+test-purpose:: Ensure that the id member of a GeoJSON feature is used to encode the identifier of a GeoSciML feature.
+test-method:: Check that the target implementation assigns a value to the id member of a GeoJSON feature to encode the identifier of a GeoSciML feature.
+====
+
+[[conf_gsmljson-core_time-zone]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core/time-zone
+target:: /req/gsmljson-core/time-zone
+test-purpose:: Ensure that time zones are expressed explicitly
+test-method:: Visually inspect instance to validate the presence of time zone indicators.
+====
+
+
+
+=== GeoSciML Basic JSON Encoding
+
+[[conf_gsmljson-basic,/conf/gsmljson-basic]]
+.GeoSciML Basic JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-basic
+target:: /req/gsmljson-basic
+
+inherit:: /conf/gsmljson-core
+
+abstract-test:: /conf/gsmljson-basic/json
+
+====
+
+[[conf_gsmljson-basic_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-basic/json
+target:: /req/gsmljson-basic/json
+test-purpose:: Ensure that GeoSciML Basic JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+=== GeoSciML Extension JSON Encoding
+
+
+[[conf_gsmljson-extension,/conf/gsmljson-extension]]
+.GeoSciML Extension JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-extension
+target:: /req/gsmljson-extension
+
+inherit:: /conf/gsmljson-core/basic
+
+abstract-test:: /conf/gsmljson-extension/json
+
+====
+
+[[conf_gsmljson-extension_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-extension/json
+target:: /req/gsmljson-extension/json
+test-purpose:: Ensure that GeoSciML Extension JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+=== GeoSciML GeologicTime JSON Encoding
+
+
+[[conf_gsmljson-geologictime,/conf/gsmljson-geologictime]]
+.GeoSciML GeologicTime JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-geologictime
+target:: /req/gsmljson-geologictime
+
+inherit:: /conf/gsmljson-core
+
+abstract-test:: /conf/gsmljson-geologictime/json
+
+====
+
+[[conf_gsmljson-geologictime_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-geologictime/json
+target:: /req/gsmljson-geologictime/json
+test-purpose:: Ensure that GeoSciML Geologic Time JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+
+
+=== GeoSciML Borehole JSON Encoding
+
+
+[[conf_gsmljson-borehole,/conf/gsmljson-borehole]]
+.GeoSciML Borehole JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-borehole
+target:: /req/gsmljson-borehole
+
+inherit:: /conf/gsmljson-core
+
+abstract-test:: /conf/gsmljson-borehole/json
+
+====
+
+[[conf_gsmljson-borehole_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-borehole/json
+target:: /req/gsmljson-borehole/json
+test-purpose:: Ensure that GeoSciML Borehole JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+
+
+=== GeoSciML LaboratoryAnalysis-Specimen JSON Encoding
+
+
+[[conf_gsmljson-lab,/conf/gsmljson-lab]]
+.GeoSciML LaboratoryAnalysis-Specimen JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lab
+target:: /req/gsmljson-lab
+
+inherit:: /conf/gsmljson-core
+
+inherit:: OGC 10-025r1  OMXML
+
+abstract-test:: /conf/gsmljson-lab/json
+
+====
+
+[[conf_gsmljson-lab_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lab/json
+target:: /req/gsmljson-lab/json
+test-purpose:: Ensure that GeoSciML Laboratory and Analysis JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+=== GeoSciML Lite JSON Encoding
+
+[[conf_gsmljson-lite,/conf/gsmljson-lite]]
+.GeoSciML Lite JSON Abstract Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lite
+target:: /req/gsmljson-lite
+
+inherit:: OGC 21-045r1: Annex A
+
+abstract-test:: /conf/gsmljson-lite/json
+
+====
+
+[[conf_gsmljson-lite_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lite/json
+target:: /req/gsmljson-lite/json
+test-purpose:: Ensure that GeoSciML Lite JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+[appendix,obligation="informative"]
+== Title
+
+[NOTE]
+Place other Annex material in sequential annexes beginning with "B" and leave final two annexes for the Revision History and Bibliography
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+[appendix]
+== Revision History
+
+[width="90%",options="header",align="left"]
+|===
+|Date |Release |Editor | Primary clauses modified |Description
+|2016-04-28 |0.1 |G. Editor |all |initial version
+|===
+
+[bibliography]
+[[Bibliography]]
+== Bibliography
+
+* [[[ISO19168-1:2020,ISO 19168-1:2020]]],
