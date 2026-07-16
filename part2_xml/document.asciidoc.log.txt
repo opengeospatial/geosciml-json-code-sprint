@@ -24,8 +24,8 @@
 :doc-uri: ./document.doc
 :edition: 1.0
 
-:spec-part1-uri: http://www.opengis.net/spec/geosciml-part1/5.0
-:spec-part2-uri: http://www.opengis.net/spec/geosciml-part2/5.0
+:spec-part1-uri: https://www.opengis.net/spec/geosciml-part1/5.0
+:spec-part2-uri: https://www.opengis.net/spec/geosciml-part2/5.0
 
 ////
 Make sure to complete each included document
@@ -48,7 +48,7 @@ Attention is drawn to the possibility that some of the elements of this document
 [abstract]
 == Abstract
 
-GeoSciML is a Standard for representing geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The Standard is composed of multiple parts. Part 1 describes a logical model. Part 2 (this document) describes GML/XML encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. It includes a Lite model, used for simple map-based applications; a basic model, aligned on INSPIRE, for basic data exchange; and an extended model to address more complex scenarios.
+GeoSciML (Geoscience Markup Language) is a Standard for representing geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The Standard is composed of multiple parts. Part 1 describes a logical model. Part 2 (this document) describes encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. The encoding rules define an application of Geography Markup Language (GML), which is itself an application of the Extensible Markup Language (XML).
 
 == Preface
 
@@ -94,110 +94,260 @@ Additional contributors to this Standard include the following:
 Individual name(s), Organization
 
 == Scope
-[NOTE]
-====
-Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.
-====
+
+Part 2 of GeoSciML covers the representation in XML of features from the domain of geology (earth materials, geological units and stratigraphy, geological time, geological structures, geomorphology, geochemistry) and sampling features common to the practice of geoscience, such as boreholes and geological specimens.
 
 == Conformance
-This standard defines XXXX.
 
-Requirements for N standardization target types are considered:
+This standard defines an XML encoding which conforms to OGC GML 3.3 encoding rules, itself, an iteration over ISO 19136 (2007).
 
-* AAAA
-* BBBB
+Requirements for one standardization target type are considered:
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+* Data instance
 
-In order to conform to this OGC® interface standard, a software implementation shall choose to implement:
-
-* Any one of the conformance levels specified in Annex A (normative).
-* Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web sitehttps://docs.ogc.org/is/16-008/16-008.html#_ftnref1[^[.underline]#++[++1++]++#^].
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
 [bibliography]
 == References
 
-The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
 
-[NOTE]
-====
-Insert References here. If there are no references, leave this section empty.
+* [[[OGC06-121r9,OGC 06-121r9]]], _OGC® Web Services Common Standard (2010)_
 
-References are to follow the Springer LNCS style, with the exception that optional information may be appended to references: DOIs are added after the date and web resource references may include an access date at the end of the reference in parentheses. See examples from Springer and OGC below.
-====
+* [[[ISO19103:2005,ISO/TS 19103:2005]]], _Conceptual Schema Language (2005)_
 
-* [[[Smith81,Identification of Common Molecular Subsequences]]],
-_Identification of Common Molecular Subsequences_.
-Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195–197 (1981)
+* [[[ISO19107:2003,ISO 19107:2003]]], _Spatial Schema (2003)_
 
-* [[[May06,ZIB Structure Prediction Pipeline]]],
-_ZIB Structure Prediction Pipeline: Composing a Complex Biological Workflow through Web Services_.
-May, P., Ehrlich, H.C., Steinke, T. In: Nagel, W.E., Walter,
-W.V., Lehner, W. (eds.) Euro-Par 2006. LNCS, vol. 4128, pp. 1148–1158. Springer,
-Heidelberg (2006)
+* [[[ISO19108:2006,ISO 19108:2002/Cor 1:2006]]], _Temporal Schema (2006)_
 
-* [[[Grid,The Grid]]], _The Grid: Blueprint for a New Computing Infrastructure._,
-Foster, I., Kesselman, C.. Morgan Kaufmann, San Francisco (1999).
+* [[[ISO8601,ISO 8601]]],
 
-* [[[Czajkowski01,Grid Information Services for Distributed Resource Sharing]]],
-_Grid Information Services for Distributed Resource Sharing._
-Czajkowski, K., Fitzgerald, S., Foster, I., Kesselman, C. In: 10th IEEE International Symposium on High
-Performance Distributed Computing, pp. 181–184. IEEE Press, New York (2001)
+* [[[ISO/TS19101-2:2008,ISO/TS 19101-2:2008]]],
 
-* [[[Foster02,The Physiology of the Grid]]],
-_The Physiology of the Grid: an Open Grid Services Architecture for Distributed Systems Integration._
-Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Forum (2002)
+* [[[ISO19136:2007,ISO 19136:2007]]],
 
-* [[[NCBI,NCBI]]], _National Center for Biotechnology Information_, link:++http://www.ncbi.nlm.nih.gov++[]
+* [[[ISO19156:2011,ISO 19156:2011]]],
 
-* [[[ISO19101-1,ISO 19101-1:2014]]], Geographic information -- Reference model -- Part 1: Fundamentals
+* [[[ISO19111:2007,ISO 19111:2007]]],
 
-* [[[ISO19115-1,ISO 19115-1:2014]]], _Geographic information -- Metadata -- Part 1: Fundamentals_
+* [[[ISO19115:2003,ISO 19115:2003]]],
 
-* [[[ISO19157,ISO 19157:2013]]], _Geographic information -- Data quality_
+* [[[ISO19101:2002,ISO 19101:2002]]],
 
-* [[[ISO19139,ISO 19139:2007]]], _Geographic information -- Metadata -- XML schema implementation_
+* [[[OGC07-036,OGC 07-036]]],
 
-* [[[ISO19115-3,ISO 19115-3]]], _Geographic information -- Metadata -- Part 3: XML schemas_ (2016)
+* [[[OGC10-025r1,OGC 10-025r1]]],
 
-* [[[OGC15-097,OGC 15-097]]], _OGC Geospatial User Feedback Standard: Conceptual Model_ (2016)
+* [[[OGC08-094r1,OGC 08-094r1]]],
 
-* [[[OGC12-019,OGC 12-019]]], _OGC City Geography Markup Language (CityGML) Encoding Standard_ (2012)
+* [[[RFC3986,RFC 3986]]],
 
-* [[[OGC14-005r3,OGC 14-005r3]]], _OGC IndoorGML_ (2014)
+* [[[ISOIEC19757-3,ISO/IEC 19757-3]]],
 
-* [[[OGC06121r9,OGC 06-121r9]]], _OGC Web Service Common Implementation Specification_, April 7, 2010. link:++http://portal.opengeospatial.org/files/?artifact_id=38867++[]
+* [[[OGC08-131r3,OGC 08-131r3]]],
+
+* [[[OMGUML,OMGUML]]], OMG: Unified Modeling Language (UML). Version 2.3
+
+* [[[UCUM201,UCUM]]], Schadow, G. and McDonald, C. J.: Unified Code for Units of Measure (UCUM) - Version 2.0.1
+
+* [[[MurphySalvador1994]]], Murphy, M. A. and Salvador, A.: _International Stratigraphic Guide – an abridged version accessed online at URL (link:++http://www.stratigraphy.org/index.php/ics-stratigraphicguide++[] (1994)_
+
+* [[[W3CXML, XML]]], W3C: _Extensible Markup Language (XML) - Version 1.0 (Fourth Edition) (2006)_
+
+* [[[W3CXSD, XSD]]], W3C: _XML Schema - Version 1.0 (Second Edition) (2004)_
+
+* [[[INSPIRE]]], INSPIRE Thematic Woring Group Geology: _INSPIRE Data Specification for the spatial data theme Geology Version 3.0. European Commission Joint Research Centre (2013)_
+
+* [[[NAGMDM_SC]]], North American Geologic Map Data Model Steering Committee: _NADM Conceptual Model 1.0—A conceptual model for geologic map information. U.S. Geological Survey Open-File Report 2004-1334, 58 p., accessed online at URL link:++http://pubs.usgs.gov/of/2004/1334++[[.underline]#http://pubs.usgs.gov/of/2004/1334#] (2004)_
+
+* [[[NAGMDM_Science]]],North American Geologic Map Data Model science language products _(link:++http://ngmdb.usgs.gov/www-nadm/sltt/products.html)_++[]
 
 == Terms and definitions
 
-This document uses the terms defined in OGC Policy Directive 49, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "`shall`" (not "`must`") is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
 
-For the purposes of this document, the following additional terms and definitions apply.
 
-=== example term
+=== classifier
 
-term used for exemplary purposes
+A classifier is an abstract UML metaclass which describes (classifies) a set of instances having common features (not to be confused with the “Feature” stereotype from the OGC Feature Model). A feature declares a structural or behavioral characteristic of instances of classifiers. (link:++http://www.uml-diagrams.org/classifier.html++[]). Classes, Interfaces, Association, and Types are kinds of classifiers.
+
+
+=== domain feature
+
+Feature of a type defined within a particular application domain.
 
 [.source]
-<<ISO19101-1>>
+<<ISO19156:2011>>
 
-NOTE: An example note.
+NOTE: This may be contrasted with observations and sampling features, which are features of types defined for cross-domain purposes.
+
+
+=== element ++<++XML++>++
+
+Basic information item of an XML document containing child elements, attributes and character data.
+
+
+[.source]
+<<OGC07-036>>
+
+=== feature
+
+Abstraction of a real-world phenomenon.
+
+[.source]
+<<ISO19101:2002>>
+
+
+=== GML application schema
+
+Application schema written in XML Schema in accordance with the rules specified in OGC GML 3.3
+
+[.source]
+<<OGC07-036>>
+
+
+=== GML document
+
+XML document with a root element that is one of the elements AbstractFeature, Dictionary or TopoComplex, specified in the GML schema or any element of a substitution group of any of these elements.
+
+
+[.source]
+<<OGC07-036>>
+
+
+=== GML schema
+
+Schema components in the XML namespace ― as specified in OGC GML 3.3
+
+[.source]
+<<OGC07-036>>
+
+
+
+=== measurement
+
+Set of operations having the objective of determining the value of a quantity.
+
+[.source]
+<<ISO/TS19101-2:2008>>
+
+
+
+=== observation
+
+Act of observing a property.
+
+[.source]
+<<ISO 19156:2011>>
+
+NOTE: The goal of an observation may be to measure or otherwise determine the value of a property.
+
+
+
+=== observation procedure
+
+Method, algorithm or instrument, or system which may be used in making an observation.
+
+[.source]
+<<ISO19156:2011>>
+
+
+
+
+=== observation result
+
+Estimate of the value of a property determined through a known procedure.
+
+[.source]
+<<ISO19156:2011>>
+
+
+
+=== property ++<++General Feature Model++>++
+
+Facet or attribute of an object referenced by a name.
+
+
 
 [example]
-Here's an example of an example term.
+Abby’s car has the color red, where “color red” is a property of the car instance.
+
+
+
+=== sampled feature
+
+The real-world domain feature of interest, such as a geological unit or structure which is observed.
+
+[.source]
+<<ISO19156:2011>>
+
+
+
+=== sampling feature
+
+Feature, such as a station, outcrop, borehole, section or specimen, which is involved in making observations of a domain feature.
+
+[.source]
+<<ISO19156:2011>>
+
+NOTE: A sampling feature is purely an artefact of the observational strategy, and has no significance independent of the observational campaign.
+
+
+
+
+=== schema ++<++XML Schema++>++
+
+XML document containing a collection of schema component definitions and declarations within the same target namespace.
+
+Example Schema components of W3C XML Schema are types, elements, attributes, groups, etc.
+
+
+[.source]
+<<OGC07-036>>
+
+NOTE: The W3C XML Schema provides an XML interchange format for schema information. A single schema document provides descriptions of components associated with a single XML namespace, but several documents may describe components in the same schema, i.e. the same target namespace.
+
+
+
+
+
+
+
+
+
+
+
+
 
 == Conventions
 
-This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+This section provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
 
 === Identifiers
-The normative provisions in this standard are denoted by the URI
 
-`http://www.opengis.net/spec/{standard}/{m.n}`
+The normative provisions in this specification are denoted by a URI constructed using this pattern:
 
-All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
+link:++http://www.opengis.net/spec/++{++standard}/++{++m.n}++[\http://www.opengis.net/spec/++{++standard}/++{++m.n}]
+
+All requirements and conformance tests that appear in this document are denoted by a partial URI which is relative to this base. The identifier supports cross-referencing of class membership, dependencies, and links from each conformance test to the requirements tested. In this specification identifiers are expressed as partial URIs or paths, which can be appended to a base URI that identifies the specification as a whole in order to construct a complete URI for identification in an external context.
+
+The URI for each requirements class has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Freq%2F%5BclassM%5D++[\http://www.opengis.net/spec/geosciml-part2/5.0/req/++[++classM++]++]
+
+The URI for each requirement or recommendation has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Freq%2F%5BclassM%5D%2F%5BreqN%5D++[\http://www.opengis.net/spec/geosciml-part2/5.0/req/++[++classM++]/++[++reqN++]]
+
+
+The URI for each conformance class has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml-part2/5.0/conf/++[++classM++]++]
+
+
+The URI for each conformance test has the form:
+
+link:++http://www.opengis.net/spec/geosciml-part2%2F5.0%2Fconf%2F%2B%2B%5B%2B%2BclassM%2B%2B%5D%2B%2B%2F%2B%2B%5B%2B%2BtestN%2B%2B%5D%2B%2B++[\http://www.opengis.net/spec/geosciml-part2/5.0/req/++[++classM++]/++[++testN++]]
 
 == XML Encoding Requirement classes (Normative)
 
@@ -291,7 +441,7 @@ recommendation:: /rec/gsmlxsd-core/iso8601-time
 This requirements class is shared by all GML/XML GeoSciML instances.
 
 
-==== XML document validation*
+==== XML document validation
 
 An XML instance shall validate to both the XSD and schematron rules provided by this specification for each of the XML requirements classes.
 
@@ -340,7 +490,7 @@ part:: Vocabulary term SHALL be encoded with HTTP URI in xlink:href and provide 
 
 ==== Identifiers
 
-The GeoSciML community has developed a best practice of using link:++http://www.ietf.org/rfc/rfc2616++[[.underline]#http://www.ietf.org/rfc/rfc2616#] as a codespace for string with authority to designate string that are resolvable HTTP URI.
+The GeoSciML community has developed a best practice of using link:++http://www.ietf.org/rfc/rfc2616++[\http://www.ietf.org/rfc/rfc2616#] as a codespace for string with authority to designate string that are resolvable HTTP URI.
 
 gml:identifier’s flagged with the specific codeSpace “http://www.ietf.org/rfc/rfc2616” should be resolvable HTTP URI that return an instance of itself.
 
@@ -543,7 +693,7 @@ All the elements from the GeoSciML Extension package must be schema valid accord
 ====
 [%metadata]
 identifier:: /req/gsmlxsd-extension/xsd
-part:: An XML instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/++[] geoSciMLExtension.xsd.
+part:: An XML instance document SHALL validate with schema located at   link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd++[].
 ====
 
 All the elements from the GeoSciML Extension package must pass the schematron rules defined in the schematron file located at link:++http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch++[[.underline]#http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.sch#].
@@ -722,12 +872,6 @@ The abstract GeoSciML Lite encoding sets general encoding rules for XML targets,
 
 GeoSciML Lite schemas are meant to deliver simple content, consistent with simple scenarios described in GML Simple Feature Level 0 (OGC 10-100r3).  User defined properties must respect the same constrains as defined in SF-0 specification.
 
-[width="100%",cols="100%",options="header",]
-|===
-|*Requirement /req/gsml4xsd-lite/SF-0*
-|An XML instance document SHALL be compliant to GML Simple Feature Level 0.
-|===
-
 [[req_gsmlxsd_lite_SF0]]
 
 [requirement]
@@ -737,10 +881,11 @@ identifier:: /req/gsmlxsd-lite/SF-0
 part:: An XML instance document SHALL be compliant to GML Simple Feature Level 0.
 ====
 
-Simple Feature defines 3 compliance levels summarized in Table17.
+Simple Feature defines 3 compliance levels summarized in <<tbl_sf_compliance_levels>>.
 
 //Table 17 in the original
 
+[[tbl_sf_compliance_levels]]
 .Reproduction of Table 1 of 10-100r3 (Clause 2.1)
 [width="100%",cols="^36%,^18%,^23%,^23%",options="header",]
 |===
@@ -881,7 +1026,7 @@ part:: An XML instance document shall pass schematron rules defined in schematro
 
 == Media Types for any data encoding(s)
 
-GeoSciML 4.1 data conforming to clause 8 is encoded in GML-conformant XML documents.  The standard MIME-type and sub-type for GML data should be used to indicate the encoding in internet exchange, as specified in _MIME Media Types for GML,_ namely
+GeoSciML 5.0 data conforming to the logical model defined in Part 1 of GeoSciML can be encoded in GML-conformant XML documents.  The standard MIME-type and sub-type for GML data should be used to indicate the encoding in internet exchange, as specified in _MIME Media Types for GML,_ namely
 
 `application/gml+xml`
 
@@ -965,7 +1110,7 @@ test-method:: Visually inspect instance to validate the presence of time zone in
 identifier:: /conf/gsmlxsd-basic
 target:: /req/gsmlxsd-basic
 
-inherit:: /conf/gsmlxsd-core/core
+inherit:: /conf/gsmlxsd-core
 
 abstract-test:: /conf/gsmlxsd-basic/xsd
 
@@ -1045,7 +1190,7 @@ test-method:: Perform a schematron validation on the XML instance.  Test succee
 identifier:: /conf/gsmlxsd-geologictime
 target:: /req/gsmlxsd-geologictime
 
-inherit:: /conf/gsmlxsd-core/core
+inherit:: /conf/gsmlxsd-core
 
 abstract-test:: /conf/gsmlxsd-geologictime/xsd
 
@@ -1086,7 +1231,7 @@ test-method:: Perform a schematron validation on the XML instance.  Test succee
 identifier:: /conf/gsmlxsd-borehole
 target:: /req/gsmlxsd-borehole
 
-inherit:: /conf/gsmlxsd-core/core
+inherit:: /conf/gsmlxsd-core
 
 inherit:: OGC 10-025r1  OMXML
 
@@ -1129,7 +1274,7 @@ test-method:: Perform a schematron validation on the XML instance.  Test succee
 identifier:: /conf/gsmlxsd-lab
 target:: /req/gsmlxsd-lab
 
-inherit:: /conf/gsmlxsd-core/core
+inherit:: /conf/gsmlxsd-core
 
 inherit:: OGC 10-025r1  OMXML
 

@@ -729,7 +729,7 @@ Notes:
 [arabic]
 . string, integer, measurement, date, real, binary, boolean, URI
 . Point, Curve (LineString), Surface (Polygon), Geometry, MultiPoint, MultiCurve (MultiLineString), MultiSurface (MultiPolygon), MultiGeometry (GeometryCollection)
-. In levels 0 and 1 of GML Simple Features, remote values for properties are supported through the use of the type gml:ReferenceType. In contrast, for this GeoSciML JSON standard, by reference encoding uses link objects through support for the "rel-as-link" profile from OGC API - Features - Part 5 / OGC API - Common - Part 3: Schemas.
+. By reference encoding uses link objects through support for the "rel-as-link" profile from OGC API - Features - Part 5 / OGC API - Common - Part 3: Schemas.
 
 All the elements from the GeoSciML Lite package must be schema valid according to the JSON schema provided at {json-schema-repo}/geoscimlLite.json
 
@@ -758,57 +758,243 @@ add or remove annexes after "A" as necessary
 [appendix]
 == Conformance Class Abstract Test Suite (Normative)
 
-[NOTE]
-Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)
+=== GeoSciML JSON Encoding Abstract Core
 
-=== Conformance Class A
-
-[[ats_example1,/conf/example1]]
+[[conf_gsmljson_core,/conf/gsmljson-core]]
+.GeoSciML JSON Encoding Abstract Core
 [conformance_class]
 ====
 [%metadata]
-identifier:: link:++http://www.opengis.net/spec/name-of-standard/1.0/conf/example1++[]
-target:: link:++http://www.opengis.net/spec/ABCD/m.n/req/req-class-a++[]
-classification:: Target Type:Web API
-abstract-test:: /conf/core/map-response
-abstract-test:: /conf/core/http
+identifier:: /conf/gsmljson-core
+target:: /req/gsmljson-core
+
+abstract-test:: /conf/gsmljson-core/json
+
+abstract-test:: /conf/gsmljson-core/codelist
+
+abstract-test:: /conf/gsmljson-core/time-zone
+
+abstract-test:: /conf/gsmljson-core/identifier
+
 ====
 
-==== Example 1
-
-[[ats_core_api-definition-op]]
+[[conf_gsmljson-core_json]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/core/map-response
-target:: /req/req-class-a/req-name-1
-test-purpose:: Verify that the implementation's response for the map retrieval operation is correct
-test-method:: A single step test method can be documented as a single line.
+identifier:: /conf/gsmljson-core/json
+target:: /req/gsmljson-core/json
+test-purpose:: Ensure that GeoSciML JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
 ====
 
-==== Example 2
-
-[[ats_core_http]]
+[[conf_gsmljson-core_codelist]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/core/http
-target:: /req/req-class-a/req-name-2
-test-purpose:: Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.
-
-[.component,class=test method]
-=====
-[.component,class=step]
---
-A sequential multi-step test method can be documented as shown here. This is the first step.
---
-
-[.component,class=step]
---
-This is the second step.
---
-=====
+identifier:: /conf/gsmljson-core/codelist
+target:: /req/gsmljson-core/codelist
+test-purpose:: Ensure that vocabulary reference contain an absolute http URI and this URL resolves to relevant content
+test-method:: Test the URI on the web.  If the URI does not resolve or return a 4xx error, the test fails.
 ====
+
+[[conf_gsmljson-core_identifier]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core/identifier
+target:: /req/gsmljson-core/identifier
+test-purpose:: Ensure that the id member of a GeoJSON feature is used to encode the identifier of a GeoSciML feature.
+test-method:: Check that the target implementation assigns a value to the id member of a GeoJSON feature to encode the identifier of a GeoSciML feature.
+====
+
+[[conf_gsmljson-core_time-zone]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-core/time-zone
+target:: /req/gsmljson-core/time-zone
+test-purpose:: Ensure that time zones are expressed explicitly
+test-method:: Visually inspect instance to validate the presence of time zone indicators.
+====
+
+
+
+=== GeoSciML Basic JSON Encoding
+
+[[conf_gsmljson-basic,/conf/gsmljson-basic]]
+.GeoSciML Basic JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-basic
+target:: /req/gsmljson-basic
+
+inherit:: /conf/gsmljson-core
+
+abstract-test:: /conf/gsmljson-basic/json
+
+====
+
+[[conf_gsmljson-basic_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-basic/json
+target:: /req/gsmljson-basic/json
+test-purpose:: Ensure that GeoSciML Basic JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+=== GeoSciML Extension JSON Encoding
+
+
+[[conf_gsmljson-extension,/conf/gsmljson-extension]]
+.GeoSciML Extension JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-extension
+target:: /req/gsmljson-extension
+
+inherit:: /conf/gsmljson-core/basic
+
+abstract-test:: /conf/gsmljson-extension/json
+
+====
+
+[[conf_gsmljson-extension_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-extension/json
+target:: /req/gsmljson-extension/json
+test-purpose:: Ensure that GeoSciML Extension JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+=== GeoSciML GeologicTime JSON Encoding
+
+
+[[conf_gsmljson-geologictime,/conf/gsmljson-geologictime]]
+.GeoSciML GeologicTime JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-geologictime
+target:: /req/gsmljson-geologictime
+
+inherit:: /conf/gsmljson-core
+
+abstract-test:: /conf/gsmljson-geologictime/json
+
+====
+
+[[conf_gsmljson-geologictime_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-geologictime/json
+target:: /req/gsmljson-geologictime/json
+test-purpose:: Ensure that GeoSciML Geologic Time JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+
+
+=== GeoSciML Borehole JSON Encoding
+
+
+[[conf_gsmljson-borehole,/conf/gsmljson-borehole]]
+.GeoSciML Borehole JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-borehole
+target:: /req/gsmljson-borehole
+
+inherit:: /conf/gsmljson-core
+
+abstract-test:: /conf/gsmljson-borehole/json
+
+====
+
+[[conf_gsmljson-borehole_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-borehole/json
+target:: /req/gsmljson-borehole/json
+test-purpose:: Ensure that GeoSciML Borehole JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+
+
+
+=== GeoSciML LaboratoryAnalysis-Specimen JSON Encoding
+
+
+[[conf_gsmljson-lab,/conf/gsmljson-lab]]
+.GeoSciML LaboratoryAnalysis-Specimen JSON Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lab
+target:: /req/gsmljson-lab
+
+inherit:: /conf/gsmljson-core
+
+inherit:: OGC 10-025r1  OMXML
+
+abstract-test:: /conf/gsmljson-lab/json
+
+====
+
+[[conf_gsmljson-lab_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lab/json
+target:: /req/gsmljson-lab/json
+test-purpose:: Ensure that GeoSciML Laboratory and Analysis JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
+=== GeoSciML Lite JSON Encoding
+
+[[conf_gsmljson-lite,/conf/gsmljson-lite]]
+.GeoSciML Lite JSON Abstract Encoding
+[conformance_class]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lite
+target:: /req/gsmljson-lite
+
+inherit:: OGC 21-045r1: Annex A
+
+abstract-test:: /conf/gsmljson-lite/json
+
+====
+
+[[conf_gsmljson-lite_json]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/gsmljson-lite/json
+target:: /req/gsmljson-lite/json
+test-purpose:: Ensure that GeoSciML Lite JSON documents are valid
+test-method:: Perform a JSON validation on a JSON instance document, using the JSON Schema files provided in this Standard.  Test succeeds if the validation does not report any error.
+====
+
+
 
 [appendix,obligation="informative"]
 == Title
