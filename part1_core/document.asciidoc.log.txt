@@ -542,7 +542,7 @@ image::images/image7.png[width=571,height=413]
 [obligation=informative]
 == Conceptual Model
 
-The strictly geological portion of GeoSciML, as opposed to the parts dealing with sampling (e.g., boreholes) and laboratory metadata, is largely an implementation of the North American Data Model ++[++12++]++.  NADM is a technologically neutral conceptual model that addresses geoscience concepts and the relationships between them.  GeoSciML 4 does not implement NADM Geologic Portrayal (a model of cartographic elements composing a geological map, such as legends, symbols, insets, etc.) nor Geologic Vocabulary (although older versions of GeoSciML did).
+The strictly geological portion of GeoSciML, as opposed to the parts dealing with sampling (e.g., boreholes) and laboratory metadata, is largely an implementation of the North American Data Model ++[++<<B12,12>>++]++.  NADM is a technologically neutral conceptual model that addresses geoscience concepts and the relationships between them.  GeoSciML 4 does not implement NADM Geologic Portrayal (a model of cartographic elements composing a geological map, such as legends, symbols, insets, etc.) nor Geologic Vocabulary (although older versions of GeoSciML did).
 
 GeoSciML is an ISO Feature Model implementation of NADM and this created subtle differences between NADM and GeoSciML as the logical model deals with ISO Feature Model idiosyncrasies.  For instance, NADM multiple inheritances used in Fossil could not be implemented in the ISO world that forbids such constructs.  There were also conceptual changes, especially regarding EarthMaterial that is not considered as a GeologicFeature (hence an ISO FeatureType) in GeoSciML, but as a Type.
 
@@ -603,7 +603,7 @@ Nillable properties actually carry useful or even required information in certai
 * Omit the property
 * Deliver a nilled property with relevant justification.
 
-Which option is most useful for a community is left to that community to decide.  Their decision can be enforced using Schematron.  The editors foresee the use of a) the GeoSciML data model as defined by this specification providing naming and structure and b) a series of community-defined rules to enforce the presence of certain properties relevant to their use cases.  For an XML implementation, this translates into a set of common XSD and SCH to govern conformance to GeoSciML, and community-specific SCH to enforce specific use cases, such as the INSPIRE geology specification ++[++8++]++.
+Which option is most useful for a community is left to that community to decide.  Their decision can be enforced using Schematron.  The editors foresee the use of a) the GeoSciML data model as defined by this specification providing naming and structure and b) a series of community-defined rules to enforce the presence of certain properties relevant to their use cases.  For an XML implementation, this translates into a set of common XSD and SCH to govern conformance to GeoSciML, and community-specific SCH to enforce specific use cases, such as the INSPIRE geology specification ++[++<<B8,8>>++]++.
 
 ===== Package shortcuts
 
@@ -746,7 +746,7 @@ All properties that require formal vocabularies are modelled in the UML as class
 .Example CodeLists, with a) a prescribed list of terms (DescriptionPurpose) and b) 'open' with no prescribed terms (GeologicUnitHierarchyRoleTerm)
 image::images/image9.png[width=118,height=96]
 
-When the list is open, the vocabulary is managed externally over the web where each vocabulary term should be encoded as a resource.  Vocabulary term identifiers are URIs representing concepts from a standard vocabulary governed by an appropriate community - for example, the IUGS CGI Geoscience Terminology Working Group (link:++http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html++[\http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html] and link:++http://resource.geosciml.org/++[\http://resource.geosciml.org/]) or INSPIRE ++[++8++]++.
+When the list is open, the vocabulary is managed externally over the web where each vocabulary term should be encoded as a resource.  Vocabulary term identifiers are URIs representing concepts from a standard vocabulary governed by an appropriate community - for example, the IUGS CGI Geoscience Terminology Working Group (link:++http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html++[\http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html] and link:++http://resource.geosciml.org/++[\http://resource.geosciml.org/]) or INSPIRE ++[++<<B8,8>>++]++.
 
 This requirement does not require that URIs be actually dereferenceable, but just that a vocabulary term is associated with a syntactically correct URI.
 
@@ -969,7 +969,7 @@ The specification association links an instance of MappedFeature to the GFI++_++
 
 ===== GeologicUnit
 
-Conceptually, a GeologicUnit may represent a body of material in the Earth whose complete and precise extent is inferred to exist (e.g., North American Data Model GeologicUnit ++[++12++]++, Stratigraphic unit in the sense of NACSN ++[++14++]++, or International Stratigraphic Code ++[++9++]++), or a classifier used to characterize parts of the Earth (e.g. lithologic map unit like ‘granitic rock’ or ‘alluvial deposit’, surficial units like ‘till’ or ‘old alluvium’). It includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to a lexicon) and unnamed units (i.e., recognizable, described and delineable in the field but not otherwise formalised).  In simpler terms, a geologic unit is a package of earth material (generally rock).
+Conceptually, a GeologicUnit may represent a body of material in the Earth whose complete and precise extent is inferred to exist (e.g., North American Data Model GeologicUnit ++[++<<B12,12>>++]++, Stratigraphic unit in the sense of NACSN ++[++<<B14,14>>++]++, or International Stratigraphic Code ++[++<<B9,9>>++]++), or a classifier used to characterize parts of the Earth (e.g. lithologic map unit like ‘granitic rock’ or ‘alluvial deposit’, surficial units like ‘till’ or ‘old alluvium’). It includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to a lexicon) and unnamed units (i.e., recognizable, described and delineable in the field but not otherwise formalised).  In simpler terms, a geologic unit is a package of earth material (generally rock).
 
 [[img_geologicunit_context_diagram]]
 .GeologicUnit context diagram
@@ -1047,7 +1047,7 @@ image::images/image14.png[EarthMaterial and related classes.,width=516,height=23
 
 ====== color
 
-The color property (SWE::Category) is a term from a controlled vocabulary that specifies the colour of the earth material. Color schemes such as the Munsell rock and soil color schemes ++[++11++]++ may be used.
+The color property (SWE::Category) is a term from a controlled vocabulary that specifies the colour of the earth material. Color schemes such as the Munsell rock and soil color schemes ++[++<<B11,11>>++]++ may be used.
 
 ====== purpose
 
@@ -1081,7 +1081,7 @@ GeologicalHistory is an ordered aggregation of GeologicalEvent objects, each of 
 
 The age attributes are representations of a particular geological event or feature expressed as absolute age in terms of years (numericAge) before present or named time periods in the geological time scale (youngerNamedAge and olderNamedAge), or by comparison with other geological events or features (relative age).  An event age can represent an instant in time, an interval of time, or any combination of multiple instants or intervals.
 
-Specifications of age in years before present are based on determination of time durations based on interpretation of isotopic analyses of EarthMaterial (some other methods are used for geologically young materials). Ages specified by geological time scales are essentially based on correlation of a geological unit with a standard chronostratigraphic unit that serves as a reference. Relative ages are based on relationships between geological units such as superposition, intruded by, cross-cuts, or “contains inclusions of” (a.k.a, Steno laws ++[++17++]++).
+Specifications of age in years before present are based on determination of time durations based on interpretation of isotopic analyses of EarthMaterial (some other methods are used for geologically young materials). Ages specified by geological time scales are essentially based on correlation of a geological unit with a standard chronostratigraphic unit that serves as a reference. Relative ages are based on relationships between geological units such as superposition, intruded by, cross-cuts, or “contains inclusions of” (a.k.a, Steno laws ++[++<<B17,17>>++]++).
 
 [[img_geologic_event_summary_diagram]]
 .Geologic Event summary diagram
@@ -1121,7 +1121,7 @@ The eventProcess:EventProcessTerm property provides a term from a controlled voc
 
 ====== numericAge
 
-The numericAge:NumericAgeRange property provides an age in absolute year before present (BP).  Present is defined by convention to be January 1^st^ 1950 (although van der Plitch & Hogg ++[++20++]++, suggests this convention to be restricted to radiocarbon estimations).
+The numericAge:NumericAgeRange property provides an age in absolute year before present (BP).  Present is defined by convention to be January 1^st^ 1950 (although van der Plitch & Hogg ++[++<<B20,20>>++]++, suggests this convention to be restricted to radiocarbon estimations).
 
 ====== olderNamedAge
 
@@ -1205,7 +1205,7 @@ The property stFoldDescription:FoldAbstractDescription provides a detailed fold 
 
 ===== Foliation
 
-A foliation is a planar arrangement of textural or structural features in any type of rock.  It includes any of a wide variety of penetrative planar geological structures that may be present in a rock.  Examples include schistosity, mylonitic foliation, penetrative bedding structure (lamination), and cleavage.  Following the proposed definition of gneiss by the NADM Science Language Technical Team ++[++12++]++, penetrative planar foliation defined by layers ++>++ 5 mm thick is considered Layering.
+A foliation is a planar arrangement of textural or structural features in any type of rock.  It includes any of a wide variety of penetrative planar geological structures that may be present in a rock.  Examples include schistosity, mylonitic foliation, penetrative bedding structure (lamination), and cleavage.  Following the proposed definition of gneiss by the NADM Science Language Technical Team ++[++<<B12,12>>++]++, penetrative planar foliation defined by layers ++>++ 5 mm thick is considered Layering.
 
 Bedding is a fabric representing the average orientation of paleodepositional surface and should be encoded through the foliationType property.  It might apply to bedding that is layering or a foliation without layering (e.g. clast alignment in amalgamated beds).
 
@@ -1779,7 +1779,7 @@ The particleType:ParticleTypeTerm provides a term from a controlled vocabulary t
 
 ====== aspectRatio
 
-The aspectRatio property (SWE::Category) contains a term from a controlled vocabulary describing the geometry of particles based on the ratios of lengths of long, intermediate and short axes of grains. It equates to sphericity in sedimentary rocks (i.e., the degree to which the shape of a particle approximates a sphere).  The formal definition is “_A quantitative specification based on the ratio of lengths of long, intermediate and short axes of grain shape_” ++[++16++]++ ++[++24++]++. (e.g., prolate, slightly flattened, very bladed, equant, acicular, tabular).
+The aspectRatio property (SWE::Category) contains a term from a controlled vocabulary describing the geometry of particles based on the ratios of lengths of long, intermediate and short axes of grains. It equates to sphericity in sedimentary rocks (i.e., the degree to which the shape of a particle approximates a sphere).  The formal definition is “_A quantitative specification based on the ratio of lengths of long, intermediate and short axes of grain shape_” ++[++<<B16,16>>++]++ ++[++<<B24,24>>++]++. (e.g., prolate, slightly flattened, very bladed, equant, acicular, tabular).
 
 ====== shape
 
@@ -1787,7 +1787,7 @@ The shape property (SWE::Category) describes,
 
 [loweralpha]
 .  the development of crystal faces bounding particles in crystalline compound materials, and
-.  the surface rounding of grains in sedimentary rocks. Roundness is a measure of the sharpness of the edges between surfaces bounding a particle ++[++10++]++ ++[++22++]++.
+.  the surface rounding of grains in sedimentary rocks. Roundness is a measure of the sharpness of the edges between surfaces bounding a particle ++[++<<B10,10>>++]++ ++[++<<B22,22>>++]++.
 
 The terms shall be a term from a controlled vocabulary and be appropriate for the kind of compound material (e.g., for crystalline rocks- euhedral, ideoblastic, subhedral, anhedral, xenoblastic; for sedimentary rocks - angular, rounded).
 
@@ -1826,7 +1826,7 @@ The constituentMaterial property is an association between a ConstituentPart and
 
 ===== FabricDescription
 
-The FabricDescription data type describes all types of fabrics associated with a CompoundMaterial (i.e., tectonic, metamorphic, sedimentary, igneous fabrics or textures).  It denotes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale.  FabricDescription is defined based on the average configuration of many constituents.  Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++15++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly (++[++19++]++ p. 21-24; ++[++7++]++ p. 73; ++[++10++]++,++[++15++]++).
+The FabricDescription data type describes all types of fabrics associated with a CompoundMaterial (i.e., tectonic, metamorphic, sedimentary, igneous fabrics or textures).  It denotes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale.  FabricDescription is defined based on the average configuration of many constituents.  Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++<<B15,15>>++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly (++[++<<B19,19>>++]++ p. 21-24; ++[++<<B7,7>>++]++ p. 73; ++[++<<B10,10>>++]++,++[++15++]++).
 
 FabricDescription is distinguished from ParticleGeometry based on the criteria that particle geometry is preserved if a CompoundMaterial is disaggregated, while FabricDescription is not defined if the material is disaggregated.
 
@@ -1836,7 +1836,7 @@ image::images/image46.png[Fabric description context diagram.,width=456,height=3
 
 ====== fabricType
 
-The fabricType:FabricTypeTerm property contains a term from a controlled vocabulary to denote the type of fabric in the CompoundMaterial (e.g., rapikivi texture, autobrecciation, spaced cleavage, porphyroblastic, cross-bedding).  The fabricType describes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale. It is defined based on the average configuration of many constituents. Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++15++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly.
+The fabricType:FabricTypeTerm property contains a term from a controlled vocabulary to denote the type of fabric in the CompoundMaterial (e.g., rapikivi texture, autobrecciation, spaced cleavage, porphyroblastic, cross-bedding).  The fabricType describes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale. It is defined based on the average configuration of many constituents. Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++<<B15,15>>++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly.
 
 ===== InorganicFluid
 
@@ -1918,7 +1918,7 @@ image::images/image52.png[Rock material description context diagram.,width=271,h
 
 ====== consolidationDegree
 
-The consolidationDegree property (SWE::Category) contains a term from a controlled vocabulary that specifies the degree to which an aggregation of EarthMaterial particles is a distinct solid material. Consolidation and induration are related concepts specified by this property. They define a continuum from unconsolidated material to very hard rock. Induration is the degree to which a consolidated material is made hard, operationally determined by how difficult it is to break a piece of the material. Consolidated materials may have varying degrees of induration ++[++13++]++.
+The consolidationDegree property (SWE::Category) contains a term from a controlled vocabulary that specifies the degree to which an aggregation of EarthMaterial particles is a distinct solid material. Consolidation and induration are related concepts specified by this property. They define a continuum from unconsolidated material to very hard rock. Induration is the degree to which a consolidated material is made hard, operationally determined by how difficult it is to break a piece of the material. Consolidated materials may have varying degrees of induration ++[++<<B13,13>>++]++.
 
 ==== GeologicAgeDetails
 
@@ -1984,7 +1984,7 @@ The incrementalDisplacement:DisplacementValue property contains a DisplacementVa
 
 ===== Layering
 
-A planar foliation is defined by a tabular succession of layers ++>++ 5 mm thick. This definition is based on the proposed definition of gneiss by the NADM Science Language Technical Team ++[++13++]++.  The GeologicStructure characteristic of gneiss is layering.
+A planar foliation is defined by a tabular succession of layers ++>++ 5 mm thick. This definition is based on the proposed definition of gneiss by the NADM Science Language Technical Team ++[++<<B13,13>>++]++.  The GeologicStructure characteristic of gneiss is layering.
 
 .Layering context diagram
 image::images/image57.png[Layering context diagram,width=552,height=440]
@@ -2459,7 +2459,7 @@ image::images/image74.png[NumericEraBoundary context diagram.,width=400,height=4
 
 ===== StandardGlobalNumericalAge
 
-A standard numeric age point (a numeric analogue to a ‘golden spike’) is applicable to the formal subdivision of the Precambrian, and perhaps the Pleistocene/Holocene boundary (++[++23++]++; link:++http://www.stratigraphy.org/index.php/ics-chart-timescale++[[.underline]#http://www.stratigraphy.org/index.php/ics-chart-timescale#]).  The boundary is not defined from a physical stratotype, although it can be influence by some, but placed at a convenient numerical value.
+A standard numeric age point (a numeric analogue to a ‘golden spike’) is applicable to the formal subdivision of the Precambrian, and perhaps the Pleistocene/Holocene boundary (++[++<<B23,23>>++]++; link:++http://www.stratigraphy.org/index.php/ics-chart-timescale++[\http://www.stratigraphy.org/index.php/ics-chart-timescale]).  The boundary is not defined from a physical stratotype, although it can be influence by some, but placed at a convenient numerical value.
 
 ==== GeoSciML GeologicTime vocabularies
 
@@ -2683,10 +2683,10 @@ identifier:: /req/gsml-borehole/interval-1D-CRS
 part:: Coordinate Reference System of interval geometries SHALL use the borehole geometry.
 ====
 
-Instance example for Klčovo and Lastomir Formation adapted from Túnyi ++[++18++]++:
+Instance example for Klčovo and Lastomir Formation adapted from Túnyi ++[++<<B18,18>>++]++:
 
 [[img_top__part_tunyi]]
-.Top part of Figure 2 from Túnyi ++[++18++]++
+.Top part of Figure 2 from Túnyi ++[++<<B18,18>>++]++
 image::images/image80.png[width=426,height=549]
 
 <<img_encoding_of_a_borehole_with_two_logs>> shows an encoding of the first lithostratigraphic and magnetostratigraphic units from <<img_top__part_tunyi>> showing how the collection identifiers group BoreholeIntervals into two groups.
@@ -2858,7 +2858,7 @@ recommendation:: /rec/gsml-lab-analysis/image-process
 recommendation:: /rec/gsml-lab-analysis/outcrop-pattern
 ====
 
-The LaboratoryAnalysis-Specimen application model extends the ISO19156 model for Observations, Measurements and Sampling.  It specifically describes processes and results related to the analysis of (geological) samples using instruments, commonly in a laboratory environment. The design of this package is also informed by the MOLES v3 data model ++[++21++]++. 
+The LaboratoryAnalysis-Specimen application model extends the ISO19156 model for Observations, Measurements and Sampling.  It specifically describes processes and results related to the analysis of (geological) samples using instruments, commonly in a laboratory environment. The design of this package is also informed by the MOLES v3 data model ++[++<<B21,21>>++]++. 
 
 .LaboratoryAnalysis and Specimen dependencies
 image::images/image84.png[LaboratoryAnalysis and Specimen dependencies.,width=601,height=506]
