@@ -14,7 +14,7 @@
 :fullname_2: Editor Two
 :docsubtype: Interface
 :keywords: ogcdoc, OGC document, API, openapi, html
-:submitting-organizations: Arizona Geological Survey (AzGS), Arizona, USA; British Geological Survey (NERC-BGS), UK; Bureau de Recherches Géologiques et Minières (BRGM), France; Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia; Geological Survey of Victoria (GSV), Australia; Geological Survey of Finland (GTK), Finland; Geological Survey of Italy (ISPRA), Italy; Geological Survey of Sweden (SGU), Sweden; Geoscience Australia (GA), Australia; Institute of Geological and Nuclear Sciences (GNS), New Zealand; Landcare Research, New Zealand; Natural Resources Canada (NRCan), Canada; U.S. Geological Survey (USGS), United States of America
+:submitting-organizations: Arizona Geological Survey (AzGS), Arizona, USA; British Geological Survey (NERC-BGS), UK; Bureau de Recherches Géologiques et Minières (BRGM), France; Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia; Geological Survey of Victoria (GSV), Australia; Geological Survey of Finland (GTK), Finland; Geological Survey of Italy (ISPRA), Italy; Geological Survey of Sweden (SGU), Sweden; Geoscience Australia (GA), Australia; Earth Sciences New Zealand; Landcare Research, New Zealand; Natural Resources Canada (NRCan), Canada; U.S. Geological Survey (USGS), United States of America
 :mn-document-class: ogc
 :mn-output-extensions: xml,html,doc,pdf
 :local-cache-only:
@@ -49,13 +49,11 @@ Attention is drawn to the possibility that some of the elements of this document
 [abstract]
 == Abstract
 
-GeoSciML is a model of geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases.  The model was developed by the IUGS CGI (Commission for the Management and Application of Geoscience Information) and version 4.1 is the first version officially submitted as an OGC standard.  This specification describes a logical model and GML/XML encoding rules for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses.  It includes a _Lite_ model, used for simple map-based applications; a _basic_ model, aligned on INSPIRE, for basic data exchange; and an _extended_ model to address more complex scenarios.  
-
-The specification also provides patterns, profiles (most notably of Observations and Measurements - ISO19156), and best practices to deal with common geoscience use cases. 
+GeoSciML is a model of geological features commonly described and portrayed in geological maps, cross sections, geological reports and databases. The model was originally developed by the IUGS CGI (Commission for the Management and Application of Geoscience Information). Version {edition} of the GeoSciML Standard is organized as a multi-part standard. Part 1 (this document) describes a logical model for the exchange of geological map data, geological time scales, boreholes, and metadata for laboratory analyses. The logical model also includes a _Lite_ model, used for simple map-based applications; a _basic_ model, aligned on INSPIRE, for basic data exchange; and an _extended_ model to address more complex scenarios. Part 2 (a separate document) describes XML encoding rules for representing geological features in the Geography Markup Language (GML). Part 3 (a separate document) describes JSON encoding rules for representing geological features in according to Features and Geometry JSON (JSON-FG).
 
 == Preface
 
-The primary goal of this specification is to capture the semantics, schema, and encoding syntax of key elements described and portrayed in geological maps and databases, in order to enable information systems to interoperate with such data.
+The primary goal of this specification is to capture the semantics of key elements described and portrayed in geological maps and databases, in order to enable information systems to interoperate with such data.
 
 == Security considerations
 
@@ -77,14 +75,13 @@ NOTE: The security measures discussed in the following sections only provide var
 All questions regarding this submission should be directed to the editor or the submitters:
 
 [%unnumbered%]
-[width="100%",cols="30%,70%",options="header",]
+[width="100%",cols="30%,60%,10%",options="header",]
 |===
-|*Name* |*Affiliation*
-|Eric Boisvert |Geological Survey of Canada (Natural Resources Canada)
-|Ollie Raymond |Geoscience Australia
-|Marcus Sen |British Geological Survey
-|Edd Lewis |British Geological Survey
-|Mark Rattenbury |Earth Sciences New Zealand
+|*Name* |*Affiliation* |*OGC Member*
+|Eric Boisvert |Geological Survey of Canada (Natural Resources Canada) | TBA
+|Marcus Sen |British Geological Survey | TBA
+|Edd Lewis |British Geological Survey | TBA
+|Mark Rattenbury |Earth Sciences New Zealand | TBA
 |===
 
 == Contributors
@@ -95,20 +92,26 @@ Additional contributors to this Standard include the following:
 
 Individual name(s), Organization
 
+* Eric Boisvert, Geological Survey of Canada (Natural Resources Canada)
+* Ollie Raymond, Geoscience Australia
+* Marcus Sen, British Geological Survey
+* Edd Lewis, British Geological Survey
+* Mark Rattenbury, Earth Sciences New Zealand
+
 == Scope
 
-GeoSciML (Geoscience Markup Language) covers the domain of geology (earth materials, geological units and stratigraphy, geological time, geological structures, geomorphology, geochemistry) and sampling features common to the practice of geoscience, such as boreholes and geological specimens.  The specification also proposes a simplified version of GeoSciML suitable for portrayal of geological features on digital maps.  This specification does not address (or very partially addresses) more specialised geoscience domains such as hydrogeology, seismology, geophysics or economic geology.  Some of these domains are covered by other specifications (e.g. GroundwaterML for hydrogeology; OGC 16-032, and EarthResourceML for economic geology – both developed in concert with GeoSciML).
+GeoSciML (Geoscience Markup Language) covers the domain of geology (earth materials, geological units and stratigraphy, geological time, geological structures, geomorphology, geochemistry) and sampling features common to the practice of geoscience, such as boreholes and geological specimens.  The Standard also defines a simplified version of GeoSciML suitable for portrayal of geological features on digital maps.  This Standard does not address (or very partially addresses) more specialised geoscience domains such as hydrogeology, seismology, geophysics or economic geology.  Some of these domains are covered by other specifications (e.g. GroundwaterML for hydrogeology; OGC 16-032, and EarthResourceML for economic geology – both developed in concert with GeoSciML).
 
 == Conformance
 
-This standard defines a logical model.
+This Standard defines a logical model.
 
 Requirements for two standardization target types are considered:
 
 * Logical Model
 * Encoding
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web sitehttps://docs.ogc.org/is/16-008/16-008.html#_ftnref1[^[.underline]#++[++1++]++#^].
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the link:++https://docs.ogc.org/pol/08-134r11.html++[OGC Compliance Testing Policies and Procedures] and the link:++https://www.ogc.org/how-our-compliance-program-works/++[OGC Compliance Testing web site] footnote:[link:++https://www.ogc.org/how-our-compliance-program-works/++[]].
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
@@ -162,7 +165,7 @@ All requirements-classes and conformance-classes described in this document are 
 
 * [[[INSPIRE]]], INSPIRE Thematic Woring Group Geology: _INSPIRE Data Specification for the spatial data theme Geology Version 3.0. European Commission Joint Research Centre (2013)_
 
-* [[[NAGMDM_SC]]], North American Geologic Map Data Model Steering Committee: _NADM Conceptual Model 1.0—A conceptual model for geologic map information. U.S. Geological Survey Open-File Report 2004-1334, 58 p., accessed online at URL link:++http://pubs.usgs.gov/of/2004/1334++[[.underline]#http://pubs.usgs.gov/of/2004/1334#] (2004)_
+* [[[NAGMDM_SC]]], North American Geologic Map Data Model Steering Committee: _NADM Conceptual Model 1.0—A conceptual model for geologic map information. U.S. Geological Survey Open-File Report 2004-1334, 58 p., accessed online at URL link:++http://pubs.usgs.gov/of/2004/1334++[] (2004)_
 
 * [[[NAGMDM_Science]]],North American Geologic Map Data Model science language products _(link:++http://ngmdb.usgs.gov/www-nadm/sltt/products.html)_++[]
 
@@ -429,7 +432,7 @@ Package names are not formal in UML and can change from one implementation to an
 
 ISO TC211::ISO 19156 All::ISO 19156:2011 Observations and Measurements::Sampling Features::samplingPoint::SF++_++SamplingPoint
 
-For the sake of readability, and also because some HollowWorld package names do not have OCL friendly names (e.g. some package names contain ‘:’, as shown in the previous example), this document will use shortcuts to identify packages.  For example, for OM::SF++_++SamplingPoint, OM acts as a shortcut for (ISO TC211::ISO 19156 All::ISO 19156:2011 Observations and Measurements::++*++) that includes all classifiers in all sub packages and avoids creating a shortcut for all sub packages.  The list of shortcuts is provided in Section link:++https://docs.ogc.org/is/16-008/16-008.html#19++[[.underline]#8.1.2#].  GeoSciML also uses the recently published ISO19115-3 model which has numerous classifier name overlaps with ISO19115 from HollowWorld.
+For the sake of readability, and also because some HollowWorld package names do not have OCL friendly names (e.g. some package names contain ‘:’, as shown in the previous example), this document will use shortcuts to identify packages.  For example, for OM::SF++_++SamplingPoint, OM acts as a shortcut for (ISO TC211::ISO 19156 All::ISO 19156:2011 Observations and Measurements::++*++) that includes all classifiers in all sub packages and avoids creating a shortcut for all sub packages.  The list of shortcuts is provided in <<package_shortcuts>>.  GeoSciML also uses the recently published ISO19115-3 model which has numerous classifier name overlaps with ISO19115 from HollowWorld.
 
 W3C XPath will be used in XML instances.  XML entities will be identified using their full qualified name (namespace, identified by its prefix, and entity name).
 
@@ -442,7 +445,7 @@ W3C XPath will be used in XML instances.  XML entities will be identified using
 
 === GeoSciML Models
 
-The GeoSciML 4.1 is an ISO General Feature Model (ISO19101, ISO19109) implementation of portions of the North American Data Model ++[++12++]++ and CSIRO’s XMML model.  GeoSciML also provides models for concepts at the immediate periphery of geological mapping, such as boreholes, geologic specimens and laboratory analysis, modelled as SF++_++SamplingFeatures and OM++_++Observations (OGC 10-004r3). 
+The GeoSciML {edition} is an ISO General Feature Model (ISO19101, ISO19109) implementation of portions of the North American Data Model ++[++<<B12,12>>++]++ and CSIRO’s XMML model.  GeoSciML also provides models for concepts at the immediate periphery of geological mapping, such as boreholes, geologic specimens and laboratory analysis, modelled as SF++_++SamplingFeatures and OM++_++Observations (OGC 10-004r3). 
 
 .Model lineage. Geological entities are logical implementations of NADM while sampling and observations entities are implementations of O&M (ISO19156).
 image::images/image1.png[width=601,height=520]
@@ -452,7 +455,7 @@ GeoSciML has been through 4 major releases and a few minor releases since 2005.�
 
 This fourth iteration is essentially a repackaging of the previous version 3.2 from 13 packages organised by themes into 6 packages organised by use cases (<<img_geosciml_packages>>):
 
-* *GeoSciML Basic*: a set of core geologic features, aligned to the INSPIRE Data Specification on Geology.
+* *GeoSciML Basic*: a set of core geologic features, aligned to the <<INSPIRE>> Data Specification on Geology.
 * *GeoSciML Extension*: an extension providing detailed description of basic features which adds additional properties and associations.
 * *GeoSciML Geologic Age*: a model for the representation of geologic time using procedures adopted by the International Stratigraphic Commission.
 * *GeoSciML Borehole*: a model for boreholes, including geologic logs and drilling details and other engineering information.
@@ -460,7 +463,7 @@ This fourth iteration is essentially a repackaging of the previous version 3.2 f
 * *GeoSciML Lite*: previously known as “GeoSciML Portrayal” in version 3.2; a simplified alternate implementation of the conceptual model for layer based applications.
 
 [[img_geosciml_packages]]
-.GeoSciML 4.1 packages
+.GeoSciML {edition} packages
 image::images/image2.png[width=601,height=525]
 
  Each application package is the subject of at least one requirements class (to conform to the modular specification) per target implementation (this specification has three targets; logical model, encoding and data instance).  More target implementations might be published as separate documents.
@@ -483,6 +486,7 @@ GeologicFeature can share arbitrary relationships through a relation class (Abst
 
 In order to provide a simple entry level model for data providers, but also to align to INSPIRE, only a minimal set of properties are supported by the _basic_ package.  When more properties are required, the data provider can use the _extension_ package.  To split properties between _basic_ and _extension_, a modelling pattern has been adopted to overcome the limitations of classical object oriented subtyping imposed by UML and XSD.
 
+[[abstract_description_classes]]
 ==== AbstractDescription classes
 
 The technique to add extended properties to an existing class is normally to create a subtype to carry the new properties (<<img_adding_properties_by_extension>>).
@@ -491,7 +495,7 @@ The technique to add extended properties to an existing class is normally to cre
 .Adding properties by extension
 image::images/image5.png[width=601,height=892]
 
-But this only works when properties need to be added to a leaf class.  Properties added by subtyping a class higher up in the chain of inheritance will create a new branch, and new properties won’t propagate to existing subtypes in the main branch. GeoSciML 4 adopts an extension pattern using abstract property blocks or ‘AbstractDescription’ classes (<<img_extension_pattern>>).  Blocks of extended properties are organized in their own Datatype, subtyping AbstractDescription.
+But this only works when properties need to be added to a leaf class.  Properties added by subtyping a class higher up in the chain of inheritance will create a new branch, and new properties won’t propagate to existing subtypes in the main branch. GeoSciML {edition} adopts an extension pattern using abstract property blocks or ‘AbstractDescription’ classes (<<img_extension_pattern>>).  Blocks of extended properties are organized in their own Datatype, subtyping AbstractDescription.
 
 [[img_extension_pattern]]
 .Extension pattern using a property block (AbstractDescription class)
@@ -526,7 +530,7 @@ This modelling pattern is also used by other standards communities (e.g., ISO 19
 
 === GeoSciML Lite
 
-GeoSciML Lite is a denormalised view, or a transformation, of key geological and sampling features, designed as a simple entry-level model to publish datasets, particularly adapted to geographic visualization with key reporting properties.  The use case for GeoSciML Lite is a simple layer-based application; such as web map application or GIS where the key functionality is to display a map layer and perform simple identify or query operations.  The classes are modelled to be easily implementable in any GIS or web mapping application.  One feature type maps to one table composed of optional, single-occurrence properties – consistent with the structure of denormalised RDBMS tables.  The XML implementation (clause 9.8) is conformant with GML Simple Feature (OGC 10-100r3).
+GeoSciML Lite is a denormalised view, or a transformation, of key geological and sampling features, designed as a simple entry-level model to publish datasets, particularly adapted to geographic visualization with key reporting properties.  The use case for GeoSciML Lite is a simple layer-based application; such as web map application or GIS where the key functionality is to display a map layer and perform simple identify or query operations.  The classes are modelled to be easily implementable in any GIS or web mapping application.  One feature type maps to one table composed of optional, single-occurrence properties – consistent with the structure of denormalised RDBMS tables.  The XML implementation (defined in the separate Part 2 document) is conformant with GML Simple Feature (OGC 10-100r3).
 
 Each property of GeoSciML Lite classes is derived from a subset of the properties available in the full GeoSciML model, with the exception of “genericSymbolizer”, which is a convenience property providing a cartographic symbol or code. The property is a shortcut to symbolisation that would otherwise be provided by an SLD (Styled Layer Descriptor).
 
@@ -539,7 +543,7 @@ image::images/image7.png[width=571,height=413]
 [obligation=informative]
 == Conceptual Model
 
-The strictly geological portion of GeoSciML, as opposed to the parts dealing with sampling (e.g., boreholes) and laboratory metadata, is largely an implementation of the North American Data Model ++[++12++]++.  NADM is a technologically neutral conceptual model that addresses geoscience concepts and the relationships between them.  GeoSciML 4 does not implement NADM Geologic Portrayal (a model of cartographic elements composing a geological map, such as legends, symbols, insets, etc.) nor Geologic Vocabulary (although older versions of GeoSciML did).
+The strictly geological portion of GeoSciML, as opposed to the parts dealing with sampling (e.g., boreholes) and laboratory metadata, is largely an implementation of the North American Data Model ++[++<<B12,12>>++]++.  NADM is a technologically neutral conceptual model that addresses geoscience concepts and the relationships between them.  GeoSciML 4 does not implement NADM Geologic Portrayal (a model of cartographic elements composing a geological map, such as legends, symbols, insets, etc.) nor Geologic Vocabulary (although older versions of GeoSciML did).
 
 GeoSciML is an ISO Feature Model implementation of NADM and this created subtle differences between NADM and GeoSciML as the logical model deals with ISO Feature Model idiosyncrasies.  For instance, NADM multiple inheritances used in Fossil could not be implemented in the ISO world that forbids such constructs.  There were also conceptual changes, especially regarding EarthMaterial that is not considered as a GeologicFeature (hence an ISO FeatureType) in GeoSciML, but as a Type.
 
@@ -593,15 +597,16 @@ This section defines the minimum UML mapping requirements that shall be met by a
 
 ==== Property cardinality
 
-All properties that could feasibly be made optional are optional in GeoSciML 4.1.  This is a reversal of the pattern used in GeoSciML version 3.2 where all properties were made mandatory, forcing the data provider to document why the property was missing using nillable properties.  This design attracted a lot of criticism (not only for GeoSciML but for other communities confronted with the same pattern) from application developers and data providers that consider filling the instance with nil properties is “unnecessarily verbose” and a waste of bandwidth.  It has been argued that nillable properties are just verbose absent values.  This issue is a real concern for mobile applications where payload has an impact on user experience.
+All properties that could feasibly be made optional are optional in GeoSciML {edition}.  This is a reversal of the pattern used in GeoSciML version 3.2 where all properties were made mandatory, forcing the data provider to document why the property was missing using nillable properties.  This design attracted a lot of criticism (not only for GeoSciML but for other communities confronted with the same pattern) from application developers and data providers that consider filling the instance with nil properties is “unnecessarily verbose” and a waste of bandwidth.  It has been argued that nillable properties are just verbose absent values.  This issue is a real concern for mobile applications where payload has an impact on user experience.
 
 Nillable properties actually carry useful or even required information in certain use cases, such as legally bounded data exchange scenarios.  Some communities using GeoSciML may still want to force usage of nillable properties and the SWG recognised that different communities might want to enforce the use of some properties for their particular needs.  To meet this requirement and to offer flexibility to various communities wanting to use (or extend) GeoSciML, properties are optional, but can still be nilled.  A data provider is offered two options when a value is missing:
 
 * Omit the property
 * Deliver a nilled property with relevant justification.
 
-Which option is most useful for a community is left to that community to decide.  Their decision can be enforced using Schematron.  The editors foresee the use of a) the GeoSciML data model as defined by this specification providing naming and structure and b) a series of community-defined rules to enforce the presence of certain properties relevant to their use cases.  For an XML implementation, this translates into a set of common XSD and SCH to govern conformance to GeoSciML, and community-specific SCH to enforce specific use cases, such as the INSPIRE geology specification ++[++8++]++.
+Which option is most useful for a community is left to that community to decide.  Their decision can be enforced using Schematron.  The editors foresee the use of a) the GeoSciML data model as defined by this specification providing naming and structure and b) a series of community-defined rules to enforce the presence of certain properties relevant to their use cases.  For an XML implementation, this translates into a set of common XSD and SCH to govern conformance to GeoSciML, and community-specific SCH to enforce specific use cases, such as the INSPIRE geology specification ++[++<<B8,8>>++]++.
 
+[[package_shortcuts]]
 ===== Package shortcuts
 
 The following shortcuts are used to refer to external (non GeoSciML) classifiers.
@@ -640,7 +645,7 @@ requirement:: /req/gsml-core/codelist
 
 
 
-This section presents requirements to which all target encodings must conform in to order to claim compliance to GeoSciML 4.1.
+This section presents requirements to which all target encodings must conform in to order to claim compliance to GeoSciML {edition}.
 
 ==== Naming of entities
 
@@ -709,7 +714,7 @@ identifier:: /req/gsml-core/quantities-uom
 part:: Quantities and measurements SHALL have explicit units of measure from a governed ontology.
 ====
 
-The quantities and measurements units of measure shall be taken from a standard vocabulary governed by an appropriate community, for example the Unified Code for Units of Measure (UCUM).
+The quantities and measurements units of measure shall be taken from a standard vocabulary governed by an appropriate community, for example the Unified Code for Units of Measure (<<UCUM201>>).
 
 ==== QuantityRange
 
@@ -725,6 +730,7 @@ identifier:: /req/gsml-core/quantities-single-range
 part:: QuantityRange properties that must report a single value SHALL assign both lower and upper value as equal to that single value.
 ====
 
+[[code_lists]]
 ==== Code lists
 
 
@@ -743,7 +749,7 @@ All properties that require formal vocabularies are modelled in the UML as class
 .Example CodeLists, with a) a prescribed list of terms (DescriptionPurpose) and b) 'open' with no prescribed terms (GeologicUnitHierarchyRoleTerm)
 image::images/image9.png[width=118,height=96]
 
-When the list is open, the vocabulary is managed externally over the web where each vocabulary term should be encoded as a resource.  Vocabulary term identifiers are URIs representing concepts from a standard vocabulary governed by an appropriate community - for example, the IUGS CGI Geoscience Terminology Working Group (link:++http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html++[\http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html] and link:++http://resource.geosciml.org/++[\http://resource.geosciml.org/]) or INSPIRE ++[++8++]++.
+When the list is open, the vocabulary is managed externally over the web where each vocabulary term should be encoded as a resource.  Vocabulary term identifiers are URIs representing concepts from a standard vocabulary governed by an appropriate community - for example, the IUGS CGI Geoscience Terminology Working Group (link:++http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html++[\http://www.cgi-iugs.org/tech_collaboration/geoscience_terminology_working_group.html] and link:++http://resource.geosciml.org/++[\http://resource.geosciml.org/]) or INSPIRE ++[++<<B8,8>>++]++.
 
 This requirement does not require that URIs be actually dereferenceable, but just that a vocabulary term is associated with a syntactically correct URI.
 
@@ -772,7 +778,7 @@ Although OGC standards are not restricted to a web environment, they are strongl
 
 Linked Open Data is a method to publish structured data on the web.  It leverages existing web technologies such as HTTP (transfer protocol) and URI (addressing over the web) to connect structured resources.  The principle is similar to interconnected web pages through hyperlinks, except that pages are replace with structured information that can be processed by machines.
 
-The following requirements essentially impose that URI used as vocabulary, identifiers and references can be “dereferenced”, which is “_The act of retrieving a representation of a resource identified by a URI_”https://docs.ogc.org/is/16-008/16-008.html#_ftnref2[[.underline]#++[++2++]++#] from the web.  A resource can have multiple representations (GML, XML, RDF, etc.) and this specification does not impose a particular one, although it is common sense in this context to provide a GeoSciML representation for geological features.
+The following requirements essentially impose that URI used as vocabulary, identifiers and references can be “dereferenced”, which is “_The act of retrieving a representation of a resource identified by a URI_” footnote:[link:++https://www.w3.org/2001/tag/doc/httpRange-14/2007-05-31/HttpRange-14++[] Clause 2] from the web.  A resource can have multiple representations (GML, XML, RDF, etc.) and this specification does not impose a particular one, although it is common sense in this context to provide a GeoSciML representation for geological features.
 
 It is important to note that a HTTP URI in this context is [.underline]#both# an identifier and a location.  The same identifier is used to refer to any number of representations.  Therefore, different representations are selected through content negotiation with the server.
 
@@ -788,8 +794,9 @@ identifier:: /req/gsml-lod/codelistURI
 part:: URI used for vocabulary terms SHALL be dereferenceable to one or more representations of the vocabulary term.
 ====
 
-The requirement described at 8.2.7  in Abstract Requirements Class demand that a vocabulary reference be encoded as a URI, but does not require that the URI actually resolve to anything (it could, but it is not required).  In this class, the target must ensure that the URI used to identify vocabulary terms SHALL dereference to one or more representations of a definition of the term (eg, RDF/SKOS, HTML, GML Definition, etc.)
+The requirement described at <<code_lists>> in Abstract Requirements Class demand that a vocabulary reference be encoded as a URI, but does not require that the URI actually resolve to anything (it could, but it is not required).  In this class, the target must ensure that the URI used to identify vocabulary terms SHALL dereference to one or more representations of a definition of the term (eg, RDF/SKOS, HTML, GML Definition, etc.)
 
+[[identifier_section]]
 ==== Identifier
 
 
@@ -811,7 +818,7 @@ This requirement demands that the target ensures that a data instance exposes a 
 ====
 [%metadata]
 identifier:: /req/gsml-lod/gsml-representation
-part:: Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML 5.0 as one of its representations.
+part:: Dereferenceable HTTP URI used as identifiers SHOULD provide GeoSciML {edition} as one of its representations.
 ====
 
 It is expected that one of the representations should be a XML (GML) or any GeoSciML compliant representations, including any profiles derived from this specification.
@@ -828,7 +835,7 @@ identifier:: /req/gsml-lod/byref
 part:: External references to an entity conforming to [/req/gsml-lod/identifier] shall be expressed using this entity identifier.
 ====
 
-Serialization of a dataset will often omit the full description of a feature and replace the property value with an external reference.  A reference to this feature is formed by the dereferenceable identifier described in clause 8.3.2. A client ingesting the dataset can use this reference to extract a feature representation if need be.  Over the web, this reference shall be a HTTP URI that can be dereferenced to one or more representations of that feature.
+Serialization of a dataset will often omit the full description of a feature and replace the property value with an external reference.  A reference to this feature is formed by the dereferenceable identifier described in <<identifier_section>>. A client ingesting the dataset can use this reference to extract a feature representation if need be.  Over the web, this reference shall be a HTTP URI that can be dereferenced to one or more representations of that feature.
 
 === GeoSciML Basic Requirements Class (Normative)
 
@@ -856,7 +863,7 @@ requirement:: /req/gsml-basic/quantity-range-repeat
 
  
 
-Basic package provides a collection of classes representing fundamental geological and geomorphological features (units, structures, and events), earth materials, geologic time, and the relations between them.  It limits the number of descriptive properties to match important common use cases, including the INSPIRE geological theme specification ++[++8++]++.
+Basic package provides a collection of classes representing fundamental geological and geomorphological features (units, structures, and events), earth materials, geologic time, and the relations between them.  It limits the number of descriptive properties to match important common use cases, including the INSPIRE geological theme specification ++[++<<B8,8>>++]++.
 
 [img_geosciml_basic_dependencies]
 .GeoSciML Basic dependencies
@@ -886,6 +893,7 @@ The GeologicFeature observationMethod (SWE::Category) specifies the approach to 
 
 ObservationMethod is a convenience property that provides a simple approach to observation metadata when data are reported using a feature view (as opposed to observation view).  This property corresponds (loosely) to ISO19115 Lineage.
 
+[[purpose_section]]
 ====== purpose
 
 
@@ -895,7 +903,7 @@ ObservationMethod is a convenience property that provides a simple approach to o
 ====
 [%metadata]
 identifier:: /req/gsml-basic/geologicfeature-purpose
-part:: Purpose SHALL be a value from Table 2 of clause 8.4.1.1.2.
+part:: Purpose SHALL be a value from <<valid_purpose_values>> of <<purpose_section>>.
 ====
 
  
@@ -930,7 +938,7 @@ To avoid extra complexity, GeoSciML Basic provides an explicit geologicHistory p
 
 A relatedFeature is a general structure used to define relationships between any features or objects within GeoSciML. Relationships are always binary and directional.  There is always a single source and a single target for a given FeatureRelation (which is abstract in GeoSciML Basic).  The relationship is always defined from the perspective of the Source and is generally an active verb. 
 
-In GeoSciML Basic, relatedFeature is a stub association (see clause 5.1.1).   However some encodings (such as XML) will allow a “by reference” value (for example xlink:href) to an external instance.
+In GeoSciML Basic, relatedFeature is a stub association (see <<abstract_description_classes>>).   However some encodings (such as XML) will allow a “by reference” value (for example xlink:href) to an external instance.
 
 ===== MappedFeature
 
@@ -966,7 +974,7 @@ The specification association links an instance of MappedFeature to the GFI++_++
 
 ===== GeologicUnit
 
-Conceptually, a GeologicUnit may represent a body of material in the Earth whose complete and precise extent is inferred to exist (e.g., North American Data Model GeologicUnit ++[++12++]++, Stratigraphic unit in the sense of NACSN ++[++14++]++, or International Stratigraphic Code ++[++9++]++), or a classifier used to characterize parts of the Earth (e.g. lithologic map unit like ‘granitic rock’ or ‘alluvial deposit’, surficial units like ‘till’ or ‘old alluvium’). It includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to a lexicon) and unnamed units (i.e., recognizable, described and delineable in the field but not otherwise formalised).  In simpler terms, a geologic unit is a package of earth material (generally rock).
+Conceptually, a GeologicUnit may represent a body of material in the Earth whose complete and precise extent is inferred to exist (e.g., North American Data Model GeologicUnit ++[++<<B12,12>>++]++, Stratigraphic unit in the sense of NACSN ++[++<<B14,14>>++]++, or International Stratigraphic Code ++[++<<B9,9>>++]++), or a classifier used to characterize parts of the Earth (e.g. lithologic map unit like ‘granitic rock’ or ‘alluvial deposit’, surficial units like ‘till’ or ‘old alluvium’). It includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to a lexicon) and unnamed units (i.e., recognizable, described and delineable in the field but not otherwise formalised).  In simpler terms, a geologic unit is a package of earth material (generally rock).
 
 [[img_geologicunit_context_diagram]]
 .GeologicUnit context diagram
@@ -988,7 +996,7 @@ Examples: group, subgroup, formation, member, bed, intrusion, complex, batholith
 
 ====== hierarchyLink
 
-The property hierarchyLink is an association that links a GeologicUnit with a GeologicUnitHierarchy (8.4.1.4) to represent containment of a part GeologicUnit within another GeologicUnit. It indicates a subsidiary unit with its role and proportion with respect to the container unit.  For example, members are described as part of formations, or different facies can be described as parts of a GeologicUnit.
+The property hierarchyLink is an association that links a GeologicUnit with a GeologicUnitHierarchy (<<geologic_unit_hierarchy>>) to represent containment of a part GeologicUnit within another GeologicUnit. It indicates a subsidiary unit with its role and proportion with respect to the container unit.  For example, members are described as part of formations, or different facies can be described as parts of a GeologicUnit.
 
 ====== composition
 
@@ -996,12 +1004,13 @@ The property composition is an association that links a GeologicUnit with Compos
 
 ====== gbMaterialDescription (stub property)
 
-The property gbMaterialDescription:EarthMaterialAbstractDescription is a placeholder that provides detailed material description.  This is a stub property (See 5.1.1) in GeoSciML Basic as EarthMaterialAbstractDescription is abstract with subtypes defined in GeoSciML Extension. 
+The property gbMaterialDescription:EarthMaterialAbstractDescription is a placeholder that provides detailed material description.  This is a stub property (See <<abstract_description_classes>>) in GeoSciML Basic as EarthMaterialAbstractDescription is abstract with subtypes defined in GeoSciML Extension. 
 
 ====== gbUnitDescription (stub property)
 
-The property gbUnitDescription:GeologicUnitAbstractDescriptio is a placeholder that provides detailed material description.  This is a stub property (See 5.1.1) in GeoSciML Basic as GeologicUnitAbstractDescription is abstract with subtypes defined in GeoSciML Extension. 
+The property gbUnitDescription:GeologicUnitAbstractDescription is a placeholder that provides detailed material description.  This is a stub property (See <<abstract_description_classes>>) in GeoSciML Basic as GeologicUnitAbstractDescription is abstract with subtypes defined in GeoSciML Extension. 
 
+[[geologic_unit_hierarchy]]
 ===== GeologicUnitHierarchy
 
 GeologicUnitHierarchy associates a GeologicUnit with another GeologicUnit that is a proper part of that unit. Parts may be formal or notional. Formal parts refer to a specific body of rock, as in formal stratigraphic members. Notional parts refer to assemblages of particular EarthMaterials with particular internal structure, which may be repeated in various places within a unit (e.g. ‘turbidite sequence’, ‘point bar assemblage’, ‘leucosome veins’). 
@@ -1032,8 +1041,9 @@ The proportion property (SWE::QuantityRange) specifies the fraction of the geolo
 
 ====== Material
 
-The material:EarthMaterial property contains the material description (8.4.1.6) of the composing part.
+The material:EarthMaterial property contains the material description (<<earth_material>>) of the composing part.
 
+[[earth_material]]
 ===== EarthMaterial
 
 The EarthMaterial class holds a description of a naturally occurring substance in the Earth.  EarthMaterial represents material composition or substance, and is thus independent of quantity or location. Ideally, EarthMaterials are defined strictly based on physical properties, but because of standard geological usage, genetic interpretations enter into the description as well.  
@@ -1044,11 +1054,11 @@ image::images/image14.png[EarthMaterial and related classes.,width=516,height=23
 
 ====== color
 
-The color property (SWE::Category) is a term from a controlled vocabulary that specifies the colour of the earth material. Color schemes such as the Munsell rock and soil color schemes ++[++11++]++ may be used.
+The color property (SWE::Category) is a term from a controlled vocabulary that specifies the colour of the earth material. Color schemes such as the Munsell rock and soil color schemes ++[++<<B11,11>>++]++ may be used.
 
 ====== purpose
 
-The purpose:DescriptionPurpose property provides a specification of the intended purpose or level of abstraction for the given EarthMaterial. The intent is the same a GeologicFeature’s purpose (see 8.4.1.1.2) and it shares the same vocabulary (instance, typicalNorm, definingNorm).
+The purpose:DescriptionPurpose property provides a specification of the intended purpose or level of abstraction for the given EarthMaterial. The intent is the same a GeologicFeature’s purpose (see <<purpose_section>>) and it shares the same vocabulary (instance, typicalNorm, definingNorm).
 
 ====== gbEarthMaterialDescription (stub property)
 
@@ -1078,7 +1088,7 @@ GeologicalHistory is an ordered aggregation of GeologicalEvent objects, each of 
 
 The age attributes are representations of a particular geological event or feature expressed as absolute age in terms of years (numericAge) before present or named time periods in the geological time scale (youngerNamedAge and olderNamedAge), or by comparison with other geological events or features (relative age).  An event age can represent an instant in time, an interval of time, or any combination of multiple instants or intervals.
 
-Specifications of age in years before present are based on determination of time durations based on interpretation of isotopic analyses of EarthMaterial (some other methods are used for geologically young materials). Ages specified by geological time scales are essentially based on correlation of a geological unit with a standard chronostratigraphic unit that serves as a reference. Relative ages are based on relationships between geological units such as superposition, intruded by, cross-cuts, or “contains inclusions of” (a.k.a, Steno laws ++[++17++]++).
+Specifications of age in years before present are based on determination of time durations based on interpretation of isotopic analyses of EarthMaterial (some other methods are used for geologically young materials). Ages specified by geological time scales are essentially based on correlation of a geological unit with a standard chronostratigraphic unit that serves as a reference. Relative ages are based on relationships between geological units such as superposition, intruded by, cross-cuts, or “contains inclusions of” (a.k.a, Steno laws ++[++<<B17,17>>++]++).
 
 [[img_geologic_event_summary_diagram]]
 .Geologic Event summary diagram
@@ -1118,7 +1128,7 @@ The eventProcess:EventProcessTerm property provides a term from a controlled voc
 
 ====== numericAge
 
-The numericAge:NumericAgeRange property provides an age in absolute year before present (BP).  Present is defined by convention to be January 1^st^ 1950 (although van der Plitch & Hogg ++[++20++]++, suggests this convention to be restricted to radiocarbon estimations).
+The numericAge:NumericAgeRange property provides an age in absolute year before present (BP).  Present is defined by convention to be January 1^st^ 1950 (although van der Plitch & Hogg ++[++<<B20,20>>++]++, suggests this convention to be restricted to radiocarbon estimations).
 
 ====== olderNamedAge
 
@@ -1166,7 +1176,7 @@ image::images/image17.png[Summary diagram of Geologic structures.,width=601,heig
 
 ===== GeologicStructure
 
-A geologic structure is a configuration of matter in the Earth based on describable inhomogeneity, pattern, or fracture in an earth material.  The identity of a GeologicStructure is independent of the material that is the substrate for the structure.  The general GeologicFeatureRelation (available in the Extension package – see 8.5) is used to associate penetrative GeologicStructures with GeologicUnits.  GeoSciML Basic only provides a limited set of core structures (Contact, Fold, ShearDisplacementStructure and Foliation) with a single property to categorise them.  Supplemental properties (through the pattern described in 5.1.1) and geologic structure types are available from the Extension package.
+A geologic structure is a configuration of matter in the Earth based on describable inhomogeneity, pattern, or fracture in an earth material.  The identity of a GeologicStructure is independent of the material that is the substrate for the structure.  The general GeologicFeatureRelation (available in the Extension package – see 8.5) is used to associate penetrative GeologicStructures with GeologicUnits.  GeoSciML Basic only provides a limited set of core structures (Contact, Fold, ShearDisplacementStructure and Foliation) with a single property to categorise them.  Supplemental properties (through the pattern described in <<abstract_description_classes>>) and geologic structure types are available from the Extension package.
 
 ===== Contact
 
@@ -1202,7 +1212,7 @@ The property stFoldDescription:FoldAbstractDescription provides a detailed fold 
 
 ===== Foliation
 
-A foliation is a planar arrangement of textural or structural features in any type of rock.  It includes any of a wide variety of penetrative planar geological structures that may be present in a rock.  Examples include schistosity, mylonitic foliation, penetrative bedding structure (lamination), and cleavage.  Following the proposed definition of gneiss by the NADM Science Language Technical Team ++[++12++]++, penetrative planar foliation defined by layers ++>++ 5 mm thick is considered Layering.
+A foliation is a planar arrangement of textural or structural features in any type of rock.  It includes any of a wide variety of penetrative planar geological structures that may be present in a rock.  Examples include schistosity, mylonitic foliation, penetrative bedding structure (lamination), and cleavage.  Following the proposed definition of gneiss by the NADM Science Language Technical Team ++[++<<B12,12>>++]++, penetrative planar foliation defined by layers ++>++ 5 mm thick is considered Layering.
 
 Bedding is a fabric representing the average orientation of paleodepositional surface and should be encoded through the foliationType property.  It might apply to bedding that is layering or a foliation without layering (e.g. clast alignment in amalgamated beds).
 
@@ -1218,9 +1228,10 @@ The foliationType:FoliationTypeTerm property specifies the type of foliation fro
 
 The property stFoliationDescription:FoliationAbstractDescription provides a detailed foliation description.  This is a stub property in GeoSciML Basic since FoliationAbstractDescription is an abstract class with subtypes defined in GeoSciML Extension.
 
+[[ShearDisplacementStructure_section]]
 ===== ShearDisplacementStructure
 
-A shear displacement structure includes all brittle to ductile style structures along which displacement has occurred, from a simple, single ‘planar’ brittle or ductile surface to a fault system comprised of tens of strands of both brittle and ductile nature. This structure may have some significant thickness (a deformation zone) and have an associated body of deformed rock that may be considered a deformation unit (which geologicUnitType is ‘DeformationUnit’) which can be associated to the ShearDisplacementStructure using GeologicFeatureRelation from the GeoSciML Extension package (8.5.1.2).
+A shear displacement structure includes all brittle to ductile style structures along which displacement has occurred, from a simple, single ‘planar’ brittle or ductile surface to a fault system comprised of tens of strands of both brittle and ductile nature. This structure may have some significant thickness (a deformation zone) and have an associated body of deformed rock that may be considered a deformation unit (which geologicUnitType is ‘DeformationUnit’) which can be associated to the ShearDisplacementStructure using GeologicFeatureRelation from the GeoSciML Extension package (<<geologic_feature_relation>>).
 
 [[img_ShearDisplacementStructure_context_diagram]]
 .ShearDisplacementStructure context diagram
@@ -1250,7 +1261,7 @@ A geomorphologic feature is a kind of GeologicFeature describing the shape and n
 .Partial encoding of landform located in Elba Island as part of a geomorphological unit (encoded from a map from D’Orefice et al, 2009)
 image::images/image23.png[width=601,height=279]
 
-<<img_partial_encoding_of_landform>> shows an example of GeoSciML encoding of a landform lava cone geomorphologic unit (from ++[++2++]++) located in Elba Island showing how the geomorphologic feature is related to the geologic unit and materials that it is made of.
+<<img_partial_encoding_of_landform>> shows an example of GeoSciML encoding of a landform lava cone geomorphologic unit (from ++[++<<B2,2>>++]++) located in Elba Island showing how the geomorphologic feature is related to the geologic unit and materials that it is made of.
 
 ====== unitDescription
 
@@ -1314,7 +1325,7 @@ b)    using GSMLItem as a validation constraint
 [%unnumbered%]
 image::images/image26.png[width=292,height=70]
 
-This requirements class does not impose any encoding style for Union stereotype, although in the XML encoding requirements class (see 9.3) we chose the second option.
+This requirements class does not impose any encoding style for Union stereotype, although in the XML encoding requirements class (see Part 2) we chose the second option.
 
 [[tbl_types_of_GSMLItem_members]]
 .Types of GSMLItem members
@@ -1366,13 +1377,14 @@ part:: At least one of polarity, azimuth or dip SHALL not be null.
 
 To have any meaningful value, the planar orientation shall have at least a value for polarity, azimuth or dip.
 
+[[convention_section]]
 ====== convention
 
 The property convention:ConventionCode contains the convention used for the measurement from a controlled vocabulary.
 
 ====== azimuth
 
-The azimuth (SWE::QuantityRange) property (compass point, bearing etc.) contains the value of the orientation. The convention property (8.4.6.2.1) reports how azimuth is interpreted (if it is relative to a quadrant).
+The azimuth (SWE::QuantityRange) property (compass point, bearing etc.) contains the value of the orientation. The convention property (<<convention_section>>) reports how azimuth is interpreted (if it is relative to a quadrant).
 
 ====== dip
 
@@ -1422,7 +1434,7 @@ The magnitude property (SWE::QuantityRange) reports the magnitude of the vector.
 
 ===== GSML++_++QuantityRange
 
-GSML++_++QuantityRange is a specialization of SWE Common QuantiytyRange (OGC 08-094r1, Clause 7.2.13)  where lower and upper values are made explicit.  SWE::QuantityRange uses an array of values (RealPair, see Clause OGC 08-094r1,7.2.1) where the lowest value is the first element and the highest the second.  This convenience data type has been created as an alternative encoding for implementations that do no support encoding of arrays in a single field (e.g. DBF) or reference to elements in string encoded arrayshttps://docs.ogc.org/is/16-008/16-008.html#_ftnref3[[.underline]#++[++3++]++#] (eg. Filter Encoding Specification 2.0 – OGC 09-029r2).
+GSML++_++QuantityRange is a specialization of SWE Common QuantiytyRange (OGC 08-094r1, Clause 7.2.13)  where lower and upper values are made explicit.  SWE::QuantityRange uses an array of values (RealPair, see Clause OGC 08-094r1,7.2.1) where the lowest value is the first element and the highest the second.  This convenience data type has been created as an alternative encoding for implementations that do no support encoding of arrays in a single field (e.g. DBF) or reference to elements in string encoded arrays footnote:[SWE RealPair is encoded as space delimited lists (<swe:value>10 300</swe:value> in XML) , which demands that clients parse the string to extract each token.  To build a WFS/FES query that tests the first element, it requires parsing the string either using string-before(swe:value,’ ’)  or tokenize(swe:value,’ ’).  This is cumbersome at best, or not even supported by the server at worst.  09-026r2 Clause 7.4.4 describes the minimal XPath supports and string parsing is not present.] (eg. Filter Encoding Specification 2.0 – OGC 09-029r2).
 
 [[img_Context_diagram_for_QuantityRange]]
 .Context diagram for QuantityRange making lower and upper values explicit
@@ -1467,7 +1479,7 @@ image::images/image29.png[width=166,height=126]
 
 ==== GeoSciML Basic vocabularies
 
-Geology is a descriptive science and uses vocabularies extensively.  <<tbl_vocabularies_used_in_geosciml_basic>> lists the vocabularies used in GeoSciML Basic.  Each of those vocabularies shall be implemented using externally managed vocabularies as specified in clause 8.2.7
+Geology is a descriptive science and uses vocabularies extensively.  <<tbl_vocabularies_used_in_geosciml_basic>> lists the vocabularies used in GeoSciML Basic.  Each of those vocabularies shall be implemented using externally managed vocabularies as specified in <<code_lists>>
 
 [[tbl_vocabularies_used_in_geosciml_basic]]
 .Vocabularies used in GeoSciML Basic
@@ -1558,7 +1570,7 @@ e.g., "upright", "overturned", "vertical"
 
 ==== Instance examples
 
-The following figure shows a partial encoding of an existing map from Drewes ++[++3++]++.  This example has been chosen because it was selected for a similar exercise for the North American Data Model (link:++http://ngmdb.usgs.gov/www-nadm/dmdt/++[\http://ngmdb.usgs.gov/www-nadm/dmdt/]).  <<img_excerpt_from_drewes_map>> shows a small section of a map showing unit Ttv (Dacitic vent breccia) from a quadrangle in Arizona, USA.  The original legend description is shown in <<img_original_description_from_drewes_map>>.
+The following figure shows a partial encoding of an existing map from Drewes ++[++<<B3,3>>++]++.  This example has been chosen because it was selected for a similar exercise for the North American Data Model (link:++http://ngmdb.usgs.gov/www-nadm/dmdt/++[\http://ngmdb.usgs.gov/www-nadm/dmdt/]).  <<img_excerpt_from_drewes_map>> shows a small section of a map showing unit Ttv (Dacitic vent breccia) from a quadrangle in Arizona, USA.  The original legend description is shown in <<img_original_description_from_drewes_map>>.
 
 [[img_excerpt_from_drewes_map]]
 .Excerpt from Drewes map ++[++3++]++ with a Dacitic vent breccia unit highlighted (Ttv)
@@ -1630,6 +1642,7 @@ identifier:: /req/gsml-extension/geologicfeature-history
 part:: A GeologicFeatureRelation SHALL not be used to associate a GeologicFeature to a GeologicEvent if GeologicFeature::geologicHistory can provide the same information.
 ====
 
+[[geologic_feature_relation]]
 ===== GeologicFeatureRelation
 
 The GeologicFeatureRelation class defines the general structure used to define relationships between any GeoSciML feature types.  Relationships are always binary and directional.  There is always a single source and a single target.  The relationship is always defined from the perspective of the Source and is generally an active verb. 
@@ -1702,7 +1715,7 @@ AlterationDescription describes aspects of a geologic unit or earth material tha
 .Example of a weathering profile
 image::images/image40.png[Example of a weathering profile.,width=486,height=143]
 
-An example encoding of an altered geologic unit from Drewes ++[++3++]++ is shown in <<img_example_of_describing_alteration>>.
+An example encoding of an altered geologic unit from Drewes ++[++<<B3,3>>++]++ is shown in <<img_example_of_describing_alteration>>.
 
 [[img_example_of_describing_alteration]]
 .Example of describing alteration halo from Drewes ++[++3++]++.
@@ -1776,7 +1789,7 @@ The particleType:ParticleTypeTerm provides a term from a controlled vocabulary t
 
 ====== aspectRatio
 
-The aspectRatio property (SWE::Category) contains a term from a controlled vocabulary describing the geometry of particles based on the ratios of lengths of long, intermediate and short axes of grains. It equates to sphericity in sedimentary rocks (i.e., the degree to which the shape of a particle approximates a sphere).  The formal definition is “_A quantitative specification based on the ratio of lengths of long, intermediate and short axes of grain shape_” ++[++16++]++ ++[++24++]++. (e.g., prolate, slightly flattened, very bladed, equant, acicular, tabular).
+The aspectRatio property (SWE::Category) contains a term from a controlled vocabulary describing the geometry of particles based on the ratios of lengths of long, intermediate and short axes of grains. It equates to sphericity in sedimentary rocks (i.e., the degree to which the shape of a particle approximates a sphere).  The formal definition is “_A quantitative specification based on the ratio of lengths of long, intermediate and short axes of grain shape_” ++[++<<B16,16>>++]++ ++[++<<B24,24>>++]++. (e.g., prolate, slightly flattened, very bladed, equant, acicular, tabular).
 
 ====== shape
 
@@ -1784,7 +1797,7 @@ The shape property (SWE::Category) describes,
 
 [loweralpha]
 .  the development of crystal faces bounding particles in crystalline compound materials, and
-.  the surface rounding of grains in sedimentary rocks. Roundness is a measure of the sharpness of the edges between surfaces bounding a particle ++[++10++]++ ++[++22++]++.
+.  the surface rounding of grains in sedimentary rocks. Roundness is a measure of the sharpness of the edges between surfaces bounding a particle ++[++<<B10,10>>++]++ ++[++<<B22,22>>++]++.
 
 The terms shall be a term from a controlled vocabulary and be appropriate for the kind of compound material (e.g., for crystalline rocks- euhedral, ideoblastic, subhedral, anhedral, xenoblastic; for sedimentary rocks - angular, rounded).
 
@@ -1794,7 +1807,7 @@ The property size (SWE::QuantityRange) reports the size that specifies particle 
 
 ====== sorting
 
-The sorting property (SWE::Category) contains a term from a vocabulary that specifies the size distribution of particles in a CompoundMaterial. Terminology for sorting in sedimentary rocks is based on the quantitative Graphic Standard Deviation (IGSD) scheme proposed by Folk ++[++5++]++ ++[++6++]++.  Example for this attribute may include sedimentary terms such as well sorted and poorly sorted, or igneous terms such as porphyritic, equigranular, seriate.
+The sorting property (SWE::Category) contains a term from a vocabulary that specifies the size distribution of particles in a CompoundMaterial. Terminology for sorting in sedimentary rocks is based on the quantitative Graphic Standard Deviation (IGSD) scheme proposed by Folk ++[++<<B5,5>>++]++ ++[++<<B6,6>>++]++.  Example for this attribute may include sedimentary terms such as well sorted and poorly sorted, or igneous terms such as porphyritic, equigranular, seriate.
 
 ====== sourceOrganism
 
@@ -1807,7 +1820,7 @@ image::images/image45.png[ConstituentPart context diagram.,width=601,height=691]
 
 The ConstituentPart class describes how Earth materials may be made up of other Earth materials, including the proportion of the constituent part in the whole (e.g., 20%, minor, dominant); and the role that the constituent plays in the whole (e.g., matrix, groundmass, framework, phenocryst, xenolith, vein).
 
-The distinction between "role" and "particleType" is subtle.  An operational test is that particleType may be determined independent of relationship between particles in the aggregation, whereas role requires consideration of the relationship to other particles. A particle may be identified as a clast, independent of its material composition, and independent of its relationship to other grains in a rock. The term ‘floating clast’ is a role, because it is dependent on the relationship ‘not in contact with other clasts’. Readers should consider Dunham’s textural classification of carbonate rocks (wackestone, packstone, grainstone, etc.) in the description of carbonate rocks ++[++4++]++. The description is predicated on identification of two kinds of intraclasts (grains) and matrix (carbonate mud), and then uses this distinction to establish relationships–mud supported vs. grain supported – that define roles for the two types of constituents (framework, matrix…).
+The distinction between "role" and "particleType" is subtle.  An operational test is that particleType may be determined independent of relationship between particles in the aggregation, whereas role requires consideration of the relationship to other particles. A particle may be identified as a clast, independent of its material composition, and independent of its relationship to other grains in a rock. The term ‘floating clast’ is a role, because it is dependent on the relationship ‘not in contact with other clasts’. Readers should consider Dunham’s textural classification of carbonate rocks (wackestone, packstone, grainstone, etc.) in the description of carbonate rocks ++[++<<B4,4>>++]++. The description is predicated on identification of two kinds of intraclasts (grains) and matrix (carbonate mud), and then uses this distinction to establish relationships–mud supported vs. grain supported – that define roles for the two types of constituents (framework, matrix…).
 
 ====== role
 
@@ -1823,7 +1836,7 @@ The constituentMaterial property is an association between a ConstituentPart and
 
 ===== FabricDescription
 
-The FabricDescription data type describes all types of fabrics associated with a CompoundMaterial (i.e., tectonic, metamorphic, sedimentary, igneous fabrics or textures).  It denotes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale.  FabricDescription is defined based on the average configuration of many constituents.  Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++15++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly (++[++19++]++ p. 21-24; ++[++7++]++ p. 73; ++[++10++]++,++[++15++]++).
+The FabricDescription data type describes all types of fabrics associated with a CompoundMaterial (i.e., tectonic, metamorphic, sedimentary, igneous fabrics or textures).  It denotes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale.  FabricDescription is defined based on the average configuration of many constituents.  Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++<<B15,15>>++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly (++[++<<B19,19>>++]++ p. 21-24; ++[++<<B7,7>>++]++ p. 73; ++[++<<B10,10>>++]++,++[++15++]++).
 
 FabricDescription is distinguished from ParticleGeometry based on the criteria that particle geometry is preserved if a CompoundMaterial is disaggregated, while FabricDescription is not defined if the material is disaggregated.
 
@@ -1833,7 +1846,7 @@ image::images/image46.png[Fabric description context diagram.,width=456,height=3
 
 ====== fabricType
 
-The fabricType:FabricTypeTerm property contains a term from a controlled vocabulary to denote the type of fabric in the CompoundMaterial (e.g., rapikivi texture, autobrecciation, spaced cleavage, porphyroblastic, cross-bedding).  The fabricType describes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale. It is defined based on the average configuration of many constituents. Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++15++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly.
+The fabricType:FabricTypeTerm property contains a term from a controlled vocabulary to denote the type of fabric in the CompoundMaterial (e.g., rapikivi texture, autobrecciation, spaced cleavage, porphyroblastic, cross-bedding).  The fabricType describes a pattern, defined by one or more CompoundMaterial constituents, that is present throughout a rock body when considered at some scale. It is defined based on the average configuration of many constituents. Penetrative fabric denotes that these constituents are distributed throughout the rock volume at the scale of observation ++[++<<B15,15>>++]++, and are repeated at distances that are small relative to the scale of the whole, such that they can be considered to pervade the whole uniformly.
 
 ===== InorganicFluid
 
@@ -1889,6 +1902,7 @@ Organism is a broad class to represent any living or once living things. This is
 .Organism context diagram
 image::images/image50.png[Organism context diagram.,width=276,height=456]
 
+[[physical_description_section]]
 ===== PhysicalDescription
 
 PhysicalDescription is a class that describes the numeric physical properties of a geologic unit (GeologicUnit 8.4.1.3), earth material (EarthMaterial 8.4.1.6), or geologic structure (GeologicStructure 8.4.3.1). (e.g., density, porosity, magnetic susceptibility, remanent magnetism).  These properties are modelled here as scalar numeric values (SWE::Quantity).
@@ -1915,11 +1929,11 @@ image::images/image52.png[Rock material description context diagram.,width=271,h
 
 ====== consolidationDegree
 
-The consolidationDegree property (SWE::Category) contains a term from a controlled vocabulary that specifies the degree to which an aggregation of EarthMaterial particles is a distinct solid material. Consolidation and induration are related concepts specified by this property. They define a continuum from unconsolidated material to very hard rock. Induration is the degree to which a consolidated material is made hard, operationally determined by how difficult it is to break a piece of the material. Consolidated materials may have varying degrees of induration ++[++13++]++.
+The consolidationDegree property (SWE::Category) contains a term from a controlled vocabulary that specifies the degree to which an aggregation of EarthMaterial particles is a distinct solid material. Consolidation and induration are related concepts specified by this property. They define a continuum from unconsolidated material to very hard rock. Induration is the degree to which a consolidated material is made hard, operationally determined by how difficult it is to break a piece of the material. Consolidated materials may have varying degrees of induration ++[++<<B13,13>>++]++.
 
 ==== GeologicAgeDetails
 
-GeologicEventDescription provides extended description of geologic events through links to GeochronologicEras in the GeologicTimescale model.  GeoSciML Basic provides terms whereas GeoSciML Extension provides a fuller ontology to describe geochronology (see 8.6).
+GeologicEventDescription provides extended description of geologic events through links to GeochronologicEras in the GeologicTimescale model.  GeoSciML Basic provides terms whereas GeoSciML Extension provides a fuller ontology to describe geochronology (see <<geologic_time_rc_section>>).
 
 .GeologicAgeDetails summary diagram
 image::images/image53.png[GeologicAgeDetails summary diagram.,width=548,height=726]
@@ -1977,11 +1991,11 @@ image::images/image56.png[DisplacementEvent context diagram,width=391,height=575
 
 ====== incrementalDisplacement
 
-The incrementalDisplacement:DisplacementValue property contains a DisplacementValue (8.5.4.4) reporting the parameters of the displacement.
+The incrementalDisplacement:DisplacementValue property contains a DisplacementValue (<<displacement_value_section>>) reporting the parameters of the displacement.
 
 ===== Layering
 
-A planar foliation is defined by a tabular succession of layers ++>++ 5 mm thick. This definition is based on the proposed definition of gneiss by the NADM Science Language Technical Team ++[++13++]++.  The GeologicStructure characteristic of gneiss is layering.
+A planar foliation is defined by a tabular succession of layers ++>++ 5 mm thick. This definition is based on the proposed definition of gneiss by the NADM Science Language Technical Team ++[++<<B13,13>>++]++.  The GeologicStructure characteristic of gneiss is layering.
 
 .Layering context diagram
 image::images/image57.png[Layering context diagram,width=552,height=440]
@@ -1990,6 +2004,7 @@ image::images/image57.png[Layering context diagram,width=552,height=440]
 
 The layerComposition property is an association between a Layering and a RockMaterial that describes the rock material that may define compositional layering.
 
+[[displacement_value_section]]
 ====== DisplacementValue
 
 A displacement value expresses the displacement on a fault with respect to a planar approximation of its shape.
@@ -2162,7 +2177,7 @@ The spacing property (SWE::QuantityRange) contains a linear dimension representi
 
 ===== ShearDisplacementStructureDescription
 
-ShearDisplacementStructureDescription provides extended descriptive properties of a shear displacement structure (i.e., fault or shear) defined in 8.4.3.5 by extending the abstract property block ShearDisplacementStructureAbstractDescription.
+ShearDisplacementStructureDescription provides extended descriptive properties of a shear displacement structure (i.e., fault or shear) defined in <<ShearDisplacementStructure_section>> by extending the abstract property block ShearDisplacementStructureAbstractDescription.
 
 .ShearDisplacementStructureDescription context diagram
 image::images/image62.png[ShearDisplacementStructureDescription context diagram.,width=601,height=447]
@@ -2177,7 +2192,7 @@ The property planeOrientation:GSML++_++PlanarOrientation contains a description 
 
 ====== stPhysicalProperty
 
-The property stPhysicalProperty:PhysicalDescription contains a value of generic physical properties (8.5.2.11) not addressed in this specification.
+The property stPhysicalProperty:PhysicalDescription contains a value of generic physical properties (<<physical_description_section>>) not addressed in this specification.
 
 ==== GeologicUnitDetails
 
@@ -2252,6 +2267,7 @@ Vocabularies used in GeoSciML Extension are listed in <<tbl_geosciml_extension>>
 
 
 
+[[geologic_time_rc_section]]
 === GeoSciML GeologicTime Requirements Class (Normative)
 
 
@@ -2269,7 +2285,7 @@ inherit:: ISO-19156 Observations and Measurements (Topic 20)
 requirement:: /req/gsml-timescale/start
 ====
 
-The Geologic Time package, developed by Simon Cox (CSIRO) and Steve Richard (Arizona Geological Survey) ++[++1++]++, contains elements used to describe the classification of geologic time: time periods, time boundaries, and the relationships between them as defined by the IUGS International Commission on Stratigraphy (ICS - link:++http://www.stratigraphy.org/++[]).
+The Geologic Time package, developed by Simon Cox (CSIRO) and Steve Richard (Arizona Geological Survey) ++[++<<B1,1>>++]++, contains elements used to describe the classification of geologic time: time periods, time boundaries, and the relationships between them as defined by the IUGS International Commission on Stratigraphy (ICS - link:++http://www.stratigraphy.org/++[]).
 
 
 .GeologicTime dependencies
@@ -2414,7 +2430,7 @@ image::images/image70.png[Time scale summary diagram.,width=601,height=515]
 
 ===== GeologicTimeScale
 
-The classic “Geologic Timescale” (link:++http://www.stratigraphy.org/index.php/ics-chart-timescale++[[.underline]#http://www.stratigraphy.org/index.php/ics-chart-timescale#]) comprising an ordered, hierarchical set of named “eras” is an example of an Ordinal Temporal Reference System. It may be calibrated with reference to a numeric Temporal Coordinate System, but is, in principle, defined independently.
+The classic “Geologic Timescale” (link:++http://www.stratigraphy.org/index.php/ics-chart-timescale++[]) comprising an ordered, hierarchical set of named “eras” is an example of an Ordinal Temporal Reference System. It may be calibrated with reference to a numeric Temporal Coordinate System, but is, in principle, defined independently.
 
 ===== GeochronologicEra
 
@@ -2456,7 +2472,7 @@ image::images/image74.png[NumericEraBoundary context diagram.,width=400,height=4
 
 ===== StandardGlobalNumericalAge
 
-A standard numeric age point (a numeric analogue to a ‘golden spike’) is applicable to the formal subdivision of the Precambrian, and perhaps the Pleistocene/Holocene boundary (++[++23++]++; link:++http://www.stratigraphy.org/index.php/ics-chart-timescale++[[.underline]#http://www.stratigraphy.org/index.php/ics-chart-timescale#]).  The boundary is not defined from a physical stratotype, although it can be influence by some, but placed at a convenient numerical value.
+A standard numeric age point (a numeric analogue to a ‘golden spike’) is applicable to the formal subdivision of the Precambrian, and perhaps the Pleistocene/Holocene boundary (++[++<<B23,23>>++]++; link:++http://www.stratigraphy.org/index.php/ics-chart-timescale++[\http://www.stratigraphy.org/index.php/ics-chart-timescale]).  The boundary is not defined from a physical stratotype, although it can be influence by some, but placed at a convenient numerical value.
 
 ==== GeoSciML GeologicTime vocabularies
 
@@ -2680,10 +2696,10 @@ identifier:: /req/gsml-borehole/interval-1D-CRS
 part:: Coordinate Reference System of interval geometries SHALL use the borehole geometry.
 ====
 
-Instance example for Klčovo and Lastomir Formation adapted from Túnyi ++[++18++]++:
+Instance example for Klčovo and Lastomir Formation adapted from Túnyi ++[++<<B18,18>>++]++:
 
 [[img_top__part_tunyi]]
-.Top part of Figure 2 from Túnyi ++[++18++]++
+.Top part of Figure 2 from Túnyi ++[++<<B18,18>>++]++
 image::images/image80.png[width=426,height=549]
 
 <<img_encoding_of_a_borehole_with_two_logs>> shows an encoding of the first lithostratigraphic and magnetostratigraphic units from <<img_top__part_tunyi>> showing how the collection identifiers group BoreholeIntervals into two groups.
@@ -2855,7 +2871,7 @@ recommendation:: /rec/gsml-lab-analysis/image-process
 recommendation:: /rec/gsml-lab-analysis/outcrop-pattern
 ====
 
-The LaboratoryAnalysis-Specimen application model extends the ISO19156 model for Observations, Measurements and Sampling.  It specifically describes processes and results related to the analysis of (geological) samples using instruments, commonly in a laboratory environment. The design of this package is also informed by the MOLES v3 data model ++[++21++]++. 
+The LaboratoryAnalysis-Specimen application model extends the ISO19156 model for Observations, Measurements and Sampling.  It specifically describes processes and results related to the analysis of (geological) samples using instruments, commonly in a laboratory environment. The design of this package is also informed by the MOLES v3 data model ++[++<<B21,21>>++]++. 
 
 .LaboratoryAnalysis and Specimen dependencies
 image::images/image84.png[LaboratoryAnalysis and Specimen dependencies.,width=601,height=506]
@@ -3180,6 +3196,7 @@ Vocabularies used in the LaboratoryAnalysis-Specimen package are listed <<tbl_la
 |*GeologicSpecimenPreparationTerm* |Refers to a vocabulary of terms to describe sample preparation applied to geologic specimens, typically in preparation for analytical processes like geochemistry or microscopy.  e.g., crush, mineral separation, thin section, cut, polish, mount, acid digestion.
 |===
 
+[[outcrop_encoding_pattern]]
 ==== Outcrop encoding pattern (Informative)
 
 It is suggested to use SamplingFeatureCollection for representing geological field data collected at an outcrop, (i.e., an outcrop is modelled as a collection of sampling points).  At each point at an outcrop, observations may be made on a single geologic feature (sampledFeature), such as a geologic unit description, a fault description, a contact description, or structural measurements on a foliation.  If more than one geologic feature is observed at an outcrop, it is delivered as a separate sampling point.
@@ -3195,7 +3212,7 @@ SamplingFeatureCollection might also be used to represent dredge hauls, measured
 ====
 [%metadata]
 identifier:: /rec/gsml-lab-analysis/outcrop-pattern
-part:: Observations at outcrop SHOULD be encoded using the pattern described at clause 8.8.5
+part:: Observations at outcrop SHOULD be encoded using the pattern described at <<outcrop_encoding_pattern>>
 ====
 
 === GeoSciML Lite Requirements Class (Normative)
@@ -3253,7 +3270,7 @@ image::images/image99.png[Package dependency for GeoSciML Lite.,width=524,height
 
 GeoSciML Lite conforms to the Level 0 of the Simple Features Profile for GML (OGC 10-100r, OGC 06-049). The simple features profile supports only a limited subset of possible GML geometry types that may be used to describe feature geographic location and shape. For the purposes of GeoSciML simple features, these include GEO::Point, GEO::LineString, GEO::Curve, GEO::Polygon, GEO::Surface, GEO::MultiPoint, GEO::MultiCurve, GEO::MultiSurface and multi-geometry types consisting of collections of these base types.
 
-GeoSciML Lite features are analogous to GeoSciML MappedFeatures and O&M sampling features, with additional text attributes for human consumption, a flatted-relation view of the age, and assignment to a single lithology. The Lite schema consists of ‘free-text’ fields and identifier fields.  Best practice is that free text fields will, where possible, contain well-structured summaries of data in a format suitable for reading by the intended users.  For instance, an agreed common format like comma-delimited values should be adopted by user communities. Identifier fields should contain identifiers for concepts from a controlled vocabulary (for example link:++http://resource.geosciml.org/classifier/cgi/lithology/++[[.underline]#CGI Simple Lithology#] (link:++http://resource.geosciml.org/classifier/cgi/lithology/++[])) that specify representative thematic properties for a feature. Inclusion of these standardized identifiers enables interoperability across services. Ideally the identifiers should be URIs that can be resolved to obtain machine-processable or human-readable representations of the identified concepts.
+GeoSciML Lite features are analogous to GeoSciML MappedFeatures and O&M sampling features, with additional text attributes for human consumption, a flatted-relation view of the age, and assignment to a single lithology. The Lite schema consists of ‘free-text’ fields and identifier fields.  Best practice is that free text fields will, where possible, contain well-structured summaries of data in a format suitable for reading by the intended users.  For instance, an agreed common format like comma-delimited values should be adopted by user communities. Identifier fields should contain identifiers for concepts from a controlled vocabulary (for example link:++http://resource.geosciml.org/classifier/cgi/lithology/++[CGI Simple Lithology]) that specify representative thematic properties for a feature. Inclusion of these standardized identifiers enables interoperability across services. Ideally the identifiers should be URIs that can be resolved to obtain machine-processable or human-readable representations of the identified concepts.
 
 In addition, some features include an (optional) identifier for a specification (specification++_++uri), which is a resource containing a description of that particular feature. In many cases, these descriptions will be the same for all geometries assigned to the same map unit or classified as the same kind of contact or structure. If more complete information is available, different specification descriptions may be associated within subsets of mapped features of the same type that are portrayed with the same symbol. In the most extreme case, each mapped feature occurrence might have a unique description that captures the full spatial variability of a geologic unit or structure. Following the standard patterns of web architecture, the specification++_++uri should be resolvable to obtain one or more representations of that description. For maximum interoperability, one of these representations should be a GeoSciML encoded description of the feature, but other encodings might also be available, for example HTML web pages, other XML schema, or JSON. For those familiar with the GeoSciML Basic package, the specification++_++uri property is equivalent to the specification association from MappedFeature to GeologicFeature.
 
@@ -3397,7 +3414,7 @@ Although many vocabulary terms are defined as URI, not all URIs are actually sup
 .GeoSciML Lite feature types
 image::images/image101.png[GeoSciML Lite feature types.,width=601,height=453]
 
-<<img_lite_feature_types>> shows the seven Lite feature types specified by GeoSciML 4.1.  Each feature type is equivalent to a layer in a GIS or a Web Map Service. 
+<<img_lite_feature_types>> shows the seven Lite feature types specified by GeoSciML {edition}.  Each feature type is equivalent to a layer in a GIS or a Web Map Service. 
 
 ===== User defined properties
 
@@ -4719,8 +4736,8 @@ abstract-test:: /conf/gsml-basic/quantity-range-repeat
 [%metadata]
 identifier:: /conf/gsml-basic/geologicfeature-purpose
 target:: /req/gsml-basic/geologicfeature-purpose
-test-purpose:: Ensure that the target implementation enforces the purpose property to be restricted to the values provided in Table 2 (instance, typicalNorm, definingNorm) of 8.4.1.1.2
-test-method:: Visual inspection that the target implementation has a mechanism to limit the property value to those provided in Table 2
+test-purpose:: Ensure that the target implementation enforces the purpose property to be restricted to the values provided in <<valid_purpose_values>> (instance, typicalNorm, definingNorm) of <<purpose_section>>
+test-method:: Visual inspection that the target implementation has a mechanism to limit the property value to those provided in <<valid_purpose_values>>
 ====
 
 [[conf_gsml-basic_geologicevent-non-null]]
@@ -5225,13 +5242,13 @@ IUGS: International Union of Geological Sciences (www.iugs.org)
 
 IUGS CGI: International Union of Geological Sciences, Commission for the Management and Application of Geoscience Information (www.cgi-iugs.org)
 
-GeoSciML:  Geoscience Markup Language (link:++http://www.geosciml.org/++[[.underline]#www.geosciml.org#])
+GeoSciML:  Geoscience Markup Language (link:++http://www.geosciml.org/++[])
 
 GWML: GroundWater Markup Language
 
 RDBMS: Relational database management system
 
-UCUM: Unified Code for Units of Measure (link:++http://unitsofmeasure.org/ucum.html++[[.underline]#http://unitsofmeasure.org/ucum.html#])
+UCUM: Unified Code for Units of Measure (link:++http://unitsofmeasure.org/ucum.html++[])
 
 ////
 Revision History should be the last annex before the Bibliography
@@ -5250,21 +5267,89 @@ Bibliography should be the last annex
 [[Bibliography]]
 == Bibliography
 
-[NOTE]
-.Example Bibliography (Delete this note).
-===============================================
-The TC has approved Springer LNCS as the official document citation type.
+// Example citation ++[++<<B7,7>>++]++
 
-Springer LNCS is widely used in technical and computer science journals and other publications
+//1
+* [[[B1]]], Cox, S. J. D., S. M. Richard, S.M.: A formal model for the geologic time scale and global stratotype section and point, compatible with geospatial information transfer standards. Geosphere, 1, 119 (2005). link:++http://www.chronos.org/pdfs/publications/geosphere2005.pdf++[]
 
-* For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
+//2
+* [[[B2]]], D’Orefice, M., Graciotti, R., Eds.: Carte Geomorfologica d’Italia alla scalla 1:50 000, foglio 316-317-328-329, ISOLA D’ELBA, Servizio Geologico d’Italia (ISPRA) (2009).
 
-– Actual References:
+//3
+* [[[B3]]], Drewes, H.: Geologic map of the Bartlett Mountain Quadrangle, Pima and Santa Cruz counties, Arizona, I-2624. Lat 31 deg 22’30" to 31 deg 30’, long 111 deg 15’ to 111 deg 22’30". Scale 1:24,000 (1 inch = 2,000 feet). Sheet 43 by 39 1/2 inches (1998)
 
-[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
+//4
+* [[[B4]]], Dunham, R.J.: Classification of carbonate rocks according to depositional texture. In Ham, W.E. Classification of carbonate rocks. American Association of Petroleum Geologists Memoir. 1, 108–121 (1962).
 
-[n] Web: Author Surname, A.: Title, link:++http://Website-Url++[]
+//5
+* [[[B5]]], Folk, R.L.: Petrology of sedimentary rocks. Hemphill’s. Austin, Texas (1968)
 
-===============================================
+//6
+* [[[B6]]], Folk, R.L.: Petrology of Sedimentary Rocks. Hemphill Publishing Company, Austin, Texas (1974)
 
-* [[[OGC2015,OGCTB12]]], _OGC: OGC Testbed 12 Annex B: Architecture_ (2015).
+//7
+* [[[B7]]], Hobbs, B. E., Means, W. D., & Williams, P. F.: An outline of structural geology. New York: Wiley (1976)
+
+//8
+* [[[B8]]], INSPIRE: D2.8.II.4 Data Specification on Geology – Technical Guidelines. D2.8.II.4_v3.0. European Commission, Thematic Working Group Geology, (2013) link:++http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_GE_v3.0.pdf++[]
+
+//9
+* [[[B9]]], ISSC (International Subcommission on Stratigraphic Classification) of IUGS International Commission on Stratigraphy, International stratigraphic guide (2d edition, Amos Salvador, ed.): Trondheim, Norway, International Union of Geological Sciences, and Boulder, Colorado, Geological Society of America (1994)
+
+//10
+* [[[B10]]], Jackson, J.A.: Glossary of geology, 4th ed.:  Alexandria, Virginia, American Geological Institute (1997)
+
+//11
+* [[[B11]]], Munsell soil color charts (Munsell Color: New Windsor, NY) Passey HB, Hugie VK, Williams EW, Ball DE (1994)
+
+
+//12
+* [[[B12]]], NADM Conceptual Model 1.0, A Conceptual Model for Geologic Map Information, co published as U.S. Geological Survey Open-File Report 2004-1334 and Geological Survey of Canada Open File 4737. (2004) <link:++http://pubs.usgs.gov/of/2004/1334/2004-1334.pdf++[]>
+
+
+//13
+* [[[B13]]], NADM Science-language Technical Team, link:++http://ngmdb.usgs.gov/www-nadm/sltt/products.html++[] (2004)
+
+
+//14
+* [[[B14]]], North American Commission of Stratigraphic Nomenclature (NACSN), North American Stratigraphic Code: American Association of Petroleum Geologists Bulletin, 89, 11, 1547-1591 (2005)
+
+
+//15
+* [[[B15]]], Passchier, C.W. & Trouw, R.A.J.: Microtectonics, Springer, ISBN 3-540-58713-6 (1998)
+
+
+//16
+* [[[B16]]], Sneed E.D, Folk R.L.. Pebbles in the lower Colorado River, Texas, a study of particle morphogenesis. Journal of Geology 66(2), 114–150, (1958)
+
+
+//17
+* [[[B17]]], Steno, N.: The Prodromus of Nicolaus Steno’s Dissertation Concerning a Solid Body Enclosed by Process of Nature Within a Solid (1669)
+
+
+//18
+* [[[B18]]], Túnyi, I.: Magnetostratigraphy of Badenian evaporite deposits (East Slovak Basin), GEOLOGICA CARPATHICA, JUNE 2005, 56, 3, 273–284, (2005) <link:++http://www.geologicacarpathica.com/GeolCarp_Vol56_No3_273_284.html++[]>
+
+
+//19
+* [[[B19]]], Turner, F.J., Weiss, L.E.:  Structural Analysis of Metamorphic Tectonites. McGraw-Hill, New York, N.Y, 545 (1963)
+
+
+//20
+* [[[B20]]], van der Plicht, J., A. Hogg, A.:A note on reporting radiocarbon. Quaternary Geochronology 1 (4): 237–240 (2006) doi:10.1016/j.quageo.2006.07.001.
+
+
+//21
+* [[[B21]]], Ventouras, S., Lawrence, B.N. and Cox, S.:MOLES-v3 Information Model. In: EGU General Assembly Vienna 2010. (link:++http://meetingorganizer.copernicus.org/EGU2010/EGU2010-5080.pdf++[])
+
+
+//22
+* [[[B22]]], Wadell, H.: Volume, shape, and roundness of rock particles. Journal of Geology 40 (1932)
+
+
+//23
+* [[[B23]]], Walshe, S.L. Gradstein, F.M. & Ogg, J.G.: History, philosophy, and application of the Global Stratotype Section and Point (GSSP), Lethaia, 37, 201-218,  ISSN 0024-1164 (2004) <link:++http://precambrian.stratigraphy.org/Walsh_et_al_2004.pdf++[]>
+
+
+//24
+* [[[B24]]], Zingg, T.: Beiträge zur Schotteranalyze:  In Schweiz. Mineralog. Petrog. Mitt, v. 15, 39-140 (1935)
